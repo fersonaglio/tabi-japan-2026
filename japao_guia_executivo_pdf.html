@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabi Japan 2026 • Guia Ilustrado de Expedição (Fernando Sonaglio)</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- FontAwesome 6 Pro -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google Fonts: Plus Jakarta Sans, Outfit & Noto Serif JP -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "sans-serif"],
+            display: ["Outfit", "sans-serif"],
+            mono: ["Space Grotesk", "monospace"],
+            serif: ["Noto Serif JP", "serif"],
+          },
+          colors: {
+            pdf: {
+              bg: "#090d16",
+              card: "#111726",
+              cardborder: "#1e293b",
+              subtle: "#94a3b8",
+              crimson: "#e11d48",
+              gold: "#f59e0b",
+              emerald: "#10b981",
+              sky: "#0ea5e9",
+              indigo: "#6366f1"
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #090d16;
+      color: #f1f5f9;
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      -webkit-font-smoothing: antialiased;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 10mm 12mm;
+    }
+
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-page {
+        page-break-after: always;
+        break-inside: avoid;
+        min-height: 94vh;
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+      }
+      .print-avoid-break {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .dark-card-print {
+        background-color: #f8fafc !important;
+        color: #0f172a !important;
+        border-color: #cbd5e1 !important;
+        box-shadow: none !important;
+      }
+      .dark-text-white {
+        color: #0f172a !important;
+      }
+      .dark-text-slate {
+        color: #475569 !important;
+      }
+      .dark-bg-night {
+        background-color: #f1f5f9 !important;
+        border-color: #e2e8f0 !important;
+      }
+      .print-border {
+        border: 1px solid #cbd5e1 !important;
+      }
+      img {
+        max-height: 125px !important;
+        object-fit: cover !important;
+      }
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.2rem 0.65rem;
+      border-radius: 9999px;
+      font-family: "Space Grotesk", monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.025em;
+    }
+
+    .img-zoom {
+      transition: transform 0.4s ease;
+    }
+    .img-zoom:hover {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body class="selection:bg-rose-500/30 selection:text-rose-200">
+
+  <!-- BARRA DE AÇÃO FLUTUANTE (SOMENTE NA TELA - NÃO SAI NO PDF) -->
+  <header class="no-print sticky top-0 z-50 bg-pdf-bg/90 backdrop-blur-md border-b border-pdf-cardborder px-4 py-3">
+    <div class="max-w-5xl mx-auto flex items-center justify-between flex-wrap gap-3">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-lg bg-rose-600/20 text-rose-400 flex items-center justify-center font-serif text-lg font-bold border border-rose-500/30">旅</span>
+        <div>
+          <h1 class="text-sm font-bold text-white flex items-center gap-2">
+            TABI JAPAN 2026 <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-rose-300 font-mono font-bold">Guia Ilustrado (PDF)</span>
+          </h1>
+          <p class="text-[11px] text-slate-400">Fernando de Lima Sonaglio • 29/08 a 15/09/2026</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button onclick="window.print()" class="px-4 py-2 bg-rose-600 hover:bg-rose-500 text-white font-mono font-bold text-xs rounded-xl shadow-lg shadow-rose-600/20 transition-all flex items-center gap-2 active:scale-95">
+          <i class="fa-solid fa-file-pdf text-sm"></i> Salvar / Imprimir em PDF (A4)
+        </button>
+        <a href="japao_dashboard_fernando.html" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 font-mono text-xs rounded-xl border border-slate-700 transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-arrow-left"></i> Painel Interativo
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTAINER PRINCIPAL DO DOCUMENTO (FORMATO A4 / EBOOK) -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-8 py-8 space-y-12">
+
+    <!-- ========================================== -->
+    <!-- PÁGINA 1: CAPA EXECUTIVA ILUSTRADA -->
+    <!-- ========================================== -->
+    <section class="print-page relative flex flex-col justify-between py-6 border-b border-pdf-cardborder print:border-none min-h-[92vh]">
+      <div class="space-y-5">
+        <!-- Topo Editorial -->
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <div class="flex items-center gap-2 font-mono text-xs tracking-widest text-rose-400 uppercase">
+            <i class="fa-solid fa-torii-gate"></i> Expedição Japão 2026 • Livro Oficial de Bordo
+          </div>
+          <span class="font-mono text-xs text-slate-400">TÓQUIO • FUJI • QUIOTO • NARA • OSAKA</span>
+        </div>
+
+        <!-- Hero com Imagem Panorâmica do Monte Fuji e Chureito Pagoda -->
+        <div class="relative rounded-3xl overflow-hidden border border-slate-700 shadow-2xl h-56 sm:h-64">
+          <img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=1200&q=80" alt="Monte Fuji e Pagoda Chureito" class="w-full h-full object-cover img-zoom">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
+            <span class="font-serif text-3xl sm:text-4xl text-rose-400 font-black tracking-tight">日本旅行 • 2026</span>
+            <h1 class="font-display text-2xl sm:text-3xl font-black text-white uppercase tracking-tight">
+              TABI JAPAN: EXPEDIÇÃO FERNANDO SONAGLIO
+            </h1>
+            <p class="text-xs sm:text-sm text-slate-200 font-medium">
+              13 Dias e 12 Noites no Japão • 29 de Agosto a 15 de Setembro de 2026
+            </p>
+          </div>
+        </div>
+
+        <!-- Dados do Viajante e Datas -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2 font-mono text-xs">
+          <div class="p-3 rounded-2xl bg-pdf-card border border-pdf-cardborder dark-card-print">
+            <span class="text-slate-400 block text-[10px] uppercase">Viajante Titular</span>
+            <span class="font-bold text-white text-xs dark-text-white">Fernando Sonaglio</span>
+          </div>
+          <div class="p-3 rounded-2xl bg-pdf-card border border-pdf-cardborder dark-card-print">
+            <span class="text-slate-400 block text-[10px] uppercase">Período Total</span>
+            <span class="font-bold text-white text-xs dark-text-white">29/08 a 15/09/2026</span>
+          </div>
+          <div class="p-3 rounded-2xl bg-pdf-card border border-pdf-cardborder dark-card-print">
+            <span class="text-slate-400 block text-[10px] uppercase">Noites no Japão</span>
+            <span class="font-bold text-rose-400 text-xs">13 Dias / 12 Noites</span>
+          </div>
+          <div class="p-3 rounded-2xl bg-pdf-card border border-pdf-cardborder dark-card-print">
+            <span class="text-slate-400 block text-[10px] uppercase">Status de Entrada</span>
+            <span class="font-bold text-emerald-400 text-xs">Entrada Efetuada em 01/09</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resumo dos 4 Pilares Garantidos com Fotos Reais -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4">
+        <div class="p-3 rounded-2xl bg-pdf-card border border-pdf-cardborder flex items-center gap-3 dark-card-print">
+          <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=300&q=80" alt="Tóquio Skytree" class="w-14 h-14 rounded-xl object-cover border border-slate-700 flex-shrink-0">
+          <div class="space-y-0.5 text-xs">
+            <span class="font-bold text-sky-400 font-mono">VOOS GOL & AIR FRANCE</span>
+            <p class="text-[11px] text-slate-300 dark-text-slate">•••••• (Internacional) • •••••• (Nacional). Mala 23kg despachada inclusa.</p>
+          </div>
+        </div>
+
+        <div class="p-3 rounded-2xl bg-pdf-card border border-pdf-cardborder flex items-center gap-3 dark-card-print">
+          <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=300&q=80" alt="Quioto Torii" class="w-14 h-14 rounded-xl object-cover border border-slate-700 flex-shrink-0">
+          <div class="space-y-0.5 text-xs">
+            <span class="font-bold text-emerald-400 font-mono">SEGURO MTA 60 MUNDO</span>
+            <p class="text-[11px] text-slate-300 dark-text-slate">Pedido • apólice no app do seguro • • US$ 60k DMH + Telemedicina Albert Einstein 24h.</p>
+          </div>
+        </div>
+
+        <div class="p-3 rounded-2xl bg-pdf-card border border-pdf-cardborder flex items-center gap-3 dark-card-print">
+          <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=300&q=80" alt="Internet 5G" class="w-14 h-14 rounded-xl object-cover border border-slate-700 flex-shrink-0">
+          <div class="space-y-0.5 text-xs">
+            <span class="font-bold text-indigo-400 font-mono">INTERNET ILIMITADA 5G</span>
+            <p class="text-[11px] text-slate-300 dark-text-slate">Holafly Japão (• pedido no app Holafly •) • Redes SoftBank/KDDI + 1GB na França.</p>
+          </div>
+        </div>
+
+        <div class="p-3 rounded-2xl bg-pdf-card border border-pdf-cardborder flex items-center gap-3 dark-card-print">
+          <img src="https://images.unsplash.com/photo-1576085898323-218337e3e43c?auto=format&fit=crop&w=300&q=80" alt="Parque Yoyogi Shabat" class="w-14 h-14 rounded-xl object-cover border border-slate-700 flex-shrink-0">
+          <div class="space-y-0.5 text-xs">
+            <span class="font-bold text-amber-400 font-mono">FÉ ADVENTISTA & SHABAT</span>
+            <p class="text-[11px] text-slate-300 dark-text-slate">Culto na Tokyo International Church. Dieta bíblica Levítico 11.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rodapé da Capa -->
+      <div class="flex items-center justify-between border-t border-slate-800 pt-3 text-[10px] font-mono text-slate-400">
+        <span>Documento oficial de segurança e apoio para familiares e viajante</span>
+        <span>Japão 2026</span>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- PÁGINA 2: VOOS & AS 4 HOSPEDAGENS AIRBNB -->
+    <!-- ========================================== -->
+    <section class="print-page space-y-5 pt-4">
+      <div class="border-b border-slate-800 pb-2.5 flex items-center justify-between">
+        <h2 class="font-display text-lg font-bold text-white uppercase tracking-wide flex items-center gap-2">
+          <span class="w-6 h-6 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center text-xs font-mono">01</span>
+          Voos & Endereços das 4 Hospedagens
+        </h2>
+        <span class="font-mono text-xs text-slate-400">Para Apoio e Localização</span>
+      </div>
+
+      <!-- Grade de Voos -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs font-mono">
+        <div class="p-3.5 rounded-2xl bg-pdf-card border border-pdf-cardborder space-y-2 dark-card-print">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-white flex items-center gap-1.5 dark-text-white">
+              <i class="fa-solid fa-plane text-sky-400"></i> GOL • Chapecó ⟷ GRU
+            </span>
+            <span class="badge-pill bg-sky-500/20 text-sky-400">LOC: ••••••</span>
+          </div>
+          <div class="space-y-1 text-slate-300 dark-text-slate text-[11px]">
+            <p>🛫 <strong>Ida (G3-1291):</strong> Sáb, 29/08 • 11:30 XAP → 13:05 GRU</p>
+            <p>🛬 <strong>Volta (G3-1290):</strong> Ter, 15/09 • 08:50 GRU → 10:25 XAP</p>
+          </div>
+        </div>
+
+        <div class="p-3.5 rounded-2xl bg-pdf-card border border-pdf-cardborder space-y-2 dark-card-print">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-white flex items-center gap-1.5 dark-text-white">
+              <i class="fa-solid fa-globe text-rose-400"></i> Air France • GRU ⟷ CDG ⟷ HND
+            </span>
+            <span class="badge-pill bg-rose-500/20 text-rose-400">LOC: ••••••</span>
+          </div>
+          <div class="space-y-1 text-slate-300 dark-text-slate text-[11px]">
+            <p>🛫 <strong>Ida:</strong> Dom, 30/08 14:40 GRU → Ter, 01/09 06:25 HND (T3)</p>
+            <p>🛬 <strong>Volta:</strong> Seg, 14/09 00:05 HND → Seg, 14/09 20:25 GRU</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- As 4 Hospedagens com Fotos Ilustrativas Reais -->
+      <div class="space-y-2.5 pt-1">
+        <h3 class="text-xs font-mono uppercase text-slate-400 tracking-wider">Onde o Fernando vai ficar hospedado (Airbnbs Pagos):</h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <!-- Airbnb 1: Tóquio 1 -->
+          <div class="p-3 rounded-2xl bg-pdf-card border border-pdf-cardborder flex gap-3 dark-card-print">
+            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=300&q=80" alt="Tóquio Skytree Asakusa" class="w-16 h-20 rounded-xl object-cover border border-slate-700 flex-shrink-0">
+            <div class="space-y-1">
+              <span class="font-bold text-white font-mono block dark-text-white">1. Tóquio: Ciel Hills Ap 201</span>
+              <p class="text-[11px] text-slate-300 dark-text-slate">
+                📍 Sumida-ku, Narihira 4-2-12 (Oshiage)<br>
+                📅 01 a 06/09 (5 noites)<br>
+                🔑 Keybox: <code>••••••••</code> • Host: Daigo
+              </p>
+            </div>
+          </div>
+
+          <!-- Airbnb 2: Quioto -->
+          <div class="p-3 rounded-2xl bg-pdf-card border border-pdf-cardborder flex gap-3 dark-card-print">
+            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=300&q=80" alt="Quioto Estação" class="w-16 h-20 rounded-xl object-cover border border-slate-700 flex-shrink-0">
+            <div class="space-y-1">
+              <span class="font-bold text-white font-mono block dark-text-white">2. Quioto: Faminess Ap 503</span>
+              <p class="text-[11px] text-slate-300 dark-text-slate">
+                📍 Minami Ward, Higashikujo 2-1 (Kyoto Station)<br>
+                📅 06 a 09/09 (3 noites)<br>
+                🔑 Keybox no térreo • Host: Daisuke
+              </p>
+            </div>
+          </div>
+
+          <!-- Airbnb 3: Osaka -->
+          <div class="p-3 rounded-2xl bg-pdf-card border border-pdf-cardborder flex gap-3 dark-card-print">
+            <img src="https://images.unsplash.com/photo-1590559899731-a382839e5549?auto=format&fit=crop&w=300&q=80" alt="Osaka Dotonbori" class="w-16 h-20 rounded-xl object-cover border border-slate-700 flex-shrink-0">
+            <div class="space-y-1">
+              <span class="font-bold text-white font-mono block dark-text-white">3. Osaka: CHUANHouse Kuromon</span>
+              <p class="text-[11px] text-slate-300 dark-text-slate">
+                📍 Chuo Ward, Nipponbashi 2-11-8 (Kuromon)<br>
+                📅 09 a 11/09 (2 noites)<br>
+                🔑 Checkin Code: <code>••••••••</code> • PIN: <code>••••••••</code> • Host: Kuromon
+              </p>
+            </div>
+          </div>
+
+          <!-- Airbnb 4: Tóquio 2 -->
+          <div class="p-3 rounded-2xl bg-pdf-card border border-pdf-cardborder flex gap-3 dark-card-print">
+            <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=300&q=80" alt="Tóquio Kuramae Taito" class="w-16 h-20 rounded-xl object-cover border border-slate-700 flex-shrink-0">
+            <div class="space-y-1">
+              <span class="font-bold text-white font-mono block dark-text-white">4. Tóquio 2: Misuji Kuramae</span>
+              <p class="text-[11px] text-slate-300 dark-text-slate">
+                📍 1-3-18 Misuji, Taito City, Tokyo<br>
+                📅 11 a 13/09 (2 noites)<br>
+                🔑 Entrada 1F: <code>•••••</code> • Quarto 303 Keybox: <code>••••</code> • Host: Lu
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- PÁGINA 3: DIAS 01 A 04 (TÓQUIO METRÓPOLE) -->
+    <!-- ========================================== -->
+    <section class="print-page space-y-4 pt-4">
+      <div class="border-b border-slate-800 pb-2.5 flex items-center justify-between">
+        <h2 class="font-display text-lg font-bold text-white uppercase tracking-wide flex items-center gap-2">
+          <span class="w-6 h-6 rounded-lg bg-rose-500/20 text-rose-400 flex items-center justify-center text-xs font-mono">02</span>
+          Roteiro Ilustrado: Dias 01 a 04 (Tóquio)
+        </h2>
+        <span class="font-mono text-xs text-slate-400">Asakusa • Akihabara • Shibuya • Toyosu</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 text-xs">
+        <!-- Card Dia 1 -->
+        <div class="p-3.5 rounded-2xl bg-pdf-card border border-pdf-cardborder space-y-2 dark-card-print print-avoid-break">
+          <div class="relative h-28 rounded-xl overflow-hidden border border-slate-700">
+            <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=600&q=80" alt="Senso-ji Asakusa" class="w-full h-full object-cover">
+            <span class="absolute top-2 left-2 badge-pill bg-black/80 text-white font-mono">DIA 01 • 01/09 (Ter)</span>
+          </div>
+          <h3 class="font-bold text-white font-mono dark-text-white">Chegada em Haneda — CONCLUÍDO ✓</h3>
+          <p class="text-[11px] text-slate-300 dark-text-slate leading-relaxed">
+            • <strong>06:25:</strong> Desembarque em Haneda (AF186) e trem para Asakusa — OK.<br>
+            • <strong>Concluído:</strong> passeio pelo bairro de Asakusa e compras no Don Quijote.<br>
+            • <strong>Pendente:</strong> Templo Senso-ji (ano 645), Portão Kaminarimon e doces Senbei na rua Nakamise → recuperar <strong>02/09 às 07:00</strong>.<br>
+            • Jantar no <em>Asakusa Sushiken</em> (Halal).
+          </p>
+        </div>
+
+        <!-- Card Dia 2 -->
+        <div class="p-3.5 rounded-2xl bg-pdf-card border border-pdf-cardborder space-y-2 dark-card-print print-avoid-break">
+          <div class="relative h-28 rounded-xl overflow-hidden border border-slate-700">
+            <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80" alt="Akihabara Electric Town" class="w-full h-full object-cover">
+            <span class="absolute top-2 left-2 badge-pill bg-black/80 text-white font-mono">DIA 02 • 02/09 (Qua)</span>
+          </div>
+          <h3 class="font-bold text-white font-mono dark-text-white">Senso-ji (recuperação) & Shinjuku</h3>
+          <p class="text-[11px] text-slate-300 dark-text-slate leading-relaxed">
+            • <strong>07:00:</strong> Recuperação do Senso-ji: Kaminarimon, Lanterna Gigante e Senbei em Nakamise.<br>
+            • <strong>Shinjuku Gyoen</strong> (¥500): jardins japoneses e estufas no meio dos arranha-céus.<br>
+            • <strong>Mirante Tocho 45F (grátis)</strong> + telão 3D do Gato Gigante e beco histórico Omoide Yokocho.<br>
+            • Almoço no <em>CoCo Ichibanya Halal Kabukicho</em> (curry bovino sem mirin).
+          </p>
+        </div>
+
+        <!-- Card Dia 3 -->
+        <div class="p-3.5 rounded-2xl bg-pdf-card border border-pdf-cardborder space-y-2 dark-card-print print-avoid-break">
+          <div class="relative h-28 rounded-xl overflow-hidden border border-slate-700">
+            <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=600&q=80" alt="Shibuya Crossing" class="w-full h-full object-cover">
+            <span class="absolute top-2 left-2 badge-pill bg-black/80 text-white font-mono">DIA 03 • 03/09 (Qui)</span>
+          </div>
+          <h3 class="font-bold text-white font-mono dark-text-white">Cruzamento de Shibuya & SHIBUYA SKY</h3>
+          <p class="text-[11px] text-slate-300 dark-text-slate leading-relaxed">
+            • O cruzamento mais movimentado do mundo em Shibuya e estátua de bronze do cão Hachiko.<br>
+            • <strong>17:00: Mirante SHIBUYA SKY (45º andar)</strong> — vista panorâmica de Tóquio no pôr do sol e Monte Fuji ao fundo.<br>
+            • Jantar no renomado <em>Gyumon Shibuya</em>.
+          </p>
+        </div>
+
+        <!-- Card Dia 4 -->
+        <div class="p-3.5 rounded-2xl bg-pdf-card border border-pdf-cardborder space-y-2 dark-card-print print-avoid-break">
+          <div class="relative h-28 rounded-xl overflow-hidden border border-slate-700">
+            <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=800&q=80" alt="teamLab Planets" class="w-full h-full object-cover">
+            <span class="absolute top-2 left-2 badge-pill bg-black/80 text-white font-mono">DIA 04 • 04/09 (Sex)</span>
+          </div>
+          <h3 class="font-bold text-white font-mono dark-text-white">Mercado Tsukiji & teamLab Planets</h3>
+          <p class="text-[11px] text-slate-300 dark-text-slate leading-relaxed">
+            • Mercado tradicional de Tsukiji (espetinhos bovinos e omeletes tamagoyaki).<br>
+            • <strong>14:30: teamLab Planets TOKYO (Toyosu)</strong> — museu imersivo digital descalço em águas e labirintos de cristal.<br>
+            • 18:06: Início do Shabat adventista com pôr do sol na Baía de Odaiba.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- PÁGINA 4: DIAS 05 A 08 (SHABAT, FUJI & QUIOTO) -->
+    <!-- ========================================== -->
+    <section class="print-page space-y-4 pt-4">
+      <div class="border-b border-slate-800 pb-2.5 flex items-center justify-between">
+        <h2 class="font-display text-lg font-bold text-white uppercase tracking-wide flex items-center gap-2">
+          <span class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-xs font-mono">03</span>
+          Roteiro Ilustrado: Dias 05 a 08 (Fuji & Quioto)
+        </h2>
+        <span class="font-mono text-xs text-slate-400">Shabat TIC • Monte Fuji • Shinkansen • Nara</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 text-xs">
+        <!-- Card Dia 5 -->
+        <div class="p-3.5 rounded-2xl bg-pdf-card border border-pdf-cardborder space-y-2 dark-card-print print-avoid-break">
+          <div class="relative h-28 rounded-xl overflow-hidden border border-slate-700">
+            <img src="https://images.unsplash.com/photo-1576085898323-218337e3e43c?auto=format&fit=crop&w=600&q=80" alt="Yoyogi Park Nature Tokyo" class="w-full h-full object-cover">
+            <span class="absolute top-2 left-2 badge-pill bg-black/80 text-white font-mono">DIA 05 • 05/09 (Sáb)</span>
+          </div>
+          <h3 class="font-bold text-white font-mono dark-text-white">Shabat na Tokyo International Church</h3>
+          <p class="text-[11px] text-slate-300 dark-text-slate leading-relaxed">
+            • 09:30 às 12:30: Culto e Escola Sabatina na <strong>Tokyo International SDA Church (TIC)</strong> em Jingumae/Shibuya.<br>
+            • 12:30: Almoço potluck vegetariano comunitário.<br>
+            • Tarde contemplativa na natureza do Parque Yoyogi até o pôr do sol.
+          </p>
+        </div>
+
+        <!-- Card Dia 6 -->
+        <div class="p-3.5 rounded-2xl bg-pdf-card border border-pdf-cardborder space-y-2 dark-card-print print-avoid-break">
+          <div class="relative h-28 rounded-xl overflow-hidden border border-slate-700">
+            <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=600&q=80" alt="Monte Fuji Lago Kawaguchiko" class="w-full h-full object-cover">
+            <span class="absolute top-2 left-2 badge-pill bg-black/80 text-white font-mono">DIA 06 • 06/09 (Dom)</span>
+          </div>
+          <h3 class="font-bold text-white font-mono dark-text-white">Monte Fuji & Trem-Bala Shinkansen #1</h3>
+          <p class="text-[11px] text-slate-300 dark-text-slate leading-relaxed">
+            • 07:20: Ônibus da <strong>Estação de Tóquio (Yaesu South Exit)</strong> para o Lago Kawaguchiko aos pés do Monte Fuji.<br>
+            • Pagoda Chureito com vista clássica do vulcão sagrado.<br>
+            • <strong>19:39: Shinkansen Nozomi #1</strong> voando a 285 km/h para Quioto → Chegada no Airbnb 2 Faminess.
+          </p>
+        </div>
+
+        <!-- Card Dia 7 -->
+        <div class="p-3.5 rounded-2xl bg-pdf-card border border-pdf-cardborder space-y-2 dark-card-print print-avoid-break">
+          <div class="relative h-28 rounded-xl overflow-hidden border border-slate-700">
+            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80" alt="Fushimi Inari Torii Quioto" class="w-full h-full object-cover">
+            <span class="absolute top-2 left-2 badge-pill bg-black/80 text-white font-mono">DIA 07 • 07/09 (Seg)</span>
+          </div>
+          <h3 class="font-bold text-white font-mono dark-text-white">Fushimi Inari & Templo Kiyomizu-dera</h3>
+          <p class="text-[11px] text-slate-300 dark-text-slate leading-relaxed">
+            • 07:00: Trilha mágica pelos milhares de portais Torii vermelhos de Fushimi Inari.<br>
+            • Templo Kiyomizu-dera sustentado por vigas de madeira no penhasco e ruelas de Ninenzaka.<br>
+            • <strong>Ayam-YA mudou:</strong> a filial de Tóquio agora é em <strong>Shin-Okachimachi, 3-10-3 Motoasakusa</strong> (somente dinheiro — famoso lámen de frango).<br>
+            • Jantar em Quioto: opção halal próxima à Estação de Quioto (a confirmar).
+          </p>
+        </div>
+
+        <!-- Card Dia 8 -->
+        <div class="p-3.5 rounded-2xl bg-pdf-card border border-pdf-cardborder space-y-2 dark-card-print print-avoid-break">
+          <div class="relative h-28 rounded-xl overflow-hidden border border-slate-700">
+            <img src="https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=600&q=80" alt="Bambu Arashiyama Quioto" class="w-full h-full object-cover">
+            <span class="absolute top-2 left-2 badge-pill bg-black/80 text-white font-mono">DIA 08 • 08/09 (Ter)</span>
+          </div>
+          <h3 class="font-bold text-white font-mono dark-text-white">Bambu de Arashiyama & Pavilhão Dourado</h3>
+          <p class="text-[11px] text-slate-300 dark-text-slate leading-relaxed">
+            • 08:00: Floresta de Bambu de Arashiyama, Templo Tenryu-ji e ponte Togetsukyo.<br>
+            • Bonde retrô Randen até Kitanohakubaicho.<br>
+            • 14:15: Templo Zen <strong>Kinkaku-ji (Pavilhão Dourado)</strong> reluzindo sobre o lago no sol da tarde.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- PÁGINA 5: DIAS 09 A 13 (OSAKA & DISNEYSEA) -->
+    <!-- ========================================== -->
+    <section class="print-page space-y-4 pt-4">
+      <div class="border-b border-slate-800 pb-2.5 flex items-center justify-between">
+        <h2 class="font-display text-lg font-bold text-white uppercase tracking-wide flex items-center gap-2">
+          <span class="w-6 h-6 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xs font-mono">04</span>
+          Roteiro Ilustrado: Dias 09 a 13 (Nara, Osaka & Gran Finale)
+        </h2>
+        <span class="font-mono text-xs text-slate-400">Todai-ji • Dotonbori • Castelo de Osaka • DisneySea</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
+        <!-- Card Dia 9 -->
+        <div class="p-3 rounded-2xl bg-pdf-card border border-pdf-cardborder space-y-2 dark-card-print print-avoid-break">
+          <div class="relative h-24 rounded-xl overflow-hidden border border-slate-700">
+            <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=600&q=80" alt="Nara Cervos Sagrados" class="w-full h-full object-cover">
+            <span class="absolute top-2 left-2 badge-pill bg-black/80 text-white font-mono text-[10px]">DIA 09 • 09/09 (Qua)</span>
+          </div>
+          <h3 class="font-bold text-white font-mono text-xs dark-text-white">Nara & Chegada a Osaka</h3>
+          <p class="text-[10px] text-slate-300 dark-text-slate leading-relaxed">
+            • 08:45: Trem Kintetsu para Nara (mala no locker). Cervos sagrados e Grande Buda Todai-ji.<br>
+            • 15:20: Check-in no <strong>Airbnb 3 CHUANHouse Kuromon</strong>.<br>
+            • Noite em Dotonbori: Glico Man e cheesecake Rikuro.
+          </p>
+        </div>
+
+        <!-- Card Dia 10 -->
+        <div class="p-3 rounded-2xl bg-pdf-card border border-pdf-cardborder space-y-2 dark-card-print print-avoid-break">
+          <div class="relative h-24 rounded-xl overflow-hidden border border-slate-700">
+            <img src="https://images.unsplash.com/photo-1590559899731-a382839e5549?auto=format&fit=crop&w=600&q=80" alt="Castelo de Osaka" class="w-full h-full object-cover">
+            <span class="absolute top-2 left-2 badge-pill bg-black/80 text-white font-mono text-[10px]">DIA 10 • 10/09 (Qui)</span>
+          </div>
+          <h3 class="font-bold text-white font-mono text-xs dark-text-white">Castelo de Osaka & Umeda Sky</h3>
+          <p class="text-[10px] text-slate-300 dark-text-slate leading-relaxed">
+            • 09:30: Castelo de Osaka e muralhas monumentais.<br>
+            • Almoço Halal no <em>Matsuri</em> (Okonomiyaki bovino).<br>
+            • Bairro Shinsekai & Pôr do sol no mirante <strong>Umeda Sky Building</strong>.
+          </p>
+        </div>
+
+        <!-- Card Dia 11 -->
+        <div class="p-3 rounded-2xl bg-pdf-card border border-pdf-cardborder space-y-2 dark-card-print print-avoid-break">
+          <div class="relative h-24 rounded-xl overflow-hidden border border-slate-700">
+            <img src="https://images.unsplash.com/photo-1554797589-7241bb691973?auto=format&fit=crop&w=600&q=80" alt="Shinkansen Trem Bala Japao" class="w-full h-full object-cover">
+            <span class="absolute top-2 left-2 badge-pill bg-black/80 text-white font-mono text-[10px]">DIA 11 • 11/09 (Sex)</span>
+          </div>
+          <h3 class="font-bold text-white font-mono text-xs dark-text-white">Shinkansen #2 & Ueno</h3>
+          <p class="text-[10px] text-slate-300 dark-text-slate leading-relaxed">
+            • 09:18: Shinkansen Nozomi #220 (Fileira A com vista Fuji).<br>
+            • 12:30: Check-in no <strong>Airbnb 4 Misuji Kuramae</strong>.<br>
+            • Parque Ueno e jantar leve antes das 17:00 (Panga abre às 17:00 e o Shabat inicia às 17:56 → <strong>Wagyu A5 movido para sábado</strong>).
+          </p>
+        </div>
+
+        <!-- Card Dia 12 -->
+        <div class="p-3 rounded-2xl bg-pdf-card border border-pdf-cardborder space-y-2 dark-card-print print-avoid-break">
+          <div class="relative h-24 rounded-xl overflow-hidden border border-slate-700">
+            <img src="https://images.unsplash.com/photo-1576085898323-218337e3e43c?auto=format&fit=crop&w=600&q=80" alt="Yoyogi Park Nature Tokyo" class="w-full h-full object-cover">
+            <span class="absolute top-2 left-2 badge-pill bg-black/80 text-white font-mono text-[10px]">DIA 12 • 12/09 (Sáb)</span>
+          </div>
+          <h3 class="font-bold text-white font-mono text-xs dark-text-white">Shabat 2 na TIC, Panga & MEGA Donki</h3>
+          <p class="text-[10px] text-slate-300 dark-text-slate leading-relaxed">
+            • 09:30: Culto e Louvor na <strong>Tokyo SDA Church (TIC)</strong> em Shibuya.<br>
+            • Almoço potluck e descanso sereno no Parque Yoyogi.<br>
+            • 17:55 (Pós-Shabat): Jantar nobre no <strong>Yakiniku Panga A5</strong> (abre 17:00) + compras Tax-Free no <strong>MEGA Don Quijote 24h</strong>.
+          </p>
+        </div>
+
+        <!-- Card Dia 13 -->
+        <div class="p-3 rounded-2xl bg-pdf-card border border-emerald-500/40 space-y-2 dark-card-print print-avoid-break md:col-span-2">
+          <div class="relative h-24 rounded-xl overflow-hidden border border-slate-700">
+            <img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=600&q=80" alt="Tokyo DisneySea Vulcao" class="w-full h-full object-cover">
+            <span class="absolute top-2 left-2 badge-pill bg-emerald-500 text-slate-950 font-mono font-bold text-[10px]">DIA 13 • 13/09 (Dom) • GRAN FINALE</span>
+          </div>
+          <h3 class="font-bold text-white font-mono text-xs dark-text-white">Tokyo DisneySea ➔ Limousine Bus direto Haneda T3</h3>
+          <p class="text-[10px] text-slate-300 dark-text-slate leading-relaxed">
+            • 08:30: Check-out Kuramae com malas → mala de 23kg despachada na sexta (11/09) via Yamato para Haneda T3.<br>
+            • 09:15 às 19:00: <strong>Tokyo DisneySea</strong> completo (Fantasy Springs, Vulcão e gôndolas venezianas).<br>
+            • <strong>19:30: último Limousine Bus direto</strong> da porta da Disney até o Terminal 3 de Haneda (45 min, ¥1.300 — o "20:15" do plano antigo não existe).<br>
+            • 20:35: Chegada em Haneda T3 → Despacho da mala → <strong>00:05 Voo Air France AF0293 de volta para o Brasil!</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- PÁGINA 6: DIETA BÍBLICA & CARTÃO DO GARÇOM -->
+    <!-- ========================================== -->
+    <section class="print-page space-y-5 pt-4">
+      <div class="border-b border-slate-800 pb-2.5 flex items-center justify-between">
+        <h2 class="font-display text-lg font-bold text-white uppercase tracking-wide flex items-center gap-2">
+          <span class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-xs font-mono">05</span>
+          Dieta Bíblica Adventista & Cartão do Garçom
+        </h2>
+        <span class="font-mono text-xs text-slate-400">Levítico 11 • Alimentação Segura</span>
+      </div>
+
+      <!-- Resumo com Imagem de Wagyu Grelhado -->
+      <div class="p-3.5 rounded-2xl bg-pdf-card border border-pdf-cardborder flex gap-3.5 items-center dark-card-print">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=300&q=80" alt="Wagyu Grelhado" class="w-16 h-16 rounded-xl object-cover border border-slate-700 flex-shrink-0">
+        <p class="text-xs text-slate-300 dark-text-slate leading-relaxed">
+          <strong>Diretrizes Bíblicas Adventistas:</strong> Carnes limpas (bovino, frango e peixes com escamas bem cozidos). Proibição estrita de carne de porco/banha, frutos do mar impuros (camarão, caranguejo, lagosta, polvo, lula, ostras), peixes crus (sashimi) e bebidas alcoólicas/mirin na preparação.
+        </p>
+      </div>
+
+      <!-- CARTÃO OFICIAL EM JAPONÊS PARA APRESENTAR EM RESTAURANTES -->
+      <div class="p-5 rounded-3xl bg-slate-900 border-2 border-rose-500/60 space-y-3.5 shadow-xl dark-card-print print-border">
+        <div class="border-b border-slate-800 pb-2.5 flex items-center justify-between">
+          <span class="font-serif font-black text-rose-400 text-base">【食事制限のお願い / Restrições Bíblicas Adventistas】</span>
+          <span class="font-mono text-[10px] text-slate-400">Apresentar ao garçom ou cozinheiro</span>
+        </div>
+
+        <div class="font-serif text-slate-200 text-xs space-y-2.5 leading-relaxed dark-text-white">
+          <p>私は宗教上の理由（キリスト教安息日再臨派 / セブンスデー・アドベンチスト）により、以下の食材を食べることができません：</p>
+
+          <div class="space-y-1 pl-2 border-l-2 border-rose-500 text-[11px]">
+            <p class="text-rose-400 font-bold">❌ 豚肉・豚脂・ラード・豚エキス・豚ゼラチン <span class="font-sans text-slate-400 font-normal">(Sem porco/banha/caldo suíno)</span></p>
+            <p class="text-rose-400 font-bold">❌ 甲殻類・軟体動物・貝類・ウナギ（エビ・カニ・イカ・タコ・ホタテ・牡蠣等） <span class="font-sans text-slate-400 font-normal">(Sem camarão, caranguejo, lula, polvo, ostras, enguias)</span></p>
+            <p class="text-rose-400 font-bold">❌ 生魚・生肉・生寿司・刺身 <span class="font-sans text-slate-400 font-normal">(Sem peixe cru ou sashimi — apenas bem cozidos)</span></p>
+            <p class="text-rose-400 font-bold">❌ お酒・日本酒・料理酒・みりん <span class="font-sans text-slate-400 font-normal">(Sem bebidas alcoólicas ou mirin)</span></p>
+          </div>
+
+          <div class="p-2.5 rounded-xl bg-emerald-950/20 border border-emerald-500/40 text-emerald-300 font-sans text-[11px] dark-bg-night">
+            <span class="font-bold font-serif text-emerald-400">✅ 食べられるもの (Permitidos):</span>
+            牛肉（国産牛/ハラール）、鶏肉、鱗とヒレのある魚（鮭・マグロ・鯛等・必ず加熱調理したもの）、野菜、キノコ、米、豆腐、卵、乳製品。
+          </div>
+
+          <p class="text-center font-bold text-slate-300 text-[11px] pt-0.5 dark-text-slate">
+            ご配慮いただき誠にありがとうございます。(Muito obrigado pela sua compreensão!)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- PÁGINA 7: CONTATOS DE EMERGÊNCIA & APOIO -->
+    <!-- ========================================== -->
+    <section class="print-page space-y-5 pt-4">
+      <div class="border-b border-slate-800 pb-2.5 flex items-center justify-between">
+        <h2 class="font-display text-lg font-bold text-white uppercase tracking-wide flex items-center gap-2">
+          <span class="w-6 h-6 rounded-lg bg-rose-500/20 text-rose-400 flex items-center justify-center text-xs font-mono">06</span>
+          Contatos de Emergência & Apoio Consular
+        </h2>
+        <span class="font-mono text-xs text-slate-400">Plantão 24 Horas</span>
+      </div>
+
+      <!-- Telefones de Emergência -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 font-mono text-xs">
+        <div class="p-3 rounded-2xl bg-pdf-card border border-rose-500/40 space-y-1 dark-card-print">
+          <span class="text-slate-400 block text-[10px] uppercase">Polícia do Japão</span>
+          <span class="text-rose-400 font-bold text-base">110</span>
+          <p class="text-[10px] text-slate-400">Gratuito / Tradução em Inglês</p>
+        </div>
+        <div class="p-3 rounded-2xl bg-pdf-card border border-rose-500/40 space-y-1 dark-card-print">
+          <span class="text-slate-400 block text-[10px] uppercase">Ambulância / Resgate</span>
+          <span class="text-rose-400 font-bold text-base">119</span>
+          <p class="text-[10px] text-slate-400">Emergência Médica Prioritária</p>
+        </div>
+        <div class="p-3 rounded-2xl bg-pdf-card border border-sky-500/40 space-y-1 dark-card-print">
+          <span class="text-slate-400 block text-[10px] uppercase">Apoio Turista JNTO</span>
+          <span class="text-sky-400 font-bold text-xs">050-3816-2720</span>
+          <p class="text-[10px] text-slate-400">Linha 24h Oficial em Inglês</p>
+        </div>
+        <div class="p-3 rounded-2xl bg-pdf-card border border-emerald-500/40 space-y-1 dark-card-print">
+          <span class="text-slate-400 block text-[10px] uppercase">Consulado Brasil Tóquio</span>
+          <span class="text-emerald-400 font-bold text-xs">+81 90-6949-5328</span>
+          <p class="text-[10px] text-slate-400">Plantão 24h para Emergências</p>
+        </div>
+      </div>
+
+      <!-- Serviços Contratados -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 font-mono text-xs">
+        <div class="p-3 rounded-2xl bg-pdf-card border border-pdf-cardborder space-y-0.5 dark-card-print">
+          <span class="text-slate-400 text-[10px] uppercase block">Seguro Viagem MTA 60</span>
+          <span class="font-bold text-white dark-text-white">Tel: (31) 4003-8442</span>
+          <p class="text-[10px] text-emerald-400">Apólice • apólice no app do seguro • • Einstein 24h</p>
+        </div>
+        <div class="p-3 rounded-2xl bg-pdf-card border border-pdf-cardborder space-y-0.5 dark-card-print">
+          <span class="text-slate-400 text-[10px] uppercase block">Air France Japão</span>
+          <span class="font-bold text-white dark-text-white">Tel: +81 3-5767-4143</span>
+          <p class="text-[10px] text-sky-400">Localizador: ••••••</p>
+        </div>
+        <div class="p-3 rounded-2xl bg-pdf-card border border-pdf-cardborder space-y-0.5 dark-card-print">
+          <span class="text-slate-400 text-[10px] uppercase block">Tokyo SDA Church (TIC)</span>
+          <span class="font-bold text-white dark-text-white">Tel: +81 3-3402-1517</span>
+          <p class="text-[10px] text-amber-400">1-11-1 Jingumae, Shibuya</p>
+        </div>
+      </div>
+
+      <!-- Rodapé Final com Frases -->
+      <div class="border-t border-slate-800 pt-5 text-center text-xs font-mono text-slate-400 space-y-1">
+        <p class="font-bold text-white dark-text-white">🎌 EXPEDIÇÃO TABI JAPAN 2026 • BOA EXPEDIÇÃO, FERNANDO! 🎌</p>
+        <p class="text-[11px] text-slate-400">Documento ilustrado gerado e sincronizado com os registros oficiais de viagem.</p>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>

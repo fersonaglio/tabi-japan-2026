@@ -1,0 +1,2899 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>⛩️ Tabi Japan 2026 • Fernando Sonaglio | Hub Oficial da Viagem</title>
+  
+  <!-- Favicon Personalizado Tema Japão (Sol Vermelho + Torii Gate Dourado) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%23121620'/><stop offset='100%25' stop-color='%23080A0F'/></linearGradient></defs><circle cx='50' cy='50' r='48' fill='url(%23bg)' stroke='%23D4AF37' stroke-width='3'/><circle cx='50' cy='50' r='26' fill='%23BC002D'/><path d='M22 36 Q50 30 78 36 L78 41 Q50 35 22 41 Z' fill='%23F4E07B'/><rect x='28' y='44' width='44' height='4' fill='%23F4E07B'/><rect x='34' y='41' width='5' height='32' fill='%23F4E07B'/><rect x='61' y='41' width='5' height='32' fill='%23F4E07B'/></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23080A0F'/><circle cx='50' cy='50' r='28' fill='%23BC002D'/><path d='M22 36 Q50 30 78 36 L78 41 Q50 35 22 41 Z' fill='%23D4AF37'/><rect x='28' y='44' width='44' height='4' fill='%23D4AF37'/><rect x='34' y='41' width='5' height='32' fill='%23D4AF37'/><rect x='61' y='41' width='5' height='32' fill='%23D4AF37'/></svg>">
+  
+  <!-- Google Fonts: Plus Jakarta Sans, Outfit, Noto Serif JP & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@400;600;700;900&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS & FontAwesome 6 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            jp: {
+              night: '#080C14',
+              deep: '#04070D',
+              card: '#0F172A',
+              cardhover: '#17233D',
+              cardborder: 'rgba(255, 255, 255, 0.08)',
+              borderhover: 'rgba(255, 255, 255, 0.20)',
+              subtle: '#94A3B8',
+              crimson: '#EF4444',
+              red: '#DC2626',
+              torii: '#BC002D',
+              darkred: '#7F1D1D',
+              gold: '#F59E0B',
+              goldlight: '#FDE68A',
+              golddark: '#B45309',
+              emerald: '#10B981',
+              emeraldlight: '#6EE7B7',
+              sky: '#38BDF8',
+              skydark: '#0284C7',
+              purple: '#A855F7',
+              sakura: '#F472B6'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Outfit"', 'sans-serif'],
+            display: ['"Outfit"', '"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Noto Serif JP"', 'serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
+          },
+          boxShadow: {
+            'glow-red': '0 0 30px rgba(220, 38, 38, 0.30)',
+            'glow-gold': '0 0 30px rgba(245, 158, 11, 0.30)',
+            'glow-emerald': '0 0 30px rgba(16, 185, 129, 0.30)',
+            'glow-sky': '0 0 30px rgba(56, 189, 248, 0.30)',
+            'glow-purple': '0 0 30px rgba(168, 85, 247, 0.30)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #080C14;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1E293B;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #DC2626;
+    }
+
+    /* Scrollbar invisível no menu de abas */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none !important;
+      height: 0 !important;
+      width: 0 !important;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none !important;
+      scrollbar-width: none !important;
+    }
+
+    .hero-glow-monumental {
+      background: 
+        radial-gradient(circle at 85% 15%, rgba(220, 38, 38, 0.22) 0%, transparent 45%),
+        radial-gradient(circle at 15% 85%, rgba(245, 158, 11, 0.16) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.08) 0%, transparent 60%),
+        linear-gradient(180deg, #090D18 0%, #080C14 100%);
+    }
+
+    .glass-card {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(255, 255, 255, 0.18);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    .tab-active {
+      background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%) !important;
+      color: #ffffff !important;
+      border-color: #EF4444 !important;
+      box-shadow: 0 4px 20px rgba(220, 38, 38, 0.45) !important;
+    }
+
+    .badge-shabat {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(5, 150, 105, 0.3) 100%);
+      border: 1px solid rgba(52, 211, 153, 0.4);
+      color: #34D399;
+    }
+
+    .shabat-card {
+      background: linear-gradient(180deg, rgba(6, 78, 59, 0.28) 0%, rgba(15, 23, 42, 0.95) 100%);
+      border: 1px solid rgba(16, 185, 129, 0.45);
+    }
+
+    .disney-card {
+      background: linear-gradient(180deg, rgba(88, 28, 135, 0.28) 0%, rgba(15, 23, 42, 0.95) 100%);
+      border: 1px solid rgba(168, 85, 247, 0.45);
+    }
+
+    /* Toast Notification Animation */
+    @keyframes slideDownFade {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .toast-animate {
+      animation: slideDownFade 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+  
+    /* Suporte a Safe Area (iPhone Notch, Dynamic Island e Home Bar) */
+    body {
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Target Size e Touch Feedback */
+    button, a, input, select {
+      touch-action: manipulation;
+    }
+
+    /* Scroll Snap para Navegação de Abas em Mobile */
+    .tab-scroll-container {
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .tab-scroll-item {
+      scroll-snap-align: start;
+    }
+
+    /* Foco Acessível de Alto Contraste (WCAG 2.2) */
+    button:focus-visible, a:focus-visible, input:focus-visible {
+      outline: 2px solid #F59E0B !important;
+      outline-offset: 2px !important;
+    }
+
+  </style>
+</head>
+<body class="bg-jp-night text-slate-100 font-sans min-h-screen selection:bg-jp-red selection:text-white pb-[calc(5rem+env(safe-area-inset-bottom))] antialiased">
+
+  <!-- ==================== PIN GATE / ÁREA PRIVADA ==================== -->
+  <div id="pin-gate" class="fixed inset-0 z-[200] flex items-center justify-center px-4 transition-opacity duration-500" style="background:rgba(4,7,13,0.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);">
+    <div id="pin-card" class="w-full max-w-sm rounded-3xl border p-8 text-center space-y-5 shadow-2xl" style="background:#0F172A;border-color:rgba(245,158,11,0.4);">
+      <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl" style="background:linear-gradient(135deg,#DC2626,#991B1B);box-shadow:0 0 30px rgba(220,38,38,0.3);">
+        <i class="fa-solid fa-lock text-2xl text-white"></i>
+      </div>
+      <div>
+        <h2 class="text-lg font-black text-white" style="font-family:'Outfit',sans-serif;">Área Privada</h2>
+        <p class="mt-1 text-xs text-slate-400">Digite a senha de 4 dígitos para abrir o painel</p>
+      </div>
+      <input id="pin-input" type="password" inputmode="numeric" autocomplete="off" maxlength="4" placeholder="••••" class="w-full rounded-2xl border-2 px-4 py-3 text-center font-mono text-3xl font-black tracking-[0.5em] text-white outline-none transition-colors" style="background:#080C14;border-color:rgba(255,255,255,0.08);">
+      <button id="pin-btn" class="w-full rounded-2xl py-3 text-sm font-bold text-white transition-all active:scale-95" style="background:linear-gradient(135deg,#DC2626,#991B1B);">Desbloquear</button>
+      <p id="pin-error" class="hidden font-mono text-[11px] text-red-400">Senha incorreta — tente novamente</p>
+    </div>
+  </div>
+  <style>@keyframes shakeX{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-6px)}80%{transform:translateX(6px)}}#pin-input:focus{border-color:rgba(245,158,11,0.9)!important;box-shadow:0 0 20px rgba(245,158,11,0.25);}</style>
+
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-container" class="fixed top-5 left-1/2 -translate-x-1/2 z-[100] pointer-events-none transition-all duration-300"></div>
+
+  <!-- TOP HEADER / LUXURY LOGO & DUAL LIVE CLOCKS -->
+  <header class="border-b border-jp-cardborder bg-jp-card/95 backdrop-blur-md sticky top-0 z-50 transition-all shadow-lg pt-[env(safe-area-inset-top)]">
+    <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 min-h-16 py-2 sm:py-0 flex items-center justify-between gap-2">
+      
+      <!-- Brand Logo & Traveler Name -->
+      <div class="flex items-center space-x-2.5 sm:space-x-3.5 min-w-0">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-br from-jp-red to-jp-darkred border border-red-500/40 flex items-center justify-center shadow-glow-red shrink-0">
+          <span class="text-lg sm:text-xl font-serif font-black text-white">旅</span>
+        </div>
+        <div class="min-w-0">
+          <div class="flex items-center gap-1.5 flex-wrap">
+            <span class="font-display font-extrabold text-xs sm:text-base tracking-wide text-white flex items-center gap-1 truncate">
+              ⛩️ TABI JAPAN 2026
+            </span>
+            <span class="hidden sm:inline-flex px-2 py-0.5 text-[9px] sm:text-[10px] font-mono uppercase bg-sky-500/20 text-sky-400 border border-sky-500/40 rounded-full font-bold items-center gap-1 shrink-0">
+              <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-ping"></span>
+              ✈️ Em Viagem
+            </span>
+          </div>
+          <p class="text-[10px] sm:text-xs text-slate-300 hidden sm:block font-medium truncate">Fernando de Lima Sonaglio • 30/08 a 15/09/2026</p>
+        </div>
+      </div>
+
+      <!-- Live Dual Clocks (SP & Tokyo) -->
+      <div class="flex items-center space-x-1.5 sm:space-x-2.5 text-xs font-mono shrink-0">
+        <div class="hidden md:flex items-center space-x-2 bg-jp-night/80 px-3 py-1.5 rounded-2xl border border-jp-cardborder shadow-inner">
+          <span class="text-slate-300 font-semibold flex items-center gap-1.5">
+            <i class="fa-solid fa-clock text-slate-400"></i> SP:
+          </span>
+          <span id="clock-sp" class="text-slate-100 font-bold tracking-wider">--:--:--</span>
+        </div>
+        <div class="flex items-center space-x-1.5 sm:space-x-2 bg-gradient-to-r from-red-950/50 to-jp-night px-2.5 sm:px-3.5 py-1.5 rounded-2xl border border-red-500/40 shadow-glow-red">
+          <span class="text-red-300 font-bold flex items-center gap-1 text-[11px] sm:text-xs">
+            <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-red-500 animate-ping"></span>
+            🇯🇵 <span class="hidden sm:inline">TÓQUIO</span>:
+          </span>
+          <span id="clock-tyo" class="text-white font-black tracking-wider text-xs sm:text-sm">--:--:--</span>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==================== HOME / HERO SECTION MONUMENTAL ==================== -->
+  <section class="hero-glow-monumental py-8 sm:py-12 border-b border-jp-cardborder relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8">
+      
+      <!-- Top Title & Mission -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+        
+        <!-- Left: Hero Text & Flight Countdown -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-jp-gold/20 via-amber-500/10 to-transparent border border-jp-gold/40 text-jp-gold text-xs font-semibold">
+            <i class="fa-solid fa-location-dot text-amber-400"></i>
+            <span>📍 Em Tóquio — <strong>DIA 02 em andamento (02/09, Quarta): Senso-ji 07:00 + Shinjuku Gyoen</strong></span>
+          </div>
+          
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight font-display leading-tight">
+            Hub Tabi Japan 2026<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-jp-crimson via-amber-300 to-amber-100">
+              Expedição Fernando Sonaglio
+            </span>
+          </h1>
+          
+          <p class="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed">
+            Painel mestre oficial de navegação e apoio operacional. Roteiro estruturado de <strong>13 dias / 12 noites</strong> (Tóquio, Monte Fuji, Quioto, Nara, Osaka), <strong>dieta 100% adventista</strong>, <strong>cultos de Shabat na Tokyo International SDA Church</strong>, <strong>4 hospedagens Airbnbs reservadas</strong>, trens-bala Shinkansen e <strong>Tokyo DisneySea</strong>.
+          </p>
+        </div>
+
+        <!-- Right: Status Dashboard Card -->
+        <div class="bg-jp-card/95 border border-jp-cardborder rounded-3xl p-6 space-y-3.5 shadow-2xl backdrop-blur-md">
+          <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
+            <h3 class="text-xs font-mono uppercase tracking-wider text-jp-gold font-bold flex items-center gap-2">
+              <i class="fa-solid fa-shield-halved text-emerald-400"></i> Resumo Geral da Viagem
+            </h3>
+            <span class="text-[10px] font-mono text-emerald-400 font-bold">100% Fechado</span>
+          </div>
+          
+          <div class="space-y-2.5 text-xs">
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-jp-night/70 border border-jp-cardborder hover:border-slate-600 transition-all">
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-plane text-sky-400"></i>
+                <div>
+                  <span class="text-white font-semibold block">Air France (<span class="font-mono text-jp-gold">••••••</span>)</span>
+                  <span class="text-[10px] text-jp-subtle font-mono">GRU ⇄ CDG ⇄ HND</span>
+                </div>
+              </div>
+              <span class="px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 font-bold font-mono text-[10px]">Emitido</span>
+            </div>
+
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-jp-night/70 border border-jp-cardborder hover:border-slate-600 transition-all">
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-plane-departure text-amber-400"></i>
+                <div>
+                  <span class="text-white font-semibold block">GOL Nacional (<span class="font-mono text-amber-400">••••••</span>)</span>
+                  <span class="text-[10px] text-jp-subtle font-mono">Chapecó XAP ⇄ GRU</span>
+                </div>
+              </div>
+              <span class="px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 font-bold font-mono text-[10px]">Emitido</span>
+            </div>
+
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-emerald-950/20 border border-emerald-500/30">
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-hotel text-emerald-400"></i>
+                <div>
+                  <span class="text-white font-semibold block">4 Hospedagens Fechadas</span>
+                  <span class="text-[10px] text-emerald-300 font-mono">Tóquio 1 & 2, Quioto e Osaka</span>
+                </div>
+              </div>
+              <span class="px-2 py-0.5 rounded-md bg-emerald-500/30 text-emerald-300 font-bold font-mono text-[10px]">R$ —</span>
+            </div>
+
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-amber-950/20 border border-jp-gold/30">
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-wallet text-jp-gold"></i>
+                <div>
+                  <span class="text-white font-semibold block">Dinheiro de Bolso (Wise)</span>
+                  <span class="text-[10px] text-amber-200 font-mono">Saldo no app Wise + cartão Suica</span>
+                </div>
+              </div>
+              <span class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-400 font-bold font-mono text-[10px]">R$ —</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 4 Monumental Pillar Stats Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Pillar 1: Voos Confirmados -->
+        <div onclick="switchTab('tab-voos')" class="cursor-pointer bg-jp-card border border-sky-500/30 hover:border-sky-500 p-5 rounded-3xl space-y-2.5 shadow-xl transition-all hover:scale-[1.02] group">
+          <div class="flex items-center justify-between">
+            <span class="w-9 h-9 rounded-2xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-base">
+              <i class="fa-solid fa-plane"></i>
+            </span>
+            <span class="text-[10px] font-mono font-bold text-sky-400 uppercase bg-sky-500/10 px-2.5 py-0.5 rounded-full border border-sky-500/20">
+              100% Emitido
+            </span>
+          </div>
+          <div>
+            <h3 class="text-xs font-mono uppercase text-slate-400 font-bold">Voos Confirmados</h3>
+            <div class="text-xl font-bold text-white font-mono mt-0.5">Air France & GOL</div>
+          </div>
+          <p class="text-[11px] text-slate-300 leading-relaxed">
+            Localizadores <span class="text-sky-300 font-mono font-bold">••••••</span> (Internacional) e <span class="text-amber-300 font-mono font-bold">••••••</span> (Nacional). 1 mala de 23kg + 12kg de mão.
+          </p>
+          <span class="text-[10px] font-mono text-sky-400 group-hover:underline flex items-center gap-1 font-bold pt-1">
+            Ver detalhes dos voos <i class="fa-solid fa-arrow-right text-[9px]"></i>
+          </span>
+        </div>
+
+        <!-- Pillar 2: 4 Hospedagens 100% Pagas -->
+        <div onclick="switchTab('tab-hospedagem')" class="cursor-pointer bg-jp-card border border-emerald-500/30 hover:border-emerald-500 p-5 rounded-3xl space-y-2.5 shadow-xl transition-all hover:scale-[1.02] group">
+          <div class="flex items-center justify-between">
+            <span class="w-9 h-9 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-base">
+              <i class="fa-solid fa-hotel"></i>
+            </span>
+            <span class="text-[10px] font-mono font-bold text-emerald-400 uppercase bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
+              4/4 Confirmadas
+            </span>
+          </div>
+          <div>
+            <h3 class="text-xs font-mono uppercase text-slate-400 font-bold">4 Hospedagens Pagas</h3>
+            <div class="text-xl font-bold text-emerald-400 font-mono mt-0.5">R$ —</div>
+          </div>
+          <p class="text-[11px] text-slate-300 leading-relaxed">
+            Ciel Hills (Tóquio), Faminess (Quioto), CHUANHouse (Osaka) e Misuji Kuramae Rooftop (Tóquio).
+          </p>
+          <span class="text-[10px] font-mono text-emerald-400 group-hover:underline flex items-center gap-1 font-bold pt-1">
+            Ver senhas e anfitriões <i class="fa-solid fa-arrow-right text-[9px]"></i>
+          </span>
+        </div>
+
+        <!-- Pillar 3: Dieta Adventista & Shabat -->
+        <div onclick="switchTab('tab-alimentacao')" class="cursor-pointer bg-jp-card border border-amber-500/30 hover:border-amber-500 p-5 rounded-3xl space-y-2.5 shadow-xl transition-all hover:scale-[1.02] group">
+          <div class="flex items-center justify-between">
+            <span class="w-9 h-9 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-base">
+              <i class="fa-solid fa-church"></i>
+            </span>
+            <span class="text-[10px] font-mono font-bold text-amber-400 uppercase bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/20">
+              Adventista
+            </span>
+          </div>
+          <div>
+            <h3 class="text-xs font-mono uppercase text-slate-400 font-bold">Shabat & Alimentação</h3>
+            <div class="text-xl font-bold text-amber-400 font-mono mt-0.5">TIC Jingumae</div>
+          </div>
+          <p class="text-[11px] text-slate-300 leading-relaxed">
+            Zero porco, zero álcool, restaurantes Halal/Wagyu seguros e culto aos sábados em Shibuya.
+          </p>
+          <span class="text-[10px] font-mono text-amber-400 group-hover:underline flex items-center gap-1 font-bold pt-1">
+            Ver cartão de garçom <i class="fa-solid fa-arrow-right text-[9px]"></i>
+          </span>
+        </div>
+
+        <!-- Pillar 4: Dinheiro no Destino (Wise) -->
+        <div onclick="switchTab('tab-orcamento')" class="cursor-pointer bg-jp-card border border-purple-500/30 hover:border-purple-500 p-5 rounded-3xl space-y-2.5 shadow-xl transition-all hover:scale-[1.02] group">
+          <div class="flex items-center justify-between">
+            <span class="w-9 h-9 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-base">
+              <i class="fa-solid fa-wallet"></i>
+            </span>
+            <span class="text-[10px] font-mono font-bold text-purple-400 uppercase bg-purple-500/10 px-2.5 py-0.5 rounded-full border border-purple-500/20">
+              ¥ —
+            </span>
+          </div>
+          <div>
+            <h3 class="text-xs font-mono uppercase text-slate-400 font-bold">Custo Vivo no Japão</h3>
+            <div class="text-xl font-bold text-purple-400 font-mono mt-0.5">R$ —</div>
+          </div>
+          <p class="text-[11px] text-slate-300 leading-relaxed">
+            Refeições diárias, 2x Shinkansen Nozomi, metrôs, ingressos e compras de lembranças.
+          </p>
+          <span class="text-[10px] font-mono text-purple-400 group-hover:underline flex items-center gap-1 font-bold pt-1">
+            Ver tabela por cidades <i class="fa-solid fa-arrow-right text-[9px]"></i>
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Quick Action Buttons Bar -->
+      <div class="flex items-center justify-between flex-wrap gap-2.5 p-3 rounded-2xl bg-jp-night/80 border border-jp-cardborder">
+        <span class="text-xs font-mono uppercase text-jp-gold font-bold px-2 flex items-center gap-1.5">
+          <i class="fa-solid fa-bolt text-amber-400"></i> Atalhos Rápidos:
+        </span>
+        <div class="flex items-center gap-2 flex-wrap">
+          <button onclick="switchTab('tab-roteiro')" class="px-3.5 py-1.5 rounded-xl bg-jp-card hover:bg-slate-800 text-slate-200 border border-jp-cardborder text-xs font-semibold transition-all flex items-center gap-1.5">
+            <i class="fa-solid fa-calendar-days text-red-400"></i> Roteiro 13 Dias
+          </button>
+          <button onclick="switchTab('tab-alimentacao')" class="px-3.5 py-1.5 rounded-xl bg-jp-card hover:bg-slate-800 text-slate-200 border border-jp-cardborder text-xs font-semibold transition-all flex items-center gap-1.5">
+            <i class="fa-solid fa-utensils text-amber-400"></i> Cartão de Garçom
+          </button>
+          <button onclick="switchTab('tab-conversor')" class="px-3.5 py-1.5 rounded-xl bg-jp-card hover:bg-slate-800 text-slate-200 border border-jp-cardborder text-xs font-semibold transition-all flex items-center gap-1.5">
+            <i class="fa-solid fa-calculator text-emerald-400"></i> Conversor JPY/BRL
+          </button>
+          <button onclick="switchTab('tab-checklist')" class="px-3.5 py-1.5 rounded-xl bg-jp-card hover:bg-slate-800 text-slate-200 border border-jp-cardborder text-xs font-semibold transition-all flex items-center gap-1.5">
+            <i class="fa-solid fa-list-check text-purple-400"></i> Checklist Interativo
+          </button>
+          <button onclick="switchTab('tab-emergencia')" class="px-3.5 py-1.5 rounded-xl bg-rose-950/40 hover:bg-rose-900/60 text-rose-300 border border-rose-500/40 text-xs font-semibold transition-all flex items-center gap-1.5">
+            <i class="fa-solid fa-phone-volume text-rose-400"></i> SOS & Emergência
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NAVIGATION TABS (10 TELAS/ABAS COMPLETAS) -->
+  <nav class="sticky top-16 z-40 bg-jp-night/95 backdrop-blur-md border-b border-jp-cardborder py-2.5 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1 tab-scroll-container" role="tablist" aria-label="Abas de Navegação do Roteiro" id="tab-buttons">
+        
+        <!-- Tab 1: Roteiro -->
+        <button onclick="switchTab('tab-roteiro')" id="btn-tab-roteiro" class="tab-btn tab-active px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 whitespace-nowrap">
+          <i class="fa-solid fa-calendar-days"></i> Roteiro Dia a Dia
+        </button>
+
+        <!-- Tab 2: Orçamento -->
+        <button onclick="switchTab('tab-orcamento')" id="btn-tab-orcamento" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-jp-subtle hover:text-white hover:bg-jp-card transition-all flex items-center gap-2 whitespace-nowrap border border-transparent">
+          <i class="fa-solid fa-coins text-jp-gold"></i> Gastos & Cidades
+        </button>
+
+        <!-- Tab 3: Voos -->
+        <button onclick="switchTab('tab-voos')" id="btn-tab-voos" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-jp-subtle hover:text-white hover:bg-jp-card transition-all flex items-center gap-2 whitespace-nowrap border border-transparent">
+          <i class="fa-solid fa-plane text-sky-400"></i> Voos & Bagagens
+        </button>
+
+        <!-- Tab 4: Hospedagens -->
+        <button onclick="switchTab('tab-hospedagem')" id="btn-tab-hospedagem" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-jp-subtle hover:text-white hover:bg-jp-card transition-all flex items-center gap-2 whitespace-nowrap border border-transparent">
+          <i class="fa-solid fa-bed text-emerald-400"></i> Hospedagens (4/4)
+        </button>
+
+        <!-- Tab 5: Dieta Adventista -->
+        <button onclick="switchTab('tab-alimentacao')" id="btn-tab-alimentacao" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-jp-subtle hover:text-white hover:bg-jp-card transition-all flex items-center gap-2 whitespace-nowrap border border-transparent">
+          <i class="fa-solid fa-utensils text-amber-400"></i> Dieta Adventista
+        </button>
+
+        <!-- Tab 6: Clima & Roupas -->
+        <button onclick="switchTab('tab-clima')" id="btn-tab-clima" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-jp-subtle hover:text-white hover:bg-jp-card transition-all flex items-center gap-2 whitespace-nowrap border border-transparent">
+          <i class="fa-solid fa-cloud-sun text-yellow-400"></i> Clima & Roupas
+        </button>
+
+        <!-- Tab 7: Modo Sobrevivência -->
+        <button onclick="switchTab('tab-frases')" id="btn-tab-frases" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-jp-subtle hover:text-white hover:bg-jp-card transition-all flex items-center gap-2 whitespace-nowrap border border-transparent">
+          <i class="fa-solid fa-comments text-sky-400"></i> Sobrevivência (Frases)
+        </button>
+
+        <!-- Tab 8: Emergência -->
+        <button onclick="switchTab('tab-emergencia')" id="btn-tab-emergencia" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-jp-subtle hover:text-white hover:bg-jp-card transition-all flex items-center gap-2 whitespace-nowrap border border-transparent">
+          <i class="fa-solid fa-phone-volume text-rose-400"></i> Emergência & Apoio
+        </button>
+
+        <!-- Tab 9: Conversor -->
+        <button onclick="switchTab('tab-conversor')" id="btn-tab-conversor" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-jp-subtle hover:text-white hover:bg-jp-card transition-all flex items-center gap-2 whitespace-nowrap border border-transparent">
+          <i class="fa-solid fa-calculator text-emerald-400"></i> Conversor JPY/BRL
+        </button>
+
+        <!-- Tab 10: Checklist -->
+        <button onclick="switchTab('tab-checklist')" id="btn-tab-checklist" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-jp-subtle hover:text-white hover:bg-jp-card transition-all flex items-center gap-2 whitespace-nowrap border border-transparent">
+          <i class="fa-solid fa-list-check text-purple-400"></i> Checklist Interativo
+        </button>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
+
+    <!-- ==================== TAB 1: ROTEIRO DIA A DIA ==================== -->
+    <div id="tab-roteiro" class="tab-content space-y-6">
+      
+      <!-- Filter Toolbar -->
+      <div class="flex items-center justify-between flex-wrap gap-3 p-4 bg-jp-card/90 border border-jp-cardborder rounded-2xl shadow-md">
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-xs font-mono uppercase text-jp-gold font-bold mr-1 flex items-center gap-1">
+            <i class="fa-solid fa-filter"></i> Filtrar Região:
+          </span>
+          <button onclick="filterDays('all')" class="city-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-jp-red text-white transition-all shadow-md">Todos (13 Dias)</button>
+          <button onclick="filterDays('toquio1')" class="city-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-jp-night text-jp-subtle hover:text-white border border-jp-cardborder transition-all">Tóquio 1 (5n)</button>
+          <button onclick="filterDays('fuji')" class="city-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-jp-night text-jp-subtle hover:text-white border border-jp-cardborder transition-all">Monte Fuji (1d)</button>
+          <button onclick="filterDays('quioto')" class="city-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-jp-night text-jp-subtle hover:text-white border border-jp-cardborder transition-all">Quioto & Nara (3n)</button>
+          <button onclick="filterDays('osaka')" class="city-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-jp-night text-jp-subtle hover:text-white border border-jp-cardborder transition-all">Osaka (2n)</button>
+          <button onclick="filterDays('toquio2')" class="city-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-jp-night text-jp-subtle hover:text-white border border-jp-cardborder transition-all">Tóquio 2 (2n)</button>
+        </div>
+        <span class="text-xs text-jp-subtle font-mono">12 Noites no Japão • 01/09 a 14/09</span>
+      </div>
+
+      <!-- ITINERARY 13 DAYS CARDS GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="itinerary-grid">
+        
+        <!-- DIA 01 -->
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-jp-cardborder" data-city="toquio1">
+          <div>
+            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs">DIA 01</span>
+                <span class="text-xs font-bold text-slate-200">Terça • 01/09</span>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-bold text-[10px] font-mono uppercase">Chegada & Asakusa</span>
+            </div>
+
+            <h4 class="font-bold text-base text-white mt-3 flex items-center gap-2">
+              Chegada em Haneda e Asakusa <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-mono uppercase ml-1">✔ Concluído</span>
+            </h4>
+
+            <div class="mt-3 text-xs text-slate-300 leading-relaxed space-y-3">
+              <p>
+                <strong>✔ Feito:</strong> pouso em Haneda T3 (06:25), imigração, check-in no Airbnb <strong>Ciel Hills (Oshiage)</strong>, volta pelo bairro e compras na Don Quijote.
+              </p>
+              <p>
+                <strong>🔑 Códigos do Ciel Hills:</strong> entrada principal <code class="text-emerald-400 font-bold">•••••</code> • senha do quarto via tablet do 1º andar com a reserva <code class="text-sky-400 font-bold">••••••••</code>.
+              </p>
+              <p>
+                <strong>⏳ Pendente:</strong> o <strong>Senso-ji</strong> e a rua Nakamise não foram visitados no dia 01/09. Recuperar na manhã de <strong>02/09 às 07:00</strong> (antes do Shinjuku Gyoen) ou, se não der, no <strong>sábado 12/09 à noite</strong> após o Shabat. <a href="https://www.google.com/maps/search/?api=1&query=Sensō-ji+Temple+Tokyo" target="_blank" class="text-sky-400 hover:underline inline-flex items-center gap-0.5 ml-1 font-bold"><i class="fa-solid fa-location-dot"></i> Maps</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder space-y-1 mt-2 text-xs">
+            <span class="text-jp-gold font-bold font-mono uppercase block">Onde Comer (Sem Porco/Álcool)</span>
+            <p class="text-slate-300 text-[11px]">
+              <strong>Asakusa Sushiken:</strong> restaurante com selo Halal oficial. Peça o tempurá crocante 100% de vegetais/legumes da estação ou o nobre nigiri de Wagyu selado na brasa.
+            </p>
+          </div>
+        </div>
+
+        <!-- DIA 02 -->
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-jp-cardborder" data-city="toquio1">
+          <div>
+            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs">DIA 02</span>
+                <span class="text-xs font-bold text-slate-200">Quarta • 02/09</span>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 font-bold text-[10px] font-mono uppercase">Shinjuku</span>
+            </div>
+
+            <h4 class="font-bold text-base text-white mt-3 flex items-center gap-2">
+              Parque Shinjuku Gyoen e Mirante do Governo
+            </h4>
+
+            <div class="mt-3 text-xs text-slate-300 leading-relaxed space-y-3">
+              <p>
+                <strong>07:00 — Senso-ji (recuperação do DIA 01):</strong> vá direto ao templo <strong>Senso-ji</strong> e à rua Nakamise em Asakusa antes da multidão. Volte para Oshiage e siga para Shinjuku. <a href="https://www.google.com/maps/search/?api=1&query=Sensō-ji+Temple+Tokyo" target="_blank" class="text-sky-400 hover:underline inline-flex items-center gap-0.5 ml-1 font-bold"><i class="fa-solid fa-location-dot"></i> Maps</a>
+              </p>
+              <p>
+                Comece a manhã caminhando no <strong>Shinjuku Gyoen</strong> (entrada ¥500), um parque enorme e silencioso no meio dos arranha-céus. <a href="https://www.google.com/maps/search/?api=1&query=Shinjuku+Gyoen+National+Garden" target="_blank" class="text-sky-400 hover:underline inline-flex items-center gap-0.5 ml-1 font-bold"><i class="fa-solid fa-location-dot"></i> Maps</a>
+              </p>
+              <p>
+                Perto das 14h, suba no <strong>Mirante do Governo Metropolitano (Tocho)</strong> no 45º andar: o elevador sobe em 55 segundos, é 100% de graça e dá pra ver Tóquio inteira até o horizonte.
+              </p>
+              <p>
+                No fim da tarde, passe na saída leste da estação de Shinjuku para ver o telão 3D do gato gigante e tire fotos no beco histórico <strong>Omoide Yokocho</strong> quando as lanternas vermelhas acenderem.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder space-y-1 mt-2 text-xs">
+            <span class="text-jp-gold font-bold font-mono uppercase block">Onde Comer (Sem Porco/Álcool)</span>
+            <p class="text-slate-300 text-[11px]">
+              <strong>CoCo Ichibanya Halal Kabukicho:</strong> peça o Beef Curry (curry japonês bovino sem mirin, servido com arroz branco e legumes).
+            </p>
+          </div>
+        </div>
+
+        <!-- DIA 03 -->
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-jp-cardborder" data-city="toquio1">
+          <div>
+            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs">DIA 03</span>
+                <span class="text-xs font-bold text-slate-200">Quinta • 03/09</span>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 font-bold text-[10px] font-mono uppercase">Harajuku & Shibuya</span>
+            </div>
+
+            <h4 class="font-bold text-base text-white mt-3 flex items-center gap-2">
+              Santuário Meiji, Cruzamento de Shibuya e Shibuya Sky
+            </h4>
+
+            <div class="mt-3 text-xs text-slate-300 leading-relaxed space-y-3">
+              <p>
+                Às 09:00, entre pelo grande torii de madeira do <strong>Santuário Meiji Jingu</strong>, no meio da floresta urbana. Em seguida, desça a pé pela rua <strong>Takeshita</strong> em Harajuku. <a href="https://www.google.com/maps/search/?api=1&query=Meiji+Jingu+Shrine+Tokyo" target="_blank" class="text-sky-400 hover:underline inline-flex items-center gap-0.5 ml-1 font-bold"><i class="fa-solid fa-location-dot"></i> Maps</a>
+              </p>
+              <p>
+                À tarde, vá para Shibuya: atravesse o famoso cruzamento pelas faixas diagonais, tire a foto na estátua do cãozinho <strong>Hachiko</strong> e visite a loja da Nintendo no Shibuya Parco.
+              </p>
+              <p>
+                Às <strong>17:00</strong>, suba no terraço aberto do <strong>SHIBUYA SKY</strong> para pegar o pôr do sol às 18:08 e ver o acendimento das luzes da cidade lá de cima.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder space-y-1 mt-2 text-xs">
+            <span class="text-jp-gold font-bold font-mono uppercase block">Onde Comer (Sem Porco/Álcool)</span>
+            <p class="text-slate-300 text-[11px]">
+              <strong>Gyumon Wagyu Halal (Shibuya):</strong> almoço com cortes nobres de Wagyu na grelha individual.
+            </p>
+          </div>
+        </div>
+
+        <!-- DIA 04 -->
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-jp-cardborder" data-city="toquio1">
+          <div>
+            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs">DIA 04</span>
+                <span class="text-xs font-bold text-slate-200">Sexta • 04/09</span>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 font-bold text-[10px] font-mono uppercase">Tsukiji & Toyosu</span>
+            </div>
+
+            <h4 class="font-bold text-base text-white mt-3 flex items-center gap-2">
+              Mercado Tsukiji, Akihabara e teamLab Planets
+            </h4>
+
+            <div class="mt-3 text-xs text-slate-300 leading-relaxed space-y-3">
+              <p>
+                Tome o café da manhã no <strong>Mercado Tsukiji</strong> às 08:00: espetinhos de Wagyu A5 flambados no maçarico, milho doce grelhado na brasa e omelete Tamagoyaki artesanal. <a href="https://www.google.com/maps/search/?api=1&query=Tsukiji+Outer+Market+Tokyo" target="_blank" class="text-sky-400 hover:underline inline-flex items-center gap-0.5 ml-1 font-bold"><i class="fa-solid fa-location-dot"></i> Maps</a>
+              </p>
+              <p>
+                Às 10:30, pegue o metrô até <strong>Akihabara</strong> para ver os prédios de eletrônicos, miniaturas no Radio Kaikan e lojas da Yodobashi.
+              </p>
+              <p>
+                Às <strong>14:30</strong>, entre no <strong>teamLab Planets</strong> em Toyosu (vá de bermuda ou calça fácil de dobrar, pois você entra descalço na água). Retorne para o Airbnb Ciel Hills antes das 18:00 para tomar banho antes do pôr do sol.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-jp-night border border-amber-500/40 space-y-1 mt-2 text-xs">
+            <div class="flex items-center justify-between">
+              <span class="text-amber-300 font-bold font-mono uppercase">Entrada do Shabat</span>
+              <span class="text-amber-400 font-bold font-mono">Pôr do Sol: 18:06 JST</span>
+            </div>
+            <p class="text-slate-300 text-[11px]">
+              Almoço em Akihabara: <strong>Halal Ramen Ayam-YA</strong> (lámen cremoso de frango). Novo endereço: <strong>3-10-3 Motoasakusa (Shin-Okachimachi)</strong> — aceita <strong>somente dinheiro</strong>.
+            </p>
+          </div>
+        </div>
+
+        <!-- DIA 05 -->
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-emerald-500/50 bg-emerald-950/10" data-city="toquio1">
+          <div>
+            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-md bg-emerald-600 text-white font-mono font-bold text-xs">DIA 05</span>
+                <span class="text-xs font-bold text-slate-200">Sábado • 05/09</span>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold text-[10px] font-mono uppercase">Shabat • Igreja Adventista</span>
+            </div>
+
+            <h4 class="font-bold text-base text-white mt-3 flex items-center gap-2">
+              Culto na Igreja TIC, Parque Yoyogi e Tokyo Tower
+            </h4>
+
+            <div class="mt-3 text-xs text-slate-300 leading-relaxed space-y-3">
+              <p>
+                Pegue a Linha Hanzomon direto de Oshiage até Meiji-jingumae (25 min). Às <strong>09:30</strong> começa a Escola Sabatina e às <strong>10:45</strong> o Culto na <strong>Tokyo International SDA Church (TIC)</strong> em Jingumae (1-11-1 Jingumae, Shibuya). <a href="https://www.google.com/maps/search/?api=1&query=1-11-1+Jingumae+Shibuya+Tokyo" target="_blank" class="text-emerald-400 hover:underline inline-flex items-center gap-0.5 ml-1 font-bold"><i class="fa-solid fa-location-dot"></i> Maps</a>
+              </p>
+              <p>
+                Às 12:30, participe do almoço comunitário vegetariano oferecido pela igreja aos visitantes. À tarde, faça uma caminhada tranquila nas alamedas do <strong>Parque Yoyogi</strong>, ao lado da igreja.
+              </p>
+              <p>
+                Às <strong>18:05</strong> (pôr do sol e fim do Shabat), suba no mirante de <strong>Roppongi Hills</strong> para ver a <strong>Tokyo Tower</strong> acesa em laranja.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-jp-night border border-emerald-500/40 space-y-1 mt-2 text-xs">
+            <span class="text-emerald-400 font-bold font-mono uppercase block">Dica de Bagagem para Amanhã</span>
+            <p class="text-slate-300 text-[11px]">
+              À noite, entre em qualquer 7-Eleven e despache sua mala grande de 23kg via <em>Yamato Takkyubin</em> (tamanho 160, <strong>~¥2.530</strong>) direto para o Faminess em Quioto. A entrega é na <strong>segunda-feira (07/09)</strong> — você viaja domingo só com a mochila leve pro Monte Fuji.
+            </p>
+          </div>
+        </div>
+
+        <!-- DIA 06 -->
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-jp-cardborder" data-city="fuji">
+          <div>
+            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs">DIA 06</span>
+                <span class="text-xs font-bold text-slate-200">Domingo • 06/09</span>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 font-bold text-[10px] font-mono uppercase">Fuji & Viagem a Quioto</span>
+            </div>
+
+            <h4 class="font-bold text-base text-white mt-3 flex items-center gap-2">
+              Lago Kawaguchiko, Chureito Pagoda e Shinkansen para Quioto
+            </h4>
+
+            <div class="mt-3 text-xs text-slate-300 leading-relaxed space-y-3">
+              <p>
+                Às <strong>07:20</strong>, pegue o ônibus expresso Highway Bus na Estação de Tóquio até o lago <strong>Kawaguchiko</strong> (chegada 09:25). Suba os 398 degraus até o mirante da <strong>Chureito Pagoda</strong> com o Monte Fuji ao fundo. <a href="https://www.google.com/maps/search/?api=1&query=Chureito+Pagoda+Arakurayama+Sengen+Park" target="_blank" class="text-sky-400 hover:underline inline-flex items-center gap-0.5 ml-1 font-bold"><i class="fa-solid fa-location-dot"></i> Maps</a>
+              </p>
+              <p>
+                Almoço: sopa Hoto de legumes servida em caldeirão de ferro no restaurante <strong>Hoto Fudo</strong> em frente à estação. À tarde: suba no teleférico do lago e passe no Parque Oishi.
+              </p>
+              <p>
+                Ônibus de volta às 16:30 para Tóquio. Às <strong>19:39</strong>, embarque no <strong>Shinkansen Nozomi</strong> na Estação de Tóquio direto para Quioto (chegada às <strong>21:53</strong>). Caminhe 3 min até o ap <strong>Faminess Kyoto (Ap 503)</strong>.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder space-y-1 mt-2 text-xs">
+            <span class="text-jp-gold font-bold font-mono uppercase block">Check-in Quioto</span>
+            <p class="text-slate-300 text-[11px]">
+              Faminess Kyoto Ap 503 (41-1 Higashikujo Kamitonodacho). A mala despachada via Takkyubin <strong>chega na segunda (07/09)</strong> — na noite de domingo, use a muda de roupa da mochila.
+            </p>
+          </div>
+        </div>
+
+        <!-- DIA 07 -->
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-jp-cardborder" data-city="quioto">
+          <div>
+            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs">DIA 07</span>
+                <span class="text-xs font-bold text-slate-200">Segunda • 07/09</span>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-jp-gold/10 text-jp-gold font-bold text-[10px] font-mono uppercase">Quioto Leste & Sul</span>
+            </div>
+
+            <h4 class="font-bold text-base text-white mt-3 flex items-center gap-2">
+              Fushimi Inari, Kiyomizu-dera e Mercado Nishiki
+            </h4>
+
+            <div class="mt-3 text-xs text-slate-300 leading-relaxed space-y-3">
+              <p>
+                Saia do ap às <strong>06:30</strong> (a 3 min a pé da Estação de Quioto) e pegue a Linha JR Nara até a estação Inari (5 min, ¥150). Caminhe pelos 10.000 portais Torii vermelhos de <strong>Fushimi Inari Taisha</strong> com a montanha sagrada silenciosa e vazia. <a href="https://www.google.com/maps/search/?api=1&query=Fushimi+Inari+Taisha+Kyoto" target="_blank" class="text-sky-400 hover:underline inline-flex items-center gap-0.5 ml-1 font-bold"><i class="fa-solid fa-location-dot"></i> Maps</a>
+              </p>
+              <p>
+                Às 09:00, pegue o trem Keihan até Kiyomizu-Gojo para visitar o <strong>Kiyomizu-dera</strong> suspenso no penhasco e desça pelas ladeiras históricas de pedra <strong>Ninenzaka e Sannenzaka</strong>.
+              </p>
+              <p>
+                Às 12:30, almoce no <strong>Mercado Nishiki</strong> (espetinhos bovinos e frutas) e passeie pelas ruelas tradicionais de <strong>Gion</strong> ao entardecer.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder space-y-1 mt-2 text-xs">
+            <span class="text-jp-gold font-bold font-mono uppercase block">Jantar em Quioto</span>
+            <p class="text-slate-300 text-[11px]">
+              <strong>Halal Ramen Ayam-YA Karasuma:</strong> lámen com caldo espesso de frango caipira e tiras de frango grelhado (100% sem porco e sem álcool).
+            </p>
+          </div>
+        </div>
+
+        <!-- DIA 08 -->
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-jp-cardborder" data-city="quioto">
+          <div>
+            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs">DIA 08</span>
+                <span class="text-xs font-bold text-slate-200">Terça • 08/09</span>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-bold text-[10px] font-mono uppercase">Quioto Oeste & Norte</span>
+            </div>
+
+            <h4 class="font-bold text-base text-white mt-3 flex items-center gap-2">
+              Bosque de Bambu de Arashiyama e Pavilhão Dourado
+            </h4>
+
+            <div class="mt-3 text-xs text-slate-300 leading-relaxed space-y-3">
+              <p>
+                Às <strong>07:30</strong>, pegue a Linha JR Sagano direto da Estação de Quioto até Saga-Arashiyama (16 min). Caminhe pelo mágico <strong>Bosque de Bambus de Arashiyama</strong>, visite o jardim zen do Templo <strong>Tenryu-ji</strong> e a ponte Togetsukyo. <a href="https://www.google.com/maps/search/?api=1&query=Arashiyama+Bamboo+Grove+Kyoto" target="_blank" class="text-sky-400 hover:underline inline-flex items-center gap-0.5 ml-1 font-bold"><i class="fa-solid fa-location-dot"></i> Maps</a>
+              </p>
+              <p>
+                Almoço em Arashiyama (soba artesanal ou tempurá de legumes). Em seguida, pegue o bonde retrô <strong>Keifuku Randen</strong> até Kitanohakubaicho.
+              </p>
+              <p>
+                Às <strong>14:15</strong>, entre no <strong>Pavilhão Dourado (Kinkaku-ji)</strong> para admirar o templo folheado a ouro reluzindo sobre o lago no sol da tarde. Ônibus direto de volta para a Estação de Quioto.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder space-y-1 mt-2 text-xs">
+            <span class="text-jp-gold font-bold font-mono uppercase block">Dica de Transporte</span>
+            <p class="text-slate-300 text-[11px]">
+              O bonde elétrico Randen conecta Arashiyama diretamente à região de Kinkaku-ji sem precisar voltar ao centro!
+            </p>
+          </div>
+        </div>
+
+        <!-- DIA 09 -->
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-jp-cardborder" data-city="osaka">
+          <div>
+            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs">DIA 09</span>
+                <span class="text-xs font-bold text-slate-200">Quarta • 09/09</span>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 font-bold text-[10px] font-mono uppercase">Nara & Osaka</span>
+            </div>
+
+            <h4 class="font-bold text-base text-white mt-3 flex items-center gap-2">
+              Parque de Nara, Grande Buda Todai-ji e Dotonbori
+            </h4>
+
+            <div class="mt-3 text-xs text-slate-300 leading-relaxed space-y-3">
+              <p>
+                Check-out no Faminess Quioto às 08:30. Pegue o trem Kintetsu até <strong>Nara</strong> (45 min) e deixe a mala nos lockers da estação. Compre os biscoitos Shika Senbei (¥200) para alimentar os cervos soltos no parque e entre no templo <strong>Todai-ji</strong> para ver o Grande Buda de bronze de 15 metros. <a href="https://www.google.com/maps/search/?api=1&query=Nara+Park+Japan" target="_blank" class="text-sky-400 hover:underline inline-flex items-center gap-0.5 ml-1 font-bold"><i class="fa-solid fa-location-dot"></i> Maps</a>
+              </p>
+              <p>
+                Às 14:30, pegue o trem Kintetsu direto até <strong>Osaka-Namba</strong> (38 min). Passe no <strong>Santuário Namba Yasaka</strong> (o palco em forma de cabeça de leão gigante com 12m).
+              </p>
+              <p>
+                Check-in no <strong>CHUANHouse Kuromon</strong> às 16:30. À noite, caminhe por <strong>Dotonbori</strong>, tire a foto clássica do Glico Man e compre o cheesecake fofinho do Rikuro (¥965).
+              </p>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder space-y-1 mt-2 text-xs">
+            <span class="text-jp-gold font-bold font-mono uppercase block">Check-in Osaka</span>
+            <p class="text-slate-300 text-[11px]">
+              CHUANHouse Kuromon (1-1-17 Nipponbashihigashi, Naniwa-ku). Use o cofre de chaves na entrada com as instruções enviadas no OneStayApp.
+            </p>
+          </div>
+        </div>
+
+        <!-- DIA 10 -->
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-jp-cardborder" data-city="osaka">
+          <div>
+            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs">DIA 10</span>
+                <span class="text-xs font-bold text-slate-200">Quinta • 10/09</span>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-jp-red/10 text-jp-crimson font-bold text-[10px] font-mono uppercase">Osaka</span>
+            </div>
+
+            <h4 class="font-bold text-base text-white mt-3 flex items-center gap-2">
+              Castelo de Osaka, Shinsekai e Mirante Umeda Sky
+            </h4>
+
+            <div class="mt-3 text-xs text-slate-300 leading-relaxed space-y-3">
+              <p>
+                Às 09:00, visite o <strong>Castelo de Osaka (Osaka-jo)</strong>: atravesse os portões de muralha de pedra e suba até o mirante do topo da torre principal (¥1.200). <a href="https://www.google.com/maps/search/?api=1&query=Osaka+Castle" target="_blank" class="text-sky-400 hover:underline inline-flex items-center gap-0.5 ml-1 font-bold"><i class="fa-solid fa-location-dot"></i> Maps</a>
+              </p>
+              <p>
+                Almoço no <strong>Matsuri Halal Osaka</strong>: peça o Okonomiyaki e Okonomiyaki bovino/vegetariano feitos na chapa sem carne suína e sem saquê.
+              </p>
+              <p>
+                À tarde, passe no bairro retrô <strong>Shinsekai</strong> com a Torre Tsutenkaku. Às 17:30, suba no observatório suspenso <strong>Umeda Sky Building</strong> para pegar o pôr do sol sobre os canais da baía de Osaka.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder space-y-1 mt-2 text-xs">
+            <span class="text-jp-gold font-bold font-mono uppercase block">Onde Comer (Halal em Osaka)</span>
+            <p class="text-slate-300 text-[11px]">
+              <strong>Matsuri Halal:</strong> 3-27-17 Yoshino, Fukushima-ku. Restaurante 100% certificado onde você come comida típica de rua de Osaka com segurança.
+            </p>
+          </div>
+        </div>
+
+        <!-- DIA 11 -->
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-jp-cardborder" data-city="toquio2">
+          <div>
+            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs">DIA 11</span>
+                <span class="text-xs font-bold text-slate-200">Sexta • 11/09</span>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 font-bold text-[10px] font-mono uppercase">Retorno a Tóquio</span>
+            </div>
+
+            <h4 class="font-bold text-base text-white mt-3 flex items-center gap-2">
+              Shinkansen para Tóquio, Parque Ueno e Jantar no Panga
+            </h4>
+
+            <div class="mt-3 text-xs text-slate-300 leading-relaxed space-y-3">
+              <p>
+                Check-out em Osaka às 08:30. Embarque no <strong>Shinkansen Nozomi #220 às 09:18</strong> na estação Shin-Osaka rumo a Tóquio (sente na fileira A para ver o Monte Fuji pela janela).
+              </p>
+              <p>
+                Chegada às 11:45 em Tóquio. Vá para o ap em <strong>Kuramae/Taito City</strong> (1-3-18 Misuji) para deixar as malas.
+              </p>
+              <p>
+                À tarde, passeie no <strong>Parque Ueno</strong> e faça compras na feira de rua de Ameyoko e lojas da Uniqlo. <strong>Jantar leve em casa</strong> antes do pôr do sol das 17:56 (o Yakiniku Panga só abre às 17:00 — sem tempo hábil na sexta). O Wagyu A5 fica para <strong>amanhã, sábado, às 19:00</strong> após o Shabat.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-jp-night border border-amber-500/40 space-y-1 mt-2 text-xs">
+            <div class="flex items-center justify-between">
+              <span class="text-amber-300 font-bold font-mono uppercase">Entrada do Shabat</span>
+              <span class="text-amber-400 font-bold font-mono">Pôr do Sol: 17:56 JST</span>
+            </div>
+            <p class="text-slate-300 text-[11px]">
+              <strong>Yakiniku Panga:</strong> 3-27-9 Taito, Taito-ku. Reserve com antecedência para o <strong>sábado (12/09) às 19:00</strong>, logo após o fim do Shabat (jantar abre às 17:00).
+            </p>
+          </div>
+        </div>
+
+        <!-- DIA 12 -->
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-emerald-500/50 bg-emerald-950/10" data-city="toquio2">
+          <div>
+            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-md bg-emerald-600 text-white font-mono font-bold text-xs">DIA 12</span>
+                <span class="text-xs font-bold text-slate-200">Sábado • 12/09</span>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold text-[10px] font-mono uppercase">Shabat & Compras</span>
+            </div>
+
+            <h4 class="font-bold text-base text-white mt-3 flex items-center gap-2">
+              Culto na TIC e Compras no Don Quijote
+            </h4>
+
+            <div class="mt-3 text-xs text-slate-300 leading-relaxed space-y-3">
+              <p>
+                Às <strong>09:30</strong>, participe da Escola Sabatina e Culto na <strong>Tokyo International SDA Church (TIC)</strong> em Jingumae. Almoço de comunhão na igreja e tarde de descanso físico e espiritual.
+              </p>
+              <p>
+                Às <strong>17:55</strong> (pôr do sol e encerramento do Shabat), pegue o metrô até Shibuya para fazer as compras no <strong>MEGA Don Quijote Shibuya</strong> (aberto 24h). Compre os chocolates KitKat temáticos (matcha, wasabi, morango), cosméticos e lembranças com 10% de desconto Tax-Free mostrando o passaporte físico no caixa. <a href="https://www.google.com/maps/search/?api=1&query=MEGA+Don+Quijote+Shibuya+Tokyo" target="_blank" class="text-sky-400 hover:underline inline-flex items-center gap-0.5 ml-1 font-bold"><i class="fa-solid fa-location-dot"></i> Maps</a>
+              </p>
+              <p>
+                Às <strong>19:00</strong>, jantar especial no <strong>Yakiniku Panga Okachimachi</strong> (Wagyu A5 Halal) — transferido da sexta, pois o restaurante só abre às 17:00.
+              </p>
+              <p>
+                Volte para o hotel à noite para fechar e pesar a mala despachada de 23kg.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder space-y-1 mt-2 text-xs">
+            <span class="text-jp-gold font-bold font-mono uppercase block">Dica de Tax-Free</span>
+            <p class="text-slate-300 text-[11px]">
+              Em compras acima de ¥5.500 no Don Quijote, apresente seu passaporte brasileiro no balcão de Tax-Free para abater o imposto de 10% na hora.
+            </p>
+          </div>
+        </div>
+
+        <!-- DIA 13 -->
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-purple-500/50 bg-purple-950/10" data-city="toquio2">
+          <div>
+            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-md bg-purple-600 text-white font-mono font-bold text-xs">DIA 13</span>
+                <span class="text-xs font-bold text-slate-200">Domingo • 13/09</span>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-purple-500/20 text-purple-400 font-bold text-[10px] font-mono uppercase">DisneySea & Embarque</span>
+            </div>
+
+            <h4 class="font-bold text-base text-white mt-3 flex items-center gap-2">
+              Tokyo DisneySea e Voo de Volta
+            </h4>
+
+            <div class="mt-3 text-xs text-slate-300 leading-relaxed space-y-3">
+              <p>
+                Às <strong>08:30</strong>, faça o check-out no hotel e pegue o trem até a estação <strong>Maihama (Disney)</strong> (20 min). <strong>Não conte com os lockers 特大 da estação — são pouquíssimos.</strong> Plano recomendado: despachar a mala de 23kg <strong>na sexta 11/09</strong> via Yamato direto para o <strong>Terminal 3 de Haneda</strong> (balcão de retirada no aeroporto) e ir à Disney só com mochila.
+              </p>
+              <p>
+                Passe o dia no <strong>Tokyo DisneySea</strong>: conheça a área nova <em>Fantasy Springs</em> (atrações de Frozen e Enrolados), suba no Vulcão e faça o passeio de gôndola. Almoço italiano seguro no <em>Ristorante di Canaletto</em> (massas com cogumelos, queijos e vegetais e pizzas de queijo).
+              </p>
+              <p>
+                O <strong>último ônibus</strong> Limousine Bus Disney → Haneda T3 sai às <strong>19:30</strong> (embarque 19:10, chegada <strong>20:35</strong>, ¥1.300). <strong>Não existe o horário das 20:15.</strong> Atenção: o show noturno Believe (19:50–20:15) é incompatível com esse ônibus — escolha um dos dois.
+              </p>
+              <p>
+                Às <strong>21:05</strong>, chegue no Terminal 3 de Haneda: faça o check-in do voo Air France <strong>AF0293</strong>, despache a mala de 23kg e passe no raio-X. O voo decola às <strong>00:05</strong> da madrugada de segunda rumo ao Brasil.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-jp-night border border-purple-500/40 space-y-1 mt-2 text-xs">
+            <div class="flex items-center justify-between">
+              <span class="text-purple-300 font-bold font-mono uppercase">Ônibus Disney → Haneda</span>
+              <span class="text-emerald-400 font-mono font-bold">Último: 19:30 → chega 20:35 (¥1.300)</span>
+            </div>
+            <p class="text-slate-300 text-[11px]">
+              Compre a passagem do ônibus direto na bilheteria da estação de ônibus do DisneySea ou pelo site da Limousine Bus.
+            </p>
+          </div>
+
+          <div class="p-3 rounded-xl bg-sky-950/40 border border-sky-500/40 space-y-1 text-xs">
+            <div class="flex items-center justify-between">
+              <span class="text-sky-300 font-bold font-mono uppercase flex items-center gap-1.5"><i class="fa-solid fa-shuffle"></i> Alternativa Flexível (Plano B Urbano)</span>
+              <span class="text-sky-400 font-mono font-bold text-[10px]">Sem Parque / Decisão na Viagem</span>
+            </div>
+            <p class="text-slate-300 text-[11px] leading-relaxed">
+              <strong>Manhã:</strong> Palácio Imperial & Estação de Tóquio • <strong>Tarde:</strong> Ginza Pedestre & Uniqlo 12 Andares (Tax-Free) • <strong>Fim de Tarde:</strong> Ilha de Odaiba & Robô Gundam 18m com pôr do sol na baía (Trem direto de 25 min para Haneda T3 às 20:30).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 2: GASTOS & CIDADES ==================== -->
+    <div id="tab-orcamento" class="tab-content hidden space-y-6">
+      
+      <!-- Top 3 Focus Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        
+        <!-- Card 1: Dinheiro de Bolso / Wise -->
+        <div class="bg-gradient-to-br from-jp-card via-jp-card to-emerald-950/30 border-2 border-emerald-500/60 p-6 rounded-3xl space-y-2 shadow-2xl relative overflow-hidden">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-mono font-bold uppercase tracking-wider">
+            <i class="fa-solid fa-wallet"></i> Foco Principal (Dia a Dia)
+          </div>
+          <h3 class="text-xs font-mono uppercase text-slate-300 font-bold">Custo Vivo no Japão (Wise / Bolso)</h3>
+          <div class="text-3xl sm:text-4xl font-black text-emerald-400 font-mono tracking-tight">R$ —</div>
+          <div class="text-xs font-mono text-jp-gold font-bold flex items-center gap-1.5">
+            <span>Saldo total no app Wise</span>
+            <span class="text-slate-400 font-normal">(Sem Passagem e Sem Hotéis)</span>
+          </div>
+          <p class="text-[11px] text-slate-300 pt-2 leading-relaxed border-t border-jp-cardborder">
+            Cobre <strong>todas as refeições (100% sem porco/álcool)</strong>, os 2 Trens-Bala Shinkansen, metrôs locais, ingressos turísticos e compras de lembranças.
+          </p>
+        </div>
+
+        <!-- Card 2: Comprovação na Imigração -->
+        <div class="bg-gradient-to-br from-jp-card via-jp-card to-amber-950/30 border border-jp-gold/50 p-6 rounded-3xl space-y-2 shadow-xl">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-jp-gold/20 text-jp-gold text-[10px] font-mono font-bold uppercase tracking-wider">
+            <i class="fa-solid fa-passport"></i> Imigração em Haneda
+          </div>
+          <h3 class="text-xs font-mono uppercase text-slate-300 font-bold">Saldo Recomendado para Mostrar</h3>
+          <div class="text-3xl sm:text-4xl font-black text-jp-gold font-mono tracking-tight">¥ 120.000</div>
+          <div class="text-xs font-mono text-slate-300 font-bold">≈ R$ 4.400 a R$ 5.000 no Wise</div>
+          <p class="text-[11px] text-slate-300 pt-2 leading-relaxed border-t border-jp-cardborder">
+            Se o oficial de imigração solicitar comprovação de fundos, basta mostrar o saldo no app da Wise + limite do cartão de crédito. <strong>Aprovação 100% garantida</strong>.
+          </p>
+        </div>
+
+        <!-- Card 3: Total Geral da Viagem -->
+        <div class="bg-jp-card border border-jp-cardborder p-6 rounded-3xl space-y-2 shadow-xl">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 text-[10px] font-mono font-bold uppercase tracking-wider">
+            <i class="fa-solid fa-calculator"></i> Orçamento Consolidado
+          </div>
+          <h3 class="text-xs font-mono uppercase text-slate-400 font-bold">Total Geral (Tudo Incluso)</h3>
+          <div class="text-3xl sm:text-4xl font-black text-white font-mono tracking-tight">R$ 15.566,07</div>
+          <div class="text-xs font-mono text-slate-400">Voo Air France + 4 Hospedagens + Bolso Wise</div>
+          <p class="text-[11px] text-jp-subtle pt-2 leading-relaxed border-t border-jp-cardborder">
+            Passagem (R$ —,00) e as 4 Hospedagens (R$ —) já estão parceladas sem juros no cartão de crédito brasileiro.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Categories Breakdown Grid -->
+      <div class="bg-jp-card border border-jp-cardborder rounded-3xl p-6 space-y-4">
+        <div class="flex items-center justify-between flex-wrap gap-2 border-b border-jp-cardborder pb-3">
+          <div>
+            <h3 class="text-base font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-receipt text-jp-gold"></i> Divisão dos Gastos Diários de Bolso por Categoria
+            </h3>
+            <p class="text-xs text-jp-subtle">O dinheiro real que você vai usar nas ruas, estações e restaurantes no Japão</p>
+          </div>
+          <span class="px-3 py-1 bg-emerald-950 text-emerald-400 font-mono font-bold text-xs rounded-xl border border-emerald-800">
+            Total Disponível em JPY: ¥ — (Wise ¥ — + Suica ¥ 1.000)
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
+          
+          <div class="p-4 rounded-2xl bg-jp-night border border-jp-cardborder space-y-2">
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-amber-400 font-mono font-bold uppercase flex items-center gap-1.5">
+                <i class="fa-solid fa-utensils"></i> Alimentação
+              </span>
+              <span class="text-white font-bold font-mono">38%</span>
+            </div>
+            <div class="text-2xl font-bold text-white font-mono">R$ 1.675,00</div>
+            <span class="text-[11px] text-jp-subtle font-mono block">¥ 45.225 JPY • 13 Dias</span>
+            <p class="text-[11px] text-slate-300 border-t border-jp-cardborder pt-2">
+              Média de <strong>R$ 125 a R$ 130 / dia</strong> para café no 7-Eleven, almoço Gyudon/Lámen e jantares Wagyu/Curry.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-jp-night border border-jp-cardborder space-y-2">
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-sky-400 font-mono font-bold uppercase flex items-center gap-1.5">
+                <i class="fa-solid fa-train-subway"></i> Transporte & Trens
+              </span>
+              <span class="text-white font-bold font-mono">38%</span>
+            </div>
+            <div class="text-2xl font-bold text-white font-mono">R$ 1.669,00</div>
+            <span class="text-[11px] text-jp-subtle font-mono block">¥ 45.063 JPY</span>
+            <p class="text-[11px] text-slate-300 border-t border-jp-cardborder pt-2">
+              Inclui os <strong>2 Trens-Bala Shinkansen (R$ 1.055)</strong>, ônibus do Monte Fuji (R$ 150) e metrôs locais no Suica (R$ 464).
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-jp-night border border-jp-cardborder space-y-2">
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-purple-400 font-mono font-bold uppercase flex items-center gap-1.5">
+                <i class="fa-solid fa-ticket"></i> Ingressos
+              </span>
+              <span class="text-white font-bold font-mono">11%</span>
+            </div>
+            <div class="text-2xl font-bold text-white font-mono">R$ 462,00</div>
+            <span class="text-[11px] text-jp-subtle font-mono block">¥ 12.474 JPY</span>
+            <p class="text-[11px] text-slate-300 border-t border-jp-cardborder pt-2">
+              teamLab Planets (R$ 140), Shibuya Sky (R$ 80), templos Kiyomizu-dera/Kinkaku-ji, Buda de Nara e Castelo de Osaka.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-jp-night border border-jp-cardborder space-y-2">
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-emerald-400 font-mono font-bold uppercase flex items-center gap-1.5">
+                <i class="fa-solid fa-bag-shopping"></i> Compras & Extras
+              </span>
+              <span class="text-white font-bold font-mono">13%</span>
+            </div>
+            <div class="text-2xl font-bold text-white font-mono">R$ 550,00</div>
+            <span class="text-[11px] text-jp-subtle font-mono block">¥ 14.850 JPY</span>
+            <p class="text-[11px] text-slate-300 border-t border-jp-cardborder pt-2">
+              Roupas térmicas Uniqlo, doces KitKat temáticos no Don Quijote, biscoitinhos dos cervos de Nara e farmácia de viagem.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- City Breakdown Table -->
+      <div class="bg-jp-card border border-jp-cardborder rounded-3xl p-6 space-y-4">
+        <h3 class="text-base font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-chart-pie text-jp-crimson"></i> Tabela Consolidada por Cidade & Região
+        </h3>
+
+        <div class="overflow-x-auto">
+          <div class="overflow-x-auto -mx-1 sm:mx-0 rounded-xl border border-jp-cardborder"><table class="w-full text-left text-xs min-w-[580px] font-mono">
+            <thead class="bg-jp-night border-b border-jp-cardborder text-jp-gold uppercase font-bold">
+              <tr>
+                <th class="p-3">Cidade / Região</th>
+                <th class="p-3">Estadia</th>
+                <th class="p-3">Alimentação</th>
+                <th class="p-3">Transporte</th>
+                <th class="p-3">Ingressos</th>
+                <th class="p-3 text-emerald-400">Total Bolso/Dia</th>
+                <th class="p-3 text-right text-slate-300">Hospedagem Confirmada</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-jp-cardborder text-slate-300">
+              <tr class="hover:bg-jp-night/50 transition-all">
+                <td class="p-3 font-bold text-white">🗼 Tóquio (Etapa 1)</td>
+                <td class="p-3">5 dias</td>
+                <td class="p-3">R$ 625,00</td>
+                <td class="p-3">R$ 150,00</td>
+                <td class="p-3">R$ 240,00</td>
+                <td class="p-3 text-emerald-400 font-bold">R$ 1.015,00</td>
+                <td class="p-3 text-right text-emerald-400 font-bold">R$ — (Ciel Hills)</td>
+              </tr>
+              <tr class="hover:bg-jp-night/50 transition-all">
+                <td class="p-3 font-bold text-white">🗻 Monte Fuji (Bate-volta)</td>
+                <td class="p-3">1 dia</td>
+                <td class="p-3">R$ 125,00</td>
+                <td class="p-3">R$ 172,00</td>
+                <td class="p-3">R$ 37,00</td>
+                <td class="p-3 text-emerald-400 font-bold">R$ 334,00</td>
+                <td class="p-3 text-right text-jp-subtle">-</td>
+              </tr>
+              <tr class="hover:bg-jp-night/50 transition-all">
+                <td class="p-3 font-bold text-white">🚅 Shinkansen 1 (Tóquio → Quioto)</td>
+                <td class="p-3">-</td>
+                <td class="p-3 text-jp-subtle">-</td>
+                <td class="p-3 text-jp-gold font-bold">R$ 518,00</td>
+                <td class="p-3 text-jp-subtle">-</td>
+                <td class="p-3 text-emerald-400 font-bold">R$ 518,00</td>
+                <td class="p-3 text-right text-jp-subtle">-</td>
+              </tr>
+              <tr class="hover:bg-jp-night/50 transition-all">
+                <td class="p-3 font-bold text-white">⛩️ Quioto & Nara</td>
+                <td class="p-3">3 dias</td>
+                <td class="p-3">R$ 375,00</td>
+                <td class="p-3">R$ 115,00</td>
+                <td class="p-3">R$ 63,00</td>
+                <td class="p-3 text-emerald-400 font-bold">R$ 553,00</td>
+                <td class="p-3 text-right text-emerald-400 font-bold">R$ 721,36 (Faminess)</td>
+              </tr>
+              <tr class="hover:bg-jp-night/50 transition-all">
+                <td class="p-3 font-bold text-white">🐙 Osaka</td>
+                <td class="p-3">2 dias</td>
+                <td class="p-3">R$ 250,00</td>
+                <td class="p-3">R$ 87,00</td>
+                <td class="p-3">R$ 77,00</td>
+                <td class="p-3 text-emerald-400 font-bold">R$ 414,00</td>
+                <td class="p-3 text-right text-emerald-400 font-bold">R$ 309,31 (CHUANHouse)</td>
+              </tr>
+              <tr class="hover:bg-jp-night/50 transition-all">
+                <td class="p-3 font-bold text-white">🚅 Shinkansen 2 (Osaka → Tóquio)</td>
+                <td class="p-3">-</td>
+                <td class="p-3 text-jp-subtle">-</td>
+                <td class="p-3 text-jp-gold font-bold">R$ 537,00</td>
+                <td class="p-3 text-jp-subtle">-</td>
+                <td class="p-3 text-emerald-400 font-bold">R$ 537,00</td>
+                <td class="p-3 text-right text-jp-subtle">-</td>
+              </tr>
+              <tr class="hover:bg-jp-night/50 transition-all">
+                <td class="p-3 font-bold text-white">🗼 Tóquio (Etapa 2 - Final)</td>
+                <td class="p-3">2 dias</td>
+                <td class="p-3">R$ 300,00</td>
+                <td class="p-3">R$ 90,00</td>
+                <td class="p-3">R$ 45,00</td>
+                <td class="p-3 text-emerald-400 font-bold">R$ 435,00</td>
+                <td class="p-3 text-right text-emerald-400 font-bold">R$ 672,83 (Misuji Rooftop)</td>
+              </tr>
+              <tr class="hover:bg-jp-night/50 transition-all">
+                <td class="p-3 font-bold text-white">🛍️ Compras & Lembranças</td>
+                <td class="p-3">Viagem toda</td>
+                <td class="p-3 text-jp-subtle">-</td>
+                <td class="p-3 text-jp-subtle">-</td>
+                <td class="p-3 text-jp-subtle">-</td>
+                <td class="p-3 text-emerald-400 font-bold">R$ 550,00</td>
+                <td class="p-3 text-right text-jp-subtle">-</td>
+              </tr>
+            </tbody>
+            <tfoot class="bg-jp-night border-t-2 border-emerald-500/50 text-white font-bold text-sm">
+              <tr>
+                <td class="p-3 text-jp-gold">TOTAIS CONSOLIDADOS</td>
+                <td class="p-3">13 Dias</td>
+                <td class="p-3">R$ 1.675,00</td>
+                <td class="p-3">R$ 1.669,00</td>
+                <td class="p-3">R$ 462,00</td>
+                <td class="p-3 text-emerald-400 font-mono text-base">R$ — (Wise)</td>
+                <td class="p-3 text-right font-mono text-emerald-400 text-base">R$ — (4 Hotéis)</td>
+              </tr>
+            </tfoot>
+          </table></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== TAB 3: VOOS & BAGAGENS ==================== -->
+    <div id="tab-voos" class="tab-content hidden space-y-6">
+
+      <!-- CARD OFICIAL DE SEGURO VIAGEM INTERNACIONAL (MY TRAVEL ASSIST - PEDIDO • apólice no app do seguro •) -->
+      <div class="glass-card rounded-3xl p-6 border-2 border-emerald-500/60 bg-emerald-950/20 space-y-4 shadow-2xl">
+        <div class="flex items-center justify-between flex-wrap gap-3 border-b border-jp-cardborder pb-4">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center text-2xl shadow-glow-emerald">
+              <i class="fa-solid fa-shield-heart"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="text-base sm:text-lg font-bold text-white">Seguro Viagem Internacional Oficial</h3>
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-mono font-bold text-xs border border-emerald-500/40 flex items-center gap-1">
+                  <i class="fa-solid fa-circle-check"></i> 100% EMITIDO & PAGO
+                </span>
+              </div>
+              <p class="text-xs text-slate-300">My Travel Assist (MTA 60 Mundo) • Pedido Seguros Promo <strong>• apólice no app do seguro •</strong></p>
+            </div>
+          </div>
+          
+          <a href="Roteiros%20de%20Viagem/Apolice_Seguro_Viagem_Fernando_Sonaglio.pdf" target="_blank" class="min-h-[44px] px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-mono font-bold text-xs sm:text-sm rounded-xl shadow-lg transition-all flex items-center gap-2 active:scale-95">
+            <i class="fa-solid fa-file-pdf text-base text-white"></i> Abrir Apólice Oficial (PDF)
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono">
+          <div class="p-3.5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-1">
+            <span class="text-slate-400 uppercase text-[10px] block">Despesa Médica (DMH)</span>
+            <span class="text-emerald-400 font-bold text-base">US$ 60.000</span>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-1">
+            <span class="text-slate-400 uppercase text-[10px] block">Seguro Bagagem 23kg</span>
+            <span class="text-sky-400 font-bold text-base">US$ 1.000</span>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-1">
+            <span class="text-slate-400 uppercase text-[10px] block">Reembolso Farmácia</span>
+            <span class="text-amber-400 font-bold text-base">US$ 600</span>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-1">
+            <span class="text-slate-400 uppercase text-[10px] block">Vigência (18 Dias)</span>
+            <span class="text-white font-bold text-xs">29/08 a 15/09/2026</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-jp-night border border-emerald-500/30 flex items-center justify-between flex-wrap gap-3 text-xs">
+          <div class="space-y-1">
+            <span class="font-bold text-white flex items-center gap-1.5 font-mono">
+              <i class="fa-solid fa-user-doctor text-emerald-400"></i> Telemedicina Albert Einstein 24h em Português
+            </span>
+            <p class="text-slate-300 text-[11px]">
+              Consultas médicas online em português via videochamada durante toda a estadia no Japão.
+            </p>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="tel:3140038442" class="min-h-[38px] px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-jp-cardborder text-xs font-mono font-bold transition-all flex items-center gap-1.5">
+              <i class="fa-solid fa-phone text-emerald-400"></i> Central Seguros Promo: (31) 4003-8442
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Conexão Nacional GOL (Chapecó <-> Guarulhos) -->
+      <div class="glass-card rounded-3xl p-6 border-2 border-amber-500/60 bg-gradient-to-br from-jp-card via-jp-card to-amber-950/20 shadow-xl space-y-5">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-jp-cardborder pb-4">
+          <div class="flex items-center gap-3">
+            <span class="px-3 py-1 rounded-xl bg-amber-500 text-black font-mono font-black text-xs uppercase shadow-md">Confirmado • GOL</span>
+            <div>
+              <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-plane text-amber-400"></i> Voo Nacional: Chapecó (XAP) ⟷ São Paulo (GRU)
+              </h3>
+              <p class="text-xs text-slate-300 font-mono">Código Localizador GOL: <strong class="text-amber-400 font-bold text-sm tracking-wider">••••••</strong> • Passageiro: FERNANDO SONAGLIO</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="https://voarfacil.net/eticket/dd3f8d3fe9de057fdb7d8e986b59dd2243facfb7" target="_blank" class="px-4 py-2 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs font-bold font-mono transition-all flex items-center gap-2 shadow-md">
+              <i class="fa-solid fa-ticket"></i> Ver E-ticket Digital GOL
+            </a>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+          <!-- Ida Nacional -->
+          <div class="p-4 rounded-2xl bg-jp-night border border-amber-500/30 space-y-2.5">
+            <div class="flex justify-between items-center text-slate-300 font-mono">
+              <span class="text-amber-400 font-bold flex items-center gap-1.5"><i class="fa-solid fa-plane-departure"></i> IDA: Voo G3-1291</span>
+              <span class="text-slate-400">Sáb, 29/08/2026 • 1h 35m</span>
+            </div>
+            <div class="flex items-center justify-between pt-1">
+              <div>
+                <div class="text-xl font-bold text-white font-mono">11:30</div>
+                <div class="text-xs text-slate-300 font-bold">Chapecó (XAP)</div>
+              </div>
+              <div class="text-center px-3">
+                <i class="fa-solid fa-arrow-right text-amber-400"></i>
+              </div>
+              <div class="text-right">
+                <div class="text-xl font-bold text-emerald-400 font-mono">13:05</div>
+                <div class="text-xs text-emerald-300 font-bold">Guarulhos (GRU)</div>
+              </div>
+            </div>
+            <p class="text-[11px] text-slate-400 border-t border-jp-cardborder pt-2">
+              ✅ Chegada em SP com <strong>25 horas de antecedência</strong> do voo internacional (30/08 às 14:40). Margem de segurança total!
+            </p>
+          </div>
+
+          <!-- Volta Nacional -->
+          <div class="p-4 rounded-2xl bg-jp-night border border-amber-500/30 space-y-2.5">
+            <div class="flex justify-between items-center text-slate-300 font-mono">
+              <span class="text-amber-400 font-bold flex items-center gap-1.5"><i class="fa-solid fa-plane-arrival"></i> VOLTA: Voo G3-1290</span>
+              <span class="text-slate-400">Ter, 15/09/2026 • 1h 35m</span>
+            </div>
+            <div class="flex items-center justify-between pt-1">
+              <div>
+                <div class="text-xl font-bold text-white font-mono">08:50</div>
+                <div class="text-xs text-slate-300 font-bold">Guarulhos (GRU)</div>
+              </div>
+              <div class="text-center px-3">
+                <i class="fa-solid fa-arrow-right text-amber-400"></i>
+              </div>
+              <div class="text-right">
+                <div class="text-xl font-bold text-emerald-400 font-mono">10:25</div>
+                <div class="text-xs text-emerald-300 font-bold">Chapecó (XAP)</div>
+              </div>
+            </div>
+            <p class="text-[11px] text-slate-400 border-t border-jp-cardborder pt-2">
+              ✅ O voo Air France pousa em GRU na noite de 14/09 (20:25). Descanso e retorno tranquilo na manhã seguinte para casa!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Voo Internacional Air France -->
+      <div class="bg-jp-card border border-jp-cardborder rounded-3xl p-6 space-y-6 shadow-xl">
+        <div class="flex items-center justify-between flex-wrap gap-4 border-b border-jp-cardborder pb-4">
+          <div>
+            <span class="text-xs font-mono text-jp-gold uppercase font-bold">Voo Internacional Confirmado Air France</span>
+            <h3 class="text-2xl font-bold text-white flex items-center gap-3">
+              Código Localizador: <span class="font-mono text-jp-crimson tracking-wider font-black">••••••</span>
+            </h3>
+            <p class="text-xs text-jp-subtle mt-0.5 font-mono">E-ticket: ••• ••• ••• ••• • • Passageiro: FERNANDO DE LIMA SONAGLIO</p>
+          </div>
+          <div class="flex items-center gap-2 bg-emerald-950/60 border border-emerald-800 text-emerald-400 px-4 py-2 rounded-2xl text-xs font-bold font-mono">
+            <i class="fa-solid fa-suitcase-rolling"></i> 1 Mala Despachada (23kg) + 1 Mala de Mão (12kg) + 1 Item Pessoal
+          </div>
+        </div>
+
+        <!-- Flights Timeline -->
+        <div class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300 font-mono flex items-center gap-2">
+            <i class="fa-solid fa-plane-arrival text-jp-crimson"></i> Voo de Ida (São Paulo → Paris → Tóquio Haneda)
+          </h4>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4 rounded-2xl bg-jp-night border border-jp-cardborder space-y-3">
+              <div class="flex justify-between text-xs text-jp-subtle">
+                <span class="font-bold text-white">Trecho 1: AF 0453</span>
+                <span class="font-mono">Boeing 777-300ER</span>
+              </div>
+              <div class="flex items-center justify-between pt-1">
+                <div>
+                  <div class="text-xl font-bold text-white font-mono">14:40</div>
+                  <div class="text-xs text-jp-subtle">30/08 (Dom) • GRU T3</div>
+                </div>
+                <div class="text-center px-3">
+                  <span class="text-[10px] text-jp-subtle font-mono block">11h 25m</span>
+                  <i class="fa-solid fa-arrow-right text-jp-crimson"></i>
+                </div>
+                <div class="text-right">
+                  <div class="text-xl font-bold text-white font-mono">07:05 (+1d)</div>
+                  <div class="text-xs text-jp-subtle">31/08 (Seg) • Paris CDG 2E</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-jp-night border border-red-500/40 space-y-3 bg-red-950/10">
+              <div class="flex justify-between text-xs text-jp-subtle">
+                <span class="font-bold text-red-400">Trecho 2: AF 0186 (Pouso no Japão)</span>
+                <span class="font-mono text-slate-300">Airbus A350-900</span>
+              </div>
+              <div class="flex items-center justify-between pt-1">
+                <div>
+                  <div class="text-xl font-bold text-white font-mono">10:10</div>
+                  <div class="text-xs text-jp-subtle">31/08 (Seg) • Paris CDG 2E</div>
+                </div>
+                <div class="text-center px-3">
+                  <span class="text-[10px] text-red-400 font-mono block font-bold">13h 15m</span>
+                  <i class="fa-solid fa-arrow-right text-red-400"></i>
+                </div>
+                <div class="text-right">
+                  <div class="text-xl font-bold text-emerald-400 font-mono">06:25 (+1d)</div>
+                  <div class="text-xs text-emerald-300 font-bold">01/09 (Ter) • Haneda HND T3</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Return Flight -->
+        <div class="space-y-4 pt-2">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300 font-mono flex items-center gap-2">
+            <i class="fa-solid fa-plane-departure text-jp-gold"></i> Voo de Volta (Tóquio Haneda → Paris → São Paulo)
+          </h4>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="p-4 rounded-2xl bg-jp-night border border-jp-cardborder space-y-2 text-xs">
+              <div class="flex justify-between text-jp-subtle">
+                <span class="font-bold text-white font-mono">AF 0293</span>
+                <span class="font-mono text-jp-gold">14/09 • 00:05</span>
+              </div>
+              <p class="text-slate-200 font-medium">Tóquio Haneda (T3) → Paris CDG (08:00)</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-jp-night border border-jp-cardborder space-y-2 text-xs">
+              <div class="flex justify-between text-jp-subtle">
+                <span class="font-bold text-white font-mono">AF 0476</span>
+                <span class="font-mono text-jp-gold">14/09 • 10:20</span>
+              </div>
+              <p class="text-slate-200 font-medium">Paris CDG → São Paulo GRU (17:20)</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-jp-night border border-jp-cardborder space-y-2 text-xs">
+              <div class="flex justify-between text-jp-subtle">
+                <span class="font-bold text-white font-mono">G3-1290 (GOL)</span>
+                <span class="font-mono text-jp-gold">15/09 • 08:50</span>
+              </div>
+              <p class="text-slate-200 font-medium">São Paulo GRU → Chapecó XAP (10:25)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Baggage & Takkyubin Logistics Guide -->
+        <div class="p-5 rounded-2xl bg-jp-night/70 border border-jp-cardborder space-y-3 text-xs">
+          <h5 class="text-xs font-mono uppercase text-jp-gold font-bold flex items-center gap-2">
+            <i class="fa-solid fa-truck-fast text-amber-400"></i> Estratégia de Bagagem & Envio via Yamato Takkyubin
+          </h5>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-300 leading-relaxed">
+            <div>
+              <strong class="text-white block mb-1">📦 Regras a Bordo:</strong>
+              1 mala de 23kg despachada + 1 mala de bordo (12kg) + 1 mochila pessoal com notebook/documentos.
+            </div>
+            <div>
+              <strong class="text-white block mb-1">🚚 Despacho no 7-Eleven (05/09):</strong>
+              No sábado à noite (05/09), envie a mala de 23kg direto do 7-Eleven de Tóquio para o Faminess em Quioto por <strong>~¥2.530 (tamanho 160)</strong>. Entrega na <strong>segunda (07/09)</strong> — no domingo, viaje leve com a mochila para o Monte Fuji e Shinkansen.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==================== TAB 4: HOSPEDAGENS ==================== -->
+    <div id="tab-hospedagem" class="tab-content hidden space-y-6">
+      
+      <!-- Hospedagem 1: Tóquio 1 (CONFIRMADO AIRBNB) -->
+      <div class="bg-jp-card border-2 border-emerald-500/60 rounded-3xl p-6 space-y-4 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        
+        <div class="flex items-center justify-between flex-wrap gap-4 border-b border-jp-cardborder pb-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-mono font-bold uppercase tracking-wider border border-emerald-500/30">
+                1. Tóquio 1 • Confirmado & Pago (6x sem juros)
+              </span>
+              <span class="text-xs text-jp-subtle font-mono">Airbnb: ••••••••</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mt-1">
+              Edifício Ciel Hills (Ap 201) — Ao lado da Tokyo Skytree
+            </h3>
+            <p class="text-xs text-slate-300 mt-0.5 font-mono">
+              📍 4-2-12 Narihira, Sumida-ku, Tokyo 130-0002 (東京都墨田区業平4-2-12)
+            </p>
+          </div>
+          <div class="text-right">
+            <span class="text-xs text-jp-subtle block">Check-in / Checkout</span>
+            <span class="text-sm font-bold text-white font-mono">01/09 (16:00) a 06/09 (10:00)</span>
+            <span class="text-xs text-emerald-400 font-mono block font-bold">5 Noites em Tóquio</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+          <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder">
+            <span class="text-jp-subtle block">Anfitrião:</span>
+            <span class="font-mono font-bold text-white text-sm">Daigo</span>
+            <span class="text-[10px] text-emerald-400 block">Host Verificado</span>
+            <span class="text-[10px] text-jp-subtle block font-mono">Tel: 080-••••-••••</span>
+          </div>
+          <div class="p-3 bg-jp-night rounded-2xl border border-emerald-500/40 bg-emerald-950/20">
+            <span class="text-emerald-400 block font-bold">Entrada Principal:</span>
+            <span class="font-mono font-black text-emerald-300 text-sm tracking-wider">•••••</span>
+            <span class="block font-mono text-[10px] text-slate-400">Teclado numérico na porta</span>
+          </div>
+          <div class="p-3 bg-jp-night rounded-2xl border border-sky-500/40 bg-sky-950/20">
+            <span class="text-sky-400 block font-bold">Senha do Quarto:</span>
+            <span class="font-mono font-black text-sky-300 text-xs tracking-wider">Tablet 1º andar</span>
+            <span class="block font-mono text-[10px] text-slate-400">Inserir reserva: ••••••••</span>
+          </div>
+          <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder">
+            <span class="text-jp-subtle block">Acomodação:</span>
+            <span class="font-mono font-bold text-jp-gold">Ap 201 (Max 5)</span>
+            <span class="block font-mono text-[10px] text-slate-400">Wi-Fi: <strong class="text-white">•••••••••••</strong></span>
+            <span class="block font-mono text-[10px] text-slate-400">Senha: <strong class="text-sky-300">••••••••</strong></span>
+          </div>
+          <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder">
+            <span class="text-jp-subtle block">Valor Total Pago:</span>
+            <span class="font-mono font-bold text-emerald-400 text-sm">R$ —</span>
+            <span class="text-[10px] text-slate-400 block font-mono">R$ 252,31 / noite</span>
+          </div>
+        </div>
+
+        <div class="p-3 bg-jp-night/60 rounded-2xl border border-jp-cardborder text-xs text-slate-300 flex items-center justify-between flex-wrap gap-2">
+          <div>
+            📍 <strong>Acesso do Aeroporto de Haneda:</strong> No Terminal 3, pegue a linha direta <em>Keikyu / Toei Asakusa Line</em> até <strong>Oshiage (Skytree)</strong> (38 min sem baldeação). A 4 min a pé da estação.
+          </div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <a href="https://www.onestayapp.com/v2/checkin/booking?defaultShowQrcode=&checkinCode=••••••••&pinCode=••••••••" target="_blank" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold font-mono transition-all inline-flex items-center gap-1.5 shadow-md">
+              <i class="fa-solid fa-key"></i> Chave Digital (OneStayApp)
+            </a>
+            <a href="https://www.google.com/maps/search/?api=1&query=4-2-12+Narihira+Sumida-ku+Tokyo" target="_blank" class="px-3.5 py-1.5 bg-sky-600/20 hover:bg-sky-600/30 text-sky-400 border border-sky-500/30 rounded-xl text-xs font-bold font-mono transition-all inline-flex items-center gap-1.5">
+              <i class="fa-solid fa-location-dot"></i> Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hospedagem 2: Quioto (CONFIRMADO AIRBNB) -->
+      <div class="bg-jp-card border-2 border-emerald-500/60 rounded-3xl p-6 space-y-4 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        
+        <div class="flex items-center justify-between flex-wrap gap-4 border-b border-jp-cardborder pb-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-mono font-bold uppercase tracking-wider border border-emerald-500/30">
+                2. Quioto • Confirmado & Pago (6x sem juros)
+              </span>
+              <span class="text-xs text-jp-subtle font-mono">Airbnb: ••••••••</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mt-1">
+              Faminess Kyoto (Ap 503) — A 3 min da Kyoto Station
+            </h3>
+            <p class="text-xs text-slate-300 mt-0.5 font-mono">
+              📍 41-1 Higashikujō Kamitonodachō, Minami-ku, Kyoto 601-8002 (京都府京都市南区東九条上殿田町41-1)
+            </p>
+          </div>
+          <div class="text-right">
+            <span class="text-xs text-jp-subtle block">Check-in / Checkout</span>
+            <span class="text-sm font-bold text-white font-mono">06/09 (15:00) a 09/09 (10:00)</span>
+            <span class="text-xs text-emerald-400 font-mono block font-bold">3 Noites em Quioto</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+          <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder">
+            <span class="text-jp-subtle block">Anfitrião:</span>
+            <span class="font-mono font-bold text-white text-sm">大輔 (Daisuke)</span>
+            <span class="text-[10px] text-emerald-400 block">Superhost (10 anos)</span>
+            <span class="text-[10px] text-jp-subtle block font-mono">Tel: 075-525-7575</span>
+          </div>
+          <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder">
+            <span class="text-jp-subtle block">Acomodação:</span>
+            <span class="font-mono font-bold text-white">Ap 503 (Cama Casal)</span>
+            <span class="text-[10px] text-slate-400 block">Elevador & Cozinha</span>
+          </div>
+          <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder">
+            <span class="text-jp-subtle block">Lavanderia & Acesso:</span>
+            <span class="font-mono font-bold text-jp-gold">Teclado Numérico</span>
+            <span class="block font-mono text-[10px] text-slate-400">Máquina de Lavar</span>
+          </div>
+          <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder">
+            <span class="text-jp-subtle block">Valor Total Pago:</span>
+            <span class="font-mono font-bold text-emerald-400 text-sm">R$ 721,36</span>
+            <span class="text-[10px] text-slate-400 block font-mono">6x de R$ 120,23</span>
+          </div>
+        </div>
+
+        <div class="p-3 bg-jp-night/60 rounded-2xl border border-jp-cardborder text-xs text-slate-300 flex items-center justify-between flex-wrap gap-2">
+          <div>
+            📍 <strong>Acesso & Localização:</strong> Saia pela saída sul (Hachijo Exit) da Kyoto Station e caminhe 3 minutos. Prédio com elevador e FamilyMart na esquina. Check-in com teclado numérico.
+          </div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <a href="https://drive.google.com/file/d/1vctTCWkO-tRUL4waJ1Z7CAKY1bYG8-A6/view?usp=drive_link" target="_blank" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold font-mono transition-all inline-flex items-center gap-1.5 shadow-md">
+              <i class="fa-solid fa-key"></i> Como Obter a Chave (PDF)
+            </a>
+            <a href="https://drive.google.com/file/d/19Mvybbl5wcOvYFlXp8cwGpTc7Ze4_UCk/view?usp=drive_link" target="_blank" class="px-3.5 py-1.5 bg-jp-gold/20 hover:bg-jp-gold/30 text-jp-gold border border-jp-gold/40 rounded-xl text-xs font-bold font-mono transition-all inline-flex items-center gap-1.5">
+              <i class="fa-solid fa-map-location-dot"></i> Mapa da Estação (PDF)
+            </a>
+            <a href="https://maps.app.goo.gl/ZBUZTGMBwtC9vULa6" target="_blank" class="px-3.5 py-1.5 bg-sky-600/20 hover:bg-sky-600/30 text-sky-400 border border-sky-500/30 rounded-xl text-xs font-bold font-mono transition-all inline-flex items-center gap-1.5">
+              <i class="fa-solid fa-location-dot"></i> Google Maps
+            </a>
+            <a href="https://wa.me/819092153106" target="_blank" class="px-3.5 py-1.5 bg-emerald-950/80 hover:bg-emerald-900 text-emerald-300 border border-emerald-700/50 rounded-xl text-xs font-bold font-mono transition-all inline-flex items-center gap-1.5">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp Anfitrião
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hospedagem 3: Osaka (CONFIRMADO AIRBNB) -->
+      <div class="bg-jp-card border-2 border-emerald-500/60 rounded-3xl p-6 space-y-4 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        
+        <div class="flex items-center justify-between flex-wrap gap-4 border-b border-jp-cardborder pb-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-mono font-bold uppercase tracking-wider border border-emerald-500/30">
+                3. Osaka • Confirmado & Pago (6x sem juros)
+              </span>
+              <span class="text-xs text-jp-subtle font-mono">Airbnb: ••••••••</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mt-1">
+              CHUANHouse Kuromon (川CASA黒門) — Perto de Namba & Dotonbori
+            </h3>
+            <p class="text-xs text-slate-300 mt-0.5 font-mono">
+              📍 1-1-17 Nipponbashihigashi, Naniwa-ku, Osaka 556-0006 (大阪府大阪市浪速区日本橋東1-1-17)
+            </p>
+          </div>
+          <div class="text-right">
+            <span class="text-xs text-jp-subtle block">Check-in / Checkout</span>
+            <span class="text-sm font-bold text-white font-mono">09/09 (16:00) a 11/09 (10:00)</span>
+            <span class="text-xs text-emerald-400 font-mono block font-bold">2 Noites em Osaka</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+          <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder">
+            <span class="text-jp-subtle block">Anfitrião:</span>
+            <span class="font-mono font-bold text-white text-sm">黒門 (Kuromon)</span>
+            <span class="text-[10px] text-emerald-400 block">Top 1% dos Hóspedes</span>
+            <span class="text-[10px] text-jp-subtle block font-mono">Tel: +81 70-8927-5779</span>
+          </div>
+          <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder">
+            <span class="text-jp-subtle block">Acomodação:</span>
+            <span class="font-mono font-bold text-white">Quarto Privativo</span>
+            <span class="text-[10px] text-slate-400 block">Cama Casal & Cozinha</span>
+          </div>
+          <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder">
+            <span class="text-jp-subtle block">Lavanderia & Acesso:</span>
+            <span class="font-mono font-bold text-jp-gold">Cofre de Chaves</span>
+            <span class="block font-mono text-[10px] text-slate-400">Máquina de Lavar</span>
+          </div>
+          <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder">
+            <span class="text-jp-subtle block">Valor Total Pago:</span>
+            <span class="font-mono font-bold text-emerald-400 text-sm">R$ 309,31</span>
+            <span class="text-[10px] text-slate-400 block font-mono">6x de R$ 51,55</span>
+          </div>
+        </div>
+
+        <div class="p-3 bg-jp-night/60 rounded-2xl border border-jp-cardborder text-xs text-slate-300 flex items-center justify-between flex-wrap gap-2">
+          <div>
+            📍 <strong>Acesso & Localização:</strong> A passos do famoso Mercado Kuromon e a curta caminhada da estação Namba, do Santuário Namba Yasaka e de Dotonbori. Self check-in prático com cofre de chaves.
+          </div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <a href="https://www.onestayapp.com/s/eky8osz" target="_blank" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold font-mono transition-all inline-flex items-center gap-1.5 shadow-md">
+              <i class="fa-solid fa-id-card"></i> Pré-Check-in (OneStayApp)
+            </a>
+            <a href="https://www.google.com/maps/search/?api=1&query=1-1-17+Nipponbashihigashi+Naniwa+Osaka" target="_blank" class="px-3.5 py-1.5 bg-sky-600/20 hover:bg-sky-600/30 text-sky-400 border border-sky-500/30 rounded-xl text-xs font-bold font-mono transition-all inline-flex items-center gap-1.5">
+              <i class="fa-solid fa-location-dot"></i> Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hospedagem 4: Tóquio 2 (CONFIRMADO AIRBNB) -->
+      <div class="bg-jp-card border-2 border-emerald-500/60 rounded-3xl p-6 space-y-4 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        
+        <div class="flex items-center justify-between flex-wrap gap-4 border-b border-jp-cardborder pb-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-mono font-bold uppercase tracking-wider border border-emerald-500/30">
+                4. Tóquio 2 (Final) • Confirmado & Pago (6x sem juros)
+              </span>
+              <span class="text-xs text-emerald-300 font-mono">Airbnb: ••••••••</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mt-1">
+              Misuji Kuramae Rooftop (Glass House & Terraço Panorâmico)
+            </h3>
+            <p class="text-xs text-slate-300 mt-0.5 font-mono">
+              📍 1-3-18 Misuji, Taito City, Tokyo 111-0055 (東京都台東区三筋1-3-18)
+            </p>
+          </div>
+          <div class="text-right">
+            <span class="text-xs text-jp-subtle block">Check-in / Checkout</span>
+            <span class="text-sm font-bold text-white font-mono">11/09 (15:00) a 13/09 (11:00)</span>
+            <span class="text-xs text-emerald-400 font-mono block font-bold">2 Noites em Tóquio</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+          <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder">
+            <span class="text-jp-subtle block">Anfitrião:</span>
+            <span class="font-mono font-bold text-white text-sm">Lu</span>
+            <span class="text-[10px] text-emerald-400 block">Host Superhost</span>
+            <span class="text-[10px] text-slate-400 block">Comunicação Airbnb</span>
+          </div>
+          <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder">
+            <span class="text-jp-subtle block">Acomodação:</span>
+            <span class="font-mono font-bold text-white">Rooftop + Glass House</span>
+            <span class="text-[10px] text-slate-400 block">Vista Panorâmica</span>
+          </div>
+          <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder">
+            <span class="text-jp-subtle block">Acesso & Chave:</span>
+            <span class="font-mono font-bold text-jp-gold">Key Lockbox</span>
+            <span class="block font-mono text-[10px] text-slate-400">Self Check-in</span>
+          </div>
+          <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder">
+            <span class="text-jp-subtle block">Valor Total Pago:</span>
+            <span class="font-mono font-bold text-emerald-400 text-sm">R$ 672,83</span>
+            <span class="text-[10px] text-slate-400 block font-mono">6x de R$ 112,14</span>
+          </div>
+        </div>
+
+        <div class="p-3 bg-jp-night/60 rounded-2xl border border-emerald-500/30 text-xs text-slate-300 flex items-center justify-between flex-wrap gap-2">
+          <div>
+            📍 <strong>Localização Estratégica & Haneda:</strong> No bairro descolado de Kuramae/Asakusa, próximo à estação Kuramae (Linha Asakusa) que tem metrô direto para o Terminal 3 do Aeroporto de Haneda sem precisar de baldeação.
+          </div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <a href="https://www.google.com/maps/search/?api=1&query=1-3-18+Misuji+Taito+City+Tokyo" target="_blank" class="px-3.5 py-1.5 bg-sky-600/20 hover:bg-sky-600/30 text-sky-400 border border-sky-500/30 rounded-xl text-xs font-bold font-mono transition-all inline-flex items-center gap-1.5">
+              <i class="fa-solid fa-location-dot"></i> Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== TAB 5: DIETA ADVENTISTA ==================== -->
+    <div id="tab-alimentacao" class="tab-content hidden space-y-6">
+      
+      <!-- Interactive Flashcard for Waiter -->
+      <div class="bg-gradient-to-br from-jp-card via-jp-card to-amber-950/20 border-2 border-jp-gold/50 rounded-3xl p-6 space-y-4 shadow-xl">
+        <div class="flex items-center justify-between flex-wrap gap-3">
+          <div class="flex items-center gap-2.5">
+            <i class="fa-solid fa-language text-jp-gold text-2xl"></i>
+            <div>
+              <h3 class="text-base font-bold text-white">Cartão de Garçom em Japonês (Mostre na Mesa)</h3>
+              <p class="text-xs text-jp-subtle">Explica exatamente a restrição sem porco e sem álcool</p>
+            </div>
+          </div>
+          <button onclick="copyJapaneseCard()" id="copy-card-btn" class="px-4 py-2 bg-jp-gold/15 hover:bg-jp-gold/25 text-jp-gold border border-jp-gold/40 rounded-xl text-xs font-bold font-mono transition-all flex items-center gap-2 shadow-md">
+            <i class="fa-regular fa-copy"></i> Copiar Texto em Japonês
+          </button>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-jp-night border border-jp-cardborder font-serif text-lg sm:text-2xl text-white leading-loose tracking-wide select-all shadow-inner">
+          【食事制限のお願い】<br>
+          私は<strong>豚肉</strong>（豚エキス、ラード、ゼラチン含む）および<strong>アルコール</strong>（みりん、料理酒含む）を食べることができません。<br>
+          <strong>牛肉、鶏肉、魚介類、野菜、卵、豆腐</strong>は食べられます。<br>
+          この料理には豚肉やアルコールが入っていますか？
+        </div>
+
+        <div class="flex items-center justify-between text-xs text-slate-300 pt-1 flex-wrap gap-2">
+          <span>💡 <em>Dica de Ouro:</em> Basta apontar para a tela do celular. Os atendentes japoneses são muito atenciosos e verificam com a cozinha na hora!</span>
+          <span class="text-jp-gold font-mono font-bold">100% Seguro para Adventistas</span>
+        </div>
+      </div>
+
+      <!-- Safe Restaurants Directory -->
+      <div class="space-y-3">
+        <h3 class="text-base font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-circle-check text-emerald-400"></i> Diretório de Restaurantes Seguros & Halal Certificados
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          
+          <!-- Restaurant 1: Gyumon Shibuya -->
+          <div class="bg-jp-card border border-jp-cardborder rounded-3xl p-5 space-y-3 hover:border-slate-600 transition-all">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-bold text-jp-crimson font-mono uppercase flex items-center gap-1"><i class="fa-solid fa-fire"></i> Yakiniku Wagyu</span>
+              <span class="text-emerald-400 font-bold font-mono">~¥3.500 (R$ 130)</span>
+            </div>
+            <h4 class="font-bold text-white text-lg">Gyumon Wagyu (Shibuya)</h4>
+            <p class="text-xs text-slate-300">
+              Churrasco japonês nobre na brasa com cortes de Wagyu bovino certificado Halal e grelha individual.
+            </p>
+            <div class="pt-2 border-t border-jp-cardborder flex items-center justify-between">
+              <span class="text-[11px] text-jp-subtle font-mono">📍 Shibuya, Tóquio</span>
+              <a href="https://www.google.com/maps/search/?api=1&query=Gyumon+Shibuya+Tokyo" target="_blank" class="text-sky-400 hover:underline font-mono text-xs inline-flex items-center gap-1"><i class="fa-solid fa-location-dot"></i> Maps</a>
+            </div>
+          </div>
+
+          <!-- Restaurant 2: Yakiniku Panga -->
+          <div class="bg-jp-card border border-jp-cardborder rounded-3xl p-5 space-y-3 hover:border-slate-600 transition-all">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-bold text-jp-gold font-mono uppercase flex items-center gap-1"><i class="fa-solid fa-award"></i> Wagyu A5 Halal</span>
+              <span class="text-emerald-400 font-bold font-mono">~¥4.500 (R$ 165)</span>
+            </div>
+            <h4 class="font-bold text-white text-lg">Yakiniku Panga (Okachimachi)</h4>
+            <p class="text-xs text-slate-300">
+              Cortes supremos de Wagyu A5 com selo Halal oficial. Jantar especial no <strong>sábado (12/09) às 19:00</strong>, após o fim do Shabat (o restaurante abre às 17:00).
+            </p>
+            <div class="pt-2 border-t border-jp-cardborder flex items-center justify-between">
+              <span class="text-[11px] text-jp-subtle font-mono">📍 Taito/Okachimachi, Tóquio</span>
+              <a href="https://www.google.com/maps/search/?api=1&query=Yakiniku+Panga+Okachimachi+Tokyo" target="_blank" class="text-sky-400 hover:underline font-mono text-xs inline-flex items-center gap-1"><i class="fa-solid fa-location-dot"></i> Maps</a>
+            </div>
+          </div>
+
+          <!-- Restaurant 3: Ayam-YA Okachimachi & Karasuma -->
+          <div class="bg-jp-card border border-jp-cardborder rounded-3xl p-5 space-y-3 hover:border-slate-600 transition-all">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-bold text-emerald-400 font-mono uppercase flex items-center gap-1"><i class="fa-solid fa-bowl-food"></i> Lámen Halal</span>
+              <span class="text-emerald-400 font-bold font-mono">~¥1.100 (R$ 40)</span>
+            </div>
+            <h4 class="font-bold text-white text-lg">Ayam-YA (Tóquio & Quioto)</h4>
+            <p class="text-xs text-slate-300">
+              Caldo denso e saboroso feito 100% de frango, zero porco e zero mirin. O lámen mais elogiado do Japão.
+            </p>
+            <div class="pt-2 border-t border-jp-cardborder flex items-center justify-between">
+              <span class="text-[11px] text-jp-subtle font-mono">📍 Okachimachi (TYO) & Karasuma (KYO)</span>
+              <a href="https://www.google.com/maps/search/?api=1&query=Halal+Ramen+Ayam-YA+Okachimachi" target="_blank" class="text-sky-400 hover:underline font-mono text-xs inline-flex items-center gap-1"><i class="fa-solid fa-location-dot"></i> Maps</a>
+            </div>
+          </div>
+
+          <!-- Restaurant 4: CoCo Ichibanya Halal -->
+          <div class="bg-jp-card border border-jp-cardborder rounded-3xl p-5 space-y-3 hover:border-slate-600 transition-all">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-bold text-amber-400 font-mono uppercase flex items-center gap-1"><i class="fa-solid fa-pepper-hot"></i> Curry Halal</span>
+              <span class="text-emerald-400 font-bold font-mono">~¥1.000 (R$ 37)</span>
+            </div>
+            <h4 class="font-bold text-white text-lg">CoCo Ichibanya Halal Kabukicho</h4>
+            <p class="text-xs text-slate-300">
+              Filial 100% Halal em Shinjuku: arroz japonês com curry bovino ou frango sem traços de porco.
+            </p>
+            <div class="pt-2 border-t border-jp-cardborder flex items-center justify-between">
+              <span class="text-[11px] text-jp-subtle font-mono">📍 Kabukicho, Shinjuku, Tóquio</span>
+              <a href="https://www.google.com/maps/search/?api=1&query=CoCo+Ichibanya+Halal+Kabukicho+Tokyo" target="_blank" class="text-sky-400 hover:underline font-mono text-xs inline-flex items-center gap-1"><i class="fa-solid fa-location-dot"></i> Maps</a>
+            </div>
+          </div>
+
+          <!-- Restaurant 5: Matsuri Halal Osaka -->
+          <div class="bg-jp-card border border-jp-cardborder rounded-3xl p-5 space-y-3 hover:border-slate-600 transition-all">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-bold text-purple-400 font-mono uppercase flex items-center gap-1"><i class="fa-solid fa-utensils"></i> Cozinha Osaka</span>
+              <span class="text-emerald-400 font-bold font-mono">~¥1.200 (R$ 44)</span>
+            </div>
+            <h4 class="font-bold text-white text-lg">Matsuri Halal Osaka</h4>
+            <p class="text-xs text-slate-300">
+              Prove o clássico Okonomiyaki e Okonomiyaki bovino/vegetariano de Osaka preparados com receita segura sem carne suína.
+            </p>
+            <div class="pt-2 border-t border-jp-cardborder flex items-center justify-between">
+              <span class="text-[11px] text-jp-subtle font-mono">📍 Fukushima-ku, Osaka</span>
+              <a href="https://www.google.com/maps/search/?api=1&query=Halal+Restaurant+Matsuri+Osaka" target="_blank" class="text-sky-400 hover:underline font-mono text-xs inline-flex items-center gap-1"><i class="fa-solid fa-location-dot"></i> Maps</a>
+            </div>
+          </div>
+
+          <!-- Restaurant 6: Asakusa Sushiken -->
+          <div class="bg-jp-card border border-jp-cardborder rounded-3xl p-5 space-y-3 hover:border-slate-600 transition-all">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-bold text-sky-400 font-mono uppercase flex items-center gap-1"><i class="fa-solid fa-fish"></i> Sushi & Tempurá</span>
+              <span class="text-emerald-400 font-bold font-mono">~¥2.200 (R$ 80)</span>
+            </div>
+            <h4 class="font-bold text-white text-lg">Asakusa Sushiken (Halal)</h4>
+            <p class="text-xs text-slate-300">
+              O primeiro sushi bar Halal do Japão. Excelentes opções de Wagyu selado e tempurás crocantes de legumes frescos.
+            </p>
+            <div class="pt-2 border-t border-jp-cardborder flex items-center justify-between">
+              <span class="text-[11px] text-jp-subtle font-mono">📍 Asakusa, Tóquio</span>
+              <a href="https://www.google.com/maps/search/?api=1&query=Asakusa+Sushiken+Tokyo" target="_blank" class="text-sky-400 hover:underline font-mono text-xs inline-flex items-center gap-1"><i class="fa-solid fa-location-dot"></i> Maps</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== TAB 6: CLIMA & ROUPAS ==================== -->
+    <div id="tab-clima" class="tab-content hidden space-y-6">
+      <div class="bg-jp-card border border-jp-cardborder rounded-3xl p-6 space-y-5 shadow-xl">
+        <div class="flex items-center justify-between flex-wrap gap-2 border-b border-jp-cardborder pb-4">
+          <div>
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-cloud-sun text-amber-400"></i> Guia de Clima & Roupas de Setembro 2026
+            </h3>
+            <p class="text-xs text-jp-subtle">Temperaturas médias, umidade e recomendações para cada região visitada</p>
+          </div>
+          <span class="px-3 py-1 bg-amber-500/10 text-amber-400 font-mono font-bold text-xs rounded-xl border border-amber-500/30">
+            Transição Verão → Início do Outono
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 pt-2">
+          <!-- Tóquio & Osaka -->
+          <div class="p-5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-3">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-white text-sm flex items-center gap-2">
+                <i class="fa-solid fa-city text-jp-crimson"></i> Tóquio & Osaka
+              </h4>
+              <span class="text-xs font-mono font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-md">24°C a 29°C</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Clima quente e agradável durante o dia, fresco à noite. Sensação térmica de verão suave.
+            </p>
+            <div class="space-y-1.5 text-xs text-slate-300 border-t border-jp-cardborder pt-2">
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Camisetas de algodão leves e respiráveis</div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Bermudas e calças leves confortáveis</div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Óculos de sol e protetor solar</div>
+            </div>
+          </div>
+
+          <!-- Quioto & Nara -->
+          <div class="p-5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-3">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-white text-sm flex items-center gap-2">
+                <i class="fa-solid fa-torii-gate text-jp-gold"></i> Quioto & Nara
+              </h4>
+              <span class="text-xs font-mono font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-md">23°C a 30°C</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Cercadas por montanhas, com bastante sol nos pátios abertos dos templos históricos.
+            </p>
+            <div class="space-y-1.5 text-xs text-slate-300 border-t border-jp-cardborder pt-2">
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <strong>Meias limpas e sem furos</strong> (tira o sapato nos templos!)</div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Calçados fáceis de calçar e descalçar</div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Garrafa de chá gelado nas vending machines</div>
+            </div>
+          </div>
+
+          <!-- Monte Fuji & Kawaguchiko -->
+          <div class="p-5 rounded-2xl bg-jp-night border border-sky-500/40 bg-sky-950/20 space-y-3">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-white text-sm flex items-center gap-2">
+                <i class="fa-solid fa-mountain text-sky-400"></i> Monte Fuji (Lagos)
+              </h4>
+              <span class="text-xs font-mono font-bold text-sky-400 bg-sky-500/20 px-2 py-0.5 rounded-md">14°C a 19°C</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Clima serrano e brisa fresca vinda dos lagos e da montanha. Mais frio de manhã cedo.
+            </p>
+            <div class="space-y-1.5 text-xs text-slate-300 border-t border-jp-cardborder pt-2">
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> <strong>1 casaco corta-vento leve ou moletom</strong></div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Calça comprida flexível para caminhada</div>
+              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Mochila leve para guardar o agasalho à tarde</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footwear & Umbrella Warnings -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-3">
+          <div class="p-4 rounded-2xl bg-jp-card border border-emerald-500/40 space-y-2">
+            <h5 class="text-xs font-mono uppercase text-emerald-400 font-bold flex items-center gap-2">
+              <i class="fa-solid fa-shoe-prints"></i> Regra de Ouro do Calçado (15.000 a 20.000 Passos/Dia)
+            </h5>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Você vai caminhar de 12 a 18 km por dia. Leve <strong>1 ou 2 pares de tênis esportivos já amaciados</strong> com excelente amortecimento (ex: Ultraboost, Asics Gel, Nike Invincible). Nunca viaje com tênis novo direto da caixa!
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-jp-card border border-amber-500/40 space-y-2">
+            <h5 class="text-xs font-mono uppercase text-amber-400 font-bold flex items-center gap-2">
+              <i class="fa-solid fa-umbrella"></i> Chuvas Rápidas & Guarda-Chuva Transparente
+            </h5>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Setembro pode ter pancadas rápidas de chuva de verão. Qualquer loja de conveniência 7-Eleven ou Lawson vende o clássico <strong>guarda-chuva transparente japonês por apenas ¥500 (R$ 18)</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 7: MODO SOBREVIVÊNCIA (FLASHCARDS) ==================== -->
+    <div id="tab-frases" class="tab-content hidden space-y-6">
+      <div class="bg-jp-card border border-jp-cardborder rounded-3xl p-6 space-y-5 shadow-xl">
+        <div class="flex items-center justify-between flex-wrap gap-2 border-b border-jp-cardborder pb-4">
+          <div>
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-comments text-sky-400"></i> Modo Sobrevivência: Flashcards em Japonês Grande
+            </h3>
+            <p class="text-xs text-jp-subtle">Toque em qualquer botão para copiar o texto ou mostre o card na tela para o atendente</p>
+          </div>
+          <span class="px-3 py-1 bg-sky-500/10 text-sky-400 font-mono font-bold text-xs rounded-xl border border-sky-500/30">
+            Comunicação Instantânea
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2">
+          
+          <!-- Card 1: Sem Porco / Sem Álcool -->
+          <div class="p-5 rounded-2xl bg-jp-night border-2 border-red-500/80 space-y-3 shadow-xl hover:border-red-500 transition-all">
+            <div class="flex justify-between items-center">
+              <span class="px-2.5 py-0.5 rounded-md bg-red-600 text-white text-[10px] font-mono font-bold uppercase">Alimentação • Crítico</span>
+              <button onclick="copyFlashcard('豚肉（豚骨、ラード、エキス含む）やアルコールは一切食べられません。この料理に入っていますか？', 'Frase de Dieta')" class="text-xs text-jp-subtle hover:text-white flex items-center gap-1"><i class="fa-regular fa-copy"></i> Copiar</button>
+            </div>
+            <div class="text-xl sm:text-2xl font-bold font-serif text-white tracking-wide leading-relaxed">
+              豚肉やアルコールは一切食べられません。<br>この料理に入っていますか？
+            </div>
+            <div class="text-xs font-mono text-amber-400">
+              Butaniku ya arukooru wa issai taberaremasen. Kono ryouri ni haitte imasu ka?
+            </div>
+            <p class="text-xs text-slate-300 border-t border-jp-cardborder pt-2">
+              👉 <em>"Não posso comer carne de porco (nem banha/extrato) e nem álcool. Este prato contém esses ingredientes?"</em>
+            </p>
+          </div>
+
+          <!-- Card 2: Pagar com Suica -->
+          <div class="p-5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-3 shadow-xl hover:border-emerald-500/50 transition-all">
+            <div class="flex justify-between items-center">
+              <span class="px-2.5 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 text-[10px] font-mono font-bold uppercase">Pagamento</span>
+              <button onclick="copyFlashcard('Suica（スイカ）で支払えますか？', 'Frase Suica')" class="text-xs text-jp-subtle hover:text-white flex items-center gap-1"><i class="fa-regular fa-copy"></i> Copiar</button>
+            </div>
+            <div class="text-xl sm:text-2xl font-bold font-serif text-white tracking-wide leading-relaxed">
+              Suica（スイカ）で<br>支払えますか？
+            </div>
+            <div class="text-xs font-mono text-emerald-400">
+              Suika de shiharaemasu ka?
+            </div>
+            <p class="text-xs text-slate-300 border-t border-jp-cardborder pt-2">
+              👉 <em>"Posso pagar com cartão Suica / Apple Pay?"</em>
+            </p>
+          </div>
+
+          <!-- Card 3: Tax-Free -->
+          <div class="p-5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-3 shadow-xl hover:border-amber-500/50 transition-all">
+            <div class="flex justify-between items-center">
+              <span class="px-2.5 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-mono font-bold uppercase">Compras</span>
+              <button onclick="copyFlashcard('免税（Tax-Free）をお願いできますか？', 'Frase Tax-Free')" class="text-xs text-jp-subtle hover:text-white flex items-center gap-1"><i class="fa-regular fa-copy"></i> Copiar</button>
+            </div>
+            <div class="text-xl sm:text-2xl font-bold font-serif text-white tracking-wide leading-relaxed">
+              免税（Tax-Free）を<br>お願いします。
+            </div>
+            <div class="text-xs font-mono text-amber-400">
+              Menzei (Taksu Furii) o onegaishimasu.
+            </div>
+            <p class="text-xs text-slate-300 border-t border-jp-cardborder pt-2">
+              👉 <em>"Gostaria de solicitar o Tax-Free (apresente o passaporte físico no caixa)."</em>
+            </p>
+          </div>
+
+          <!-- Card 4: Banheiro -->
+          <div class="p-5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-3 shadow-xl hover:border-sky-500/50 transition-all">
+            <div class="flex justify-between items-center">
+              <span class="px-2.5 py-0.5 rounded-md bg-sky-500/20 text-sky-300 text-[10px] font-mono font-bold uppercase">Localização</span>
+              <button onclick="copyFlashcard('お手洗いはどこですか？', 'Frase Banheiro')" class="text-xs text-jp-subtle hover:text-white flex items-center gap-1"><i class="fa-regular fa-copy"></i> Copiar</button>
+            </div>
+            <div class="text-xl sm:text-2xl font-bold font-serif text-white tracking-wide leading-relaxed">
+              お手洗い（トイレ）は<br>どこですか？
+            </div>
+            <div class="text-xs font-mono text-sky-400">
+              Otearai (toire) wa doko desu ka?
+            </div>
+            <p class="text-xs text-slate-300 border-t border-jp-cardborder pt-2">
+              👉 <em>"Onde fica o banheiro?"</em>
+            </p>
+          </div>
+
+          <!-- Card 5: Pedir a Conta -->
+          <div class="p-5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-3 shadow-xl hover:border-amber-500/50 transition-all">
+            <div class="flex justify-between items-center">
+              <span class="px-2.5 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-mono font-bold uppercase">Restaurante</span>
+              <button onclick="copyFlashcard('お会計をお願いします。', 'Frase Conta')" class="text-xs text-jp-subtle hover:text-white flex items-center gap-1"><i class="fa-regular fa-copy"></i> Copiar</button>
+            </div>
+            <div class="text-xl sm:text-2xl font-bold font-serif text-white tracking-wide leading-relaxed">
+              お会計を<br>お願いします。
+            </div>
+            <div class="text-xs font-mono text-amber-400">
+              Okaikei o onegaishimasu.
+            </div>
+            <p class="text-xs text-slate-300 border-t border-jp-cardborder pt-2">
+              👉 <em>"A conta, por favor." (No Japão você leva a comanda ao caixa perto da saída).</em>
+            </p>
+          </div>
+
+          <!-- Card 6: Tirar Foto -->
+          <div class="p-5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-3 shadow-xl hover:border-pink-500/50 transition-all">
+            <div class="flex justify-between items-center">
+              <span class="px-2.5 py-0.5 rounded-md bg-pink-500/20 text-pink-300 text-[10px] font-mono font-bold uppercase">Cortesia</span>
+              <button onclick="copyFlashcard('写真を撮っていただけますか？', 'Frase Foto')" class="text-xs text-jp-subtle hover:text-white flex items-center gap-1"><i class="fa-regular fa-copy"></i> Copiar</button>
+            </div>
+            <div class="text-xl sm:text-2xl font-bold font-serif text-white tracking-wide leading-relaxed">
+              写真を撮って<br>いただけますか？
+            </div>
+            <div class="text-xs font-mono text-pink-400">
+              Shashin o totte itadakemasu ka?
+            </div>
+            <p class="text-xs text-slate-300 border-t border-jp-cardborder pt-2">
+              👉 <em>"Você poderia tirar uma foto para mim, por favor?"</em>
+            </p>
+          </div>
+
+          <!-- Card 7: Água sem Gelo -->
+          <div class="p-5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-3 shadow-xl hover:border-sky-500/50 transition-all">
+            <div class="flex justify-between items-center">
+              <span class="px-2.5 py-0.5 rounded-md bg-sky-500/20 text-sky-300 text-[10px] font-mono font-bold uppercase">Bebida</span>
+              <button onclick="copyFlashcard('氷なしのお水をお願いします。', 'Frase Água')" class="text-xs text-jp-subtle hover:text-white flex items-center gap-1"><i class="fa-regular fa-copy"></i> Copiar</button>
+            </div>
+            <div class="text-xl sm:text-2xl font-bold font-serif text-white tracking-wide leading-relaxed">
+              氷なしのお水を<br>お願いします。
+            </div>
+            <div class="text-xs font-mono text-sky-400">
+              Koori nashi no omizu o onegaishimasu.
+            </div>
+            <p class="text-xs text-slate-300 border-t border-jp-cardborder pt-2">
+              👉 <em>"Água sem gelo (em temperatura ambiente), por favor."</em>
+            </p>
+          </div>
+
+          <!-- Card 8: Despacho de Bagagem 7-Eleven -->
+          <div class="p-5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-3 shadow-xl hover:border-emerald-500/50 transition-all">
+            <div class="flex justify-between items-center">
+              <span class="px-2.5 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 text-[10px] font-mono font-bold uppercase">Bagagem</span>
+              <button onclick="copyFlashcard('宅急便（ヤマト運輸）で荷物を送りたいです。', 'Frase Takkyubin')" class="text-xs text-jp-subtle hover:text-white flex items-center gap-1"><i class="fa-regular fa-copy"></i> Copiar</button>
+            </div>
+            <div class="text-xl sm:text-2xl font-bold font-serif text-white tracking-wide leading-relaxed">
+              宅急便（ヤマト運輸）で<br>荷物を送りたいです。
+            </div>
+            <div class="text-xs font-mono text-emerald-400">
+              Takkyuubin (Yamato un'yu) de nimotsu o okuritai desu.
+            </div>
+            <p class="text-xs text-slate-300 border-t border-jp-cardborder pt-2">
+              👉 <em>"Gostaria de enviar uma mala via Takkyubin (Yamato) para outro hotel."</em>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 8: CONTATOS DE EMERGÊNCIA & APOIO ==================== -->
+    <div id="tab-emergencia" class="tab-content hidden space-y-6">
+
+      <!-- CARD OFICIAL DE SEGURO VIAGEM INTERNACIONAL (MY TRAVEL ASSIST - PEDIDO • apólice no app do seguro •) -->
+      <div class="glass-card rounded-3xl p-6 border-2 border-emerald-500/60 bg-emerald-950/20 space-y-4 shadow-2xl">
+        <div class="flex items-center justify-between flex-wrap gap-3 border-b border-jp-cardborder pb-4">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center text-2xl shadow-glow-emerald">
+              <i class="fa-solid fa-shield-heart"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="text-base sm:text-lg font-bold text-white">Seguro Viagem Internacional Oficial</h3>
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-mono font-bold text-xs border border-emerald-500/40 flex items-center gap-1">
+                  <i class="fa-solid fa-circle-check"></i> 100% EMITIDO & PAGO
+                </span>
+              </div>
+              <p class="text-xs text-slate-300">My Travel Assist (MTA 60 Mundo) • Pedido Seguros Promo <strong>• apólice no app do seguro •</strong></p>
+            </div>
+          </div>
+          
+          <a href="Roteiros%20de%20Viagem/Apolice_Seguro_Viagem_Fernando_Sonaglio.pdf" target="_blank" class="min-h-[44px] px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-mono font-bold text-xs sm:text-sm rounded-xl shadow-lg transition-all flex items-center gap-2 active:scale-95">
+            <i class="fa-solid fa-file-pdf text-base text-white"></i> Abrir Apólice Oficial (PDF)
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono">
+          <div class="p-3.5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-1">
+            <span class="text-slate-400 uppercase text-[10px] block">Despesa Médica (DMH)</span>
+            <span class="text-emerald-400 font-bold text-base">US$ 60.000</span>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-1">
+            <span class="text-slate-400 uppercase text-[10px] block">Seguro Bagagem 23kg</span>
+            <span class="text-sky-400 font-bold text-base">US$ 1.000</span>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-1">
+            <span class="text-slate-400 uppercase text-[10px] block">Reembolso Farmácia</span>
+            <span class="text-amber-400 font-bold text-base">US$ 600</span>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-1">
+            <span class="text-slate-400 uppercase text-[10px] block">Vigência (18 Dias)</span>
+            <span class="text-white font-bold text-xs">29/08 a 15/09/2026</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-jp-night border border-emerald-500/30 flex items-center justify-between flex-wrap gap-3 text-xs">
+          <div class="space-y-1">
+            <span class="font-bold text-white flex items-center gap-1.5 font-mono">
+              <i class="fa-solid fa-user-doctor text-emerald-400"></i> Telemedicina Albert Einstein 24h em Português
+            </span>
+            <p class="text-slate-300 text-[11px]">
+              Consultas médicas online em português via videochamada durante toda a estadia no Japão.
+            </p>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="tel:3140038442" class="min-h-[38px] px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-jp-cardborder text-xs font-mono font-bold transition-all flex items-center gap-1.5">
+              <i class="fa-solid fa-phone text-emerald-400"></i> Central Seguros Promo: (31) 4003-8442
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-jp-card border border-rose-500/40 rounded-3xl p-6 space-y-5 bg-rose-950/10 shadow-xl">
+        <div class="flex items-center justify-between flex-wrap gap-2 border-b border-jp-cardborder pb-4">
+          <div>
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-phone-volume text-rose-400"></i> Contatos de Emergência & Apoio ao Turista no Japão
+            </h3>
+            <p class="text-xs text-jp-subtle">Discagem direta, atendimento em inglês e apoio consular brasileiro 24 horas</p>
+          </div>
+          <span class="px-3 py-1 bg-rose-500/20 text-rose-300 font-mono font-bold text-xs rounded-xl border border-rose-500/40">
+            Plantão 24/7 Ativo
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pt-2">
+          
+          <!-- Polícia -->
+          <div class="p-5 rounded-2xl bg-jp-night border border-rose-500/30 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-rose-400 font-bold uppercase">Polícia do Japão</span>
+              <i class="fa-solid fa-shield-halved text-rose-400 text-lg"></i>
+            </div>
+            <a href="tel:110" class="text-3xl font-black text-white font-mono hover:text-rose-400 inline-block transition-all">110 <i class="fa-solid fa-phone text-xs ml-1"></i></a>
+            <p class="text-xs text-slate-300">
+              Gratuito de qualquer telefone ou celular. Possui tradução/intérprete em inglês.
+            </p>
+          </div>
+
+          <!-- Ambulância / Bombeiros -->
+          <div class="p-5 rounded-2xl bg-jp-night border border-rose-500/30 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-rose-400 font-bold uppercase">Ambulância / Bombeiros</span>
+              <i class="fa-solid fa-truck-medical text-rose-400 text-lg"></i>
+            </div>
+            <a href="tel:119" class="text-3xl font-black text-white font-mono hover:text-rose-400 inline-block transition-all">119 <i class="fa-solid fa-phone text-xs ml-1"></i></a>
+            <p class="text-xs text-slate-300">
+              Para emergências médicas graves e acidentes. Gratuito e prioritário.
+            </p>
+          </div>
+
+          <!-- Linha de Apoio Turista JNTO -->
+          <div class="p-5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-jp-gold font-bold uppercase">Apoio Turista JNTO (24h)</span>
+              <i class="fa-solid fa-headset text-jp-gold text-lg"></i>
+            </div>
+            <div class="text-xl font-bold text-jp-gold font-mono"><a href="tel:05038162720" class="hover:underline">050-3816-2720</a></div>
+            <p class="text-xs text-slate-300">
+              Linha oficial de turismo do Japão com atendimento em inglês 24 horas para dúvidas, orientações e suporte.
+            </p>
+          </div>
+
+          <!-- Consulado Geral do Brasil em Tóquio -->
+          <div class="p-5 rounded-2xl bg-jp-night border border-emerald-500/30 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-emerald-400 font-bold uppercase">Consulado do Brasil (Tóquio)</span>
+              <i class="fa-solid fa-flag text-emerald-400 text-lg"></i>
+            </div>
+            <div class="text-sm font-bold text-white font-mono"><a href="tel:+819069495328" class="hover:underline">+81 90-6949-5328</a></div>
+            <span class="text-[11px] text-emerald-400 block font-mono">Plantão 24h para emergências</span>
+            <p class="text-[11px] text-slate-300 border-t border-jp-cardborder pt-1">
+              Endereço: Shinagawa-ku, Higashi-Gotanda 1-13-12 (COI Gotanda 2F).
+            </p>
+          </div>
+
+          <!-- Hospital Internacional St. Luke's -->
+          <div class="p-5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-sky-400 font-bold uppercase">Hospital St. Luke's (Ginza)</span>
+              <i class="fa-solid fa-hospital text-sky-400 text-lg"></i>
+            </div>
+            <div class="text-base font-bold text-white font-mono">03-3541-5151</div>
+            <p class="text-xs text-slate-300">
+              Hospital internacional de referência em Tóquio com médicos fluentes em inglês.
+            </p>
+          </div>
+
+          <!-- Air France Japão -->
+          <div class="p-5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-jp-subtle font-bold uppercase">Air France Japão</span>
+              <i class="fa-solid fa-plane text-slate-300 text-lg"></i>
+            </div>
+            <div class="text-base font-bold text-white font-mono">+81 3-5767-4143</div>
+            <p class="text-xs text-slate-300">
+              Central de suporte a voos e reservas internacionais (Localizador: ••••••).
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Lost and Found Koban Tip -->
+        <div class="p-4 rounded-2xl bg-jp-night border border-jp-gold/40 space-y-1.5 mt-2">
+          <h5 class="text-xs font-mono uppercase text-jp-gold font-bold flex items-center gap-2">
+            <i class="fa-solid fa-box-open"></i> Perdeu Algo no Metrô ou na Rua? Procure o Koban (Posto Policial)!
+          </h5>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            O Japão tem uma taxa de recuperação de objetos perdidos superior a <strong>90%</strong>. Se esquecer carteira, passaporte ou celular em um trem, vá direto à central de achados e perdidos da estação (*Otoshimono*) ou no posto policial da esquina (*Koban*).
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 9: CONVERSOR JPY / BRL ==================== -->
+    <div id="tab-conversor" class="tab-content hidden space-y-6">
+      <div class="bg-jp-card border border-jp-cardborder rounded-3xl p-6 sm:p-8 max-w-2xl mx-auto space-y-6 shadow-2xl">
+        <div class="border-b border-jp-cardborder pb-4">
+          <span class="text-xs font-mono text-jp-gold uppercase font-bold flex items-center gap-1.5">
+            <i class="fa-solid fa-calculator text-emerald-400"></i> Câmbio Interativo
+          </span>
+          <h3 class="text-2xl font-bold text-white mt-1">Calculadora Iene Japonês (JPY) $\longleftrightarrow$ Real (BRL)</h3>
+          <p class="text-xs text-jp-subtle mt-1 font-mono">Taxa de referência: <strong>R$ 1,00 ≈ 27,00 JPY</strong> (ou ¥ 1.000 ≈ R$ 37,04)</p>
+        </div>
+
+        <!-- Conversion Inputs -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div class="space-y-2">
+            <label class="text-xs font-mono text-slate-300 font-bold flex items-center gap-1.5">
+              <span>🇯🇵 Valor em Ienes (¥ JPY):</span>
+            </label>
+            <div class="relative">
+              <span class="absolute left-3.5 top-3.5 text-jp-gold font-mono font-bold text-lg">¥</span>
+              <input type="number" id="input-jpy" value="1000" oninput="convertFromJpy()" class="w-full pl-9 pr-4 py-3 rounded-2xl bg-jp-night border border-jp-cardborder text-white font-mono font-bold text-xl focus:outline-none focus:border-red-500 shadow-inner">
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-xs font-mono text-slate-300 font-bold flex items-center gap-1.5">
+              <span>🇧🇷 Equivalente em Reais (R$ BRL):</span>
+            </label>
+            <div class="relative">
+              <span class="absolute left-3.5 top-3.5 text-emerald-400 font-mono font-bold text-lg">R$</span>
+              <input type="number" id="input-brl" value="37.04" oninput="convertFromBrl()" class="w-full pl-12 pr-4 py-3 rounded-2xl bg-jp-night border border-jp-cardborder text-emerald-400 font-mono font-bold text-xl focus:outline-none focus:border-emerald-500 shadow-inner">
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Conversion Chips -->
+        <div class="space-y-2 pt-2">
+          <span class="text-[11px] font-mono uppercase text-slate-400 font-bold block">Valores Rápidos (Toque para calcular):</span>
+          <div class="flex flex-wrap gap-2">
+            <button onclick="setJpyValue(500)" class="px-3 py-1.5 rounded-xl bg-jp-night hover:bg-slate-800 text-xs font-mono font-bold text-slate-200 border border-jp-cardborder transition-all">¥500</button>
+            <button onclick="setJpyValue(1000)" class="px-3 py-1.5 rounded-xl bg-jp-night hover:bg-slate-800 text-xs font-mono font-bold text-slate-200 border border-jp-cardborder transition-all">¥1.000</button>
+            <button onclick="setJpyValue(2000)" class="px-3 py-1.5 rounded-xl bg-jp-night hover:bg-slate-800 text-xs font-mono font-bold text-slate-200 border border-jp-cardborder transition-all">¥2.000</button>
+            <button onclick="setJpyValue(5000)" class="px-3 py-1.5 rounded-xl bg-jp-night hover:bg-slate-800 text-xs font-mono font-bold text-slate-200 border border-jp-cardborder transition-all">¥5.000</button>
+            <button onclick="setJpyValue(10000)" class="px-3 py-1.5 rounded-xl bg-jp-night hover:bg-slate-800 text-xs font-mono font-bold text-jp-gold border border-jp-gold/30 transition-all">¥10.000</button>
+            <button onclick="setJpyValue(20000)" class="px-3 py-1.5 rounded-xl bg-jp-night hover:bg-slate-800 text-xs font-mono font-bold text-emerald-400 border border-emerald-500/30 transition-all">¥20.000</button>
+            <button onclick="setJpyValue(50000)" class="px-3 py-1.5 rounded-xl bg-jp-night hover:bg-slate-800 text-xs font-mono font-bold text-sky-400 border border-sky-500/30 transition-all">¥50.000</button>
+          </div>
+        </div>
+
+        <!-- Everyday Price Table -->
+        <div class="border-t border-jp-cardborder pt-5">
+          <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-3 flex items-center gap-1.5">
+            <i class="fa-solid fa-tags text-amber-400"></i> Preços Médios Cotidianos no Japão
+          </h4>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-xs font-mono">
+            <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder flex flex-col justify-between">
+              <span class="text-slate-300">Água / Chá 500ml:</span>
+              <span class="text-emerald-400 font-bold mt-1">¥130 (R$ 4,80)</span>
+            </div>
+            <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder flex flex-col justify-between">
+              <span class="text-slate-300">Onigiri no 7-Eleven:</span>
+              <span class="text-emerald-400 font-bold mt-1">¥160 (R$ 5,90)</span>
+            </div>
+            <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder flex flex-col justify-between">
+              <span class="text-slate-300">Gyudon Yoshinoya:</span>
+              <span class="text-emerald-400 font-bold mt-1">¥550 (R$ 20,30)</span>
+            </div>
+            <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder flex flex-col justify-between">
+              <span class="text-slate-300">Lámen Halal Ayam-YA:</span>
+              <span class="text-emerald-400 font-bold mt-1">¥1.100 (R$ 40,70)</span>
+            </div>
+            <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder flex flex-col justify-between">
+              <span class="text-slate-300">Passagem Metrô 24h:</span>
+              <span class="text-emerald-400 font-bold mt-1">¥800 (R$ 29,60)</span>
+            </div>
+            <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder flex flex-col justify-between">
+              <span class="text-slate-300">Trem-Bala Nozomi:</span>
+              <span class="text-emerald-400 font-bold mt-1">¥14.170 (R$ 524)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 10: CHECKLIST INTERATIVO ==================== -->
+    <div id="tab-checklist" class="tab-content hidden space-y-6">
+      
+      <!-- Checklist Header & Progress Bar -->
+      <div class="bg-jp-card border border-jp-cardborder rounded-3xl p-6 space-y-4 shadow-xl">
+        <div class="flex items-center justify-between flex-wrap gap-4">
+          <div>
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-list-check text-purple-400"></i> Checklist Interativo com Auto-Salvamento
+            </h3>
+            <p class="text-xs text-jp-subtle">Seus itens marcados são salvos automaticamente no navegador (LocalStorage)</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="resetChecklist()" class="px-3.5 py-1.5 bg-jp-night hover:bg-slate-800 text-slate-300 border border-jp-cardborder rounded-xl text-xs font-mono transition-all">
+              <i class="fa-solid fa-rotate-left"></i> Redefinir Padrão
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Progress Bar -->
+        <div class="space-y-1.5">
+          <div class="flex justify-between text-xs font-mono font-bold">
+            <span class="text-slate-300" id="checklist-progress-text">Progresso Geral: 0 de 0 tarefas concluídas</span>
+            <span class="text-emerald-400" id="checklist-percentage">0%</span>
+          </div>
+          <div class="w-full h-3 rounded-full bg-jp-night border border-jp-cardborder overflow-hidden">
+            <div id="checklist-bar" class="h-full bg-gradient-to-r from-emerald-500 to-emerald-400 transition-all duration-300 w-0"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Checklist Categories -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Category 1: Documentos & Finanças -->
+        <div class="bg-jp-card border border-jp-cardborder rounded-3xl p-6 space-y-3">
+          <h4 class="text-xs font-mono uppercase text-jp-gold font-bold flex items-center gap-2 border-b border-jp-cardborder pb-2">
+            <i class="fa-solid fa-passport text-amber-400"></i> 1. Documentos & Finanças
+          </h4>
+          <div class="space-y-2 text-xs" id="checklist-group-1">
+            <!-- Items rendered via JS -->
+          </div>
+        </div>
+
+        <!-- Category 2: Hospedagens & Transportes -->
+        <div class="bg-jp-card border border-jp-cardborder rounded-3xl p-6 space-y-3">
+          <h4 class="text-xs font-mono uppercase text-sky-400 font-bold flex items-center gap-2 border-b border-jp-cardborder pb-2">
+            <i class="fa-solid fa-hotel text-sky-400"></i> 2. Hospedagens & Transportes
+          </h4>
+          <div class="space-y-2 text-xs" id="checklist-group-2">
+            <!-- Items rendered via JS -->
+          </div>
+        </div>
+
+        <!-- Category 3: Bagagens & Tecnologia -->
+        <div class="bg-jp-card border border-jp-cardborder rounded-3xl p-6 space-y-3">
+          <h4 class="text-xs font-mono uppercase text-emerald-400 font-bold flex items-center gap-2 border-b border-jp-cardborder pb-2">
+            <i class="fa-solid fa-plug text-emerald-400"></i> 3. Bagagens & Tecnologia
+          </h4>
+          <div class="space-y-2 text-xs" id="checklist-group-3">
+            <!-- Items rendered via JS -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- JAVASCRIPT MASTER SCRIPT -->
+  <script>
+    // ==========================================
+    // 1. TOAST NOTIFICATION SYSTEM
+    // ==========================================
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      
+      const bgColor = type === 'success' ? 'bg-emerald-950 border-emerald-500/50 text-emerald-200' : 'bg-jp-card border-jp-gold/50 text-amber-200';
+      const icon = type === 'success' ? 'fa-solid fa-check-circle text-emerald-400' : 'fa-solid fa-info-circle text-amber-400';
+
+      toast.className = `toast-animate flex items-center gap-2.5 px-4 py-2.5 rounded-2xl border shadow-2xl backdrop-blur-md text-xs font-mono font-semibold ${bgColor} pointer-events-auto mt-2`;
+      toast.innerHTML = `<i class="${icon}"></i> <span>${message}</span>`;
+
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translate(-50%, -10px)';
+        toast.style.transition = 'all 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+      }, 2500);
+    }
+
+    function copyFlashcard(text, label = 'Texto') {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(`${label} copiado com sucesso!`, 'success');
+      }).catch(() => {
+        showToast(`Erro ao copiar ${label}`, 'error');
+      });
+    }
+
+    function copyJapaneseCard() {
+      const text = `【食事制限のお願い】\n私は豚肉（豚エキス、ラード、ゼラチン含む）およびアルコール（みりん、料理酒含む）を食べることができません。\n牛肉、鶏肉、鱗とヒレのある魚（鮭・マグロ等・必ず加熱調理したもの）、野菜、卵、豆腐は食べられます。（※エビ・カニ・イカ・タコ・貝類・生魚は不可）\nこの料理には豚肉やアルコールが入っていますか？`;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('copy-card-btn');
+        btn.innerHTML = '<i class="fa-solid fa-check text-emerald-400"></i> Copiado com Sucesso!';
+        showToast('Cartão de Garçom copiado!', 'success');
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copiar Texto em Japonês';
+        }, 2000);
+      });
+    }
+
+    // ==========================================
+    // 2. TAB SWITCHER SYSTEM
+    // ==========================================
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(el => {
+        el.classList.remove('tab-active');
+        el.classList.add('text-jp-subtle');
+        el.classList.add('border-transparent');
+      });
+
+      const targetTab = document.getElementById(tabId);
+      if (targetTab) {
+        targetTab.classList.remove('hidden');
+      }
+
+      const activeBtn = document.getElementById('btn-' + tabId);
+      if (activeBtn) {
+        activeBtn.classList.add('tab-active');
+        activeBtn.classList.remove('text-jp-subtle');
+        activeBtn.classList.remove('border-transparent');
+      }
+    }
+
+    // ==========================================
+    // 3. ITINERARY CITY FILTER
+    // ==========================================
+    function filterDays(city) {
+      document.querySelectorAll('.city-btn').forEach(btn => {
+        btn.classList.remove('bg-jp-red', 'text-white', 'shadow-md');
+        btn.classList.add('bg-jp-night', 'text-jp-subtle');
+      });
+      if (typeof event !== "undefined" && event && event.target) {
+        event.target.classList.remove('bg-jp-night', 'text-jp-subtle');
+        event.target.classList.add('bg-jp-red', 'text-white', 'shadow-md');
+      }
+
+      const cards = document.querySelectorAll('.day-card');
+      cards.forEach(card => {
+        if (city === 'all' || card.getAttribute('data-city') === city) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // ==========================================
+    // 4. LIVE DUAL CLOCKS (SP & TOKYO)
+    // ==========================================
+    function updateClocks() {
+      const now = new Date();
+      
+      const spTime = new Intl.DateTimeFormat('pt-BR', {
+        timeZone: 'America/Sao_Paulo',
+        hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+      }).format(now);
+      const spElem = document.getElementById('clock-sp');
+      if (spElem) spElem.textContent = spTime;
+
+      const tyoTime = new Intl.DateTimeFormat('pt-BR', {
+        timeZone: 'Asia/Tokyo',
+        hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+      }).format(now);
+      const tyoElem = document.getElementById('clock-tyo');
+      if (tyoElem) tyoElem.textContent = tyoTime;
+    }
+    setInterval(updateClocks, 1000);
+    updateClocks();
+
+    // ==========================================
+    // 5. BIDIRECTIONAL CURRENCY CONVERTER
+    // ==========================================
+    const RATE = 27.0; // 1 BRL = 27 JPY
+    function convertFromJpy() {
+      const jpy = parseFloat(document.getElementById('input-jpy').value) || 0;
+      document.getElementById('input-brl').value = (jpy / RATE).toFixed(2);
+    }
+    function convertFromBrl() {
+      const brl = parseFloat(document.getElementById('input-brl').value) || 0;
+      document.getElementById('input-jpy').value = Math.round(brl * RATE);
+    }
+    function setJpyValue(val) {
+      document.getElementById('input-jpy').value = val;
+      convertFromJpy();
+      showToast(`Calculando ¥${val.toLocaleString()}...`, 'info');
+    }
+
+    // ==========================================
+    // 7. CHECKLIST DATA & LOCALSTORAGE PERSISTENCE
+    // ==========================================
+    const defaultChecklistData = [
+      // Grupo 1: Documentos & Finanças
+      { id: 'doc-passaporte', group: 1, text: 'Passaporte Brasileiro com validade superior a 6 meses', default: true },
+      { id: 'doc-visitjapan', group: 1, text: 'Visit Japan Web: QR Code unificado de Imigração e Alfândega gerado', default: true },
+      { id: 'doc-wise', group: 1, text: 'Cartão Wise com saldo em JPY ✅ | Suica Apple Wallet ✅', default: true },
+      { id: 'doc-seguro', group: 1, text: 'Seguro Viagem Internacional contratado com cobertura médica', default: true },
+      { id: 'doc-cartoes', group: 1, text: 'Avisar bancos dos cartões de crédito para uso no exterior', default: true },
+
+      // Grupo 2: Hospedagens & Transportes
+      { id: 'trans-voogol', group: 2, text: 'Voo Nacional GOL (Localizador ••••••, XAP ⟷ GRU)', default: true },
+      { id: 'trans-vooaf', group: 2, text: 'Voo Internacional Air France (Localizador ••••••)', default: true },
+      { id: 'hosp-toquio1', group: 2, text: 'Hospedagem 1: Ciel Hills Ap 201 (Sumida/Oshiage - ••••••••) Confirmada', default: true },
+      { id: 'hosp-quioto', group: 2, text: 'Hospedagem 2: Faminess Kyoto Ap 503 (Minami Ward - ••••••••) Confirmada', default: true },
+      { id: 'hosp-osaka', group: 2, text: 'Hospedagem 3: CHUANHouse Kuromon (Naniwa Ward - ••••••••) Confirmada', default: true },
+      { id: 'hosp-toquio2', group: 2, text: 'Hospedagem 4: Misuji Kuramae Rooftop (Taito City - ••••••••) Confirmada', default: true },
+      { id: 'trans-suica', group: 2, text: 'Cartão Suica Digital na Apple Wallet do iPhone', default: true },
+      { id: 'tkt-shinkansen', group: 2, text: '2x Trens-Bala Shinkansen Nozomi no app SmartEX (06/09 ~19:39 e 11/09 09:18)', default: false },
+      { id: 'tkt-disney', group: 2, text: 'Tokyo DisneySea: comprar ingresso para 13/09 (app oficial/Klook, ¥9.900)', default: false },
+
+      // Grupo 3: Bagagens & Tecnologia
+      { id: 'bag-adaptador', group: 3, text: 'Adaptador de tomada padrão japonês Tipo A (dois pinos chatos 100V)', default: true },
+      { id: 'bag-powerbank', group: 3, text: 'Powerbank portátil de alta capacidade na mala de mão (proibido despachar)', default: false },
+      { id: 'bag-esim', group: 3, text: 'eSIM de dados ilimitados no Japão (Holafly • pedido no app Holafly •)', default: true },
+      { id: 'bag-tenis', group: 3, text: 'Tênis esportivo confortável já amaciado (15-20 mil passos/dia)', default: false },
+      { id: 'bag-corta-vento', group: 3, text: '1 Casaco corta-vento leve para a altitude do Monte Fuji', default: false },
+      { id: 'bag-remedios', group: 3, text: 'Farmácia de viagem básica pessoal (analgésicos, antitérmicos e curativos)', default: false }
+    ];
+
+    const STORAGE_KEY = 'tabi_japan_checklist_state_v1';
+
+    function getChecklistState() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        try {
+          return JSON.parse(saved);
+        } catch (e) {
+          console.error(e);
+        }
+      }
+      const initial = {};
+      defaultChecklistData.forEach(item => {
+        initial[item.id] = item.default;
+      });
+      return initial;
+    }
+
+    function saveChecklistState(state) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      renderChecklist();
+    }
+
+    function toggleChecklistItem(id) {
+      const state = getChecklistState();
+      state[id] = !state[id];
+      saveChecklistState(state);
+      showToast(state[id] ? 'Item marcado como concluído!' : 'Item desmarcado', 'info');
+    }
+
+    function resetChecklist() {
+      localStorage.removeItem(STORAGE_KEY);
+      renderChecklist();
+      showToast('Checklist restaurado para o padrão oficial!', 'info');
+    }
+
+    function renderChecklist() {
+      const state = getChecklistState();
+      let totalItems = defaultChecklistData.length;
+      let completedItems = 0;
+
+      // Clear groups
+      for (let g = 1; g <= 3; g++) {
+        const container = document.getElementById(`checklist-group-1`.replace('1', g));
+        if (container) container.innerHTML = '';
+      }
+
+      defaultChecklistData.forEach(item => {
+        const isChecked = !!state[item.id];
+        if (isChecked) completedItems++;
+
+        const groupContainer = document.getElementById(`checklist-group-${item.group}`);
+        if (groupContainer) {
+          const label = document.createElement('label');
+          label.className = `flex items-center gap-3 p-3 rounded-2xl border cursor-pointer transition-all ${
+            isChecked 
+              ? 'bg-emerald-950/20 border-emerald-500/40 text-slate-300' 
+              : 'bg-jp-night border-jp-cardborder text-slate-200 hover:border-slate-600'
+          }`;
+
+          label.innerHTML = `
+            <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleChecklistItem('${item.id}')" class="rounded border-slate-700 text-emerald-500 focus:ring-0 w-4 h-4 cursor-pointer">
+            <span class="${isChecked ? 'line-through text-slate-400' : 'text-slate-200 font-medium'}">${item.text}</span>
+          `;
+
+          groupContainer.appendChild(label);
+        }
+      });
+
+      // Update progress bar
+      const percentage = Math.round((completedItems / totalItems) * 100);
+      const progText = document.getElementById('checklist-progress-text');
+      const percElem = document.getElementById('checklist-percentage');
+      const barElem = document.getElementById('checklist-bar');
+
+      if (progText) progText.textContent = `Progresso Geral: ${completedItems} de ${totalItems} tarefas concluídas`;
+      if (percElem) percElem.textContent = `${percentage}%`;
+      if (barElem) barElem.style.width = `${percentage}%`;
+    }
+
+    // Initialize Checklist on load
+    renderChecklist();
+  </script>
+
+  <!-- MODAL DE TELA CHEIA PARA GARÇOM (WCAG WAI-ARIA DIALOG) -->
+  <div id="waiter-modal" role="dialog" aria-modal="true" aria-labelledby="modal-waiter-title" style="display: none;" class="fixed inset-0 z-[110] items-center justify-center bg-black/90 backdrop-blur-md p-4 transition-all duration-300">
+    <div class="bg-jp-night border-2 border-jp-gold rounded-3xl p-5 sm:p-8 max-w-2xl w-full space-y-5 shadow-2xl relative transform scale-95 transition-all duration-300 max-h-[90vh] overflow-y-auto" id="waiter-modal-content">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
+        <h2 id="modal-waiter-title" class="text-sm sm:text-base font-bold text-jp-gold flex items-center gap-2 font-mono">
+          <i class="fa-solid fa-utensils text-amber-400" aria-hidden="true"></i> MOSTRAR AO GARÇOM / ATENDENTE
+        </h2>
+        <button type="button" onclick="closeWaiterModal()" id="btn-close-modal" class="min-h-[44px] min-w-[44px] rounded-xl bg-jp-card hover:bg-slate-800 text-slate-300 hover:text-white border border-jp-cardborder flex items-center justify-center transition-all focus:outline-none focus:ring-2 focus:ring-amber-400" aria-label="Fechar janela modal (Pressione Escape)">
+          <i class="fa-solid fa-xmark text-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body (Texto Extra-Grande em Japonês) -->
+      <div class="p-4 sm:p-6 rounded-2xl bg-jp-card border border-jp-gold/40 font-serif text-lg sm:text-2xl text-white leading-loose tracking-wide shadow-inner text-left">
+        【食事制限のお願い】<br>
+        私は<strong class="text-red-400 underline decoration-red-500">豚肉</strong>（豚エキス、ラード、ゼラチン含む）および<strong class="text-red-400 underline decoration-red-500">アルコール</strong>（みりん、料理酒含む）を食べることができません。<br>
+        <span class="text-emerald-300 font-bold">牛肉、鶏肉、鱗とヒレのある魚（鮭・マグロ等・加熱のみ）、野菜、卵、豆腐</span>は食べられます。<br>
+        <span class="text-xs sm:text-sm text-amber-300/90 block mt-2 border-t border-jp-cardborder pt-2 font-sans">
+          ※ エビ・カニ・イカ・タコ・貝類・生魚（刺身）は食べられません。
+        </span>
+        <span class="text-sm sm:text-lg block mt-2 font-sans">この料理には豚肉やアルコールが入っていますか？</span>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="flex justify-between items-center flex-wrap gap-3 pt-2">
+        <span class="text-xs font-mono text-slate-400">
+          💡 Toque em Fechar ou pressione <kbd class="px-2 py-1 bg-jp-card border border-jp-cardborder rounded text-slate-200">ESC</kbd>
+        </span>
+        <button type="button" onclick="closeWaiterModal()" class="min-h-[44px] px-6 py-2.5 bg-jp-gold hover:bg-amber-400 text-black font-bold font-mono rounded-xl transition-all shadow-md focus:outline-none focus:ring-2 focus:ring-amber-300">
+          Fechar Janela
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <script>
+// ==========================================
+// PIN GATE — Área Privada (senha de 4 dígitos)
+// ==========================================
+(function () {
+  var PIN_HASH = '112b89e61925b93e267b8deecb2b1b02dbedd4e25003b9a1d17c6bf93a4b9e41';
+  var KEY = 'tabi_japan_unlocked_v1';
+
+  function sha256Hex(str) {
+    function rrot(x, n) { return (x >>> n) | (x << (32 - n)); }
+    var bytes = [];
+    for (var i = 0; i < str.length; i++) {
+      var c = str.charCodeAt(i);
+      if (c < 128) bytes.push(c);
+      else if (c < 2048) { bytes.push(192 | (c >> 6), 128 | (c & 63)); }
+      else { bytes.push(224 | (c >> 12), 128 | ((c >> 6) & 63), 128 | (c & 63)); }
+    }
+    var bitLen = bytes.length * 8;
+    bytes.push(128);
+    while (bytes.length % 64 !== 56) bytes.push(0);
+    var hi = Math.floor(bitLen / 4294967296), lo = bitLen >>> 0;
+    bytes.push((hi >>> 24) & 255, (hi >>> 16) & 255, (hi >>> 8) & 255, hi & 255,
+               (lo >>> 24) & 255, (lo >>> 16) & 255, (lo >>> 8) & 255, lo & 255);
+    var H = [0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a, 0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19];
+    var K = [0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+    var w = new Array(64);
+    for (var off = 0; off < bytes.length; off += 64) {
+      for (var j = 0; j < 16; j++) {
+        w[j] = ((bytes[off + 4 * j] << 24) | (bytes[off + 4 * j + 1] << 16) | (bytes[off + 4 * j + 2] << 8) | bytes[off + 4 * j + 3]) >>> 0;
+      }
+      for (j = 16; j < 64; j++) {
+        var s0 = rrot(w[j - 15], 7) ^ rrot(w[j - 15], 18) ^ (w[j - 15] >>> 3);
+        var s1 = rrot(w[j - 2], 17) ^ rrot(w[j - 2], 19) ^ (w[j - 2] >>> 10);
+        w[j] = (w[j - 16] + s0 + w[j - 7] + s1) >>> 0;
+      }
+      var a = H[0], b = H[1], c = H[2], d = H[3], e = H[4], f = H[5], g = H[6], h = H[7];
+      for (j = 0; j < 64; j++) {
+        var S1 = rrot(e, 6) ^ rrot(e, 11) ^ rrot(e, 25);
+        var ch = (e & f) ^ ((~e) & g);
+        var t1 = (h + S1 + ch + K[j] + w[j]) >>> 0;
+        var S0 = rrot(a, 2) ^ rrot(a, 13) ^ rrot(a, 22);
+        var maj = (a & b) ^ (a & c) ^ (b & c);
+        var t2 = (S0 + maj) >>> 0;
+        h = g; g = f; f = e; e = (d + t1) >>> 0; d = c; c = b; b = a; a = (t1 + t2) >>> 0;
+      }
+      H[0] = (H[0] + a) >>> 0; H[1] = (H[1] + b) >>> 0; H[2] = (H[2] + c) >>> 0; H[3] = (H[3] + d) >>> 0;
+      H[4] = (H[4] + e) >>> 0; H[5] = (H[5] + f) >>> 0; H[6] = (H[6] + g) >>> 0; H[7] = (H[7] + h) >>> 0;
+    }
+    var hex = '';
+    for (j = 0; j < 8; j++) hex += ('00000000' + (H[j] >>> 0).toString(16)).slice(-8);
+    return hex;
+  }
+
+  function isUnlocked() {
+    try { return localStorage.getItem(KEY) === '1'; } catch (e) { return false; }
+  }
+
+  function lockSite() {
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    location.reload();
+  }
+
+  var gate = document.getElementById('pin-gate');
+  if (!gate) return;
+
+  if (isUnlocked()) { gate.remove(); return; }
+
+  var input = document.getElementById('pin-input');
+  var err = document.getElementById('pin-error');
+
+  function shake() {
+    var card = document.getElementById('pin-card');
+    if (!card) return;
+    card.style.animation = 'none';
+    void card.offsetWidth;
+    card.style.animation = 'shakeX 0.45s ease';
+  }
+
+  function tryUnlock() {
+    var v = input.value.replace(/\D/g, '');
+    if (v.length !== 4) { err.classList.remove('hidden'); input.value = ''; shake(); return; }
+    if (sha256Hex(v) === PIN_HASH) {
+      try { localStorage.setItem(KEY, '1'); } catch (e) {}
+      gate.classList.add('opacity-0', 'pointer-events-none');
+      setTimeout(function () { gate.remove(); }, 450);
+      var fbtn = document.createElement('button');
+      fbtn.id = 'btn-lock-site';
+      fbtn.innerHTML = '<i class="fa-solid fa-lock"></i>';
+      fbtn.title = 'Bloquear painel';
+      fbtn.setAttribute('aria-label', 'Bloquear painel');
+      fbtn.className = 'fixed bottom-6 right-4 z-[150] flex h-11 w-11 items-center justify-center rounded-full bg-jp-card border border-jp-gold/50 text-sm text-jp-gold shadow-xl transition-all hover:bg-slate-800';
+      fbtn.addEventListener('click', lockSite);
+      document.body.appendChild(fbtn);
+    } else {
+      err.classList.remove('hidden'); input.value = ''; shake();
+    }
+  }
+
+  document.getElementById('pin-btn').addEventListener('click', tryUnlock);
+  input.addEventListener('keydown', function (e) { if (e.key === 'Enter') tryUnlock(); });
+  input.addEventListener('input', function () { input.value = input.value.replace(/\D/g, '').slice(0, 4); });
+  setTimeout(function () { input.focus(); }, 350);
+})();
+
+// Node-only self-test (not executed in browser: pin-gate element does not exist there)
+if (typeof module !== 'undefined' && typeof require !== 'undefined') {
+  // no-op
+}
+
+  </script>
+</body>
+</html>
