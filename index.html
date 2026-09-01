@@ -422,7 +422,7 @@
   </nav>
 
   <!-- ==================== HOME / HERO SECTION MONUMENTAL ==================== -->
-  <section class="hero-glow-monumental py-8 sm:py-12 border-b border-jp-cardborder relative overflow-hidden">
+  <section class="hidden md:block hero-glow-monumental py-8 sm:py-12 border-b border-jp-cardborder relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8">
       
       <!-- Top Title & Mission -->
@@ -2659,17 +2659,21 @@
 
   </main>
 
-  <!-- JAVASCRIPT MASTER SCRIPT -->
-  <script>
+    <script>
     // ==========================================
     // 1. TOAST NOTIFICATION SYSTEM
     // ==========================================
     function showToast(message, type = 'success') {
       const container = document.getElementById('toast-container');
+      if (!container) return;
       const toast = document.createElement('div');
       
-      const bgColor = type === 'success' ? 'bg-emerald-950 border-emerald-500/50 text-emerald-200' : 'bg-jp-card border-jp-gold/50 text-amber-200';
-      const icon = type === 'success' ? 'fa-solid fa-check-circle text-emerald-400' : 'fa-solid fa-info-circle text-amber-400';
+      const bgColor = type === 'success' 
+        ? 'bg-emerald-950 border-emerald-500/50 text-emerald-200' 
+        : (type === 'error' ? 'bg-rose-950 border-rose-500/50 text-rose-200' : 'bg-jp-card border-jp-gold/50 text-amber-200');
+      const icon = type === 'success' 
+        ? 'fa-solid fa-check-circle text-emerald-400' 
+        : (type === 'error' ? 'fa-solid fa-triangle-exclamation text-rose-400' : 'fa-solid fa-info-circle text-amber-400');
 
       toast.className = `toast-animate flex items-center gap-2.5 px-4 py-2.5 rounded-2xl border shadow-2xl backdrop-blur-md text-xs font-mono font-semibold ${bgColor} pointer-events-auto mt-2`;
       toast.innerHTML = `<i class="${icon}"></i> <span>${message}</span>`;
@@ -2685,26 +2689,38 @@
     }
 
     function copyFlashcard(text, label = 'Texto') {
-      navigator.clipboard.writeText(text).then(() => {
-        showToast(`${label} copiado com sucesso!`, 'success');
-      }).catch(() => {
-        showToast(`Erro ao copiar ${label}`, 'error');
-      });
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(`${label} copiado com sucesso!`, 'success');
+        }).catch(() => {
+          showToast(`Erro ao copiar ${label}`, 'error');
+        });
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        showToast(`${label} copiado!`, 'success');
+      }
     }
 
     function copyJapaneseCard() {
-      const text = `【食事制限のお願い】\n私は豚肉（豚エキス、ラード、ゼラチン含む）およびアルコール（みりん、料理酒含む）を食べることができません。\n牛肉、鶏肉、鱗とヒレのある魚（鮭・マグロ等・必ず加熱調理したもの）、野菜、卵、豆腐は食べられます。（※エビ・カニ・イカ・タコ・貝類・生魚は不可）\nこの料理には豚肉やアルコールが入っていますか？`;
-      navigator.clipboard.writeText(text).then(() => {
-        const btn = document.getElementById('copy-card-btn');
-        btn.innerHTML = '<i class="fa-solid fa-check text-emerald-400"></i> Copiado com Sucesso!';
-        showToast('Cartão de Garçom copiado!', 'success');
-        setTimeout(() => {
-          btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copiar Texto em Japonês';
-        }, 2000);
-      });
+      const text = `【食事制限のお願い】
+私は豚肉（豚エキス、ラード、ゼラチン含む）およびアルコール（みりん、料理酒含む）を食べることができません。
+牛肉、鶏肉、鱗とヒレのある魚（鮭・マグロ等・必ず加熱調理したもの）、野菜、卵、豆腐は食べられます。（※エビ・カニ・イカ・タコ・貝類・生魚は不可）
+この料理には豚肉やアルコールが入っていますか？`;
+      copyFlashcard(text, 'Cartão de Garçom');
+      const btn = document.getElementById('copy-card-btn');
+      if (btn) {
+        const originalHtml = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-check text-emerald-400"></i> Copiado!';
+        setTimeout(() => { btn.innerHTML = originalHtml; }, 2000);
+      }
     }
 
-        // ==========================================
+    // ==========================================
     // 2. TAB SWITCHER SYSTEM & BOTTOM NAV SYNC
     // ==========================================
     function updateBottomNav(tabId) {
@@ -2712,66 +2728,55 @@
       const bRoteiro = document.getElementById('bnav-roteiro');
       const bConversor = document.getElementById('bnav-conversor');
       
-      if (!bRoteiro || !bConversor) return;
+      if (bRoteiro && bConversor) {
+        bRoteiro.classList.remove('text-jp-crimson', 'font-bold');
+        bRoteiro.classList.add('text-slate-400');
+        const iconRoteiro = bRoteiro.querySelector('i');
+        if (iconRoteiro) { iconRoteiro.classList.remove('text-red-400'); iconRoteiro.classList.add('text-slate-400'); }
 
-      // Reset styles
-      bRoteiro.classList.remove('text-jp-crimson', 'font-bold');
-      bRoteiro.classList.add('text-slate-400');
-      const iconRoteiro = bRoteiro.querySelector('i');
-      if (iconRoteiro) { iconRoteiro.classList.remove('text-red-400'); iconRoteiro.classList.add('text-slate-400'); }
+        bConversor.classList.remove('text-emerald-400', 'font-bold');
+        bConversor.classList.add('text-slate-400');
+        const iconConv = bConversor.querySelector('i');
+        if (iconConv) { iconConv.classList.remove('text-emerald-400'); iconConv.classList.add('text-slate-400'); }
 
-      bConversor.classList.remove('text-emerald-400', 'font-bold');
-      bConversor.classList.add('text-slate-400');
-      const iconConv = bConversor.querySelector('i');
-      if (iconConv) { iconConv.classList.remove('text-emerald-400'); iconConv.classList.add('text-slate-400'); }
-
-      if (tabId === 'tab-roteiro') {
-        bRoteiro.classList.add('text-jp-crimson', 'font-bold');
-        bRoteiro.classList.remove('text-slate-400');
-        if (iconRoteiro) { iconRoteiro.classList.add('text-red-400'); iconRoteiro.classList.remove('text-slate-400'); }
-      } else if (tabId === 'tab-conversor') {
-        bConversor.classList.add('text-emerald-400', 'font-bold');
-        bConversor.classList.remove('text-slate-400');
-        if (iconConv) { iconConv.classList.add('text-emerald-400'); iconConv.classList.remove('text-slate-400'); }
+        if (tabId === 'tab-roteiro') {
+          bRoteiro.classList.add('text-jp-crimson', 'font-bold');
+          bRoteiro.classList.remove('text-slate-400');
+          if (iconRoteiro) { iconRoteiro.classList.add('text-red-400'); iconRoteiro.classList.remove('text-slate-400'); }
+        } else if (tabId === 'tab-conversor') {
+          bConversor.classList.add('text-emerald-400', 'font-bold');
+          bConversor.classList.remove('text-slate-400');
+          if (iconConv) { iconConv.classList.add('text-emerald-400'); iconConv.classList.remove('text-slate-400'); }
+        }
       }
     }
 
     function switchTab(tabId) {
+      // Hide all tabs
       document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      
+      // Deactivate all top tab buttons
       document.querySelectorAll('.tab-btn').forEach(el => {
         el.classList.remove('tab-active');
-        el.classList.add('text-jp-subtle');
-        el.classList.add('border-transparent');
+        el.classList.add('text-jp-subtle', 'border-transparent');
       });
 
+      // Show target tab
       const targetTab = document.getElementById(tabId);
       if (targetTab) {
         targetTab.classList.remove('hidden');
       }
 
+      // Activate corresponding top tab button
       const activeBtn = document.getElementById('btn-' + tabId);
       if (activeBtn) {
         activeBtn.classList.add('tab-active');
-        activeBtn.classList.remove('text-jp-subtle');
-        activeBtn.classList.remove('border-transparent');
-        // Scroll tab button into view on mobile top tab bar
+        activeBtn.classList.remove('text-jp-subtle', 'border-transparent');
         activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
       }
 
+      // Sync Bottom Nav Bar active state
       updateBottomNav(tabId);
-    });
-
-      const targetTab = document.getElementById(tabId);
-      if (targetTab) {
-        targetTab.classList.remove('hidden');
-      }
-
-      const activeBtn = document.getElementById('btn-' + tabId);
-      if (activeBtn) {
-        activeBtn.classList.add('tab-active');
-        activeBtn.classList.remove('text-jp-subtle');
-        activeBtn.classList.remove('border-transparent');
-      }
     }
 
     // ==========================================
@@ -2782,7 +2787,8 @@
         btn.classList.remove('bg-jp-red', 'text-white', 'shadow-md');
         btn.classList.add('bg-jp-night', 'text-jp-subtle');
       });
-      if (typeof event !== "undefined" && event && event.target) {
+      
+      if (typeof event !== "undefined" && event && event.target && event.target.classList.contains('city-btn')) {
         event.target.classList.remove('bg-jp-night', 'text-jp-subtle');
         event.target.classList.add('bg-jp-red', 'text-white', 'shadow-md');
       }
@@ -2803,19 +2809,23 @@
     function updateClocks() {
       const now = new Date();
       
-      const spTime = new Intl.DateTimeFormat('pt-BR', {
-        timeZone: 'America/Sao_Paulo',
-        hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
-      }).format(now);
-      const spElem = document.getElementById('clock-sp');
-      if (spElem) spElem.textContent = spTime;
+      try {
+        const spTime = new Intl.DateTimeFormat('pt-BR', {
+          timeZone: 'America/Sao_Paulo',
+          hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+        }).format(now);
+        const spElem = document.getElementById('clock-sp');
+        if (spElem) spElem.textContent = spTime;
 
-      const tyoTime = new Intl.DateTimeFormat('pt-BR', {
-        timeZone: 'Asia/Tokyo',
-        hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
-      }).format(now);
-      const tyoElem = document.getElementById('clock-tyo');
-      if (tyoElem) tyoElem.textContent = tyoTime;
+        const tyoTime = new Intl.DateTimeFormat('pt-BR', {
+          timeZone: 'Asia/Tokyo',
+          hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+        }).format(now);
+        const tyoElem = document.getElementById('clock-tyo');
+        if (tyoElem) tyoElem.textContent = tyoTime;
+      } catch (e) {
+        console.error('Clock error:', e);
+      }
     }
     setInterval(updateClocks, 1000);
     updateClocks();
@@ -2825,45 +2835,51 @@
     // ==========================================
     const RATE = 27.0; // 1 BRL = 27 JPY
     function convertFromJpy() {
-      const jpy = parseFloat(document.getElementById('input-jpy').value) || 0;
-      document.getElementById('input-brl').value = (jpy / RATE).toFixed(2);
+      const inputJpy = document.getElementById('input-jpy');
+      const inputBrl = document.getElementById('input-brl');
+      if (!inputJpy || !inputBrl) return;
+      const jpy = parseFloat(inputJpy.value) || 0;
+      inputBrl.value = (jpy / RATE).toFixed(2);
     }
     function convertFromBrl() {
-      const brl = parseFloat(document.getElementById('input-brl').value) || 0;
-      document.getElementById('input-jpy').value = Math.round(brl * RATE);
+      const inputJpy = document.getElementById('input-jpy');
+      const inputBrl = document.getElementById('input-brl');
+      if (!inputJpy || !inputBrl) return;
+      const brl = parseFloat(inputBrl.value) || 0;
+      inputJpy.value = Math.round(brl * RATE);
     }
     function setJpyValue(val) {
-      document.getElementById('input-jpy').value = val;
-      convertFromJpy();
-      showToast(`Calculando ¥${val.toLocaleString()}...`, 'info');
+      const inputJpy = document.getElementById('input-jpy');
+      if (inputJpy) {
+        inputJpy.value = val;
+        convertFromJpy();
+        showToast(`Calculando ¥${val.toLocaleString()}...`, 'info');
+      }
     }
 
     // ==========================================
-    // 7. CHECKLIST DATA & LOCALSTORAGE PERSISTENCE
+    // 6. CHECKLIST DATA & LOCALSTORAGE PERSISTENCE
     // ==========================================
     const defaultChecklistData = [
-      // Grupo 1: Documentos & Finanças
       { id: 'doc-passaporte', group: 1, text: 'Passaporte Brasileiro com validade superior a 6 meses', default: true },
       { id: 'doc-visitjapan', group: 1, text: 'Visit Japan Web: QR Code unificado de Imigração e Alfândega gerado', default: true },
       { id: 'doc-wise', group: 1, text: 'Cartão Wise com saldo em JPY ✅ | Suica Apple Wallet ✅', default: true },
       { id: 'doc-seguro', group: 1, text: 'Seguro Viagem Internacional contratado com cobertura médica', default: true },
       { id: 'doc-cartoes', group: 1, text: 'Avisar bancos dos cartões de crédito para uso no exterior', default: true },
 
-      // Grupo 2: Hospedagens & Transportes
       { id: 'trans-voogol', group: 2, text: 'Voo Nacional GOL (Localizador ••••••, XAP ⟷ GRU)', default: true },
       { id: 'trans-vooaf', group: 2, text: 'Voo Internacional Air France (Localizador ••••••)', default: true },
-      { id: 'hosp-toquio1', group: 2, text: 'Hospedagem 1: Ciel Hills Ap 201 (Sumida/Oshiage - ••••••••) Confirmada', default: true },
-      { id: 'hosp-quioto', group: 2, text: 'Hospedagem 2: Faminess Kyoto Ap 503 (Minami Ward - ••••••••) Confirmada', default: true },
-      { id: 'hosp-osaka', group: 2, text: 'Hospedagem 3: CHUANHouse Kuromon (Naniwa Ward - ••••••••) Confirmada', default: true },
-      { id: 'hosp-toquio2', group: 2, text: 'Hospedagem 4: Misuji Kuramae Rooftop (Taito City - ••••••••) Confirmada', default: true },
+      { id: 'hosp-toquio1', group: 2, text: 'Hospedagem 1: Ciel Hills Ap 201 (Sumida/Oshiage) Confirmada', default: true },
+      { id: 'hosp-quioto', group: 2, text: 'Hospedagem 2: Faminess Kyoto Ap 503 (Minami Ward) Confirmada', default: true },
+      { id: 'hosp-osaka', group: 2, text: 'Hospedagem 3: CHUANHouse Kuromon (Naniwa Ward) Confirmada', default: true },
+      { id: 'hosp-toquio2', group: 2, text: 'Hospedagem 4: Misuji Kuramae Rooftop (Taito City) Confirmada', default: true },
       { id: 'trans-suica', group: 2, text: 'Cartão Suica Digital na Apple Wallet do iPhone', default: true },
-      { id: 'tkt-shinkansen', group: 2, text: '2x Trens-Bala Shinkansen Nozomi no app SmartEX (06/09 ~19:39 e 11/09 09:18)', default: false },
+      { id: 'tkt-shinkansen', group: 2, text: '2x Trens-Bala Shinkansen Nozomi no app SmartEX (06/09 e 11/09)', default: false },
       { id: 'tkt-disney', group: 2, text: 'Tokyo DisneySea: comprar ingresso para 13/09 (app oficial/Klook, ¥9.900)', default: false },
 
-      // Grupo 3: Bagagens & Tecnologia
       { id: 'bag-adaptador', group: 3, text: 'Adaptador de tomada padrão japonês Tipo A (dois pinos chatos 100V)', default: true },
       { id: 'bag-powerbank', group: 3, text: 'Powerbank portátil de alta capacidade na mala de mão (proibido despachar)', default: false },
-      { id: 'bag-esim', group: 3, text: 'eSIM de dados ilimitados no Japão (Holafly • pedido no app Holafly •)', default: true },
+      { id: 'bag-esim', group: 3, text: 'eSIM de dados ilimitados no Japão (Holafly 5G)', default: true },
       { id: 'bag-tenis', group: 3, text: 'Tênis esportivo confortável já amaciado (15-20 mil passos/dia)', default: false },
       { id: 'bag-corta-vento', group: 3, text: '1 Casaco corta-vento leve para a altitude do Monte Fuji', default: false },
       { id: 'bag-remedios', group: 3, text: 'Farmácia de viagem básica pessoal (analgésicos, antitérmicos e curativos)', default: false }
@@ -2910,9 +2926,8 @@
       let totalItems = defaultChecklistData.length;
       let completedItems = 0;
 
-      // Clear groups
       for (let g = 1; g <= 3; g++) {
-        const container = document.getElementById(`checklist-group-1`.replace('1', g));
+        const container = document.getElementById(`checklist-group-${g}`);
         if (container) container.innerHTML = '';
       }
 
@@ -2938,7 +2953,6 @@
         }
       });
 
-      // Update progress bar
       const percentage = Math.round((completedItems / totalItems) * 100);
       const progText = document.getElementById('checklist-progress-text');
       const percElem = document.getElementById('checklist-percentage');
@@ -2949,11 +2963,10 @@
       if (barElem) barElem.style.width = `${percentage}%`;
     }
 
-    // Initialize Checklist on load
     renderChecklist();
 
-        // ==========================================
-    // WAITER MODAL FUNCTIONS (MOSTRAR AO GARÇOM)
+    // ==========================================
+    // 7. WAITER MODAL FUNCTIONS (MOSTRAR AO GARÇOM)
     // ==========================================
     function openWaiterModal() {
       const modal = document.getElementById('waiter-modal');
@@ -2983,7 +2996,6 @@
       }
     }
 
-    // Close modal on backdrop click or ESC key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeWaiterModal();
@@ -2992,7 +3004,7 @@
     });
 
     // ==========================================
-    // MOBILE DRAWER & PWA FUNCTIONS
+    // 8. MOBILE DRAWER & PWA FUNCTIONS
     // ==========================================
     function toggleDrawer(show) {
       const drawer = document.getElementById('drawer-menu');
@@ -3011,35 +3023,30 @@
     }
 
     function jumpToToday() {
-      // 1. Switch to Roteiro Tab
       switchTab('tab-roteiro');
       
-      // 2. Clear region filters to show all days
       if (typeof filterDays === 'function') {
         filterDays('all');
       }
       
-      // 3. Highlight bottom nav
       const bHoje = document.getElementById('bnav-hoje');
       if (bHoje) {
         bHoje.classList.add('scale-110');
         setTimeout(() => bHoje.classList.remove('scale-110'), 300);
       }
       
-      // 4. Target DIA 02
       setTimeout(() => {
         const target = document.getElementById('day-card-2') || document.querySelector('[data-city="toquio1"]');
         if (target) {
           target.scrollIntoView({ behavior: 'smooth', block: 'center' });
           target.classList.remove('today-highlight');
-          void target.offsetWidth; // trigger reflow
+          void target.offsetWidth;
           target.classList.add('today-highlight');
           showToast('📍 Exibindo o DIA 02 (Hoje: Shinjuku Gyoen & Tocho)', 'info');
         }
       }, 150);
     }
 
-    // Register PWA Service Worker
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js')
@@ -3047,7 +3054,7 @@
           .catch((err) => console.log('ServiceWorker erro:', err));
       });
     }
-</script>
+  </script>
 
   <!-- MODAL DE TELA CHEIA PARA GARÇOM (WCAG WAI-ARIA DIALOG) -->
   <div id="waiter-modal" role="dialog" onclick="if(event.target===this) closeWaiterModal();" aria-modal="true" aria-labelledby="modal-waiter-title" style="display: none;" class="fixed inset-0 z-[110] items-center justify-center bg-black/90 backdrop-blur-md p-4 transition-all duration-300">
