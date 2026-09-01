@@ -283,11 +283,6 @@
         <button type="button" onclick="switchTab('tab-emergencia')" class="h-9 w-9 rounded-xl bg-rose-950/50 hover:bg-rose-900 border border-rose-500/40 text-rose-300 flex items-center justify-center transition-all shadow-md active:scale-95" title="SOS & Emergência MTA" aria-label="Emergência SOS">
           <i class="fa-solid fa-phone-volume text-xs"></i>
         </button>
-
-        <!-- Quick Lock Site Button -->
-        <button type="button" onclick="lockSite()" class="h-9 w-9 rounded-xl bg-jp-night hover:bg-slate-800 border border-jp-cardborder text-slate-300 hover:text-jp-gold hover:border-jp-gold/40 flex items-center justify-center transition-all shadow-md active:scale-95" title="Bloquear Painel" aria-label="Bloquear Painel">
-          <i class="fa-solid fa-lock text-xs"></i>
-        </button>
       </div>
 
     </div>
@@ -3183,14 +3178,6 @@
       try { localStorage.setItem(KEY, '1'); } catch (e) {}
       gate.classList.add('opacity-0', 'pointer-events-none');
       setTimeout(function () { gate.remove(); }, 450);
-      var fbtn = document.createElement('button');
-      fbtn.id = 'btn-lock-site';
-      fbtn.innerHTML = '<i class="fa-solid fa-lock"></i>';
-      fbtn.title = 'Bloquear painel';
-      fbtn.setAttribute('aria-label', 'Bloquear painel');
-      fbtn.className = 'fixed bottom-6 right-4 z-[150] flex h-11 w-11 items-center justify-center rounded-full bg-jp-card border border-jp-gold/50 text-sm text-jp-gold shadow-xl transition-all hover:bg-slate-800';
-      fbtn.addEventListener('click', lockSite);
-      document.body.appendChild(fbtn);
     } else {
       err.classList.remove('hidden'); input.value = ''; shake();
     }
