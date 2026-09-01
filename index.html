@@ -185,9 +185,16 @@
     }
 
 
-    /* Mobile App Drawer & Nav Bar */
-    .drawer-open {
+        /* Mobile App Drawer (Slide in from RIGHT) & Nav Bar */
+    #drawer-menu {
+      transform: translateX(100%);
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #drawer-menu.drawer-open {
       transform: translateX(0) !important;
+    }
+    #drawer-backdrop {
+      transition: opacity 0.25s ease;
     }
     .drawer-backdrop-open {
       opacity: 1 !important;
@@ -198,18 +205,16 @@
     }
     .bottom-nav-active i {
       transform: scale(1.15);
-      color: #EF4444 !important;
       filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.6));
     }
     @keyframes pulseHighlight {
       0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
-      50% { box-shadow: 0 0 35px 6px rgba(245, 158, 11, 0.6); border-color: rgba(245, 158, 11, 0.95); }
+      50% { box-shadow: 0 0 35px 6px rgba(245, 158, 11, 0.7); border-color: rgba(245, 158, 11, 0.95); }
     }
     .today-highlight {
       animation: pulseHighlight 1.4s ease-in-out 3;
       border-color: rgba(245, 158, 11, 0.9) !important;
     }
-
   </style>
 </head>
 <body class="bg-jp-night text-slate-100 font-sans min-h-screen selection:bg-jp-red selection:text-white pb-[calc(5rem+env(safe-area-inset-bottom))] antialiased">
@@ -239,14 +244,9 @@
   <header class="border-b border-jp-cardborder bg-jp-card/95 backdrop-blur-md sticky top-0 z-40 transition-all shadow-lg pt-[env(safe-area-inset-top)]">
     <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 min-h-16 py-2 sm:py-0 flex items-center justify-between gap-2">
       
-      <!-- Brand Logo & Mobile Hamburger -->
-      <div class="flex items-center space-x-2.5 sm:space-x-3.5 min-w-0">
-        <!-- Mobile Drawer Hamburger Button -->
-        <button type="button" onclick="toggleDrawer(true)" class="md:hidden flex h-10 w-10 items-center justify-center rounded-xl bg-jp-night border border-jp-cardborder text-slate-200 hover:text-white hover:border-jp-gold/50 transition-all focus:outline-none focus:ring-2 focus:ring-amber-400 active:scale-95 shrink-0" aria-label="Abrir Menu Lateral">
-          <i class="fa-solid fa-bars text-lg"></i>
-        </button>
-
-        <div onclick="jumpToToday()" class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-br from-jp-red to-jp-darkred border border-red-500/40 flex items-center justify-center shadow-glow-red shrink-0 cursor-pointer active:scale-95 transition-transform" title="Toque para ir ao dia de hoje">
+      <!-- Brand Logo & Title (Left Side) -->
+      <div class="flex items-center space-x-2.5 sm:space-x-3.5 min-w-0 cursor-pointer" onclick="jumpToToday()" title="Toque para ir ao dia de hoje">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-br from-jp-red to-jp-darkred border border-red-500/40 flex items-center justify-center shadow-glow-red shrink-0 active:scale-95 transition-transform">
           <span class="text-lg sm:text-xl font-serif font-black text-white">旅</span>
         </div>
         <div class="min-w-0">
@@ -263,7 +263,7 @@
         </div>
       </div>
 
-      <!-- Live Dual Clocks & Quick Actions -->
+      <!-- Live Dual Clocks & Quick Actions & Hamburger (Right Side) -->
       <div class="flex items-center space-x-1.5 sm:space-x-2.5 text-xs font-mono shrink-0">
         <div class="hidden md:flex items-center space-x-2 bg-jp-night/80 px-3 py-1.5 rounded-2xl border border-jp-cardborder shadow-inner">
           <span class="text-slate-300 font-semibold flex items-center gap-1.5">
@@ -288,15 +288,20 @@
         <button type="button" onclick="lockSite()" class="h-9 w-9 rounded-xl bg-jp-night hover:bg-slate-800 border border-jp-cardborder text-slate-300 hover:text-jp-gold hover:border-jp-gold/40 flex items-center justify-center transition-all shadow-md active:scale-95" title="Bloquear Painel" aria-label="Bloquear Painel">
           <i class="fa-solid fa-lock text-xs"></i>
         </button>
+
+        <!-- Mobile Drawer Hamburger Button (On the RIGHT, matching drawer slide direction) -->
+        <button type="button" onclick="toggleDrawer(true)" class="md:hidden flex h-9 w-9 items-center justify-center rounded-xl bg-jp-night border border-jp-cardborder text-slate-200 hover:text-white hover:border-jp-gold/50 transition-all focus:outline-none focus:ring-2 focus:ring-amber-400 active:scale-95 shrink-0" aria-label="Abrir Menu Lateral Direito">
+          <i class="fa-solid fa-bars text-base text-amber-400"></i>
+        </button>
       </div>
 
     </div>
   </header>
 
-  <!-- ==================== MOBILE APP SIDE DRAWER (MENU LATERAL) ==================== -->
+  <!-- ==================== MOBILE APP SIDE DRAWER (MENU LATERAL DIREITO) ==================== -->
   <div id="drawer-backdrop" class="fixed inset-0 bg-black/75 backdrop-blur-sm z-[150] transition-opacity duration-300 opacity-0 pointer-events-none" onclick="toggleDrawer(false)"></div>
   
-  <aside id="drawer-menu" class="fixed top-0 left-0 bottom-0 w-[85%] max-w-[340px] bg-jp-night/98 border-r border-jp-cardborder z-[160] shadow-2xl transition-transform duration-300 -translate-x-full flex flex-col pt-[env(safe-area-inset-top)] pb-[calc(1rem+env(safe-area-inset-bottom))] backdrop-blur-2xl overflow-hidden" aria-label="Menu Lateral de Navegação">
+  <aside id="drawer-menu" class="fixed top-0 right-0 bottom-0 w-[85%] max-w-[340px] bg-jp-night/98 border-l border-jp-cardborder z-[160] shadow-2xl flex flex-col pt-[env(safe-area-inset-top)] pb-[calc(1rem+env(safe-area-inset-bottom))] backdrop-blur-2xl overflow-hidden" aria-label="Menu Lateral de Navegação">
     <!-- Drawer Header -->
     <div class="p-4 sm:p-5 border-b border-jp-cardborder bg-jp-card/60 flex items-center justify-between">
       <div class="flex items-center space-x-3">
@@ -330,19 +335,19 @@
       <!-- Seção Principal -->
       <div class="space-y-1">
         <span class="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold px-3 block">Navegação Principal</span>
-        <button onclick="switchTab('tab-roteiro'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl hover:bg-jp-card text-slate-200 text-xs font-semibold transition-all">
+        <button type="button" onclick="switchTab('tab-roteiro'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl hover:bg-jp-card text-slate-200 text-xs font-semibold transition-all">
           <span class="flex items-center gap-3"><i class="fa-solid fa-calendar-days text-red-400 w-4 text-center"></i> Roteiro Completo (13 Dias)</span>
           <i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
         </button>
-        <button onclick="switchTab('tab-hospedagem'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl hover:bg-jp-card text-slate-200 text-xs font-semibold transition-all">
+        <button type="button" onclick="switchTab('tab-hospedagem'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl hover:bg-jp-card text-slate-200 text-xs font-semibold transition-all">
           <span class="flex items-center gap-3"><i class="fa-solid fa-hotel text-emerald-400 w-4 text-center"></i> 4 Hospedagens (Airbnbs)</span>
           <i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
         </button>
-        <button onclick="switchTab('tab-voos'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl hover:bg-jp-card text-slate-200 text-xs font-semibold transition-all">
+        <button type="button" onclick="switchTab('tab-voos'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl hover:bg-jp-card text-slate-200 text-xs font-semibold transition-all">
           <span class="flex items-center gap-3"><i class="fa-solid fa-plane text-sky-400 w-4 text-center"></i> Voos & Bagagens</span>
           <i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
         </button>
-        <button onclick="switchTab('tab-orcamento'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl hover:bg-jp-card text-slate-200 text-xs font-semibold transition-all">
+        <button type="button" onclick="switchTab('tab-orcamento'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl hover:bg-jp-card text-slate-200 text-xs font-semibold transition-all">
           <span class="flex items-center gap-3"><i class="fa-solid fa-coins text-jp-gold w-4 text-center"></i> Gastos por Cidade (Wise)</span>
           <i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
         </button>
@@ -351,31 +356,31 @@
       <!-- Seção Ferramentas & Conveniência -->
       <div class="space-y-1 pt-2 border-t border-jp-cardborder">
         <span class="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold px-3 block">Ferramentas & Dieta</span>
-        <button onclick="openWaiterModal(); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs font-bold transition-all">
+        <button type="button" onclick="openWaiterModal(); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs font-bold transition-all">
           <span class="flex items-center gap-3"><i class="fa-solid fa-utensils text-amber-400 w-4 text-center"></i> Cartão de Garçom (Japonês)</span>
-          <span class="text-[9px] px-2 py-0.5 rounded bg-amber-400/20 font-mono">1-Toque</span>
+          <span class="text-[9px] px-2 py-0.5 rounded bg-amber-400/20 font-mono font-bold">1-Toque</span>
         </button>
-        <button onclick="switchTab('tab-conversor'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl hover:bg-jp-card text-slate-200 text-xs font-semibold transition-all">
+        <button type="button" onclick="switchTab('tab-conversor'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl hover:bg-jp-card text-slate-200 text-xs font-semibold transition-all">
           <span class="flex items-center gap-3"><i class="fa-solid fa-calculator text-emerald-400 w-4 text-center"></i> Conversor JPY / BRL</span>
           <i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
         </button>
-        <button onclick="switchTab('tab-alimentacao'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl hover:bg-jp-card text-slate-200 text-xs font-semibold transition-all">
+        <button type="button" onclick="switchTab('tab-alimentacao'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl hover:bg-jp-card text-slate-200 text-xs font-semibold transition-all">
           <span class="flex items-center gap-3"><i class="fa-solid fa-leaf text-emerald-400 w-4 text-center"></i> Dieta Adventista & Shabat</span>
           <i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
         </button>
-        <button onclick="switchTab('tab-clima'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl hover:bg-jp-card text-slate-200 text-xs font-semibold transition-all">
+        <button type="button" onclick="switchTab('tab-clima'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl hover:bg-jp-card text-slate-200 text-xs font-semibold transition-all">
           <span class="flex items-center gap-3"><i class="fa-solid fa-cloud-sun text-yellow-400 w-4 text-center"></i> Clima & Roupas</span>
           <i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
         </button>
-        <button onclick="switchTab('tab-frases'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl hover:bg-jp-card text-slate-200 text-xs font-semibold transition-all">
+        <button type="button" onclick="switchTab('tab-frases'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl hover:bg-jp-card text-slate-200 text-xs font-semibold transition-all">
           <span class="flex items-center gap-3"><i class="fa-solid fa-comments text-sky-400 w-4 text-center"></i> Frases de Sobrevivência</span>
           <i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
         </button>
-        <button onclick="switchTab('tab-checklist'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl hover:bg-jp-card text-slate-200 text-xs font-semibold transition-all">
+        <button type="button" onclick="switchTab('tab-checklist'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl hover:bg-jp-card text-slate-200 text-xs font-semibold transition-all">
           <span class="flex items-center gap-3"><i class="fa-solid fa-list-check text-purple-400 w-4 text-center"></i> Checklist Interativo</span>
           <i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
         </button>
-        <button onclick="switchTab('tab-emergencia'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl bg-rose-950/30 hover:bg-rose-950/50 border border-rose-500/30 text-rose-300 text-xs font-semibold transition-all">
+        <button type="button" onclick="switchTab('tab-emergencia'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl bg-rose-950/30 hover:bg-rose-950/50 border border-rose-500/30 text-rose-300 text-xs font-semibold transition-all">
           <span class="flex items-center gap-3"><i class="fa-solid fa-phone-volume text-rose-400 w-4 text-center"></i> SOS & Emergência MTA</span>
           <i class="fa-solid fa-chevron-right text-[10px] text-rose-500"></i>
         </button>
@@ -392,30 +397,34 @@
 
   <!-- ==================== MOBILE BOTTOM NAVIGATION BAR ==================== -->
   <nav id="mobile-bottom-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-jp-card/95 backdrop-blur-xl border-t border-jp-cardborder pb-[calc(0.4rem+env(safe-area-inset-bottom))] pt-1.5 shadow-2xl flex items-center justify-around px-1 md:hidden" aria-label="Navegação Inferior Mobile">
-    <button type="button" onclick="jumpToToday()" id="bnav-hoje" class="flex flex-col items-center justify-center flex-1 py-1 text-slate-300 hover:text-white transition-all group active:scale-95">
+    <!-- 1. Hoje -->
+    <button type="button" onclick="jumpToToday()" id="bnav-hoje" class="flex flex-col items-center justify-center flex-1 py-1 text-slate-400 hover:text-white transition-all group active:scale-95">
       <i class="fa-solid fa-calendar-day text-base text-amber-400 group-hover:scale-110 transition-transform"></i>
       <span class="text-[10px] font-mono font-bold mt-1 text-amber-400">Hoje</span>
     </button>
-    <button type="button" onclick="switchTab('tab-roteiro')" id="bnav-roteiro" class="flex flex-col items-center justify-center flex-1 py-1 text-slate-300 hover:text-white transition-all group active:scale-95">
+    <!-- 2. Roteiro -->
+    <button type="button" onclick="switchTab('tab-roteiro')" id="bnav-roteiro" class="flex flex-col items-center justify-center flex-1 py-1 text-jp-crimson transition-all group active:scale-95">
       <i class="fa-solid fa-map-location-dot text-base text-red-400 group-hover:scale-110 transition-transform"></i>
-      <span class="text-[10px] font-mono font-semibold mt-1">Roteiro</span>
+      <span class="text-[10px] font-mono font-bold mt-1">Roteiro</span>
     </button>
+    <!-- 3. Garçom (Central Button) -->
     <button type="button" onclick="openWaiterModal()" id="bnav-garcom" class="flex flex-col items-center justify-center flex-1 py-1 -mt-3.5 text-amber-400 transition-all active:scale-95" aria-label="Abrir Cartão do Garçom">
       <div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 border-2 border-amber-300 shadow-glow-gold flex items-center justify-center text-black font-black">
         <i class="fa-solid fa-utensils text-base text-slate-950"></i>
       </div>
       <span class="text-[10px] font-mono font-extrabold text-amber-300 mt-0.5">Garçom</span>
     </button>
-    <button type="button" onclick="switchTab('tab-conversor')" id="bnav-conversor" class="flex flex-col items-center justify-center flex-1 py-1 text-slate-300 hover:text-white transition-all group active:scale-95">
-      <i class="fa-solid fa-calculator text-base text-emerald-400 group-hover:scale-110 transition-transform"></i>
+    <!-- 4. Câmbio -->
+    <button type="button" onclick="switchTab('tab-conversor')" id="bnav-conversor" class="flex flex-col items-center justify-center flex-1 py-1 text-slate-400 hover:text-white transition-all group active:scale-95">
+      <i class="fa-solid fa-calculator text-base group-hover:text-emerald-400 transition-transform"></i>
       <span class="text-[10px] font-mono font-semibold mt-1">Câmbio</span>
     </button>
-    <button type="button" onclick="toggleDrawer(true)" id="bnav-menu" class="flex flex-col items-center justify-center flex-1 py-1 text-slate-300 hover:text-white transition-all group active:scale-95" aria-label="Abrir Menu">
+    <!-- 5. Menu (Right side, aligns with right drawer) -->
+    <button type="button" onclick="toggleDrawer(true)" id="bnav-menu" class="flex flex-col items-center justify-center flex-1 py-1 text-slate-400 hover:text-white transition-all group active:scale-95" aria-label="Abrir Menu">
       <i class="fa-solid fa-bars text-base text-sky-400 group-hover:scale-110 transition-transform"></i>
       <span class="text-[10px] font-mono font-semibold mt-1">Menu</span>
     </button>
   </nav>
-
 
   <!-- ==================== HOME / HERO SECTION MONUMENTAL ==================== -->
   <section class="hero-glow-monumental py-8 sm:py-12 border-b border-jp-cardborder relative overflow-hidden">
@@ -2700,9 +2709,38 @@
       });
     }
 
+        // ==========================================
+    // 2. TAB SWITCHER SYSTEM & BOTTOM NAV SYNC
     // ==========================================
-    // 2. TAB SWITCHER SYSTEM
-    // ==========================================
+    function updateBottomNav(tabId) {
+      const bHoje = document.getElementById('bnav-hoje');
+      const bRoteiro = document.getElementById('bnav-roteiro');
+      const bConversor = document.getElementById('bnav-conversor');
+      
+      if (!bRoteiro || !bConversor) return;
+
+      // Reset styles
+      bRoteiro.classList.remove('text-jp-crimson', 'font-bold');
+      bRoteiro.classList.add('text-slate-400');
+      const iconRoteiro = bRoteiro.querySelector('i');
+      if (iconRoteiro) { iconRoteiro.classList.remove('text-red-400'); iconRoteiro.classList.add('text-slate-400'); }
+
+      bConversor.classList.remove('text-emerald-400', 'font-bold');
+      bConversor.classList.add('text-slate-400');
+      const iconConv = bConversor.querySelector('i');
+      if (iconConv) { iconConv.classList.remove('text-emerald-400'); iconConv.classList.add('text-slate-400'); }
+
+      if (tabId === 'tab-roteiro') {
+        bRoteiro.classList.add('text-jp-crimson', 'font-bold');
+        bRoteiro.classList.remove('text-slate-400');
+        if (iconRoteiro) { iconRoteiro.classList.add('text-red-400'); iconRoteiro.classList.remove('text-slate-400'); }
+      } else if (tabId === 'tab-conversor') {
+        bConversor.classList.add('text-emerald-400', 'font-bold');
+        bConversor.classList.remove('text-slate-400');
+        if (iconConv) { iconConv.classList.add('text-emerald-400'); iconConv.classList.remove('text-slate-400'); }
+      }
+    }
+
     function switchTab(tabId) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
       document.querySelectorAll('.tab-btn').forEach(el => {
@@ -2710,6 +2748,23 @@
         el.classList.add('text-jp-subtle');
         el.classList.add('border-transparent');
       });
+
+      const targetTab = document.getElementById(tabId);
+      if (targetTab) {
+        targetTab.classList.remove('hidden');
+      }
+
+      const activeBtn = document.getElementById('btn-' + tabId);
+      if (activeBtn) {
+        activeBtn.classList.add('tab-active');
+        activeBtn.classList.remove('text-jp-subtle');
+        activeBtn.classList.remove('border-transparent');
+        // Scroll tab button into view on mobile top tab bar
+        activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+
+      updateBottomNav(tabId);
+    });
 
       const targetTab = document.getElementById(tabId);
       if (targetTab) {
@@ -2902,6 +2957,45 @@
     // Initialize Checklist on load
     renderChecklist();
 
+        // ==========================================
+    // WAITER MODAL FUNCTIONS (MOSTRAR AO GARÇOM)
+    // ==========================================
+    function openWaiterModal() {
+      const modal = document.getElementById('waiter-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        const content = document.getElementById('waiter-modal-content');
+        if (content) {
+          content.classList.remove('scale-95');
+          content.classList.add('scale-100');
+        }
+      }
+    }
+
+    function closeWaiterModal() {
+      const modal = document.getElementById('waiter-modal');
+      if (modal) {
+        const content = document.getElementById('waiter-modal-content');
+        if (content) {
+          content.classList.remove('scale-100');
+          content.classList.add('scale-95');
+        }
+        setTimeout(() => {
+          modal.style.display = 'none';
+          document.body.style.overflow = '';
+        }, 150);
+      }
+    }
+
+    // Close modal on backdrop click or ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeWaiterModal();
+        toggleDrawer(false);
+      }
+    });
+
     // ==========================================
     // MOBILE DRAWER & PWA FUNCTIONS
     // ==========================================
@@ -2922,14 +3016,22 @@
     }
 
     function jumpToToday() {
-      // Switch to Roteiro Tab
+      // 1. Switch to Roteiro Tab
       switchTab('tab-roteiro');
-      // All filter buttons to active
+      
+      // 2. Clear region filters to show all days
       if (typeof filterDays === 'function') {
         filterDays('all');
       }
       
-      // Target DIA 02
+      // 3. Highlight bottom nav
+      const bHoje = document.getElementById('bnav-hoje');
+      if (bHoje) {
+        bHoje.classList.add('scale-110');
+        setTimeout(() => bHoje.classList.remove('scale-110'), 300);
+      }
+      
+      // 4. Target DIA 02
       setTimeout(() => {
         const target = document.getElementById('day-card-2') || document.querySelector('[data-city="toquio1"]');
         if (target) {
@@ -2937,7 +3039,7 @@
           target.classList.remove('today-highlight');
           void target.offsetWidth; // trigger reflow
           target.classList.add('today-highlight');
-          showToast('📍 Exibindo programação do DIA 02 (Hoje)', 'info');
+          showToast('📍 Exibindo o DIA 02 (Hoje: Shinjuku Gyoen & Tocho)', 'info');
         }
       }, 150);
     }
@@ -2950,11 +3052,10 @@
           .catch((err) => console.log('ServiceWorker erro:', err));
       });
     }
-
-  </script>
+</script>
 
   <!-- MODAL DE TELA CHEIA PARA GARÇOM (WCAG WAI-ARIA DIALOG) -->
-  <div id="waiter-modal" role="dialog" aria-modal="true" aria-labelledby="modal-waiter-title" style="display: none;" class="fixed inset-0 z-[110] items-center justify-center bg-black/90 backdrop-blur-md p-4 transition-all duration-300">
+  <div id="waiter-modal" role="dialog" onclick="if(event.target===this) closeWaiterModal();" aria-modal="true" aria-labelledby="modal-waiter-title" style="display: none;" class="fixed inset-0 z-[110] items-center justify-center bg-black/90 backdrop-blur-md p-4 transition-all duration-300">
     <div class="bg-jp-night border-2 border-jp-gold rounded-3xl p-5 sm:p-8 max-w-2xl w-full space-y-5 shadow-2xl relative transform scale-95 transition-all duration-300 max-h-[90vh] overflow-y-auto" id="waiter-modal-content">
       
       <!-- Modal Header -->
