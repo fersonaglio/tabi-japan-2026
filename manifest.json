@@ -1,0 +1,20 @@
+{
+  "name": "⛩️ Tabi Japan 2026 • Fernando Sonaglio",
+  "short_name": "Tabi Japan",
+  "description": "Hub Oficial da Viagem ao Japão • Fernando Sonaglio",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#080C14",
+  "theme_color": "#080C14",
+  "orientation": "portrait-primary",
+  "categories": ["travel", "utilities"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%23121620'/><stop offset='100%25' stop-color='%23080A0F'/></linearGradient></defs><circle cx='50' cy='50' r='48' fill='url(%23bg)' stroke='%23D4AF37' stroke-width='3'/><circle cx='50' cy='50' r='26' fill='%23BC002D'/><path d='M22 36 Q50 30 78 36 L78 41 Q50 35 22 41 Z' fill='%23F4E07B'/><rect x='28' y='44' width='44' height='4' fill='%23F4E07B'/><rect x='34' y='41' width='5' height='32' fill='%23F4E07B'/><rect x='61' y='41' width='5' height='32' fill='%23F4E07B'/></svg>",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
