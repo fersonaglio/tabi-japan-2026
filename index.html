@@ -263,22 +263,8 @@
         </div>
       </div>
 
-      <!-- Live Dual Clocks & Quick Actions & Hamburger (Right Side) -->
+      <!-- Quick Actions (Right Side) -->
       <div class="flex items-center space-x-1.5 sm:space-x-2.5 text-xs font-mono shrink-0">
-        <div class="hidden md:flex items-center space-x-2 bg-jp-night/80 px-3 py-1.5 rounded-2xl border border-jp-cardborder shadow-inner">
-          <span class="text-slate-300 font-semibold flex items-center gap-1.5">
-            <i class="fa-solid fa-clock text-slate-400"></i> SP:
-          </span>
-          <span id="clock-sp" class="text-slate-100 font-bold tracking-wider">--:--:--</span>
-        </div>
-        <div class="flex items-center space-x-1 sm:space-x-2 bg-gradient-to-r from-red-950/50 to-jp-night px-2.5 sm:px-3 py-1.5 rounded-2xl border border-red-500/40 shadow-glow-red">
-          <span class="text-red-300 font-bold flex items-center gap-1 text-[11px] sm:text-xs">
-            <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-red-500 animate-ping"></span>
-            🇯🇵 <span class="hidden sm:inline">TÓQUIO</span>:
-          </span>
-          <span id="clock-tyo" class="text-white font-black tracking-wider text-xs sm:text-sm">--:--:--</span>
-        </div>
-
         <!-- Quick SOS Button -->
         <button type="button" onclick="switchTab('tab-emergencia')" class="h-9 w-9 rounded-xl bg-rose-950/50 hover:bg-rose-900 border border-rose-500/40 text-rose-300 flex items-center justify-center transition-all shadow-md active:scale-95" title="SOS & Emergência MTA" aria-label="Emergência SOS">
           <i class="fa-solid fa-phone-volume text-xs"></i>
@@ -3079,33 +3065,6 @@
         }
       });
     }
-
-    // ==========================================
-    // 4. LIVE DUAL CLOCKS (SP & TOKYO)
-    // ==========================================
-    function updateClocks() {
-      const now = new Date();
-      
-      try {
-        const spTime = new Intl.DateTimeFormat('pt-BR', {
-          timeZone: 'America/Sao_Paulo',
-          hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
-        }).format(now);
-        const spElem = document.getElementById('clock-sp');
-        if (spElem) spElem.textContent = spTime;
-
-        const tyoTime = new Intl.DateTimeFormat('pt-BR', {
-          timeZone: 'Asia/Tokyo',
-          hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
-        }).format(now);
-        const tyoElem = document.getElementById('clock-tyo');
-        if (tyoElem) tyoElem.textContent = tyoTime;
-      } catch (e) {
-        console.error('Clock error:', e);
-      }
-    }
-    setInterval(updateClocks, 1000);
-    updateClocks();
 
     // ==========================================
     // 5. BIDIRECTIONAL CURRENCY CONVERTER
