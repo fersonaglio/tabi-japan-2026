@@ -2,6 +2,13 @@
 <html lang="pt-BR" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8">
+    <script>
+    try {
+      if (localStorage.getItem('tabi_japan_unlocked_v1') === '1') {
+        document.documentElement.classList.add('pin-unlocked');
+      }
+    } catch(e) {}
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>⛩️ Tabi Japan 2026 • Fernando Sonaglio | Hub Oficial da Viagem</title>
   
@@ -207,14 +214,24 @@
       transform: scale(1.15);
       filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.6));
     }
-    @keyframes pulseHighlight {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
-      50% { box-shadow: 0 0 35px 6px rgba(245, 158, 11, 0.7); border-color: rgba(245, 158, 11, 0.95); }
+        /* Prevenção de FOUC do PIN Gate */
+    .pin-unlocked #pin-gate {
+      display: none !important;
     }
+
+    /* Anti-flicker e estabilização de camadas GPU no iOS/Safari */
+    header, nav, aside, #waiter-modal, .glass-card, .day-card {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
     .today-highlight {
-      animation: pulseHighlight 1.4s ease-in-out 3;
-      border-color: rgba(245, 158, 11, 0.9) !important;
+      border-color: rgba(245, 158, 11, 0.95) !important;
+      box-shadow: 0 0 25px rgba(245, 158, 11, 0.25) !important;
     }
+
   </style>
 </head>
 <body class="bg-jp-night text-slate-100 font-sans min-h-screen selection:bg-jp-red selection:text-white pb-[calc(5rem+env(safe-area-inset-bottom))] antialiased">
@@ -255,7 +272,7 @@
               ⛩️ TABI JAPAN 2026
             </span>
             <span class="hidden sm:inline-flex px-2 py-0.5 text-[9px] sm:text-[10px] font-mono uppercase bg-sky-500/20 text-sky-400 border border-sky-500/40 rounded-full font-bold items-center gap-1 shrink-0">
-              <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-ping"></span>
+              <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)] inline-block"></span>
               ✈️ Em Viagem
             </span>
           </div>
@@ -814,7 +831,7 @@
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
-                <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs animate-pulse">HOJE • DIA 03</span>
+                <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs shadow-md">HOJE • DIA 03</span>
                 <span class="text-xs font-bold text-slate-200">Quinta • 03/09</span>
               </div>
               <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 font-bold text-[10px] font-mono uppercase">Imperial, Shibuya & Shinjuku</span>
