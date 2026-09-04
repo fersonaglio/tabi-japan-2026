@@ -493,6 +493,21 @@
           <span class="flex items-center gap-2.5 sm:gap-3"><i class="fa-solid fa-phone-volume text-rose-400 w-4 text-center"></i> SOS & Emergência MTA</span>
           <i class="fa-solid fa-chevron-right text-[10px] text-rose-500"></i>
         </button>
+
+        <!-- Seletor de App de Mapas Padrão -->
+        <div class="p-3 rounded-2xl bg-jp-card/50 border border-jp-cardborder space-y-2 mt-2">
+          <div class="flex items-center justify-between text-[11px] font-mono">
+            <span class="text-slate-400 flex items-center gap-1.5 font-bold">
+              <i class="fa-solid fa-map-location-dot text-amber-400"></i> Abrir Links de Mapas
+            </span>
+            <span id="drawer-maps-pref-badge"></span>
+          </div>
+          <div class="grid grid-cols-3 gap-1.5 text-[10px] font-mono">
+            <button type="button" onclick="setMapsPreference('google_maps')" class="py-1.5 px-1.5 rounded-lg bg-red-600/20 hover:bg-red-600/30 text-red-300 font-bold border border-red-500/30 text-center active:scale-95 transition-all">Google Maps</button>
+            <button type="button" onclick="setMapsPreference('apple_maps')" class="py-1.5 px-1.5 rounded-lg bg-sky-600/20 hover:bg-sky-600/30 text-sky-300 font-bold border border-sky-500/30 text-center active:scale-95 transition-all">Apple Maps</button>
+            <button type="button" onclick="resetMapsPreference()" class="py-1.5 px-1.5 rounded-lg bg-jp-night hover:bg-slate-800 text-slate-400 hover:text-slate-200 border border-jp-cardborder text-center active:scale-95 transition-all">Perguntar</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -4363,6 +4378,158 @@
     // Carregamento inicial da previsão do tempo
     loadLiveWeather();
 
+    // ==========================================
+    // 10. MAPS APP DEEP-LINK INTERCEPTOR (PWA / iOS / ANDROID)
+    // ==========================================
+    let pendingMapUrl = '';
+    let pendingMapQuery = '';
+    const MAPS_PREF_KEY = 'tabi_maps_app_pref_v1';
+
+    function extractQueryFromMapUrl(urlStr, linkText) {
+      try {
+        const url = new URL(urlStr, window.location.origin);
+        const q = url.searchParams.get('query') || url.searchParams.get('q') || url.searchParams.get('destination') || url.searchParams.get('daddr');
+        if (q) return q;
+      } catch (e) {}
+      if (linkText) {
+        return linkText.replace(/[✔📍•0-9:—\[\]\(\)]+/g, '').replace(/GRATUITO|PAGO|Suica/gi, '').trim();
+      }
+      return '';
+    }
+
+    function openMapsModal(query, originalUrl, title) {
+      pendingMapUrl = originalUrl;
+      pendingMapQuery = query;
+
+      const modal = document.getElementById('maps-picker-modal');
+      const targetEl = document.getElementById('maps-modal-target');
+      if (targetEl) targetEl.textContent = title || query || 'Local Selecionado';
+
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        const content = document.getElementById('maps-picker-content');
+        if (content) {
+          content.classList.remove('translate-y-4');
+          content.classList.add('translate-y-0');
+        }
+      }
+    }
+
+    function closeMapsModal() {
+      const modal = document.getElementById('maps-picker-modal');
+      if (modal) {
+        const content = document.getElementById('maps-picker-content');
+        if (content) {
+          content.classList.remove('translate-y-0');
+          content.classList.add('translate-y-4');
+        }
+        setTimeout(() => {
+          modal.style.display = 'none';
+          document.body.style.overflow = '';
+        }, 150);
+      }
+    }
+
+    function executeOpenMap(choice) {
+      const remember = document.getElementById('maps-remember-choice')?.checked;
+      if (remember) {
+        try { localStorage.setItem(MAPS_PREF_KEY, choice); } catch(e) {}
+        updateMapsDrawerBadge();
+      }
+
+      const query = pendingMapQuery;
+      const url = pendingMapUrl;
+      closeMapsModal();
+
+      dispatchMapLaunch(choice, query, url);
+    }
+
+    function dispatchMapLaunch(choice, query, originalUrl) {
+      const encodedQuery = encodeURIComponent(query);
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      const isAndroid = /Android/.test(navigator.userAgent);
+
+      if (choice === 'google_maps') {
+        if (isIOS) {
+          // Protocolo oficial comgooglemaps:// para abrir direto no app Google Maps do iOS
+          window.location.href = `comgooglemaps://?q=${encodedQuery}`;
+          // Fallback caso não esteja instalado
+          setTimeout(() => {
+            if (!document.hidden) {
+              window.open(originalUrl || `https://www.google.com/maps/search/?api=1&query=${encodedQuery}`, '_blank');
+            }
+          }, 1200);
+        } else if (isAndroid) {
+          window.location.href = `geo:0,0?q=${encodedQuery}`;
+        } else {
+          window.open(originalUrl || `https://www.google.com/maps/search/?api=1&query=${encodedQuery}`, '_blank');
+        }
+      } else if (choice === 'apple_maps') {
+        // maps:// abre o app Mapas nativo do iPhone / iPad / Mac
+        window.location.href = `maps://?q=${encodedQuery}`;
+      } else {
+        // Navegador Web
+        window.open(originalUrl || `https://www.google.com/maps/search/?api=1&query=${encodedQuery}`, '_blank');
+      }
+    }
+
+    function resetMapsPreference() {
+      try { localStorage.removeItem(MAPS_PREF_KEY); } catch(e) {}
+      updateMapsDrawerBadge();
+      showToast('Preferência de mapas redefinida! Perguntará na próxima vez.', 'info');
+    }
+
+    function setMapsPreference(pref) {
+      try { localStorage.setItem(MAPS_PREF_KEY, pref); } catch(e) {}
+      updateMapsDrawerBadge();
+      const label = pref === 'google_maps' ? 'Google Maps (App)' : (pref === 'apple_maps' ? 'Apple Maps (App)' : 'Navegador Web');
+      showToast(`Padrão definido para: ${label}`, 'success');
+    }
+
+    function updateMapsDrawerBadge() {
+      const badge = document.getElementById('drawer-maps-pref-badge');
+      if (!badge) return;
+      let pref = null;
+      try { pref = localStorage.getItem(MAPS_PREF_KEY); } catch(e) {}
+      if (pref === 'google_maps') {
+        badge.innerHTML = '<span class="text-rose-400 font-bold">Google Maps</span>';
+      } else if (pref === 'apple_maps') {
+        badge.innerHTML = '<span class="text-sky-400 font-bold">Apple Maps</span>';
+      } else if (pref === 'browser') {
+        badge.innerHTML = '<span class="text-slate-300 font-bold">Navegador</span>';
+      } else {
+        badge.innerHTML = '<span class="text-amber-400 font-bold">Perguntar</span>';
+      }
+    }
+
+    // Interceptar cliques em todos os 93 links do Google Maps no app
+    document.addEventListener('click', function(e) {
+      const link = e.target.closest('a');
+      if (!link) return;
+      const href = link.getAttribute('href') || '';
+      if (href.includes('google.com/maps')) {
+        e.preventDefault();
+        
+        const linkText = link.innerText ? link.innerText.trim() : '';
+        const query = extractQueryFromMapUrl(href, linkText);
+        
+        let pref = null;
+        try { pref = localStorage.getItem(MAPS_PREF_KEY); } catch(e) {}
+        
+        // Se já tiver preferência salva, abre direto no app escolhido!
+        if (pref && pref !== 'always_ask') {
+          dispatchMapLaunch(pref, query, href);
+        } else {
+          // Se não tiver preferência, abre o seletor nativo
+          openMapsModal(query, href, linkText);
+        }
+      }
+    });
+
+    // Atualizar badge do drawer na inicialização
+    updateMapsDrawerBadge();
+
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js')
@@ -4469,6 +4636,93 @@
           Fechar Janela
         </button>
       </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== MODAL SELETOR DE MAPAS (GOOGLE MAPS / APPLE MAPS / WEB) ==================== -->
+  <div id="maps-picker-modal" role="dialog" aria-modal="true" aria-labelledby="maps-modal-title" style="display: none;" class="fixed inset-0 z-[190] items-end sm:items-center justify-center bg-black/80 backdrop-blur-sm p-0 sm:p-4 transition-all duration-300" onclick="if(event.target===this) closeMapsModal();">
+    <div id="maps-picker-content" class="w-full sm:w-[92vw] sm:max-w-md bg-jp-night border-t-2 sm:border-2 border-jp-gold rounded-t-3xl sm:rounded-3xl p-5 sm:p-6 shadow-2xl space-y-4 pb-[calc(1.5rem+env(safe-area-inset-bottom))] transform translate-y-4 transition-all duration-300">
+      
+      <!-- Cabeçalho -->
+      <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400 flex-shrink-0">
+            <i class="fa-solid fa-location-dot text-base"></i>
+          </div>
+          <div>
+            <h3 id="maps-modal-title" class="text-xs sm:text-sm font-bold text-white font-mono uppercase tracking-wide">Abrir no App de Mapas</h3>
+            <p id="maps-modal-target" class="text-[11px] font-mono text-jp-gold truncate max-w-[210px] sm:max-w-[280px]">Destino</p>
+          </div>
+        </div>
+        <button type="button" onclick="closeMapsModal()" class="h-9 w-9 rounded-xl bg-jp-card border border-jp-cardborder text-slate-300 hover:text-white flex items-center justify-center active:scale-95 transition-all" aria-label="Fechar">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+
+      <p class="text-xs text-slate-300">
+        Escolha como deseja abrir a rota/localização no seu aparelho:
+      </p>
+
+      <!-- Opções de Aplicativo -->
+      <div class="space-y-2.5">
+        <!-- 1. Google Maps (App) -->
+        <button type="button" onclick="executeOpenMap('google_maps')" class="w-full min-h-[50px] p-3 rounded-2xl bg-jp-card hover:bg-slate-800 border border-red-500/40 hover:border-red-400 flex items-center justify-between text-left transition-all active:scale-98 group shadow-md">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-red-600/20 border border-red-500/40 flex items-center justify-center text-red-400 text-lg flex-shrink-0 group-hover:scale-105 transition-transform">
+              <i class="fa-solid fa-map-location-dot"></i>
+            </div>
+            <div>
+              <div class="text-xs font-bold text-white flex items-center gap-2">
+                Google Maps <span class="px-1.5 py-0.2 rounded bg-red-500/20 text-red-300 text-[9px] font-mono font-bold">App Oficial</span>
+              </div>
+              <p class="text-[11px] text-slate-400">Abre direto no aplicativo do Google Maps</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-white"></i>
+        </button>
+
+        <!-- 2. Apple Maps (App Nativo do iPhone) -->
+        <button type="button" onclick="executeOpenMap('apple_maps')" class="w-full min-h-[50px] p-3 rounded-2xl bg-jp-card hover:bg-slate-800 border border-sky-500/40 hover:border-sky-400 flex items-center justify-between text-left transition-all active:scale-98 group shadow-md">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-sky-600/20 border border-sky-500/40 flex items-center justify-center text-sky-400 text-lg flex-shrink-0 group-hover:scale-105 transition-transform">
+              <i class="fa-brands fa-apple"></i>
+            </div>
+            <div>
+              <div class="text-xs font-bold text-white flex items-center gap-2">
+                Apple Maps <span class="px-1.5 py-0.2 rounded bg-sky-500/20 text-sky-300 text-[9px] font-mono font-bold">Nativo iOS</span>
+              </div>
+              <p class="text-[11px] text-slate-400">Abre no app Mapas padrão do iPhone</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-white"></i>
+        </button>
+
+        <!-- 3. Navegador Web -->
+        <button type="button" onclick="executeOpenMap('browser')" class="w-full min-h-[44px] p-2.5 sm:p-3 rounded-2xl bg-jp-card/50 hover:bg-slate-800 border border-jp-cardborder flex items-center justify-between text-left transition-all active:scale-98 text-slate-300 group">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 text-sm flex-shrink-0">
+              <i class="fa-solid fa-globe"></i>
+            </div>
+            <div>
+              <div class="text-xs font-semibold text-slate-200">Navegador Web</div>
+              <p class="text-[10px] text-slate-500">Abre como página no Safari / Chrome</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
+        </button>
+      </div>
+
+      <!-- Checkbox para lembrar a escolha -->
+      <label class="flex items-center gap-2.5 p-2.5 rounded-xl bg-jp-card/40 border border-jp-cardborder/60 cursor-pointer select-none">
+        <input type="checkbox" id="maps-remember-choice" checked class="w-4 h-4 rounded border-slate-600 text-amber-500 focus:ring-amber-400 focus:ring-offset-0 bg-jp-night">
+        <span class="text-[11px] text-slate-300 font-medium">Lembrar escolha e abrir direto nas próximas vezes</span>
+      </label>
+
+      <!-- Botão Cancelar -->
+      <button type="button" onclick="closeMapsModal()" class="w-full min-h-[44px] py-2.5 rounded-xl bg-jp-night border border-jp-cardborder text-slate-400 hover:text-white text-xs font-mono font-semibold active:scale-95 transition-all">
+        Cancelar
+      </button>
 
     </div>
   </div>
