@@ -171,7 +171,15 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    /* Target Size e Touch Feedback */
+    /* Safe Areas Safari iOS e Dynamic Viewport */
+    :root {
+      --sat: env(safe-area-inset-top, 0px);
+      --sab: env(safe-area-inset-bottom, 0px);
+      --sal: env(safe-area-inset-left, 0px);
+      --sar: env(safe-area-inset-right, 0px);
+    }
+
+    /* Target Size e Touch Feedback (WCAG 2.2 AA - min 44x44px) */
     button, a, input, select {
       touch-action: manipulation;
     }
@@ -183,6 +191,101 @@
     }
     .tab-scroll-item {
       scroll-snap-align: start;
+    }
+
+    /* =================================================== */
+    /* STICKY HORIZONTAL DAY SCROLLER (iPhone Mobile-First) */
+    /* =================================================== */
+    .day-scroller-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 35;
+      background: rgba(8, 12, 20, 0.94);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      margin-left: -1rem;
+      margin-right: -1rem;
+      padding: 0.5rem 1rem;
+    }
+
+    .day-snap-track {
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-padding-left: 1rem;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
+      scrollbar-width: none;
+    }
+    .day-snap-track::-webkit-scrollbar {
+      display: none !important;
+    }
+
+    .day-pill-btn {
+      scroll-snap-align: center;
+      flex-shrink: 0;
+      min-height: 48px;
+      min-width: 68px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0.35rem 0.75rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(15, 23, 42, 0.7);
+      color: #94A3B8;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .day-pill-btn:active {
+      transform: scale(0.95);
+    }
+    .day-pill-btn.day-pill-active {
+      background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%) !important;
+      border-color: #EF4444 !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+      transform: scale(1.03);
+    }
+
+    /* =================================================== */
+    /* TIMELINE STREAM (Linha do Tempo Conectada Vertical) */
+    /* =================================================== */
+    .timeline-stream-container {
+      position: relative;
+      list-style: none;
+      padding-left: 1.25rem;
+    }
+    .timeline-stream-container::before {
+      content: '';
+      position: absolute;
+      top: 1rem;
+      bottom: 1rem;
+      left: 0.375rem;
+      width: 2px;
+      background: linear-gradient(to bottom, #10B981, #38BDF8, #818CF8, #F59E0B);
+      border-radius: 9999px;
+      opacity: 0.35;
+    }
+
+    .timeline-node {
+      position: absolute;
+      left: -1.25rem;
+      top: 1.15rem;
+      width: 0.875rem;
+      height: 0.875rem;
+      border-radius: 9999px;
+      border: 2px solid #080C14;
+      background: #38BDF8;
+      box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+    }
+
+    /* Content Visibility para fluidez a 120Hz */
+    .day-card {
+      content-visibility: auto;
+      contain-intrinsic-size: 0 320px;
     }
 
     /* Foco Acessível de Alto Contraste (WCAG 2.2) */
@@ -692,10 +795,91 @@
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
 
     <!-- ==================== TAB 1: ROTEIRO DIA A DIA ==================== -->
-    <div id="tab-roteiro" class="tab-content space-y-6">
+    <div id="tab-roteiro" class="tab-content space-y-5">
       
-      <!-- Filter Toolbar -->
-      <div class="flex items-center justify-between flex-wrap gap-3 p-4 bg-jp-card/90 border border-jp-cardborder rounded-2xl shadow-md">
+      <!-- STICKY HORIZONTAL DAY SCROLLER (Mobile-First 13 Dias com Snap) -->
+      <div class="day-scroller-sticky" aria-label="Navegação Rápida entre os 13 Dias">
+        <div class="flex items-center justify-between px-1 pb-1 text-xs">
+          <span class="font-mono text-[10px] uppercase font-bold tracking-wider text-slate-400 flex items-center gap-1">
+            <i class="fa-solid fa-calendar-days text-rose-400"></i> Dias da Viagem:
+          </span>
+          <div class="flex items-center gap-2">
+            <button type="button" onclick="showAllDays()" id="btn-show-all" class="text-[11px] font-mono px-2 py-0.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white border border-slate-700 active:scale-95 transition-all">
+              Ver Todos (13)
+            </button>
+          </div>
+        </div>
+
+        <div class="day-snap-track" role="tablist" id="day-pill-track">
+          <button role="tab" onclick="selectDay(1)" id="pill-day-1" class="day-pill-btn" aria-selected="false">
+            <span class="text-[9px] font-mono font-bold uppercase">Ter 01</span>
+            <span class="text-xs font-bold text-white">Haneda</span>
+          </button>
+
+          <button role="tab" onclick="selectDay(2)" id="pill-day-2" class="day-pill-btn" aria-selected="false">
+            <span class="text-[9px] font-mono font-bold uppercase">Qua 02</span>
+            <span class="text-xs font-bold text-white">Shinjuku</span>
+          </button>
+
+          <button role="tab" onclick="selectDay(3)" id="pill-day-3" class="day-pill-btn" aria-selected="false">
+            <span class="text-[9px] font-mono font-bold uppercase text-amber-300">Qui 03</span>
+            <span class="text-xs font-bold text-white">Shibuya</span>
+          </button>
+
+          <button role="tab" onclick="selectDay(4)" id="pill-day-4" class="day-pill-btn day-pill-active" aria-selected="true">
+            <span class="text-[9px] font-mono font-bold uppercase text-rose-200">Sex 04</span>
+            <span class="text-xs font-black text-white">teamLab</span>
+          </button>
+
+          <button role="tab" onclick="selectDay(5)" id="pill-day-5" class="day-pill-btn border-emerald-500/40 bg-emerald-950/30" aria-selected="false">
+            <span class="text-[9px] font-mono font-bold uppercase text-emerald-400">Sáb 05</span>
+            <span class="text-xs font-bold text-white flex items-center gap-0.5"><i class="fa-solid fa-dove text-[8px] text-emerald-400"></i> Shabat</span>
+          </button>
+
+          <button role="tab" onclick="selectDay(6)" id="pill-day-6" class="day-pill-btn border-sky-500/30" aria-selected="false">
+            <span class="text-[9px] font-mono font-bold uppercase text-sky-300">Dom 06</span>
+            <span class="text-xs font-bold text-white">Fuji 🚅</span>
+          </button>
+
+          <button role="tab" onclick="selectDay(7)" id="pill-day-7" class="day-pill-btn" aria-selected="false">
+            <span class="text-[9px] font-mono font-bold uppercase">Seg 07</span>
+            <span class="text-xs font-bold text-white">Quioto E.</span>
+          </button>
+
+          <button role="tab" onclick="selectDay(8)" id="pill-day-8" class="day-pill-btn" aria-selected="false">
+            <span class="text-[9px] font-mono font-bold uppercase">Ter 08</span>
+            <span class="text-xs font-bold text-white">Arashiyama</span>
+          </button>
+
+          <button role="tab" onclick="selectDay(9)" id="pill-day-9" class="day-pill-btn border-sky-500/30" aria-selected="false">
+            <span class="text-[9px] font-mono font-bold uppercase text-sky-300">Qua 09</span>
+            <span class="text-xs font-bold text-white">Nara/Osaka</span>
+          </button>
+
+          <button role="tab" onclick="selectDay(10)" id="pill-day-10" class="day-pill-btn" aria-selected="false">
+            <span class="text-[9px] font-mono font-bold uppercase">Qui 10</span>
+            <span class="text-xs font-bold text-white">Castelo</span>
+          </button>
+
+          <button role="tab" onclick="selectDay(11)" id="pill-day-11" class="day-pill-btn border-sky-500/30" aria-selected="false">
+            <span class="text-[9px] font-mono font-bold uppercase text-sky-300">Sex 11</span>
+            <span class="text-xs font-bold text-white">Tóquio 2 🚅</span>
+          </button>
+
+          <button role="tab" onclick="selectDay(12)" id="pill-day-12" class="day-pill-btn border-emerald-500/40 bg-emerald-950/30" aria-selected="false">
+            <span class="text-[9px] font-mono font-bold uppercase text-emerald-400">Sáb 12</span>
+            <span class="text-xs font-bold text-white flex items-center gap-0.5"><i class="fa-solid fa-dove text-[8px] text-emerald-400"></i> Shabat</span>
+          </button>
+
+          <button role="tab" onclick="selectDay(13)" id="pill-day-13" class="day-pill-btn border-amber-500/40 bg-amber-950/20" aria-selected="false">
+            <span class="text-[9px] font-mono font-bold uppercase text-amber-300">Dom 13</span>
+            <span class="text-xs font-bold text-white flex items-center gap-0.5">Haneda ✈️</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Filter Toolbar (Desktop / Tablet) -->
+      <div class="hidden sm:flex items-center justify-between flex-wrap gap-3 p-4 bg-jp-card/90 border border-jp-cardborder rounded-2xl shadow-md">
         <div class="flex items-center gap-2 flex-wrap">
           <span class="text-xs font-mono uppercase text-jp-gold font-bold mr-1 flex items-center gap-1">
             <i class="fa-solid fa-filter"></i> Filtrar Região:
@@ -3435,7 +3619,7 @@
     }
 
     // ==========================================
-    // 3. ITINERARY CITY FILTER
+    // 3. ITINERARY CITY FILTER & DAY SELECTOR
     // ==========================================
     function filterDays(city) {
       document.querySelectorAll('.city-btn').forEach(btn => {
@@ -3456,6 +3640,65 @@
           card.classList.add('hidden');
         }
       });
+    }
+
+    // Navegação Mobile Inteligente (Foco Diário / Snap)
+    function selectDay(dayNum) {
+      // Haptic feedback nativo no iPhone se suportado
+      if (navigator.vibrate) {
+        try { navigator.vibrate(12); } catch(e) {}
+      }
+
+      // Atualizar estado visual das pílulas no scroller horizontal
+      document.querySelectorAll('.day-pill-btn').forEach(btn => {
+        btn.classList.remove('day-pill-active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+
+      const activePill = document.getElementById(`pill-day-${dayNum}`);
+      if (activePill) {
+        activePill.classList.add('day-pill-active');
+        activePill.setAttribute('aria-selected', 'true');
+        activePill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+
+      // Em telas mobile pequenas (< 768px), focar no dia selecionado com fluidez
+      const isMobile = window.innerWidth < 768;
+      const cards = document.querySelectorAll('.day-card');
+
+      if (isMobile) {
+        cards.forEach(card => {
+          if (card.id === `day-card-${dayNum}`) {
+            card.classList.remove('hidden');
+            card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+        const btnAll = document.getElementById('btn-show-all');
+        if (btnAll) btnAll.textContent = 'Ver Todos (13)';
+      } else {
+        // No desktop, faz scroll suave até o card alvo
+        cards.forEach(card => card.classList.remove('hidden'));
+        const target = document.getElementById(`day-card-${dayNum}`);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+    }
+
+    function showAllDays() {
+      if (navigator.vibrate) {
+        try { navigator.vibrate(10); } catch(e) {}
+      }
+      document.querySelectorAll('.day-card').forEach(card => card.classList.remove('hidden'));
+      document.querySelectorAll('.day-pill-btn').forEach(btn => {
+        btn.classList.remove('day-pill-active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+      const btnAll = document.getElementById('btn-show-all');
+      if (btnAll) btnAll.textContent = 'Todos Ativos ✓';
+      showToast('Exibindo todos os 13 dias do roteiro', 'info');
     }
 
     // ==========================================
