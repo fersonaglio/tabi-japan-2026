@@ -207,17 +207,28 @@
       margin-left: -1rem;
       margin-right: -1rem;
       padding: 0.5rem 1rem;
+      touch-action: pan-x;
+      overflow-y: hidden;
     }
 
     .day-snap-track {
       display: flex;
       gap: 0.5rem;
       overflow-x: auto;
+      overflow-y: hidden;
+      touch-action: pan-x;
       scroll-snap-type: x mandatory;
       scroll-padding-left: 1rem;
       -webkit-overflow-scrolling: touch;
       overscroll-behavior-x: contain;
+      overscroll-behavior-y: none;
       scrollbar-width: none;
+      cursor: grab;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .day-snap-track:active {
+      cursor: grabbing;
     }
     .day-snap-track::-webkit-scrollbar {
       display: none !important;
