@@ -521,22 +521,22 @@
 
   <!-- ==================== MOBILE BOTTOM NAVIGATION BAR ==================== -->
   <nav id="mobile-bottom-bar" class="fixed bottom-0 left-0 right-0 z-40 bg-jp-card/95 backdrop-blur-xl border-t border-jp-cardborder pb-[calc(0.4rem+env(safe-area-inset-bottom))] pt-1.5 shadow-2xl flex items-center justify-around px-1 md:hidden" aria-label="Navegação Inferior Mobile">
-    <!-- 1. Hoje -->
-    <button type="button" onclick="jumpToToday()" id="bnav-hoje" class="flex flex-col items-center justify-center flex-1 py-1 text-slate-400 hover:text-white transition-all group active:scale-95">
-      <i class="fa-solid fa-calendar-day text-base text-amber-400 group-hover:scale-110 transition-transform"></i>
-      <span class="text-[10px] font-mono font-bold mt-1 text-amber-400">Hoje</span>
+    <!-- 1. Garçom -->
+    <button type="button" onclick="openWaiterModal()" id="bnav-garcom" class="flex flex-col items-center justify-center flex-1 py-1 text-slate-400 hover:text-white transition-all group active:scale-95" aria-label="Abrir Cartão do Garçom">
+      <i class="fa-solid fa-utensils text-base text-amber-400 group-hover:scale-110 transition-transform"></i>
+      <span class="text-[10px] font-mono font-bold mt-1 text-amber-400">Garçom</span>
     </button>
     <!-- 2. Roteiro -->
     <button type="button" onclick="switchTab('tab-roteiro')" id="bnav-roteiro" class="flex flex-col items-center justify-center flex-1 py-1 text-jp-crimson transition-all group active:scale-95">
       <i class="fa-solid fa-map-location-dot text-base text-red-400 group-hover:scale-110 transition-transform"></i>
       <span class="text-[10px] font-mono font-bold mt-1">Roteiro</span>
     </button>
-    <!-- 3. Garçom (Central Button) -->
-    <button type="button" onclick="openWaiterModal()" id="bnav-garcom" class="flex flex-col items-center justify-center flex-1 py-1 -mt-3.5 text-amber-400 transition-all active:scale-95" aria-label="Abrir Cartão do Garçom">
+    <!-- 3. Hoje (Botão Central em Destaque) -->
+    <button type="button" onclick="jumpToToday()" id="bnav-hoje" class="flex flex-col items-center justify-center flex-1 py-1 -mt-3.5 text-amber-400 transition-all active:scale-95" aria-label="Ir para Hoje">
       <div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 border-2 border-amber-300 shadow-glow-gold flex items-center justify-center text-black font-black">
-        <i class="fa-solid fa-utensils text-base text-slate-950"></i>
+        <i class="fa-solid fa-calendar-day text-base text-slate-950"></i>
       </div>
-      <span class="text-[10px] font-mono font-extrabold text-amber-300 mt-0.5">Garçom</span>
+      <span class="text-[10px] font-mono font-extrabold text-amber-300 mt-0.5">Hoje</span>
     </button>
     <!-- 4. Câmbio -->
     <button type="button" onclick="switchTab('tab-conversor')" id="bnav-conversor" class="flex flex-col items-center justify-center flex-1 py-1 text-slate-400 hover:text-white transition-all group active:scale-95">
@@ -4387,11 +4387,11 @@
         setTimeout(() => bHoje.classList.remove('scale-110'), 300);
       }
       
-      // Hoje no Japão é Dia 04 (Sexta, 04/09): teamLab & Akihabara
+      // Hoje no Japão é Dia 05 (Sábado, 05/09): Culto TIC, Zojoji, Tokyo Tower & Ginza
       if (typeof selectDay === 'function') {
-        selectDay(4);
+        selectDay(5);
       }
-      showToast('📍 Exibindo DIA 04 (Hoje no Japão: teamLab, Odaiba & Shabat)', 'info');
+      showToast('📍 Exibindo DIA 05 (Hoje no Japão: Culto TIC, Zojoji & Tokyo Tower)', 'info');
     }
 
     // ==========================================
@@ -4694,52 +4694,74 @@
       </div>
 
       <!-- Modal Body (Rolagem suave interna protegida contra overflow) -->
-      <div class="flex-1 overflow-y-auto p-3.5 sm:p-5 space-y-3.5 overscroll-contain">
+      <div class="flex-1 overflow-y-auto p-3.5 sm:p-5 space-y-4 overscroll-contain">
         
-        <div class="p-3.5 sm:p-5 rounded-2xl bg-jp-card border border-jp-gold/40 text-white shadow-inner text-left space-y-3.5">
-          <div>
-            <div class="font-serif text-lg sm:text-xl font-bold text-jp-gold tracking-wide">
-              【食事制限のお願い】
-            </div>
-            <span class="text-[11px] sm:text-xs text-slate-400 font-sans block mt-0.5">
-              (Pedido de Restrição Alimentar)
-            </span>
+        <!-- CARD PRINCIPAL EM JAPONÊS (MOSTRAR NA TELA) -->
+        <div class="p-4 sm:p-5 rounded-2xl bg-jp-card border-2 border-jp-gold/70 text-white shadow-inner text-left space-y-3.5 select-all">
+          <div class="flex items-center justify-between border-b border-jp-cardborder pb-2.5">
+            <span class="px-2 py-0.5 rounded bg-jp-gold text-black text-[10px] font-mono font-bold uppercase">Japonês / 日本語</span>
+            <span class="text-[11px] text-slate-400">Mostre esta parte para o atendente:</span>
           </div>
 
-          <div class="border-t border-jp-cardborder/60 pt-3">
-            <div class="font-serif text-base sm:text-lg leading-relaxed text-slate-100">
-              私は<strong class="text-red-400 underline decoration-red-500 font-bold">豚肉</strong>（豚エキス、ラード、ゼラチン含む）および<strong class="text-red-400 underline decoration-red-500 font-bold">アルコール</strong>（みりん、料理酒含む）を食べることができません。
+          <div class="font-serif text-base sm:text-xl leading-relaxed space-y-3">
+            <p class="font-bold text-jp-gold text-lg sm:text-2xl">
+              すみません、宗教上の理由による食事のお願いです。
+            </p>
+            <p class="text-slate-200 text-sm sm:text-base leading-relaxed">
+              日本の食文化が大好きで、ぜひ美味しい料理を心から楽しみたいと思っています！<br>
+              ただ、<strong>私の宗教の戒律</strong>により、以下の食材を食べることができません：
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm pt-1">
+              <div class="p-3 rounded-xl bg-red-950/40 border border-red-500/60 space-y-1">
+                <span class="font-bold text-red-400 block text-sm sm:text-base">❌ NG（食べられないもの）</span>
+                <ul class="space-y-1 text-slate-200 font-sans">
+                  <li>• <strong>豚肉</strong>（ポーク、ハム、ベーコン、ソーセージ）</li>
+                  <li>• <strong>豚の油・エキス</strong>（ラード、豚骨、豚エキス）</li>
+                  <li>• <strong>エビ・カニ・イカ・タコ・貝類</strong>（甲殻類・シーフード全般）</li>
+                  <li>• <strong>アルコール・お酒</strong>（料理酒、みりん、ワイン）</li>
+                </ul>
+              </div>
+
+              <div class="p-3 rounded-xl bg-emerald-950/40 border border-emerald-500/60 space-y-1">
+                <span class="font-bold text-emerald-400 block text-sm sm:text-base">⭕ OK（食べられるもの）</span>
+                <ul class="space-y-1 text-slate-200 font-sans">
+                  <li>• <strong>牛肉</strong>（ビーフ）</li>
+                  <li>• <strong>鶏肉</strong>（チキン）</li>
+                  <li>• <strong>野菜・卵・乳製品・豆腐</strong></li>
+                </ul>
+              </div>
             </div>
-            <span class="text-[11px] sm:text-xs text-slate-400 font-sans block mt-1 leading-snug">
-              🇧🇷 <em>Não posso comer carne de porco (incluindo caldo, banha e gelatina) nem álcool (incluindo mirin e saquê culinário).</em>
+
+            <p class="font-bold text-white pt-2 text-sm sm:text-base border-t border-jp-cardborder leading-relaxed">
+              👉 <strong>この条件で、私でも安心して美味しく食べられる、あなたのおすすめ料理はありますか？</strong><br>
+              <span class="text-xs text-slate-400 font-normal">（※もしフォークとスプーンがあれば、一緒にお願いできますと幸いです。）</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- TRADUÇÕES DE APOIO (INGLÊS & PORTUGUÊS) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <!-- English -->
+          <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-700/60 space-y-1.5 text-xs text-slate-300">
+            <span class="font-bold text-sky-300 font-mono flex items-center gap-1.5 uppercase text-[10px]">
+              <i class="fa-solid fa-earth-americas"></i> English
             </span>
+            <p class="leading-relaxed text-[11px]">
+              <em>"Excuse me, I have a dietary request for religious reasons. I love Japanese food culture and really want to enjoy delicious Japanese cuisine! However, due to my religious beliefs, I cannot eat: <strong>Pork (meat, lard, tonkotsu broth)</strong>, <strong>Seafood/Shellfish (shrimp, crab, squid, octopus, clams)</strong>, or <strong>Alcohol (sake, mirin)</strong>. I CAN eat <strong>Beef</strong>, <strong>Chicken</strong>, <strong>Vegetables, Eggs, Dairy & Tofu</strong>.<br>
+              With these conditions, do you have any delicious recommendations that I can safely enjoy? (If you have a fork and spoon, I'd appreciate it)."</em>
+            </p>
           </div>
 
-          <div class="border-t border-jp-cardborder/60 pt-3">
-            <div class="font-serif text-sm sm:text-base leading-relaxed text-emerald-300 font-semibold">
-              牛肉、鶏肉、鱗とヒレのある魚（鮭・マグロ等・必ず加熱調理したもの）、野菜、卵、豆腐は食べられます。
-            </div>
-            <span class="text-[11px] sm:text-xs text-slate-400 font-sans block mt-1 leading-snug">
-              🇧🇷 <em>Posso comer carne bovina, frango, peixe com escamas e barbatanas (salmão, atum — sempre cozidos), vegetais, ovos e tofu.</em>
+          <!-- Português -->
+          <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-700/60 space-y-1.5 text-xs text-slate-300">
+            <span class="font-bold text-emerald-300 font-mono flex items-center gap-1.5 uppercase text-[10px]">
+              <i class="fa-solid fa-flag"></i> Português
             </span>
-          </div>
-
-          <div class="border-t border-jp-cardborder/60 pt-3">
-            <div class="font-serif text-xs sm:text-sm leading-relaxed text-amber-300/90 font-medium">
-              ※ エビ・カニ・イカ・タコ・貝類・生魚（刺身）は食べられません。
-            </div>
-            <span class="text-[11px] sm:text-xs text-slate-400 font-sans block mt-0.5 leading-snug">
-              🇧🇷 <em>※ Não como camarão, caranguejo, lula, polvo, frutos do mar/mariscos nem peixe cru (sashimi).</em>
-            </span>
-          </div>
-
-          <div class="border-t border-jp-cardborder/60 pt-3">
-            <div class="font-serif text-base sm:text-lg leading-relaxed text-sky-200 font-bold">
-              この料理には豚肉やアルコールが入っていますか？
-            </div>
-            <span class="text-[11px] sm:text-xs text-slate-400 font-sans block mt-1 leading-snug">
-              🇧🇷 <em>Este prato contém carne de porco ou álcool?</em>
-            </span>
+            <p class="leading-relaxed text-[11px]">
+              <em>"Com licença, tenho um pedido sobre a minha alimentação por motivos religiosos. Eu amo muito a cultura japonesa e quero de verdade experimentar o que há de melhor na culinária de vocês! Porém, por minha fé, não posso consumir: <strong>Carne de porco (nem banha/caldo tonkotsu)</strong>, <strong>Frutos do mar em geral (camarão, lula, polvo, mariscos)</strong> e <strong>Álcool na comida (saquê, mirin)</strong>. Posso comer <strong>Carne bovina</strong>, <strong>Frango</strong>, <strong>Vegetais, Ovos, Laticínios e Tofu</strong>.<br>
+              Dentro dessas condições, qual prato delicioso você me recomenda que eu possa comer com segurança? (Se tiver garfo e colher, agradeço muito)."</em>
+            </p>
           </div>
         </div>
 
