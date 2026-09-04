@@ -333,7 +333,7 @@
           <i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
         </button>
         <button type="button" onclick="switchTab('tab-hospedagem'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl hover:bg-jp-card text-slate-200 text-xs font-semibold transition-all">
-          <span class="flex items-center gap-3"><i class="fa-solid fa-hotel text-emerald-400 w-4 text-center"></i> 4 Hospedagens (Airbnbs)</span>
+          <span class="flex items-center gap-3"><i class="fa-solid fa-hotel text-emerald-400 w-4 text-center"></i> 5 Hospedagens (Airbnbs)</span>
           <i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i>
         </button>
         <button type="button" onclick="switchTab('tab-voos'); toggleDrawer(false);" class="w-full flex items-center justify-between p-3 rounded-xl hover:bg-jp-card text-slate-200 text-xs font-semibold transition-all">
@@ -441,32 +441,38 @@
           </h1>
           
           <p class="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed">
-            Painel mestre oficial de navegação e apoio operacional. Roteiro estruturado de <strong>13 dias / 12 noites</strong> (Tóquio, Monte Fuji, Quioto, Nara, Osaka), <strong>dieta 100% adventista</strong>, <strong>cultos de Shabat na Tokyo International SDA Church</strong>, <strong>4 hospedagens Airbnbs reservadas</strong>, trens-bala Shinkansen e <strong>Tokyo DisneySea</strong>.
+            Painel mestre oficial de navegação e apoio operacional. Roteiro estruturado de <strong>13 dias / 12 noites</strong> (Tóquio, Monte Fuji, Quioto, Nara, Osaka), <strong>dieta 100% adventista</strong>, <strong>cultos de Shabat na Tokyo International SDA Church</strong>, <strong>5 hospedagens Airbnbs reservadas</strong>, trens-bala Shinkansen e <strong>Tokyo DisneySea</strong>.
           </p>
         </div>
 
         <!-- Right: Status Dashboard Card -->
         <div class="bg-jp-card/95 border border-jp-cardborder rounded-3xl p-6 space-y-3.5 shadow-2xl backdrop-blur-md">
           <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
-            <h3 class="text-xs font-mono uppercase tracking-wider text-jp-gold font-bold flex items-center gap-2">
-              <i class="fa-solid fa-shield-halved text-emerald-400"></i> Resumo Geral da Viagem
-            </h3>
-            <span class="text-[10px] font-mono text-emerald-400 font-bold">100% Fechado</span>
+            <div>
+              <span class="text-[10px] font-mono uppercase text-slate-400 font-bold tracking-wider">Status Geral</span>
+              <h2 class="text-sm font-bold text-white flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                Tudo Pronto para o Embarque
+              </h2>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 font-mono font-bold text-xs border border-emerald-500/40">
+              100% Planejado
+            </span>
           </div>
           
-          <div class="space-y-2.5 text-xs">
-            <div class="flex items-center justify-between p-2.5 rounded-xl bg-jp-night/70 border border-jp-cardborder hover:border-slate-600 transition-all">
+          <div class="space-y-2 text-xs">
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-jp-night border border-jp-cardborder">
               <div class="flex items-center gap-2.5">
                 <i class="fa-solid fa-plane text-sky-400"></i>
                 <div>
-                  <span class="text-white font-semibold block">Air France (<span class="font-mono text-jp-gold">••••••</span>)</span>
+                  <span class="text-white font-semibold block">Air France Internacional (<span class="font-mono text-sky-400">••••••</span>)</span>
                   <span class="text-[10px] text-jp-subtle font-mono">GRU ⇄ CDG ⇄ HND</span>
                 </div>
               </div>
               <span class="px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 font-bold font-mono text-[10px]">Emitido</span>
             </div>
 
-            <div class="flex items-center justify-between p-2.5 rounded-xl bg-jp-night/70 border border-jp-cardborder hover:border-slate-600 transition-all">
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-jp-night border border-jp-cardborder">
               <div class="flex items-center gap-2.5">
                 <i class="fa-solid fa-plane-departure text-amber-400"></i>
                 <div>
@@ -481,11 +487,11 @@
               <div class="flex items-center gap-2.5">
                 <i class="fa-solid fa-hotel text-emerald-400"></i>
                 <div>
-                  <span class="text-white font-semibold block">4 Hospedagens Fechadas</span>
-                  <span class="text-[10px] text-emerald-300 font-mono">Tóquio 1 & 2, Quioto e Osaka</span>
+                  <span class="text-white font-semibold block">5 Hospedagens Fechadas</span>
+                  <span class="text-[10px] text-emerald-300 font-mono">Tóquio 1 & 2 & Haneda, Quioto e Osaka</span>
                 </div>
               </div>
-              <span class="px-2 py-0.5 rounded-md bg-emerald-500/30 text-emerald-300 font-bold font-mono text-[10px]">R$ —</span>
+              <span class="px-2 py-0.5 rounded-md bg-emerald-500/30 text-emerald-300 font-bold font-mono text-[10px]">R$ 3.328,90</span>
             </div>
 
             <div class="flex items-center justify-between p-2.5 rounded-xl bg-amber-950/20 border border-jp-gold/30">
@@ -528,22 +534,22 @@
           </span>
         </div>
 
-        <!-- Pillar 2: 4 Hospedagens 100% Pagas -->
+        <!-- Pillar 2: 5 Hospedagens 100% Pagas -->
         <div onclick="switchTab('tab-hospedagem')" class="cursor-pointer bg-jp-card border border-emerald-500/30 hover:border-emerald-500 p-5 rounded-3xl space-y-2.5 shadow-xl transition-all hover:scale-[1.02] group">
           <div class="flex items-center justify-between">
             <span class="w-9 h-9 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-base">
               <i class="fa-solid fa-hotel"></i>
             </span>
             <span class="text-[10px] font-mono font-bold text-emerald-400 uppercase bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
-              4/4 Confirmadas
+              5/5 Confirmadas
             </span>
           </div>
           <div>
-            <h3 class="text-xs font-mono uppercase text-slate-400 font-bold">4 Hospedagens Pagas</h3>
-            <div class="text-xl font-bold text-emerald-400 font-mono mt-0.5">R$ —</div>
+            <h3 class="text-xs font-mono uppercase text-slate-400 font-bold">5 Hospedagens Pagas</h3>
+            <div class="text-xl font-bold text-emerald-400 font-mono mt-0.5">R$ 3.328,90</div>
           </div>
           <p class="text-[11px] text-slate-300 leading-relaxed">
-            Ciel Hills (Tóquio), Faminess (Quioto), CHUANHouse (Osaka) e Misuji Kuramae Rooftop (Tóquio).
+            Ciel Hills (Tóquio), Faminess (Quioto), CHUANHouse (Osaka), Misuji Kuramae (Tóquio) e trias527 (Haneda Base).
           </p>
           <span class="text-[10px] font-mono text-emerald-400 group-hover:underline flex items-center gap-1 font-bold pt-1">
             Ver senhas e anfitriões <i class="fa-solid fa-arrow-right text-[9px]"></i>
@@ -645,7 +651,7 @@
 
         <!-- Tab 4: Hospedagens -->
         <button onclick="switchTab('tab-hospedagem')" id="btn-tab-hospedagem" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-jp-subtle hover:text-white hover:bg-jp-card transition-all flex items-center gap-2 whitespace-nowrap border border-transparent">
-          <i class="fa-solid fa-bed text-emerald-400"></i> Hospedagens (4/4)
+          <i class="fa-solid fa-bed text-emerald-400"></i> Hospedagens (5/5)
         </button>
 
         <!-- Tab 5: Dieta Adventista -->
@@ -1831,10 +1837,10 @@
             <i class="fa-solid fa-calculator"></i> Orçamento Consolidado
           </div>
           <h3 class="text-xs font-mono uppercase text-slate-400 font-bold">Total Geral (Tudo Incluso)</h3>
-          <div class="text-3xl sm:text-4xl font-black text-white font-mono tracking-tight">R$ 15.566,07</div>
-          <div class="text-xs font-mono text-slate-400">Voo Air France + 4 Hospedagens + Bolso Wise</div>
+          <div class="text-3xl sm:text-4xl font-black text-white font-mono tracking-tight">R$ 15.929,97</div>
+          <div class="text-xs font-mono text-slate-400">Voo Air France + 5 Hospedagens + Bolso Wise</div>
           <p class="text-[11px] text-jp-subtle pt-2 leading-relaxed border-t border-jp-cardborder">
-            Passagem (R$ —,00) e as 4 Hospedagens (R$ —) já estão parceladas sem juros no cartão de crédito brasileiro.
+            Passagem aérea e as 5 Hospedagens (R$ 3.328,90) já estão parceladas sem juros no cartão de crédito brasileiro.
           </p>
         </div>
 
@@ -2529,6 +2535,69 @@
           </div>
           <div class="flex items-center gap-2 flex-wrap">
             <a href="https://www.google.com/maps/search/?api=1&query=1-3-18+Misuji+Taito+City+Tokyo" target="_blank" class="px-3.5 py-1.5 bg-sky-600/20 hover:bg-sky-600/30 text-sky-400 border border-sky-500/30 rounded-xl text-xs font-bold font-mono transition-all inline-flex items-center gap-1.5">
+              <i class="fa-solid fa-location-dot"></i> Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hospedagem 5: Tóquio 3 (Base Pré-Voo Haneda) (CONFIRMADO AIRBNB) -->
+      <div class="bg-jp-card border-2 border-emerald-500/60 rounded-3xl p-6 space-y-4 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        
+        <div class="flex items-center justify-between flex-wrap gap-4 border-b border-jp-cardborder pb-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-mono font-bold uppercase tracking-wider border border-emerald-500/30">
+                5. Tóquio 3 (Base Pré-Voo) • Confirmado & Pago (6x R$ 60,65)
+              </span>
+              <span class="text-xs text-emerald-300 font-mono">Airbnb: HMTHZS49HF</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mt-1">
+              trias527 Tenkubashi (Estúdio Privativo Pré-Embarque Haneda)
+            </h3>
+            <p class="text-xs text-slate-300 mt-0.5 font-mono">
+              📍 5 Chome-27 Haneda trias527, Cidade de Ota, Tóquio 144-0043 (東京都大田区羽田5-27)
+            </p>
+          </div>
+          <div class="text-right">
+            <span class="text-xs text-jp-subtle block">Check-in / Checkout</span>
+            <span class="text-sm font-bold text-white font-mono">13/09 (16:00) a 14/09 (11:00)</span>
+            <span class="text-xs text-emerald-400 font-mono block font-bold">Uso Pré-Voo: até 20:45 do dia 13</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+          <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder">
+            <span class="text-jp-subtle block">Anfitrião:</span>
+            <span class="font-mono font-bold text-white text-sm">優衣 (Yui)</span>
+            <span class="text-[10px] text-emerald-400 block">Identidade & Passaporte OK</span>
+            <span class="text-[10px] text-slate-400 block">Tel: 080-4613-9077</span>
+          </div>
+          <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder">
+            <span class="text-jp-subtle block">Acomodação:</span>
+            <span class="font-mono font-bold text-white">trias527 (Designers)</span>
+            <span class="text-[10px] text-slate-400 block">Chuveiro quente & Ar cond.</span>
+          </div>
+          <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder">
+            <span class="text-jp-subtle block">Acesso & Chave:</span>
+            <span class="font-mono font-bold text-jp-gold">Self Check-in</span>
+            <span class="block font-mono text-[10px] text-slate-400">Guia enviado no dia 13</span>
+          </div>
+          <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder">
+            <span class="text-jp-subtle block">Valor Total Pago:</span>
+            <span class="font-mono font-bold text-emerald-400 text-sm">R$ 363,90</span>
+            <span class="text-[10px] text-slate-400 block font-mono">6x de R$ 60,65</span>
+          </div>
+        </div>
+
+        <div class="p-3 bg-jp-night/60 rounded-2xl border border-emerald-500/30 text-xs text-slate-300 flex items-center justify-between flex-wrap gap-2">
+          <div>
+            📍 <strong>Localização Imbatível para o Voo Noturno:</strong> Colado na Estação Tenkubashi. Apenas <strong>2 minutos de trem direto</strong> (Keikyu Airport Line ou Tokyo Monorail) até o saguão do Terminal 3 do Aeroporto de Haneda!
+          </div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="px-3.5 py-1.5 bg-emerald-600/20 text-emerald-300 border border-emerald-600/40 rounded-xl text-xs font-bold font-mono inline-flex items-center gap-1.5"><i class="fa-solid fa-check"></i> Registro de Hóspede Concluído</span>
+            <a href="https://www.google.com/maps/search/?api=1&query=5-27+Haneda+trias527+Ota+Tokyo" target="_blank" class="px-3.5 py-1.5 bg-sky-600/20 hover:bg-sky-600/30 text-sky-400 border border-sky-500/30 rounded-xl text-xs font-bold font-mono transition-all inline-flex items-center gap-1.5">
               <i class="fa-solid fa-location-dot"></i> Google Maps
             </a>
           </div>
@@ -3432,6 +3501,7 @@
       { id: 'hosp-quioto', group: 2, text: 'Hospedagem 2: Faminess Kyoto Ap 503 (Minami Ward) Confirmada', default: true },
       { id: 'hosp-osaka', group: 2, text: 'Hospedagem 3: CHUANHouse Kuromon (Naniwa Ward) Confirmada', default: true },
       { id: 'hosp-toquio2', group: 2, text: 'Hospedagem 4: Misuji Kuramae Rooftop (Taito City) Confirmada', default: true },
+      { id: 'hosp-haneda', group: 2, text: 'Hospedagem 5: trias527 Tenkubashi (Base Pré-Voo Haneda) Confirmada', default: true },
       { id: 'trans-suica', group: 2, text: 'Cartão Suica Digital na Apple Wallet do iPhone', default: true },
       { id: 'tkt-shinkansen', group: 2, text: '2x Trens-Bala Shinkansen Nozomi no app SmartEX (06/09 e 11/09)', default: false },
       { id: 'tkt-disney', group: 2, text: 'Tokyo DisneySea: comprar ingresso para 13/09 (app oficial/Klook, ¥9.900)', default: false },
