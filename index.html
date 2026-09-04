@@ -3926,8 +3926,29 @@
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js')
-          .then((reg) => console.log('ServiceWorker registrado:', reg.scope))
+          .then((reg) => {
+            reg.update(); // Força verificar nova versão no servidor
+            reg.addEventListener('updatefound', () => {
+              const newWorker = reg.installing;
+              if (newWorker) {
+                newWorker.addEventListener('statechange', () => {
+                  if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                    showToast('🔄 Atualização instalada! Recarregando...', 'info');
+                    setTimeout(() => window.location.reload(), 800);
+                  }
+                });
+              }
+            });
+          })
           .catch((err) => console.log('ServiceWorker erro:', err));
+      });
+
+      let refreshing = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (!refreshing) {
+          refreshing = true;
+          window.location.reload();
+        }
       });
     }
   </script>
