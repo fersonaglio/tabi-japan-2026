@@ -2870,8 +2870,8 @@
           <div class="flex items-center gap-2.5">
             <i class="fa-solid fa-language text-jp-gold text-2xl"></i>
             <div>
-              <h3 class="text-base font-bold text-white">Cartão de Garçom em Japonês (Mostre na Mesa)</h3>
-              <p class="text-xs text-jp-subtle">Explica exatamente a restrição sem porco e sem álcool</p>
+              <h3 class="text-base font-bold text-white">Cartão de Garçom (Mostre na Mesa)</h3>
+              <p class="text-xs text-jp-subtle">Explicação respeitosa da fé, proibições e pedido de recomendação</p>
             </div>
           </div>
           <button onclick="copyJapaneseCard()" id="copy-card-btn" class="px-4 py-2 bg-jp-gold/15 hover:bg-jp-gold/25 text-jp-gold border border-jp-gold/40 rounded-xl text-xs font-bold font-mono transition-all flex items-center gap-2 shadow-md">
@@ -2879,16 +2879,78 @@
           </button>
         </div>
 
-        <div class="p-6 rounded-2xl bg-jp-night border border-jp-cardborder font-serif text-lg sm:text-2xl text-white leading-loose tracking-wide select-all shadow-inner">
-          【食事制限のお願い】<br>
-          私は<strong>豚肉</strong>（豚エキス、ラード、ゼラチン含む）および<strong>アルコール</strong>（みりん、料理酒含む）を食べることができません。<br>
-          <strong>牛肉、鶏肉、魚介類、野菜、卵、豆腐</strong>は食べられます。<br>
-          この料理には豚肉やアルコールが入っていますか？
+        <!-- VERSÃO EM JAPONÊS (PRINCIPAL PARA MOSTRAR AO ATENDENTE) -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-jp-night border-2 border-jp-gold/60 space-y-4 text-white shadow-inner select-all">
+          <div class="border-b border-jp-cardborder pb-3">
+            <span class="px-2 py-0.5 rounded bg-jp-gold text-black text-[10px] font-mono font-bold uppercase mr-2">Japonês / 日本語</span>
+            <span class="text-xs text-slate-400">Mostre esta caixa na tela do celular:</span>
+          </div>
+          
+          <div class="font-serif text-base sm:text-xl leading-relaxed space-y-3">
+            <p class="font-bold text-jp-gold text-lg sm:text-2xl">
+              すみません、宗教上の理由による食事のお願いです。
+            </p>
+            <p class="text-slate-200 text-sm sm:text-base">
+              日本の食文化が大好きで、ぜひ美味しい料理を心から楽しみたいと思っています！<br>
+              ただ、<strong>私の宗教の戒律</strong>により、以下の食材を食べることができません：
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm pt-1">
+              <div class="p-3 rounded-xl bg-red-950/40 border border-red-500/50 space-y-1">
+                <span class="font-bold text-red-400 block text-sm sm:text-base">❌ NG（食べられないもの）</span>
+                <ul class="space-y-1 text-slate-200 font-sans">
+                  <li>• <strong>豚肉</strong>（ポーク、ハム、ベーコン、ソーセージ）</li>
+                  <li>• <strong>豚の油・エキス</strong>（ラード、豚骨、豚エキス）</li>
+                  <li>• <strong>エビ・カニ・イカ・タコ・貝類</strong>（甲殻類・シーフード全般）</li>
+                  <li>• <strong>アルコール・お酒</strong>（料理酒、みりん、ワイン）</li>
+                </ul>
+              </div>
+
+              <div class="p-3 rounded-xl bg-emerald-950/40 border border-emerald-500/50 space-y-1">
+                <span class="font-bold text-emerald-400 block text-sm sm:text-base">⭕ OK（食べられるもの）</span>
+                <ul class="space-y-1 text-slate-200 font-sans">
+                  <li>• <strong>牛肉</strong>（ビーフ）</li>
+                  <li>• <strong>鶏肉</strong>（チキン）</li>
+                  <li>• <strong>野菜・卵・乳製品・豆腐</strong></li>
+                </ul>
+              </div>
+            </div>
+
+            <p class="font-bold text-white pt-2 text-sm sm:text-base border-t border-jp-cardborder">
+              👉 <strong>この条件で、私でも安心して美味しく食べられる、あなたのおすすめ料理はありますか？</strong><br>
+              <span class="text-xs text-slate-400 font-normal">（※もしフォークとスプーンがあれば、一緒にお願いできますと幸いです。）</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- VERSÕES DE APOIO: INGLÊS & PORTUGUÊS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+          <!-- English -->
+          <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-700/60 space-y-2 text-xs text-slate-300">
+            <span class="font-bold text-sky-300 font-mono flex items-center gap-1.5 uppercase text-[11px]">
+              <i class="fa-solid fa-earth-americas"></i> English Version
+            </span>
+            <p class="leading-relaxed">
+              <em>"Excuse me, I have a dietary request for religious reasons. I love Japanese food culture and really want to enjoy delicious Japanese cuisine! However, due to my religious beliefs, I cannot eat: <strong>Pork (meat, lard, tonkotsu broth)</strong>, <strong>Seafood/Shellfish (shrimp, crab, squid, octopus, clams)</strong>, or <strong>Alcohol (sake, mirin)</strong>. I CAN eat <strong>Beef</strong>, <strong>Chicken</strong>, <strong>Vegetables, Eggs, Dairy & Tofu</strong>.<br>
+              With these conditions, do you have any delicious recommendations that I can safely enjoy? (If you have a fork and spoon, I'd appreciate it)."</em>
+            </p>
+          </div>
+
+          <!-- Português -->
+          <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-700/60 space-y-2 text-xs text-slate-300">
+            <span class="font-bold text-emerald-300 font-mono flex items-center gap-1.5 uppercase text-[11px]">
+              <i class="fa-solid fa-flag"></i> Tradução em Português
+            </span>
+            <p class="leading-relaxed">
+              <em>"Com licença, tenho um pedido sobre a minha alimentação por motivos religiosos. Eu amo muito a cultura japonesa e quero de verdade experimentar o que há de melhor e mais delicioso na culinária de vocês! Porém, pelas regras da minha fé religiosa, não posso consumir: <strong>Carne de porco (nem banha/caldo tonkotsu)</strong>, <strong>Frutos do mar em geral (camarão, lula, polvo, caranguejo, mariscos)</strong> e <strong>Álcool na comida (saquê, mirin)</strong>. Posso comer <strong>Carne bovina</strong>, <strong>Frango</strong>, <strong>Vegetais, Ovos, Laticínios e Tofu</strong>.<br>
+              Dentro dessas condições, qual prato delicioso você me recomenda que eu possa comer com segurança? (Se tiver garfo e colher, agradeço muito)."</em>
+            </p>
+          </div>
         </div>
 
         <div class="flex items-center justify-between text-xs text-slate-300 pt-1 flex-wrap gap-2">
-          <span>💡 <em>Dica de Ouro:</em> Basta apontar para a tela do celular. Os atendentes japoneses são muito atenciosos e verificam com a cozinha na hora!</span>
-          <span class="text-jp-gold font-mono font-bold">100% Seguro para Adventistas</span>
+          <span>💡 <em>Como falar ao mostrar:</em> Diga com um sorriso <strong>"Sumimasen, kore o mite kudasai"</strong> <em>(Com licença, veja isto por favor)</em>.</span>
+          <span class="text-jp-gold font-mono font-bold">100% Bíblico & Respeitoso</span>
         </div>
       </div>
 
@@ -3946,10 +4008,23 @@
     }
 
     function copyJapaneseCard() {
-      const text = `【食事制限のお願い】
-私は豚肉（豚エキス、ラード、ゼラチン含む）およびアルコール（みりん、料理酒含む）を食べることができません。
-牛肉、鶏肉、鱗とヒレのある魚（鮭・マグロ等・必ず加熱調理したもの）、野菜、卵、豆腐は食べられます。（※エビ・カニ・イカ・タコ・貝類・生魚は不可）
-この料理には豚肉やアルコールが入っていますか？`;
+      const text = `すみません、宗教上の理由による食事のお願いです。
+日本の食文化が大好きで、ぜひ美味しい料理を心から楽しみたいと思っています！
+ただ、私の宗教の戒律により、以下の食材を食べることができません：
+
+❌ NG（食べられないもの）:
+・豚肉（ポーク、ハム、ベーコン、ソーセージ）
+・豚の油・エキス（ラード、豚骨スープ、豚エキス）
+・エビ・カニ・イカ・タコ・貝類（甲殻類・シーフード全般）
+・アルコール・お酒（料理酒、みりん、ワイン）
+
+⭕ OK（食べられるもの）:
+・牛肉（ビーフ）
+・鶏肉（チキン）
+・野菜・卵・乳製品・豆腐
+
+この条件で、私でも安心して美味しく食べられる、あなたのおすすめ料理はありますか？
+（※もしフォークとスプーンがあれば、一緒にお願いできますと幸いです。）`;
       copyFlashcard(text, 'Cartão de Garçom');
       const btn = document.getElementById('copy-card-btn');
       if (btn) {
