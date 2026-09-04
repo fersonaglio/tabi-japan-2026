@@ -422,9 +422,9 @@
           <span class="text-[10px] font-mono uppercase text-amber-400 font-bold flex items-center gap-1.5">
             <i class="fa-solid fa-location-dot"></i> Hoje no Japão
           </span>
-          <span class="px-2 py-0.5 rounded-full bg-jp-red text-white text-[9px] font-mono font-bold">DIA 02</span>
+          <span class="px-2 py-0.5 rounded-full bg-jp-red text-white text-[9px] font-mono font-bold">DIA 04</span>
         </div>
-        <p class="text-xs font-bold text-white">Quarta, 02/09 • Shinjuku Gyoen & Tocho</p>
+        <p class="text-xs font-bold text-white">Sexta, 04/09 • teamLab, Odaiba & Shabat</p>
         <p class="text-[11px] text-amber-300/90 font-medium">Toque para saltar direto para hoje ➔</p>
       </div>
 
@@ -3897,26 +3897,17 @@
     function jumpToToday() {
       switchTab('tab-roteiro');
       
-      if (typeof filterDays === 'function') {
-        filterDays('all');
-      }
-      
       const bHoje = document.getElementById('bnav-hoje');
       if (bHoje) {
         bHoje.classList.add('scale-110');
         setTimeout(() => bHoje.classList.remove('scale-110'), 300);
       }
       
-      setTimeout(() => {
-        const target = document.getElementById('day-card-3') || document.querySelector('[data-city="toquio1"]');
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          target.classList.remove('today-highlight');
-          void target.offsetWidth;
-          target.classList.add('today-highlight');
-          showToast('📍 Exibindo o DIA 03 (Hoje: Harajuku, Shibuya Sky & Shinjuku Night)', 'info');
-        }
-      }, 150);
+      // Hoje no Japão é Dia 04 (Sexta, 04/09): teamLab & Akihabara
+      if (typeof selectDay === 'function') {
+        selectDay(4);
+      }
+      showToast('📍 Exibindo DIA 04 (Hoje no Japão: teamLab, Odaiba & Shabat)', 'info');
     }
 
     if ('serviceWorker' in navigator) {
