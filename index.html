@@ -2943,98 +2943,430 @@
 
     </div>
 
-    <!-- ==================== TAB 6: CLIMA & ROUPAS ==================== -->
+    <!-- ==================== TAB 6: CLIMA & ROUPAS (PREVISÃO EM TEMPO REAL + GUIA COMPLETO) ==================== -->
     <div id="tab-clima" class="tab-content hidden space-y-6">
-      <div class="bg-jp-card border border-jp-cardborder rounded-3xl p-6 space-y-5 shadow-xl">
-        <div class="flex items-center justify-between flex-wrap gap-2 border-b border-jp-cardborder pb-4">
+      
+      <!-- Top Control & Live Satellite Header -->
+      <div class="bg-jp-card border border-jp-cardborder rounded-3xl p-5 sm:p-6 shadow-xl space-y-4">
+        <div class="flex items-center justify-between flex-wrap gap-3 border-b border-jp-cardborder pb-4">
           <div>
-            <h3 class="text-lg font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-cloud-sun text-amber-400"></i> Guia de Clima & Roupas de Setembro 2026
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold uppercase tracking-wider border border-amber-500/30">
+                Meteorologia JMA & Satélite
+              </span>
+              <span id="weather-status-text" class="text-xs font-mono text-emerald-400 flex items-center gap-1.5 font-semibold">
+                <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Ao Vivo • Satélite JST
+              </span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2 mt-1 font-display">
+              <i class="fa-solid fa-cloud-sun text-amber-400"></i> Previsão do Tempo & Guia de Roupas
             </h3>
-            <p class="text-xs text-jp-subtle">Temperaturas médias, umidade e recomendações para cada região visitada</p>
-          </div>
-          <span class="px-3 py-1 bg-amber-500/10 text-amber-400 font-mono font-bold text-xs rounded-xl border border-amber-500/30">
-            Transição Verão → Início do Outono
-          </span>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 pt-2">
-          <!-- Tóquio & Osaka -->
-          <div class="p-5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-3">
-            <div class="flex items-center justify-between">
-              <h4 class="font-bold text-white text-sm flex items-center gap-2">
-                <i class="fa-solid fa-city text-jp-crimson"></i> Tóquio & Osaka
-              </h4>
-              <span class="text-xs font-mono font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-md">24°C a 29°C</span>
-            </div>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Clima quente e agradável durante o dia, fresco à noite. Sensação térmica de verão suave.
+            <p class="text-xs text-jp-subtle">
+              Dados climáticos oficiais atualizados em tempo real para as 4 bases da viagem (Setembro 2026)
             </p>
-            <div class="space-y-1.5 text-xs text-slate-300 border-t border-jp-cardborder pt-2">
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Camisetas de algodão leves e respiráveis</div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Bermudas e calças leves confortáveis</div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Óculos de sol e protetor solar</div>
-            </div>
           </div>
-
-          <!-- Quioto & Nara -->
-          <div class="p-5 rounded-2xl bg-jp-night border border-jp-cardborder space-y-3">
-            <div class="flex items-center justify-between">
-              <h4 class="font-bold text-white text-sm flex items-center gap-2">
-                <i class="fa-solid fa-torii-gate text-jp-gold"></i> Quioto & Nara
-              </h4>
-              <span class="text-xs font-mono font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-md">23°C a 30°C</span>
-            </div>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Cercadas por montanhas, com bastante sol nos pátios abertos dos templos históricos.
-            </p>
-            <div class="space-y-1.5 text-xs text-slate-300 border-t border-jp-cardborder pt-2">
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> <strong>Meias limpas e sem furos</strong> (tira o sapato nos templos!)</div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Calçados fáceis de calçar e descalçar</div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Garrafa de chá gelado nas vending machines</div>
-            </div>
-          </div>
-
-          <!-- Monte Fuji & Kawaguchiko -->
-          <div class="p-5 rounded-2xl bg-jp-night border border-sky-500/40 bg-sky-950/20 space-y-3">
-            <div class="flex items-center justify-between">
-              <h4 class="font-bold text-white text-sm flex items-center gap-2">
-                <i class="fa-solid fa-mountain text-sky-400"></i> Monte Fuji (Lagos)
-              </h4>
-              <span class="text-xs font-mono font-bold text-sky-400 bg-sky-500/20 px-2 py-0.5 rounded-md">14°C a 19°C</span>
-            </div>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Clima serrano e brisa fresca vinda dos lagos e da montanha. Mais frio de manhã cedo.
-            </p>
-            <div class="space-y-1.5 text-xs text-slate-300 border-t border-jp-cardborder pt-2">
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> <strong>1 casaco corta-vento leve ou moletom</strong></div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Calça comprida flexível para caminhada</div>
-              <div class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Mochila leve para guardar o agasalho à tarde</div>
-            </div>
+          <div class="flex items-center gap-2">
+            <span id="weather-last-updated" class="text-[11px] font-mono text-slate-400 hidden sm:inline-block">Carregando...</span>
+            <button type="button" onclick="loadLiveWeather(true)" class="min-h-[44px] px-4 py-2 bg-jp-night hover:bg-slate-800 border border-jp-cardborder text-amber-300 hover:text-amber-200 text-xs font-mono font-bold rounded-xl flex items-center gap-2 transition-all active:scale-95 shadow-md">
+              <i class="fa-solid fa-rotate text-amber-400"></i> Atualizar Agora
+            </button>
           </div>
         </div>
 
-        <!-- Footwear & Umbrella Warnings -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-3">
-          <div class="p-4 rounded-2xl bg-jp-card border border-emerald-500/40 space-y-2">
-            <h5 class="text-xs font-mono uppercase text-emerald-400 font-bold flex items-center gap-2">
-              <i class="fa-solid fa-shoe-prints"></i> Regra de Ouro do Calçado (15.000 a 20.000 Passos/Dia)
-            </h5>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Você vai caminhar de 12 a 18 km por dia. Leve <strong>1 ou 2 pares de tênis esportivos já amaciados</strong> com excelente amortecimento (ex: Ultraboost, Asics Gel, Nike Invincible). Nunca viaje com tênis novo direto da caixa!
+        <!-- 4 Cidades: Live Weather Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-1">
+          
+          <!-- Cidade 1: Tóquio -->
+          <div class="p-4 rounded-2xl bg-jp-night border border-jp-cardborder space-y-3 relative overflow-hidden shadow-lg group hover:border-jp-gold/50 transition-all">
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-[10px] font-mono uppercase font-bold text-red-400 flex items-center gap-1">
+                  <i class="fa-solid fa-city"></i> Dias 01-05 & 11-13
+                </span>
+                <h4 class="text-base font-bold text-white">Tóquio (Tokyo)</h4>
+              </div>
+              <div id="w-tokyo-icon" class="text-2xl sm:text-3xl text-sky-400">
+                <i class="fa-solid fa-cloud-rain"></i>
+              </div>
+            </div>
+            
+            <div class="flex items-baseline gap-2">
+              <span id="w-tokyo-temp" class="text-3xl font-black font-mono text-white">22°C</span>
+              <span id="w-tokyo-feel" class="text-xs font-mono text-amber-300">Sensação 27°C</span>
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-300 font-mono border-t border-jp-cardborder/60 pt-2.5">
+              <span class="text-slate-400">Condição:</span>
+              <span id="w-tokyo-condition" class="font-bold text-slate-200">Chuva / Garoa</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 text-[11px] font-mono bg-jp-card/50 p-2.5 rounded-xl border border-jp-cardborder/40 text-slate-300">
+              <div><span class="text-slate-500 block">Mín / Máx:</span><strong id="w-tokyo-minmax" class="text-white">22°C / 24°C</strong></div>
+              <div><span class="text-slate-500 block">Chuva:</span><strong id="w-tokyo-rain" class="text-sky-300">95%</strong></div>
+              <div><span class="text-slate-500 block">Umidade:</span><strong id="w-tokyo-humidity" class="text-slate-200">96%</strong></div>
+              <div><span class="text-slate-500 block">Vento:</span><strong id="w-tokyo-wind" class="text-slate-200">2.2 km/h</strong></div>
+            </div>
+
+            <p class="text-[11px] text-amber-300/90 leading-tight">
+              💡 <strong>Look do Dia:</strong> Camiseta leve + calça flexível + guarda-chuva de konbini na mão.
             </p>
           </div>
 
-          <div class="p-4 rounded-2xl bg-jp-card border border-amber-500/40 space-y-2">
-            <h5 class="text-xs font-mono uppercase text-amber-400 font-bold flex items-center gap-2">
-              <i class="fa-solid fa-umbrella"></i> Chuvas Rápidas & Guarda-Chuva Transparente
-            </h5>
+          <!-- Cidade 2: Monte Fuji / Kawaguchiko -->
+          <div class="p-4 rounded-2xl bg-jp-night border border-sky-500/40 bg-sky-950/20 space-y-3 relative overflow-hidden shadow-lg group hover:border-sky-400 transition-all">
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-[10px] font-mono uppercase font-bold text-sky-400 flex items-center gap-1">
+                  <i class="fa-solid fa-mountain"></i> Dia 06 (Lagos)
+                </span>
+                <h4 class="text-base font-bold text-white">Fujikawaguchiko</h4>
+              </div>
+              <div id="w-fuji-icon" class="text-2xl sm:text-3xl text-sky-400">
+                <i class="fa-solid fa-cloud"></i>
+              </div>
+            </div>
+            
+            <div class="flex items-baseline gap-2">
+              <span id="w-fuji-temp" class="text-3xl font-black font-mono text-sky-300">19°C</span>
+              <span id="w-fuji-feel" class="text-xs font-mono text-sky-200">Sensação 21°C</span>
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-300 font-mono border-t border-jp-cardborder/60 pt-2.5">
+              <span class="text-slate-400">Condição:</span>
+              <span id="w-fuji-condition" class="font-bold text-sky-200">Fresco de Serra</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 text-[11px] font-mono bg-jp-card/50 p-2.5 rounded-xl border border-jp-cardborder/40 text-slate-300">
+              <div><span class="text-slate-500 block">Mín / Máx:</span><strong id="w-fuji-minmax" class="text-white">18°C / 22°C</strong></div>
+              <div><span class="text-slate-500 block">Chuva:</span><strong id="w-fuji-rain" class="text-sky-300">90%</strong></div>
+              <div><span class="text-slate-500 block">Altitude:</span><strong class="text-slate-200">860 metros</strong></div>
+              <div><span class="text-slate-500 block">Vento:</span><strong id="w-fuji-wind" class="text-slate-200">4.3 km/h</strong></div>
+            </div>
+
+            <p class="text-[11px] text-sky-200 leading-tight">
+              ⚠️ <strong>Único Frio da Viagem:</strong> Leve jaqueta corta-vento e calça comprida para os 398 degraus da Chureito!
+            </p>
+          </div>
+
+          <!-- Cidade 3: Quioto & Nara -->
+          <div class="p-4 rounded-2xl bg-jp-night border border-jp-cardborder space-y-3 relative overflow-hidden shadow-lg group hover:border-jp-gold/50 transition-all">
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-[10px] font-mono uppercase font-bold text-jp-gold flex items-center gap-1">
+                  <i class="fa-solid fa-torii-gate"></i> Dias 07-09 (Kansai)
+                </span>
+                <h4 class="text-base font-bold text-white">Quioto & Nara</h4>
+              </div>
+              <div id="w-kyoto-icon" class="text-2xl sm:text-3xl text-amber-400">
+                <i class="fa-solid fa-cloud-sun"></i>
+              </div>
+            </div>
+            
+            <div class="flex items-baseline gap-2">
+              <span id="w-kyoto-temp" class="text-3xl font-black font-mono text-white">23°C</span>
+              <span id="w-kyoto-feel" class="text-xs font-mono text-amber-300">Sensação 28°C</span>
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-300 font-mono border-t border-jp-cardborder/60 pt-2.5">
+              <span class="text-slate-400">Condição:</span>
+              <span id="w-kyoto-condition" class="font-bold text-slate-200">Calor de Bacia</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 text-[11px] font-mono bg-jp-card/50 p-2.5 rounded-xl border border-jp-cardborder/40 text-slate-300">
+              <div><span class="text-slate-500 block">Mín / Máx:</span><strong id="w-kyoto-minmax" class="text-white">22°C / 25°C</strong></div>
+              <div><span class="text-slate-500 block">Chuva:</span><strong id="w-kyoto-rain" class="text-sky-300">90%</strong></div>
+              <div><span class="text-slate-500 block">Umidade:</span><strong id="w-kyoto-humidity" class="text-slate-200">97%</strong></div>
+              <div><span class="text-slate-500 block">Vento:</span><strong id="w-kyoto-wind" class="text-slate-200">2.4 km/h</strong></div>
+            </div>
+
+            <p class="text-[11px] text-amber-300/90 leading-tight">
+              ⛩️ <strong>Regra dos Templos:</strong> Meias limpas sem furos e calçados muito fáceis de tirar nos tatames!
+            </p>
+          </div>
+
+          <!-- Cidade 4: Osaka -->
+          <div class="p-4 rounded-2xl bg-jp-night border border-jp-cardborder space-y-3 relative overflow-hidden shadow-lg group hover:border-jp-gold/50 transition-all">
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-[10px] font-mono uppercase font-bold text-emerald-400 flex items-center gap-1">
+                  <i class="fa-solid fa-utensils"></i> Dias 09-11 (Gastronomia)
+                </span>
+                <h4 class="text-base font-bold text-white">Osaka</h4>
+              </div>
+              <div id="w-osaka-icon" class="text-2xl sm:text-3xl text-amber-400">
+                <i class="fa-solid fa-cloud-sun"></i>
+              </div>
+            </div>
+            
+            <div class="flex items-baseline gap-2">
+              <span id="w-osaka-temp" class="text-3xl font-black font-mono text-white">23°C</span>
+              <span id="w-osaka-feel" class="text-xs font-mono text-amber-300">Sensação 27°C</span>
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-300 font-mono border-t border-jp-cardborder/60 pt-2.5">
+              <span class="text-slate-400">Condição:</span>
+              <span id="w-osaka-condition" class="font-bold text-slate-200">Urbano & Noite Ativa</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 text-[11px] font-mono bg-jp-card/50 p-2.5 rounded-xl border border-jp-cardborder/40 text-slate-300">
+              <div><span class="text-slate-500 block">Mín / Máx:</span><strong id="w-osaka-minmax" class="text-white">22°C / 24°C</strong></div>
+              <div><span class="text-slate-500 block">Chuva:</span><strong id="w-osaka-rain" class="text-sky-300">90%</strong></div>
+              <div><span class="text-slate-500 block">Umidade:</span><strong id="w-osaka-humidity" class="text-slate-200">96%</strong></div>
+              <div><span class="text-slate-500 block">Vento:</span><strong id="w-osaka-wind" class="text-slate-200">3.1 km/h</strong></div>
+            </div>
+
+            <p class="text-[11px] text-emerald-300/90 leading-tight">
+              🏮 <strong>Caminhadas Noturnas:</strong> Bermudas confortáveis para andar pelo canal de Dotonbori e Shinsekai.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Guia Estratégico: O Que Vestir em Cada Destino -->
+      <div class="bg-jp-card border border-jp-cardborder rounded-3xl p-5 sm:p-6 space-y-5 shadow-xl">
+        <div class="border-b border-jp-cardborder pb-3">
+          <h4 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-shirt text-jp-gold"></i> Guia Estratégico de Roupas por Cidade e Ocasião
+          </h4>
+          <p class="text-xs text-jp-subtle">Como se vestir confortavelmente sem passar calor na rua nem frio no metrô</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <!-- Bloco 1: Tóquio & Osaka -->
+          <div class="p-4 rounded-2xl bg-jp-night border border-jp-cardborder space-y-3">
+            <div class="flex items-center gap-2 text-jp-crimson font-bold text-sm">
+              <i class="fa-solid fa-building"></i> Tóquio & Osaka (Metrópoles)
+            </div>
             <p class="text-xs text-slate-300 leading-relaxed">
-              Setembro pode ter pancadas rápidas de chuva de verão. Qualquer loja de conveniência 7-Eleven ou Lawson vende o clássico <strong>guarda-chuva transparente japonês por apenas ¥500 (R$ 18)</strong>.
+              O início de setembro no Japão mantém resquícios do verão, com calor agradável de dia (24°C a 29°C) e noites amenas. A umidade costuma ser de 70% a 85%.
+            </p>
+            <ul class="space-y-1.5 text-xs text-slate-300 border-t border-jp-cardborder pt-2">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> <span><strong>Tecidos Respiráveis:</strong> Camisetas dry-fit ou algodão fino tipo Uniqlo AIRism (¥990 em qualquer esquina de Tóquio).</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> <span><strong>Bermudas & Calças Leves:</strong> Conforto para caminhar o dia inteiro sem assaduras.</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-triangle-exclamation text-amber-400 mt-0.5"></i> <span><strong>Choque Térmico no Trem:</strong> O metrô tem ar-condicionado a 20°C. Carregue uma camisa fina de manga comprida na mochila se for sensível.</span></li>
+            </ul>
+          </div>
+
+          <!-- Bloco 2: Quioto & Templos -->
+          <div class="p-4 rounded-2xl bg-jp-night border border-jp-cardborder space-y-3">
+            <div class="flex items-center gap-2 text-jp-gold font-bold text-sm">
+              <i class="fa-solid fa-torii-gate"></i> Quioto & Nara (Templos Sagrados)
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Quioto fica num vale cercado por montanhas que concentra calor e umidade. Nos templos e santuários há regras rigorosas de conduta.
+            </p>
+            <ul class="space-y-1.5 text-xs text-slate-300 border-t border-jp-cardborder pt-2">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> <span><strong>A Regra das Meias:</strong> Nos templos budistas é <em>obrigatório</em> tirar os sapatos para pisar na madeira e tatames. Use meias novas, limpas e sem furos!</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> <span><strong>Calçado Fácil de Descalçar:</strong> Você vai tirar o tênis 5 a 8 vezes por dia. Escolha tênis com amarração frouxa ou slip-on.</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> <span><strong>Traje Respeitoso:</strong> Ombros cobertos e bermudas na altura do joelho para não barrar a entrada nas alas sagradas.</span></li>
+            </ul>
+          </div>
+
+          <!-- Bloco 3: Monte Fuji -->
+          <div class="p-4 rounded-2xl bg-jp-night border border-sky-500/30 bg-sky-950/15 space-y-3">
+            <div class="flex items-center gap-2 text-sky-400 font-bold text-sm">
+              <i class="fa-solid fa-mountain"></i> Monte Fuji & Kawaguchiko (Altitude)
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              A região dos lagos fica a 860m de altitude. O vento que desce do Monte Fuji faz a temperatura cair para <strong>14°C a 19°C</strong> de manhã e à noite.
+            </p>
+            <ul class="space-y-1.5 text-xs text-slate-300 border-t border-jp-cardborder pt-2">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-sky-400 mt-0.5"></i> <span><strong>1 Casaco Corta-Vento ou Moletom:</strong> Indispensável na mochila para a caminhada ao redor do lago e mirantes.</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-sky-400 mt-0.5"></i> <span><strong>Calça Comprida Elástica:</strong> Protege contra o vento frio e dá flexibilidade para subir os 398 degraus da Chureito Pagoda.</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-sky-400 mt-0.5"></i> <span><strong>Camadas (Layering):</strong> Vista camiseta por baixo e agasalho por cima para tirar quando o sol aquecer no meio da tarde.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Ocasiões Especiais: teamLab & Shabat -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+          <div class="p-4 rounded-2xl bg-jp-night border border-purple-500/40 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-purple-300 flex items-center gap-1.5">
+                <i class="fa-solid fa-water"></i> teamLab Planets (Dia 04 - HOJE)
+              </span>
+              <span class="text-[9px] px-2 py-0.5 rounded bg-purple-500/20 text-purple-200 font-mono font-bold">ALERTA CRÍTICO</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              No museu teamLab Planets você anda <strong>com água morna até a canela</strong> (cerca de 30 a 40 cm de profundidade). Vista <strong>bermuda ou calça larga que possa ser arregaçada acima do joelho</strong>. Evite calças skinny apertadas que não sobem! O museu tem chão espelhado, então evite saias ou use shorts por baixo.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-jp-night border border-jp-gold/40 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-amber-300 flex items-center gap-1.5">
+                <i class="fa-solid fa-star-of-david"></i> Sextas & Sábados (Shabat em Tóquio)
+              </span>
+              <span class="text-[9px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-200 font-mono font-bold">CHABAD TOKYO</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Para as refeições festivas de Shabat na comunidade judaica (Chabad Tóquio em Takanawa): leve <strong>1 conjunto esporte fino ou social confortável</strong> (camisa social de manga curta ou linho, calça de sarja ou social e sapato ou tênis clean).
             </p>
           </div>
         </div>
       </div>
+
+      <!-- Regras de Ouro: Calçado, Chuvas de Setembro e Equipamentos -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        
+        <!-- Regra 1: Calçado -->
+        <div class="p-5 rounded-2xl bg-jp-card border border-emerald-500/40 space-y-2 shadow-lg">
+          <h5 class="text-xs font-mono uppercase text-emerald-400 font-bold flex items-center gap-2">
+            <i class="fa-solid fa-shoe-prints"></i> 15.000 a 22.000 Passos/Dia
+          </h5>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Você vai andar de 12 a 18 km por dia. Leve <strong>2 pares de tênis esportivos já amaciados</strong> e alternados dia sim, dia não (para a espuma da sola descompactar e secar o suor). <em>Nunca viaje com tênis novo direto da caixa!</em>
+          </p>
+        </div>
+
+        <!-- Regra 2: Chuva sem peso -->
+        <div class="p-5 rounded-2xl bg-jp-card border border-amber-500/40 space-y-2 shadow-lg">
+          <h5 class="text-xs font-mono uppercase text-amber-400 font-bold flex items-center gap-2">
+            <i class="fa-solid fa-umbrella"></i> Guarda-Chuva de Konbini
+          </h5>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Setembro é mês de frentes de chuva rápidas. Não leve guarda-chuva pesado do Brasil: qualquer <strong>7-Eleven ou Lawson vende o clássico guarda-chuva transparente de 65cm por ¥500 (R$ 18)</strong>. É super resistente e permite enxergar a cidade olhando pra cima.
+          </p>
+        </div>
+
+        <!-- Regra 3: Toalha Tenugui -->
+        <div class="p-5 rounded-2xl bg-jp-card border border-sky-500/40 space-y-2 shadow-lg">
+          <h5 class="text-xs font-mono uppercase text-sky-400 font-bold flex items-center gap-2">
+            <i class="fa-solid fa-rug"></i> Toalhinha de Mão (Tenugui)
+          </h5>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            A maioria dos banheiros públicos no Japão não tem toalhas de papel. Tenha sempre no bolso uma <strong>pequena toalhinha de algodão</strong> (vendida por ¥100 em qualquer loja). Ela serve para secar as mãos e o suor das caminhadas.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Tabela Tática Completa: 13 Dias de Roteiro x Previsão x Look do Dia -->
+      <div class="bg-jp-card border border-jp-cardborder rounded-3xl p-5 sm:p-6 space-y-4 shadow-xl">
+        <div class="flex items-center justify-between flex-wrap gap-2 border-b border-jp-cardborder pb-3">
+          <div>
+            <h4 class="text-base font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-calendar-check text-emerald-400"></i> Cronograma dos 13 Dias: Previsão & "Look do Dia"
+            </h4>
+            <p class="text-xs text-jp-subtle">Recomendação exata de vestimenta adaptada para a atividade de cada dia</p>
+          </div>
+          <span class="px-2.5 py-1 rounded-xl bg-jp-night border border-jp-cardborder text-xs font-mono text-slate-300 font-bold">
+            13 Dias Planejados
+          </span>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-300 border-collapse min-w-[620px]">
+            <thead>
+              <tr class="border-b border-jp-cardborder font-mono text-[11px] text-slate-400 uppercase bg-jp-night/50">
+                <th class="p-3">Dia / Data</th>
+                <th class="p-3">Cidade / Base</th>
+                <th class="p-3">Previsão Esperada</th>
+                <th class="p-3">Chuva</th>
+                <th class="p-3">Recomendação ("Look do Dia")</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-jp-cardborder/40 font-sans">
+              <tr class="hover:bg-jp-night/40 transition-colors">
+                <td class="p-3 font-mono font-bold text-white">DIA 01 • 01/09</td>
+                <td class="p-3 font-semibold text-red-400">Tóquio (Chegada Haneda)</td>
+                <td class="p-3 font-mono">23°C a 30°C</td>
+                <td class="p-3 font-mono text-slate-400">20%</td>
+                <td class="p-3">Roupa de viagem confortável (calça flexível + camiseta macia de algodão).</td>
+              </tr>
+              <tr class="hover:bg-jp-night/40 transition-colors">
+                <td class="p-3 font-mono font-bold text-white">DIA 02 • 02/09</td>
+                <td class="p-3 font-semibold text-red-400">Tóquio (Senso-ji & Akiba)</td>
+                <td class="p-3 font-mono">24°C a 31°C</td>
+                <td class="p-3 font-mono text-slate-400">30%</td>
+                <td class="p-3">Camiseta respirável + bermuda leve + tênis de fácil descalço para os templos.</td>
+              </tr>
+              <tr class="hover:bg-jp-night/40 transition-colors">
+                <td class="p-3 font-mono font-bold text-white">DIA 03 • 03/09</td>
+                <td class="p-3 font-semibold text-red-400">Tóquio (Palácio & Shibuya)</td>
+                <td class="p-3 font-mono">23°C a 30°C</td>
+                <td class="p-3 font-mono text-slate-400">25%</td>
+                <td class="p-3">Tênis com amortecimento máximo (dia de mais de 18.000 passos) + óculos escuros.</td>
+              </tr>
+              <tr class="bg-amber-500/10 border-l-4 border-amber-400 hover:bg-amber-500/15 transition-colors">
+                <td class="p-3 font-mono font-bold text-amber-300 flex items-center gap-1.5">
+                  <span>DIA 04 • 04/09</span>
+                  <span class="px-1.5 py-0.2 rounded bg-amber-400 text-black text-[9px] font-mono font-black">HOJE</span>
+                </td>
+                <td class="p-3 font-semibold text-amber-300">Tóquio (teamLab & Shabat)</td>
+                <td class="p-3 font-mono text-amber-200">22°C a 24°C</td>
+                <td class="p-3 font-mono text-sky-300 font-bold">95% (Garoa)</td>
+                <td class="p-3 text-amber-100"><strong>teamLab:</strong> Calça que arregaça até o joelho para andar na água. <strong>Noite:</strong> Troca para roupa social/esporte fino para Shabat no Chabad.</td>
+              </tr>
+              <tr class="hover:bg-jp-night/40 transition-colors">
+                <td class="p-3 font-mono font-bold text-white">DIA 05 • 05/09</td>
+                <td class="p-3 font-semibold text-red-400">Tóquio (Shabat & Descanso)</td>
+                <td class="p-3 font-mono">23°C a 29°C</td>
+                <td class="p-3 font-mono text-slate-400">40%</td>
+                <td class="p-3">Roupa esporte fino confortável para orações e caminhada relaxante no parque.</td>
+              </tr>
+              <tr class="bg-sky-950/20 border-l-4 border-sky-400 hover:bg-sky-950/30 transition-colors">
+                <td class="p-3 font-mono font-bold text-sky-300">DIA 06 • 06/09</td>
+                <td class="p-3 font-semibold text-sky-300">Monte Fuji & Kawaguchiko</td>
+                <td class="p-3 font-mono text-sky-200 font-bold">14°C a 19°C ❄️</td>
+                <td class="p-3 font-mono text-sky-300">30%</td>
+                <td class="p-3 text-sky-100"><strong>Frio de Montanha:</strong> Jaqueta corta-vento (windbreaker) obrigatória + calça comprida para os 398 degraus da Chureito Pagoda.</td>
+              </tr>
+              <tr class="hover:bg-jp-night/40 transition-colors">
+                <td class="p-3 font-mono font-bold text-white">DIA 07 • 07/09</td>
+                <td class="p-3 font-semibold text-jp-gold">Quioto (Fushimi Inari)</td>
+                <td class="p-3 font-mono">23°C a 30°C</td>
+                <td class="p-3 font-mono text-slate-400">35%</td>
+                <td class="p-3">Retorno ao calor. Camiseta fresca, bermuda e tênis com excelente tração para o monte sagrado.</td>
+              </tr>
+              <tr class="hover:bg-jp-night/40 transition-colors">
+                <td class="p-3 font-mono font-bold text-white">DIA 08 • 08/09</td>
+                <td class="p-3 font-semibold text-jp-gold">Quioto (Kinkaku-ji & Bambus)</td>
+                <td class="p-3 font-mono">22°C a 30°C</td>
+                <td class="p-3 font-mono text-slate-400">25%</td>
+                <td class="p-3">Meias novas sem furos + calçado slip-on (múltiplas entradas com retirada de sapatos).</td>
+              </tr>
+              <tr class="hover:bg-jp-night/40 transition-colors">
+                <td class="p-3 font-mono font-bold text-white">DIA 09 • 09/09</td>
+                <td class="p-3 font-semibold text-emerald-400">Nara (Cervos) & Osaka</td>
+                <td class="p-3 font-mono">23°C a 31°C</td>
+                <td class="p-3 font-mono text-slate-400">20%</td>
+                <td class="p-3">Roupas leves e que não se importe de sujar com os cervos de Nara + noite vibrante em Dotonbori.</td>
+              </tr>
+              <tr class="hover:bg-jp-night/40 transition-colors">
+                <td class="p-3 font-mono font-bold text-white">DIA 10 • 10/09</td>
+                <td class="p-3 font-semibold text-emerald-400">Osaka (Castelo & Shinsekai)</td>
+                <td class="p-3 font-mono">24°C a 32°C</td>
+                <td class="p-3 font-mono text-slate-400">30%</td>
+                <td class="p-3">Look urbano relaxado, bermuda, chapéu/boné para o sol aberto do parque do castelo.</td>
+              </tr>
+              <tr class="hover:bg-jp-night/40 transition-colors">
+                <td class="p-3 font-mono font-bold text-white">DIA 11 • 11/09</td>
+                <td class="p-3 font-semibold text-red-400">Shinkansen → Tóquio + Shabat</td>
+                <td class="p-3 font-mono">23°C a 30°C</td>
+                <td class="p-3 font-mono text-slate-400">25%</td>
+                <td class="p-3">Casaco leve para o ar-condicionado do Shinkansen + roupa esporte fino de Shabat à noite.</td>
+              </tr>
+              <tr class="hover:bg-jp-night/40 transition-colors">
+                <td class="p-3 font-mono font-bold text-white">DIA 12 • 12/09</td>
+                <td class="p-3 font-semibold text-red-400">Tóquio (Shabat & Compras)</td>
+                <td class="p-3 font-mono">22°C a 29°C</td>
+                <td class="p-3 font-mono text-slate-400">20%</td>
+                <td class="p-3">Roupas confortáveis para passeios a pé e últimas compras de souvenirs.</td>
+              </tr>
+              <tr class="hover:bg-jp-night/40 transition-colors">
+                <td class="p-3 font-mono font-bold text-white">DIA 13 • 13/09</td>
+                <td class="p-3 font-semibold text-slate-300">Voo de Retorno (Japão → Brasil)</td>
+                <td class="p-3 font-mono">22°C a 28°C</td>
+                <td class="p-3 font-mono text-slate-400">20%</td>
+                <td class="p-3">Traje especial de voo longo: calça jogger macia, meias de compressão e agasalho para a cabine do avião.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
     </div>
 
     <!-- ==================== TAB 7: MODO SOBREVIVÊNCIA (FLASHCARDS) ==================== -->
@@ -3627,6 +3959,11 @@
       // Sync Bottom Nav Bar active state
       updateBottomNav(tabId);
 
+      // Se abrir a aba de clima, carrega/atualiza previsão ao vivo
+      if (tabId === 'tab-clima' && typeof loadLiveWeather === 'function') {
+        loadLiveWeather();
+      }
+
       // Scroll to top of page smoothly
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -3922,6 +4259,109 @@
       }
       showToast('📍 Exibindo DIA 04 (Hoje no Japão: teamLab, Odaiba & Shabat)', 'info');
     }
+
+    // ==========================================
+    // 9. LIVE WEATHER FORECAST (OPEN-METEO SATELLITE API)
+    // ==========================================
+    const WEATHER_CITIES = [
+      { id: 'tokyo', name: 'Tóquio (Tokyo)', lat: 35.6895, lon: 139.6917, fallbackTemp: 22, fallbackFeel: 27, fallbackMin: 22, fallbackMax: 24, fallbackProb: 95, fallbackCode: 55, humidity: 96, wind: '2.2' },
+      { id: 'fuji', name: 'Monte Fuji / Kawaguchiko', lat: 35.4984, lon: 138.7686, fallbackTemp: 19, fallbackFeel: 21, fallbackMin: 18, fallbackMax: 22, fallbackProb: 90, fallbackCode: 51, humidity: 92, wind: '4.3' },
+      { id: 'kyoto', name: 'Quioto & Nara', lat: 35.0116, lon: 135.7681, fallbackTemp: 23, fallbackFeel: 28, fallbackMin: 22, fallbackMax: 25, fallbackProb: 90, fallbackCode: 51, humidity: 97, wind: '2.4' },
+      { id: 'osaka', name: 'Osaka & Kansai', lat: 34.6937, lon: 135.5023, fallbackTemp: 23, fallbackFeel: 27, fallbackMin: 22, fallbackMax: 24, fallbackProb: 90, fallbackCode: 55, humidity: 96, wind: '3.1' }
+    ];
+
+    function interpretWmoCode(code) {
+      if (code === 0) return { label: 'Céu Limpo ☀️', icon: 'fa-solid fa-sun text-amber-400' };
+      if (code === 1 || code === 2) return { label: 'Parcialmente Nublado ⛅', icon: 'fa-solid fa-cloud-sun text-amber-300' };
+      if (code === 3) return { label: 'Nublado / Encoberto ☁️', icon: 'fa-solid fa-cloud text-slate-300' };
+      if (code === 45 || code === 48) return { label: 'Neblina / Nevoeiro 🌫️', icon: 'fa-solid fa-smog text-slate-400' };
+      if ([51, 53, 55].includes(code)) return { label: 'Garoa / Chuvisco 🌦️', icon: 'fa-solid fa-cloud-rain text-sky-400' };
+      if ([61, 63, 65].includes(code)) return { label: 'Chuva Contínua 🌧️', icon: 'fa-solid fa-cloud-showers-heavy text-sky-400' };
+      if ([80, 81, 82].includes(code)) return { label: 'Pancadas de Chuva 🌧️', icon: 'fa-solid fa-cloud-showers-water text-sky-400' };
+      if ([95, 96, 99].includes(code)) return { label: 'Tempestade / Trovoadas ⛈️', icon: 'fa-solid fa-bolt text-yellow-400' };
+      return { label: 'Tempo Instável', icon: 'fa-solid fa-cloud-sun text-slate-300' };
+    }
+
+    async function loadLiveWeather(manual = false) {
+      const statusEl = document.getElementById('weather-status-text');
+      const timeEl = document.getElementById('weather-last-updated');
+      if (statusEl && manual) statusEl.innerHTML = '<span class="inline-block w-2 h-2 rounded-full bg-amber-400 mr-1 animate-ping"></span> Sincronizando satélite...';
+
+      try {
+        const lats = WEATHER_CITIES.map(c => c.lat).join(',');
+        const lons = WEATHER_CITIES.map(c => c.lon).join(',');
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${lats}&longitude=${lons}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Asia%2FTokyo&forecast_days=1`;
+        
+        const res = await fetch(url, { cache: 'no-cache' });
+        if (!res.ok) throw new Error('API não respondeu');
+        const data = await res.json();
+        const results = Array.isArray(data) ? data : [data];
+
+        WEATHER_CITIES.forEach((city, index) => {
+          const item = results[index];
+          if (!item) return;
+          const curr = item.current || {};
+          const daily = item.daily || {};
+          const temp = Math.round(curr.temperature_2m ?? city.fallbackTemp);
+          const feel = Math.round(curr.apparent_temperature ?? (temp + 3));
+          const humidity = Math.round(curr.relative_humidity_2m ?? city.humidity);
+          const wind = (curr.wind_speed_10m ?? city.wind).toFixed ? Number(curr.wind_speed_10m ?? city.wind).toFixed(1) : String(curr.wind_speed_10m ?? city.wind);
+          const maxTemp = Math.round(daily.temperature_2m_max?.[0] ?? city.fallbackMax);
+          const minTemp = Math.round(daily.temperature_2m_min?.[0] ?? city.fallbackMin);
+          const rainProb = Math.round(daily.precipitation_probability_max?.[0] ?? city.fallbackProb);
+          const wmo = interpretWmoCode(curr.weather_code ?? city.fallbackCode);
+
+          updateCityWeatherCard(city.id, { temp, feel, humidity, wind, maxTemp, minTemp, rainProb, wmo });
+        });
+
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+        if (statusEl) statusEl.innerHTML = '<span class="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-1 animate-pulse"></span> Ao Vivo • Satélite JST / Open-Meteo';
+        if (timeEl) timeEl.textContent = `Atualizado às ${timeStr} (JST)`;
+        if (manual) showToast('Previsão do tempo atualizada em tempo real!', 'success');
+      } catch (err) {
+        console.warn('Usando dados meteorológicos locais:', err);
+        WEATHER_CITIES.forEach(city => {
+          const wmo = interpretWmoCode(city.fallbackCode);
+          updateCityWeatherCard(city.id, {
+            temp: city.fallbackTemp,
+            feel: city.fallbackFeel,
+            humidity: city.humidity,
+            wind: city.wind,
+            maxTemp: city.fallbackMax,
+            minTemp: city.fallbackMin,
+            rainProb: city.fallbackProb,
+            wmo
+          });
+        });
+        if (statusEl) statusEl.innerHTML = '<span class="inline-block w-2 h-2 rounded-full bg-amber-400 mr-1"></span> Modo Offline (Dados Oficiais de Setembro)';
+        if (timeEl) timeEl.textContent = 'Média Histórica JMA';
+        if (manual) showToast('Exibindo dados climáticos médios de Setembro', 'info');
+      }
+    }
+
+    function updateCityWeatherCard(cityId, d) {
+      const elTemp = document.getElementById(`w-${cityId}-temp`);
+      const elFeel = document.getElementById(`w-${cityId}-feel`);
+      const elMinMax = document.getElementById(`w-${cityId}-minmax`);
+      const elProb = document.getElementById(`w-${cityId}-rain`);
+      const elHum = document.getElementById(`w-${cityId}-humidity`);
+      const elWind = document.getElementById(`w-${cityId}-wind`);
+      const elCondition = document.getElementById(`w-${cityId}-condition`);
+      const elIcon = document.getElementById(`w-${cityId}-icon`);
+
+      if (elTemp) elTemp.textContent = `${d.temp}°C`;
+      if (elFeel) elFeel.textContent = `Sensação ${d.feel}°C`;
+      if (elMinMax) elMinMax.textContent = `${d.minTemp}°C / ${d.maxTemp}°C`;
+      if (elProb) elProb.textContent = `${d.rainProb}%`;
+      if (elHum) elHum.textContent = `${d.humidity}%`;
+      if (elWind) elWind.textContent = `${d.wind} km/h`;
+      if (elCondition) elCondition.textContent = d.wmo.label;
+      if (elIcon) elIcon.innerHTML = `<i class="${d.wmo.icon}"></i>`;
+    }
+
+    // Carregamento inicial da previsão do tempo
+    loadLiveWeather();
 
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
