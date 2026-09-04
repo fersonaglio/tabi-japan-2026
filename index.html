@@ -198,7 +198,7 @@
     /* =================================================== */
     .day-scroller-sticky {
       position: sticky;
-      top: 0;
+      top: calc(3.75rem + env(safe-area-inset-top));
       z-index: 35;
       background: rgba(8, 12, 20, 0.94);
       backdrop-filter: blur(18px);
@@ -373,9 +373,9 @@
   <!-- TOAST NOTIFICATION CONTAINER -->
   <div id="toast-container" class="fixed top-5 left-1/2 -translate-x-1/2 z-[100] pointer-events-none transition-all duration-300"></div>
 
-  <!-- TOP HEADER / LUXURY LOGO & DUAL LIVE CLOCKS -->
-  <header class="border-b border-jp-cardborder bg-jp-card/95 backdrop-blur-md sticky top-0 z-40 transition-all shadow-lg pt-[env(safe-area-inset-top)]">
-    <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 min-h-16 py-2 sm:py-0 flex items-center justify-between gap-2">
+  <!-- TOP HEADER / LUXURY LOGO & DUAL LIVE CLOCKS (100% FIXO NO TOPO DO IPHONE) -->
+  <header class="border-b border-jp-cardborder bg-jp-card/95 backdrop-blur-md fixed top-0 left-0 right-0 z-50 transition-all shadow-lg pt-[env(safe-area-inset-top)]">
+    <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-2">
       
       <!-- Brand Logo & Title (Left Side) -->
       <div class="flex items-center space-x-2.5 sm:space-x-3.5 min-w-0 cursor-pointer" onclick="jumpToToday()" title="Toque para ir ao dia de hoje">
@@ -805,7 +805,7 @@
   </nav>
 
   <!-- MAIN CONTAINER -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 mt-2">
 
     <!-- ==================== TAB 1: ROTEIRO DIA A DIA ==================== -->
     <div id="tab-roteiro" class="tab-content space-y-5">
