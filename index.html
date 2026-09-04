@@ -248,17 +248,19 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       background: rgba(15, 23, 42, 0.7);
       color: #94A3B8;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .day-pill-btn:active {
-      transform: scale(0.95);
+      touch-action: pan-x;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      transform: none !important;
+      transition: background 0.2s ease, border-color 0.2s ease;
     }
     .day-pill-btn.day-pill-active {
       background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%) !important;
       border-color: #EF4444 !important;
       color: #FFFFFF !important;
       box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
-      transform: scale(1.03);
     }
 
     /* =================================================== */
