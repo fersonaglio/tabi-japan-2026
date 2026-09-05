@@ -4422,7 +4422,10 @@
       }
     }
 
-    function switchTab(tabId) {
+    function switchTab(tabId, autoScroll = true) {
+      const targetTab = document.getElementById(tabId);
+      const isAlreadyActive = targetTab && !targetTab.classList.contains('hidden');
+
       // Hide all tabs
       document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
       
@@ -4433,7 +4436,6 @@
       });
 
       // Show target tab
-      const targetTab = document.getElementById(tabId);
       if (targetTab) {
         targetTab.classList.remove('hidden');
       }
@@ -4454,8 +4456,10 @@
         loadLiveWeather();
       }
 
-      // Scroll to top of page smoothly
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Scroll to top of page smoothly SOMENTE se autoScroll for true e a aba não estava já aberta
+      if (autoScroll && !isAlreadyActive) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     }
 
     // ==========================================
@@ -4505,6 +4509,17 @@
       // Garantir que todos os 13 dias estejam visíveis (sem esconder os dias seguintes no mobile/app)
       const cards = document.querySelectorAll('.day-card');
       cards.forEach(card => card.classList.remove('hidden'));
+
+      // Sincronizar botões de filtro de cidade para 'Todos (13 Dias)'
+      document.querySelectorAll('.city-btn').forEach(btn => {
+        btn.classList.remove('bg-jp-red', 'text-white', 'shadow-md');
+        btn.classList.add('bg-jp-night', 'text-jp-subtle');
+      });
+      const btnCityAll = document.querySelector('.city-btn');
+      if (btnCityAll) {
+        btnCityAll.classList.remove('bg-jp-night', 'text-jp-subtle');
+        btnCityAll.classList.add('bg-jp-red', 'text-white', 'shadow-md');
+      }
 
       const target = document.getElementById(`day-card-${dayNum}`);
       if (target) {
@@ -4815,9 +4830,10 @@
       }
     }
 
-    // Salto Inteligente: Navega direto para o dia correto no Japão sem erros
+    // Salto Inteligente: Navega direto para o dia correto no Japão sem erros e sem voltar ao topo (Dia 1)
     function jumpToToday() {
-      switchTab('tab-roteiro');
+      // 1. Ativa a aba do roteiro sem disparar scroll para o topo
+      switchTab('tab-roteiro', false);
       
       const bHoje = document.getElementById('bnav-hoje');
       if (bHoje) {
@@ -4829,11 +4845,23 @@
       const info = TRIP_DAYS_METADATA[currentDay];
       const dayPad = currentDay < 10 ? '0' + currentDay : '' + currentDay;
 
+      // 2. Navega e rola diretamente para o card do dia de hoje
       if (typeof selectDay === 'function') {
         selectDay(currentDay);
       }
+
+      // 3. Efeito de pulso no card para confirmar visualmente a localização
+      const targetCard = document.getElementById(`day-card-${currentDay}`);
+      if (targetCard) {
+        targetCard.classList.remove('ring-4', 'ring-amber-400');
+        void targetCard.offsetWidth; // trigger reflow
+        targetCard.classList.add('ring-4', 'ring-amber-400', 'transition-all', 'duration-500');
+        setTimeout(() => {
+          targetCard.classList.remove('ring-4', 'ring-amber-400');
+        }, 1500);
+      }
       
-      showToast(`📍 Exibindo DIA ${dayPad} (${info ? info.weekday + ' • ' + info.date : 'Hoje no Japão'})`, 'info');
+      showToast(`📍 Hoje no Japão: DIA ${dayPad} (${info ? info.weekday + ' • ' + info.date : '06/09'})`, 'info');
     }
 
     // ==========================================
