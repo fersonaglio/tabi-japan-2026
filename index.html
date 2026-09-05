@@ -263,6 +263,11 @@
       box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
     }
 
+    /* Scroll Margin Top para Cards de Dias respeitarem o Header Fixo + Barra Sticky de Dias + Safe Area */
+    .day-card {
+      scroll-margin-top: calc(8.5rem + env(safe-area-inset-top, 0px));
+    }
+
     /* =================================================== */
     /* TIMELINE STREAM (Linha do Tempo Conectada Vertical) */
     /* =================================================== */
@@ -384,9 +389,9 @@
         </div>
         <div class="min-w-0">
           <div class="flex items-center gap-1.5 flex-wrap">
-            <span class="font-display font-extrabold text-xs sm:text-base tracking-wide text-white flex items-center gap-1 truncate">
+            <h1 class="font-display font-extrabold text-xs sm:text-base tracking-wide text-white flex items-center gap-1 truncate">
               ⛩️ TABI JAPAN 2026
-            </span>
+            </h1>
             <span class="hidden sm:inline-flex px-2 py-0.5 text-[9px] sm:text-[10px] font-mono uppercase bg-sky-500/20 text-sky-400 border border-sky-500/40 rounded-full font-bold items-center gap-1 shrink-0">
               <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)] inline-block"></span>
               ✈️ Em Viagem
@@ -435,9 +440,9 @@
           <span class="text-[10px] font-mono uppercase text-amber-400 font-bold flex items-center gap-1.5">
             <i class="fa-solid fa-location-dot"></i> Hoje no Japão
           </span>
-          <span class="px-2 py-0.5 rounded-full bg-jp-red text-white text-[9px] font-mono font-bold">DIA 04</span>
+          <span class="px-2 py-0.5 rounded-full bg-jp-red text-white text-[9px] font-mono font-bold">DIA 05</span>
         </div>
-        <p class="text-xs font-bold text-white">Sexta, 04/09 • teamLab, Odaiba & Shabat</p>
+        <p class="text-xs font-bold text-white">Sábado, 05/09 • Culto TIC, Zojoji & Ginza</p>
         <p class="text-[10px] text-amber-300/90 font-medium">Toque para saltar direto para hoje ➔</p>
       </div>
 
@@ -561,7 +566,7 @@
         <div class="lg:col-span-2 space-y-4">
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-jp-gold/20 via-amber-500/10 to-transparent border border-jp-gold/40 text-jp-gold text-xs font-semibold">
             <i class="fa-solid fa-location-dot text-amber-400"></i>
-            <span>📍 Em Tóquio — <strong>DIA 03 em andamento (03/09, Quinta): Palácio Imperial + Harajuku + Shibuya Sky + Shinjuku Night</strong></span>
+            <span>📍 Em Tóquio — <strong>DIA 05 em andamento (05/09, Sábado): Culto TIC + Zojoji + Tokyo Tower + Ginza</strong></span>
           </div>
           
           <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight font-display leading-tight">
@@ -960,35 +965,35 @@
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-plane-arrival text-sky-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>06:25 — <a href="https://www.google.com/maps/search/?api=1&query=Haneda+Airport+Terminal+3" target="_blank" class="text-sky-400 hover:underline font-bold">Aeroporto de Haneda T3 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Pouso voo AF0186, imigração Visit Japan e saída rápida direta (sem espera em esteira, apenas mochila e mala de bordo!).
+                  <strong>06:25 — <a href="https://www.google.com/maps/search/?api=1&query=Haneda+Airport+Terminal+3" target="_blank" class="text-sky-400 hover:underline font-bold">Aeroporto de Haneda T3 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Pouso voo AF0186, imigração Visit Japan e saída rápida direta (sem espera em esteira, apenas mochila e mala de bordo!).
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-train-subway text-emerald-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>07:45 — Trem Direto Keikyu / Asakusa Line <span class="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">PAGO (Suica ¥530)</span>:</strong> Deslocamento direto até a <a href="https://www.google.com/maps/search/?api=1&query=Oshiage+Station+Tokyo" target="_blank" class="text-sky-400 hover:underline font-bold">Estação Oshiage (Skytree) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>.
+                  <strong>07:45 — Trem Direto Keikyu / Asakusa Line <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">PAGO (Suica ¥530)</span>:</strong> Deslocamento direto até a <a href="https://www.google.com/maps/search/?api=1&query=Oshiage+Station+Tokyo" target="_blank" class="text-sky-400 hover:underline font-bold">Estação Oshiage (Skytree) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>.
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-house-chimney text-amber-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>08:45 — Check-in <a href="https://www.google.com/maps/search/?api=1&query=4-2-12+Narihira+Sumida+City+Tokyo" target="_blank" class="text-sky-400 hover:underline font-bold">Airbnb Ciel Hills Ap 201 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-sky-500/20 text-sky-300 font-mono text-[10px] font-bold">100% PAGO</span>:</strong> Entrada com PIN e tablet no térreo.
+                  <strong>08:45 — Check-in <a href="https://www.google.com/maps/search/?api=1&query=4-2-12+Narihira+Sumida+City+Tokyo" target="_blank" class="text-sky-400 hover:underline font-bold">Airbnb Ciel Hills Ap 201 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-mono text-[10px] font-bold">100% PAGO</span>:</strong> Entrada com PIN e tablet no térreo.
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-torii-gate text-red-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>10:30 — <a href="https://www.google.com/maps/search/?api=1&query=Sensō-ji+Temple+Tokyo" target="_blank" class="text-sky-400 hover:underline font-bold">Templo Senso-ji & Nakamise-dori <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Rua histórica de Asakusa.
+                  <strong>10:30 — <a href="https://www.google.com/maps/search/?api=1&query=Sensō-ji+Temple+Tokyo" target="_blank" class="text-sky-400 hover:underline font-bold">Templo Senso-ji & Nakamise-dori <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Rua histórica de Asakusa.
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-bag-shopping text-purple-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>17:00 — <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Solamachi+Skytree" target="_blank" class="text-sky-400 hover:underline font-bold">Tokyo Solamachi / Skytree <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Passeio no shopping da torre ao lado do prédio.
+                  <strong>17:00 — <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Solamachi+Skytree" target="_blank" class="text-sky-400 hover:underline font-bold">Tokyo Solamachi / Skytree <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Passeio no shopping da torre ao lado do prédio.
                 </div>
               </div>
             </div>
@@ -1035,28 +1040,28 @@
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>07:00 — <a href="https://www.google.com/maps/search/?api=1&query=Sensō-ji+Temple+Tokyo" target="_blank" class="text-sky-400 hover:underline font-bold">Templo Senso-ji & Portão Kaminarimon <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Realizado com sucesso.
+                  <strong>07:00 — <a href="https://www.google.com/maps/search/?api=1&query=Sensō-ji+Temple+Tokyo" target="_blank" class="text-sky-400 hover:underline font-bold">Templo Senso-ji & Portão Kaminarimon <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Realizado com sucesso.
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>09:00 — <a href="https://www.google.com/maps/search/?api=1&query=Shinjuku+Gyoen+National+Garden" target="_blank" class="text-sky-400 hover:underline font-bold">Parque Nacional Shinjuku Gyoen <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">PAGO (¥500 / Suica)</span>:</strong> Realizado com sucesso.
+                  <strong>09:00 — <a href="https://www.google.com/maps/search/?api=1&query=Shinjuku+Gyoen+National+Garden" target="_blank" class="text-sky-400 hover:underline font-bold">Parque Nacional Shinjuku Gyoen <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">PAGO (¥500 / Suica)</span>:</strong> Realizado com sucesso.
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>14:30 — <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Metropolitan+Government+Building" target="_blank" class="text-sky-400 hover:underline font-bold">Mirante do Governo (Tocho 45F) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Realizado com sucesso.
+                  <strong>14:30 — <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Metropolitan+Government+Building" target="_blank" class="text-sky-400 hover:underline font-bold">Mirante do Governo (Tocho 45F) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Realizado com sucesso.
                 </div>
               </div>
 
               <div class="flex items-start gap-2 p-2 rounded-xl bg-amber-950/20 border border-amber-500/30">
                 <i class="fa-solid fa-arrow-right-arrow-left text-amber-400 mt-0.5 shrink-0"></i>
                 <div class="text-[11px] text-amber-200">
-                  <strong>Pendente transferido:</strong> <em>Godzilla Road, Gato 3D e Omoide Yokocho</em> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">100% GRATUITOS</span> foram integrados à noite do <strong>DIA 03 (Hoje)</strong>!
+                  <strong>Pendente transferido:</strong> <em>Godzilla Road, Gato 3D e Omoide Yokocho</em> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">100% GRATUITOS</span> foram integrados à noite do <strong>DIA 03 (Hoje)</strong>!
                 </div>
               </div>
             </div>
@@ -1103,35 +1108,35 @@
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-crown text-amber-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>08:30 — <a href="https://www.google.com/maps/search/?api=1&query=Kokyo+Gaien+National+Garden" target="_blank" class="text-sky-400 hover:underline font-bold">Palácio Imperial de Tóquio (Kokyo) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Esplanada dos pinheiros e fotos na icônica <a href="https://www.google.com/maps/search/?api=1&query=Nijubashi+Bridge+Tokyo" target="_blank" class="text-sky-400 hover:underline font-bold">Ponte Nijubashi <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> (✔ Feito).
+                  <strong>08:30 — <a href="https://www.google.com/maps/search/?api=1&query=Kokyo+Gaien+National+Garden" target="_blank" class="text-sky-400 hover:underline font-bold">Palácio Imperial de Tóquio (Kokyo) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Esplanada dos pinheiros e fotos na icônica <a href="https://www.google.com/maps/search/?api=1&query=Nijubashi+Bridge+Tokyo" target="_blank" class="text-sky-400 hover:underline font-bold">Ponte Nijubashi <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> (✔ Feito).
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-torii-gate text-red-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>10:30 — <a href="https://www.google.com/maps/search/?api=1&query=Meiji+Jingu+Shrine+Tokyo" target="_blank" class="text-sky-400 hover:underline font-bold">Santuário Meiji Jingu <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Floresta sagrada e torii gigante de madeira (✔ Feito).
+                  <strong>10:30 — <a href="https://www.google.com/maps/search/?api=1&query=Meiji+Jingu+Shrine+Tokyo" target="_blank" class="text-sky-400 hover:underline font-bold">Santuário Meiji Jingu <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Floresta sagrada e torii gigante de madeira (✔ Feito).
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-shirt text-pink-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>11:45 — <a href="https://www.google.com/maps/search/?api=1&query=Takeshita+Street+Harajuku" target="_blank" class="text-sky-400 hover:underline font-bold">Rua Takeshita-dori (Harajuku) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Caminhada pela rua pop (✔ Feito).
+                  <strong>11:45 — <a href="https://www.google.com/maps/search/?api=1&query=Takeshita+Street+Harajuku" target="_blank" class="text-sky-400 hover:underline font-bold">Rua Takeshita-dori (Harajuku) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Caminhada pela rua pop (✔ Feito).
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-dog text-amber-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>14:30 — <a href="https://www.google.com/maps/search/?api=1&query=Shibuya+Scramble+Crossing" target="_blank" class="text-sky-400 hover:underline font-bold">Cruzamento de Shibuya <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> & <a href="https://www.google.com/maps/search/?api=1&query=Hachiko+Memorial+Statue" target="_blank" class="text-sky-400 hover:underline font-bold">Estátua Hachiko <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Travessia e fotos (✔ Feito).
+                  <strong>14:30 — <a href="https://www.google.com/maps/search/?api=1&query=Shibuya+Scramble+Crossing" target="_blank" class="text-sky-400 hover:underline font-bold">Cruzamento de Shibuya <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> & <a href="https://www.google.com/maps/search/?api=1&query=Hachiko+Memorial+Statue" target="_blank" class="text-sky-400 hover:underline font-bold">Estátua Hachiko <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Travessia e fotos (✔ Feito).
                 </div>
               </div>
 
               <div class="flex items-start gap-2 p-2 rounded-xl bg-emerald-950/25 border border-emerald-500/30">
                 <i class="fa-solid fa-binoculars text-emerald-400 mt-0.5 shrink-0"></i>
                 <div class="text-[11px] text-emerald-200">
-                  <strong>3 Mirantes do Cruzamento de Cima <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">100% GRATUITOS</span>:</strong>
+                  <strong>3 Mirantes do Cruzamento de Cima <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">100% GRATUITOS</span>:</strong>
                   <div class="mt-1 space-y-1">
                     • <strong>1. <a href="https://www.google.com/maps/search/?api=1&query=Shibuya+Station+Mark+City+Walkway" target="_blank" class="text-sky-400 hover:underline font-bold">Passarela Shibuya Skyway (Mark City 2F) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="text-emerald-400 font-bold">[GRÁTIS]</span></strong> (✔ Feito).<br>
                     • <strong>2. <a href="https://www.google.com/maps/search/?api=1&query=MAGNET+by+SHIBUYA109" target="_blank" class="text-sky-400 hover:underline font-bold">Rooftop MAGNET 109 (7F) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="text-emerald-400 font-bold">[GRÁTIS]</span></strong>.<br>
@@ -1143,21 +1148,21 @@
               <div class="flex items-start gap-2 p-2 rounded-xl bg-sky-950/30 border border-sky-500/40">
                 <i class="fa-solid fa-headphones text-sky-400 mt-0.5 shrink-0"></i>
                 <div class="text-[11px] text-sky-200">
-                  <strong>14:45 — Compra de AirPods na <a href="https://www.google.com/maps/search/?api=1&query=Bic+Camera+Shibuya+Hachikoguchi+Store" target="_blank" class="text-sky-400 hover:underline font-bold">Bic Camera Shibuya <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">TAX-FREE 10% OFF</span>:</strong> Setor de áudio/Apple (✔ Feito).
+                  <strong>14:45 — Compra de AirPods na <a href="https://www.google.com/maps/search/?api=1&query=Bic+Camera+Shibuya+Hachikoguchi+Store" target="_blank" class="text-sky-400 hover:underline font-bold">Bic Camera Shibuya <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">TAX-FREE 10% OFF</span>:</strong> Setor de áudio/Apple (✔ Feito).
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-gamepad text-emerald-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>18:30 — <a href="https://www.google.com/maps/search/?api=1&query=Nintendo+TOKYO+Shibuya+PARCO" target="_blank" class="text-sky-400 hover:underline font-bold">Shibuya Parco (6F): Nintendo Tokyo & Pokémon <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">ENTRADA GRATUITA</span>:</strong> Aberto até as 21:00.
+                  <strong>18:30 — <a href="https://www.google.com/maps/search/?api=1&query=Nintendo+TOKYO+Shibuya+PARCO" target="_blank" class="text-sky-400 hover:underline font-bold">Shibuya Parco (6F): Nintendo Tokyo & Pokémon <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">ENTRADA GRATUITA</span>:</strong> Aberto até as 21:00.
                 </div>
               </div>
 
               <div class="flex items-start gap-2 p-2 rounded-xl bg-purple-950/25 border border-purple-500/30">
                 <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5 shrink-0"></i>
                 <div class="text-[11px] text-purple-200">
-                  <strong>Noite em Shibuya & Shinjuku <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">100% REALIZADO</span>:</strong>
+                  <strong>Noite em Shibuya & Shinjuku <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">100% REALIZADO</span>:</strong>
                   <div class="mt-1 space-y-1">
                     • <strong><a href="https://www.google.com/maps/search/?api=1&query=MEGA+Don+Quijote+Shibuya" target="_blank" class="text-sky-400 hover:underline font-bold">MEGA Don Quijote Shibuya (24h) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="text-emerald-400 font-bold">[VISITADO ✔]</span></strong>: 8 andares de compras e guloseimas!<br>
                     • <strong><a href="https://www.google.com/maps/search/?api=1&query=Cross+Shinjuku+Vision" target="_blank" class="text-sky-400 hover:underline font-bold">Gato 3D de Shinjuku <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="text-emerald-400 font-bold">[✔]</span></strong>: Telão 3D na rua.<br>
@@ -1210,7 +1215,7 @@
               <div class="flex items-start gap-2 p-2 rounded-xl bg-purple-950/40 border border-purple-500/40">
                 <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5 shrink-0"></i>
                 <div class="text-[11px] text-purple-200">
-                  <strong>08:00 às 08:30 — <a href="https://www.google.com/maps/search/?api=1&query=teamLab+Planets+TOKYO+Toyosu" target="_blank" class="text-sky-400 hover:underline font-bold">teamLab Planets TOKYO (Toyosu) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">FEITO COM SUCESSO ✔</span>:</strong>
+                  <strong>08:00 às 08:30 — <a href="https://www.google.com/maps/search/?api=1&query=teamLab+Planets+TOKYO+Toyosu" target="_blank" class="text-sky-400 hover:underline font-bold">teamLab Planets TOKYO (Toyosu) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">FEITO COM SUCESSO ✔</span>:</strong>
                   <div class="mt-1 text-slate-300 text-[10px]">
                     Imersão sensorial de abertura realizada com salas vazias e água limpa!
                   </div>
@@ -1304,7 +1309,7 @@
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-church text-emerald-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>09:30 às 12:30 — <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+International+Seventh-day+Adventist+Church" target="_blank" class="text-emerald-400 hover:underline font-bold">Tokyo International SDA Church (TIC) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Escola Sabatina (09:30) e Culto de Adoração (11:00) em inglês no coração de Harajuku/Jingumae.
+                  <strong>09:30 às 12:30 — <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+International+Seventh-day+Adventist+Church" target="_blank" class="text-emerald-400 hover:underline font-bold">Tokyo International SDA Church (TIC) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Escola Sabatina (09:30) e Culto de Adoração (11:00) em inglês no coração de Harajuku/Jingumae.
                 </div>
               </div>
 
@@ -1320,7 +1325,7 @@
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-leaf text-emerald-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>13:30 às 14:15 — <a href="https://www.google.com/maps/search/?api=1&query=Togo+Shrine+Harajuku+Tokyo" target="_blank" class="text-emerald-400 hover:underline font-bold">Santuário Tōgō (東郷神社) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">100% GRATUITO</span>:</strong>
+                  <strong>13:30 às 14:15 — <a href="https://www.google.com/maps/search/?api=1&query=Togo+Shrine+Harajuku+Tokyo" target="_blank" class="text-emerald-400 hover:underline font-bold">Santuário Tōgō (東郷神社) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">100% GRATUITO</span>:</strong>
                   <span class="text-slate-400 text-[11px] block">A 5 min a pé da igreja. Lago tradicional com carpas coloridas, pontes de madeira e jardim japonês sossegado (Aberto das 06h às 17h).</span>
                 </div>
               </div>
@@ -1331,7 +1336,7 @@
                 <div class="text-[11px] text-amber-200">
                   <div class="flex items-center justify-between flex-wrap gap-1">
                     <strong>14:50 às 15:50 — História dos Samurais: <a href="https://www.google.com/maps/search/?api=1&query=Sengakuji+Temple+Tokyo" target="_blank" class="text-sky-400 hover:underline font-bold">Templo Sengaku-ji (泉岳寺) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a></strong>
-                    <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[9px] font-bold">Pátio até 18:00</span>
+                    <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[9px] font-bold">Pátio até 18:00</span>
                   </div>
                   <div class="mt-1 text-slate-300 text-[10px]">
                     O lendário santuário e cemitério dos <strong>47 Ronin</strong> (a história mais famosa de honra samurai). Entrada gratuita no pátio e túmulos. Compre incenso tradicional na entrada (¥100). Museu Akō Gishi aberto até 16:30 (¥500). Metrô: Estação Sengakuji (Linha Asakusa A07).
@@ -1345,7 +1350,7 @@
                 <div class="text-[11px] text-emerald-200">
                   <div class="flex items-center justify-between flex-wrap gap-1">
                     <strong>16:15 às 17:20 — Monumento dos Xoguns: <a href="https://www.google.com/maps/search/?api=1&query=Zojoji+Temple+Tokyo" target="_blank" class="text-emerald-400 hover:underline font-bold">Templo Zōjō-ji (増上寺) & Shiba Park <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a></strong>
-                    <span class="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-mono text-[9px] font-bold">Portões fecham 17:30</span>
+                    <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono text-[9px] font-bold">Portões fecham 17:30</span>
                   </div>
                   <div class="mt-1 text-slate-300 text-[10px]">
                     Fundado em 1393, mausoléu dos xoguns Tokugawa. O histórico portão Sanmon de 1622 emoldura a Tokyo Tower ao fundo em ângulo espetacular. Chegada às 16:15 garante visitação com calma antes do encerramento dos portões.
@@ -1359,7 +1364,7 @@
                 <div class="text-[11px] text-slate-300">
                   <div class="flex items-center justify-between flex-wrap gap-1">
                     <strong>17:30 às 18:30 — <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Tower" target="_blank" class="text-sky-400 hover:underline font-bold">Tokyo Tower Iluminada & Pôr do Sol <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a></strong>
-                    <span class="px-1.5 py-0.2 rounded bg-red-500/20 text-red-300 font-mono text-[9px] font-bold">Pôr do Sol às 18:05</span>
+                    <span class="px-1.5 py-0.5 rounded bg-red-500/20 text-red-300 font-mono text-[9px] font-bold">Pôr do Sol às 18:05</span>
                   </div>
                   <div class="mt-1 text-[10px] text-slate-300">
                     Caminhada de 5 min a partir do Zōjō-ji. Assistir ao pôr do sol na praça e ver as luzes alaranjadas acenderem na transição para a noite. <em>(Deck Principal 150m aberto até 22:30 • Opcional ¥1.200 no Wise)</em>.
@@ -1382,7 +1387,7 @@
                     <span class="text-[11px] font-bold text-emerald-300 flex items-center gap-1.5">
                       📖 1. <a href="https://www.google.com/maps/search/?api=1&query=Books+Kyobunkwan+Ginza+Tokyo" target="_blank" class="text-emerald-300 hover:underline">Books KYOBUNKWAN (教文館 • 18:00 – 18:55) <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></a>
                     </span>
-                    <span class="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-mono text-[9px] font-bold">FECHA ÀS 19:00 • 100% GRÁTIS</span>
+                    <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono text-[9px] font-bold">FECHA ÀS 19:00 • 100% GRÁTIS</span>
                   </div>
                   <p class="text-[10px] text-slate-200 leading-tight">
                     <strong>A mais importante livraria e editora cristã do Japão (desde 1885):</strong> Edifício histórico de 1933 projetado por Antonin Raymond. No <strong>3º andar (Setor Cristão)</strong>: o maior acervo do país de Bíblias em japonês e línguas internacionais, livros devocionais, história cristã no Japão e cartões com versículos. No <strong>4º andar</strong>: o sereno <em>Café Ein Karem</em> com vista para a avenida de Ginza. Apenas 10 min de metrô da Tokyo Tower!
@@ -1399,7 +1404,7 @@
                     <span class="text-[11px] font-bold text-white flex items-center gap-1.5">
                       🏎️ 2. <a href="https://www.google.com/maps/search/?api=1&query=NISSAN+CROSSING+Ginza+Tokyo" target="_blank" class="text-red-400 hover:underline">NISSAN CROSSING Ginza 4-Chome (19:00 – 19:40) <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></a>
                     </span>
-                    <span class="px-1.5 py-0.2 rounded bg-red-500/20 text-red-300 font-mono text-[9px] font-bold">FECHA ÀS 20:00 • 100% GRÁTIS</span>
+                    <span class="px-1.5 py-0.5 rounded bg-red-500/20 text-red-300 font-mono text-[9px] font-bold">FECHA ÀS 20:00 • 100% GRÁTIS</span>
                   </div>
                   <p class="text-[10px] text-slate-200 leading-tight">
                     <strong>Atravessando a rua da Kyobunkwan (apenas 80m!):</strong> Galeria oficial da Nissan no <em>Ginza Place</em> (1F e 2F). Exposição de supercarros <strong>Nissan GT-R Nismo</strong>, protótipos de Fórmula E e concept cars elétricos. No 2º andar, o <em>Crossing Café</em> com o famoso <strong>Macchi-art</strong> (impressão fotográfica na espuma).
@@ -1437,7 +1442,7 @@
                     <span class="text-[11px] font-bold font-mono text-sky-300 uppercase flex items-center gap-1.5">
                       ⚡ 4. Akihabara (21:00 – 21:50): Tripé Alto & Underground JDM
                     </span>
-                    <span class="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 text-[9px] font-mono font-bold">Trem JR Yurakucho ➔ Akiba (7 min)</span>
+                    <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[9px] font-mono font-bold">Trem JR Yurakucho ➔ Akiba (7 min)</span>
                   </div>
 
                   <!-- DESTAQUE JDM: AKIHABARA UDX PARKING -->
@@ -1446,7 +1451,7 @@
                       <strong class="text-amber-300 text-[11px] flex items-center gap-1.5">
                         <i class="fa-solid fa-car-side text-amber-400"></i> <a href="https://www.google.com/maps/search/?api=1&query=Akihabara+UDX+Parking" target="_blank" class="text-amber-300 hover:underline">Akihabara UDX Parking (Subsolo B2F / B3F) <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i></a>
                       </strong>
-                      <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[9px] font-bold">ENTRADA GRÁTIS A PÉ • 24H</span>
+                      <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[9px] font-bold">ENTRADA GRÁTIS A PÉ • 24H</span>
                     </div>
                     <p class="text-[10px] text-slate-300 leading-tight">
                       <strong>O ponto de encontro subterrâneo de sábado à noite:</strong> Fica exatamente em frente à Yodobashi-Akiba! Pegue o elevador do complexo Akihabara UDX e desça para os pisos <strong>B2F ou B3F</strong>. Aos sábados à noite é onde entusiastas reúnem <strong>lendas JDM (Nissan Skyline GT-R, Silvia S15, Mazda RX-7, Supra)</strong> e carros <em>Itasha</em> tunados. Totalmente seguro e gratuito para pedestres caminharem e fotografarem.
@@ -1539,7 +1544,7 @@
               <span class="text-sky-300 font-bold font-mono uppercase text-[11px] flex items-center gap-1.5">
                 <i class="fa-solid fa-mobile-screen-button text-sky-400"></i> Noite no Airbnb (~23:00): Comprar Trem Fuji no App
               </span>
-              <span class="px-1.5 py-0.2 rounded bg-sky-500/20 text-sky-300 font-mono text-[9px] font-bold">Via Celular</span>
+              <span class="px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-mono text-[9px] font-bold">Via Celular</span>
             </div>
             <p class="text-slate-300 text-[10px] leading-relaxed">
               Ao retornar ao Airbnb, relaxe e compre pelo app/site da JR com Wi-Fi o trem direto <strong>Fuji Excursion</strong> para domingo:
@@ -1594,7 +1599,7 @@
               <div class="flex items-start gap-2 p-2 rounded-xl bg-sky-950/30 border border-sky-500/30">
                 <i class="fa-solid fa-train-subway text-sky-400 mt-0.5 shrink-0"></i>
                 <div class="text-[11px] text-sky-200">
-                  <strong>07:30 — <a href="https://www.google.com/maps/search/?api=1&query=Shinjuku+Station" target="_blank" class="text-sky-400 hover:underline font-bold">Trem Direto Fuji Excursion #3 (Shinjuku ➔ Kawaguchiko) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">PAGO (¥4.130 / R$ 150)</span>:</strong> 100% de trem sobre trilhos! Sem ônibus, sem estrada. Trem expresso direto saindo da Estação Shinjuku às 07:30 e chegando às 09:26 em Kawaguchiko com poltrona reservada (<strong>Assento D na janela direita para a vista panorâmica do Monte Fuji</strong>), ar-condicionado e tomadas. *(Comprado antecipadamente nas máquinas/guichês da JR em Tóquio)*.
+                  <strong>07:30 — <a href="https://www.google.com/maps/search/?api=1&query=Shinjuku+Station" target="_blank" class="text-sky-400 hover:underline font-bold">Trem Direto Fuji Excursion #3 (Shinjuku ➔ Kawaguchiko) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">PAGO (¥4.130 / R$ 150)</span>:</strong> 100% de trem sobre trilhos! Sem ônibus, sem estrada. Trem expresso direto saindo da Estação Shinjuku às 07:30 e chegando às 09:26 em Kawaguchiko com poltrona reservada (<strong>Assento D na janela direita para a vista panorâmica do Monte Fuji</strong>), ar-condicionado e tomadas. *(Comprado antecipadamente nas máquinas/guichês da JR em Tóquio)*.
                 </div>
               </div>
 
@@ -1608,7 +1613,7 @@
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-torii-gate text-red-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>10:05 — <a href="https://www.google.com/maps/search/?api=1&query=Chureito+Pagoda+Fujiyoshida" target="_blank" class="text-sky-400 hover:underline font-bold">Chureito Pagoda (Arakurayama Sengen Park) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Trenzinho local Fujikyu (13 min / ¥310 no Suica) até a estação Shimoyoshida + caminhada e subida dos 398 degraus. <em>A foto mais famosa do mundo com o pagode vermelho de 5 andares e o Monte Fuji!</em>
+                  <strong>10:05 — <a href="https://www.google.com/maps/search/?api=1&query=Chureito+Pagoda+Fujiyoshida" target="_blank" class="text-sky-400 hover:underline font-bold">Chureito Pagoda (Arakurayama Sengen Park) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Trenzinho local Fujikyu (13 min / ¥310 no Suica) até a estação Shimoyoshida + caminhada e subida dos 398 degraus. <em>A foto mais famosa do mundo com o pagode vermelho de 5 andares e o Monte Fuji!</em>
                 </div>
               </div>
 
@@ -1617,7 +1622,7 @@
                 <div class="text-[11px] text-amber-200">
                   <div class="flex items-center justify-between flex-wrap gap-1">
                     <strong>11:00 às 11:45 — <a href="https://www.google.com/maps/search/?api=1&query=Hikawa+Clock+Shop+Fujiyoshida" target="_blank" class="text-sky-300 hover:underline font-bold">Honcho Street (Rua Retrô de Fujiyoshida) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a></strong>
-                    <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[9px] font-bold">Ponto Exato: Hikawa Clock Shop</span>
+                    <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[9px] font-bold">Ponto Exato: Hikawa Clock Shop</span>
                   </div>
                   <div class="mt-1 text-slate-300 text-[10px] leading-relaxed">
                     A apenas 10 min a pé descendo da Chureito Pagoda. A clássica vista da era Showa com fiação aérea e lanternas emoldurando o Monte Fuji gigante ao fundo. <br>
@@ -1629,7 +1634,7 @@
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-leaf text-emerald-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>13:30 — <a href="https://www.google.com/maps/search/?api=1&query=Oishi+Park+Kawaguchiko" target="_blank" class="text-sky-400 hover:underline font-bold">Parque Oishi & Lago Kawaguchiko <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Pegue o ônibus turístico Red Line na estação (~¥500). Caminhada na beira do lago com os campos de flores e vista norte do vulcão.
+                  <strong>13:30 — <a href="https://www.google.com/maps/search/?api=1&query=Oishi+Park+Kawaguchiko" target="_blank" class="text-sky-400 hover:underline font-bold">Parque Oishi & Lago Kawaguchiko <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Pegue o ônibus turístico Red Line na estação (~¥500). Caminhada na beira do lago com os campos de flores e vista norte do vulcão.
                 </div>
               </div>
 
@@ -1643,14 +1648,14 @@
               <div class="flex items-start gap-2 p-2 rounded-xl bg-emerald-950/30 border border-emerald-500/30">
                 <i class="fa-solid fa-train-subway text-emerald-400 mt-0.5 shrink-0"></i>
                 <div class="text-[11px] text-emerald-200">
-                  <strong>16:48 — <a href="https://www.google.com/maps/search/?api=1&query=Kawaguchiko+Station" target="_blank" class="text-sky-400 hover:underline font-bold">Trem Fuji Excursion #44 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">PAGO (¥4.130 / R$ 150)</span>:</strong> Retirada da mala no locker e embarque no trem direto sobre trilhos de Kawaguchiko até Shinjuku (18:48) com poltrona reservada (<strong>Assento A na janela esquerda para vista das montanhas na saída</strong>). <em>Evita o trânsito da estrada aos domingos.</em> Comprado no sábado à noite nas máquinas/guichês JR em Tóquio.
+                  <strong>16:48 — <a href="https://www.google.com/maps/search/?api=1&query=Kawaguchiko+Station" target="_blank" class="text-sky-400 hover:underline font-bold">Trem Fuji Excursion #44 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">PAGO (¥4.130 / R$ 150)</span>:</strong> Retirada da mala no locker e embarque no trem direto sobre trilhos de Kawaguchiko até Shinjuku (18:48) com poltrona reservada (<strong>Assento A na janela esquerda para vista das montanhas na saída</strong>). <em>Evita o trânsito da estrada aos domingos.</em> Comprado no sábado à noite nas máquinas/guichês JR em Tóquio.
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-bolt text-yellow-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>19:30 — Trem-Bala Shinkansen Nozomi na <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Station" target="_blank" class="text-sky-400 hover:underline font-bold">Tokyo Station <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">PAGO (¥14.170 / R$ 515)</span>:</strong> Conexão via JR Chuo Rapid (14 min) até Tokyo Station. Viagem supersônica a 285 km/h para Quioto. Mala de mão no bagageiro superior. Comprar na hora na máquina JR de Tokyo Station!
+                  <strong>19:30 — Trem-Bala Shinkansen Nozomi na <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Station" target="_blank" class="text-sky-400 hover:underline font-bold">Tokyo Station <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">PAGO (¥14.170 / R$ 515)</span>:</strong> Conexão via JR Chuo Rapid (14 min) até Tokyo Station. Viagem supersônica a 285 km/h para Quioto. Mala de mão no bagageiro superior. Comprar na hora na máquina JR de Tokyo Station!
                 </div>
               </div>
             </div>
@@ -1697,28 +1702,28 @@
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-landmark text-amber-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>06:30 — <a href="https://www.google.com/maps/search/?api=1&query=Kiyomizu-dera+Kyoto" target="_blank" class="text-sky-400 hover:underline font-bold">Templo Kiyomizu-dera <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">PAGO (¥500 / R$ 18)</span>:</strong> Templo de madeira monumental e cascata Otowa.
+                  <strong>06:30 — <a href="https://www.google.com/maps/search/?api=1&query=Kiyomizu-dera+Kyoto" target="_blank" class="text-sky-400 hover:underline font-bold">Templo Kiyomizu-dera <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">PAGO (¥500 / R$ 18)</span>:</strong> Templo de madeira monumental e cascata Otowa.
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-stairs text-sky-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>08:30 — Ladeiras <a href="https://www.google.com/maps/search/?api=1&query=Ninenzaka+Kyoto" target="_blank" class="text-sky-400 hover:underline font-bold">Ninenzaka <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> & <a href="https://www.google.com/maps/search/?api=1&query=Sannenzaka+Kyoto" target="_blank" class="text-sky-400 hover:underline font-bold">Sannenzaka <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Calçamento colonial e vista da Yasaka Pagoda.
+                  <strong>08:30 — Ladeiras <a href="https://www.google.com/maps/search/?api=1&query=Ninenzaka+Kyoto" target="_blank" class="text-sky-400 hover:underline font-bold">Ninenzaka <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> & <a href="https://www.google.com/maps/search/?api=1&query=Sannenzaka+Kyoto" target="_blank" class="text-sky-400 hover:underline font-bold">Sannenzaka <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Calçamento colonial e vista da Yasaka Pagoda.
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-store text-emerald-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>10:30 — <a href="https://www.google.com/maps/search/?api=1&query=Nishiki+Market+Kyoto" target="_blank" class="text-sky-400 hover:underline font-bold">Mercado Gastronômico Nishiki <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">ENTRADA GRATUITA</span>:</strong> Espetos de Wagyu, Mochi e matcha da <a href="https://www.google.com/maps/search/?api=1&query=Sawawa+Nishiki+Market+Matcha" target="_blank" class="text-sky-400 hover:underline font-bold">Sawawa <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>.
+                  <strong>10:30 — <a href="https://www.google.com/maps/search/?api=1&query=Nishiki+Market+Kyoto" target="_blank" class="text-sky-400 hover:underline font-bold">Mercado Gastronômico Nishiki <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">ENTRADA GRATUITA</span>:</strong> Espetos de Wagyu, Mochi e matcha da <a href="https://www.google.com/maps/search/?api=1&query=Sawawa+Nishiki+Market+Matcha" target="_blank" class="text-sky-400 hover:underline font-bold">Sawawa <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>.
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-fan text-pink-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>16:00 — <a href="https://www.google.com/maps/search/?api=1&query=Gion+Kyoto" target="_blank" class="text-sky-400 hover:underline font-bold">Bairro de Gion <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> & <a href="https://www.google.com/maps/search/?api=1&query=Shirakawa+Canal+Kyoto" target="_blank" class="text-sky-400 hover:underline font-bold">Canal Shirakawa <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Ruas das gueixas e pontes tradicionais.
+                  <strong>16:00 — <a href="https://www.google.com/maps/search/?api=1&query=Gion+Kyoto" target="_blank" class="text-sky-400 hover:underline font-bold">Bairro de Gion <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> & <a href="https://www.google.com/maps/search/?api=1&query=Shirakawa+Canal+Kyoto" target="_blank" class="text-sky-400 hover:underline font-bold">Canal Shirakawa <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Ruas das gueixas e pontes tradicionais.
                 </div>
               </div>
             </div>
@@ -1739,7 +1744,7 @@
               <span class="text-sky-300 font-bold font-mono text-[11px] flex items-center gap-1.5">
                 <i class="fa-solid fa-glasses text-sky-400"></i> Opção 3 (Óculos JINS): JINS Kyoto Station Porta
               </span>
-              <span class="px-1.5 py-0.2 rounded bg-sky-500/20 text-sky-300 font-mono text-[9px] font-bold">3 min a pé do apê</span>
+              <span class="px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-mono text-[9px] font-bold">3 min a pé do apê</span>
             </div>
             <p class="text-slate-300 text-[10px] leading-relaxed">
               No subsolo da Estação de Quioto (shopping subterrâneo Porta). Você volta do passeio no fim da tarde, entra na <a href="https://www.google.com/maps/search/?api=1&query=JINS+Kyoto+Station+Porta" target="_blank" class="text-sky-300 hover:underline font-bold">JINS Kyoto Station Porta ↗</a> (aberta até 20:30), faz o exame computadorizado grátis em 5 min (ou entrega seu óculos atual), escolhe a armação e retira em <strong>30 a 45 minutos</strong> por ~¥6.600 a ¥9.900 (R$ 240 a R$ 360 com 10% Tax-Free)!
@@ -1778,28 +1783,28 @@
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-torii-gate text-red-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>07:15 — <a href="https://www.google.com/maps/search/?api=1&query=Fushimi+Inari+Taisha+Kyoto" target="_blank" class="text-sky-400 hover:underline font-bold">Fushimi Inari Taisha <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">100% GRATUITO</span>:</strong> Caminhada pelos 10.000 portais Torii vermelhos (¥0 entrada).
+                  <strong>07:15 — <a href="https://www.google.com/maps/search/?api=1&query=Fushimi+Inari+Taisha+Kyoto" target="_blank" class="text-sky-400 hover:underline font-bold">Fushimi Inari Taisha <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">100% GRATUITO</span>:</strong> Caminhada pelos 10.000 portais Torii vermelhos (¥0 entrada).
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-tree text-emerald-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>10:00 — <a href="https://www.google.com/maps/search/?api=1&query=Arashiyama+Bamboo+Grove" target="_blank" class="text-sky-400 hover:underline font-bold">Floresta de Bambu de Arashiyama <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">100% GRATUITO</span>:</strong> Bosque de bambus gigantes (Templo Tenryu-ji opcional <span class="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">¥500</span>).
+                  <strong>10:00 — <a href="https://www.google.com/maps/search/?api=1&query=Arashiyama+Bamboo+Grove" target="_blank" class="text-sky-400 hover:underline font-bold">Floresta de Bambu de Arashiyama <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">100% GRATUITO</span>:</strong> Bosque de bambus gigantes (Templo Tenryu-ji opcional <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">¥500</span>).
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-bridge text-amber-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>11:30 — <a href="https://www.google.com/maps/search/?api=1&query=Togetsukyo+Bridge+Arashiyama" target="_blank" class="text-sky-400 hover:underline font-bold">Ponte Togetsukyo <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Ponte histórica sobre o rio Katsura.
+                  <strong>11:30 — <a href="https://www.google.com/maps/search/?api=1&query=Togetsukyo+Bridge+Arashiyama" target="_blank" class="text-sky-400 hover:underline font-bold">Ponte Togetsukyo <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Ponte histórica sobre o rio Katsura.
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-crown text-yellow-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>14:30 — <a href="https://www.google.com/maps/search/?api=1&query=Kinkaku-ji+Golden+Pavilion+Kyoto" target="_blank" class="text-sky-400 hover:underline font-bold">Pavilhão Dourado (Kinkaku-ji) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">PAGO (¥500 / R$ 18)</span>:</strong> Templo folheado a ouro sobre a água.
+                  <strong>14:30 — <a href="https://www.google.com/maps/search/?api=1&query=Kinkaku-ji+Golden+Pavilion+Kyoto" target="_blank" class="text-sky-400 hover:underline font-bold">Pavilhão Dourado (Kinkaku-ji) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">PAGO (¥500 / R$ 18)</span>:</strong> Templo folheado a ouro sobre a água.
                 </div>
               </div>
             </div>
@@ -1852,28 +1857,28 @@
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-paw text-amber-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>09:30 — <a href="https://www.google.com/maps/search/?api=1&query=Nara+Park" target="_blank" class="text-sky-400 hover:underline font-bold">Parque de Nara <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">100% GRATUITO</span>:</strong> Ver e interagir com os cervos sagrados soltos (biscoitos opcionais ¥200).
+                  <strong>09:30 — <a href="https://www.google.com/maps/search/?api=1&query=Nara+Park" target="_blank" class="text-sky-400 hover:underline font-bold">Parque de Nara <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">100% GRATUITO</span>:</strong> Ver e interagir com os cervos sagrados soltos (biscoitos opcionais ¥200).
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-monument text-purple-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>10:30 — <a href="https://www.google.com/maps/search/?api=1&query=Todai-ji+Temple+Nara" target="_blank" class="text-sky-400 hover:underline font-bold">Templo Todai-ji <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">PAGO (¥600 / R$ 22)</span>:</strong> Maior estátua do Grande Buda de Bronze em madeira do mundo.
+                  <strong>10:30 — <a href="https://www.google.com/maps/search/?api=1&query=Todai-ji+Temple+Nara" target="_blank" class="text-sky-400 hover:underline font-bold">Templo Todai-ji <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">PAGO (¥600 / R$ 22)</span>:</strong> Maior estátua do Grande Buda de Bronze em madeira do mundo.
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-shield-cat text-red-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>15:30 — <a href="https://www.google.com/maps/search/?api=1&query=Namba+Yasaka+Shrine+Osaka" target="_blank" class="text-sky-400 hover:underline font-bold">Santuário Namba Yasaka (Osaka) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Cabeça gigante de leão de 12 metros (¥0).
+                  <strong>15:30 — <a href="https://www.google.com/maps/search/?api=1&query=Namba+Yasaka+Shrine+Osaka" target="_blank" class="text-sky-400 hover:underline font-bold">Santuário Namba Yasaka (Osaka) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Cabeça gigante de leão de 12 metros (¥0).
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-hotel text-emerald-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>16:30 — Check-in <a href="https://www.google.com/maps/search/?api=1&query=CHUAN+House+Kuromon+Osaka" target="_blank" class="text-sky-400 hover:underline font-bold">Airbnb CHUANHouse Kuromon <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-sky-500/20 text-sky-300 font-mono text-[10px] font-bold">100% PAGO</span>:</strong> Apartamento com totem eletrônico.
+                  <strong>16:30 — Check-in <a href="https://www.google.com/maps/search/?api=1&query=CHUAN+House+Kuromon+Osaka" target="_blank" class="text-sky-400 hover:underline font-bold">Airbnb CHUANHouse Kuromon <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-mono text-[10px] font-bold">100% PAGO</span>:</strong> Apartamento com totem eletrônico.
                 </div>
               </div>
 
@@ -1891,7 +1896,7 @@
                   <strong class="text-[11px] text-purple-300 flex items-center gap-1.5">
                     🏮 18:15 — Segredos de Dotonbori: Hozen-ji & Beco Ukiyo Koji
                   </strong>
-                  <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[9px] font-bold">100% GRÁTIS • 24H</span>
+                  <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[9px] font-bold">100% GRÁTIS • 24H</span>
                 </div>
                 <div class="text-[10px] text-slate-300 leading-relaxed space-y-1">
                   <div>
@@ -1907,7 +1912,7 @@
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-person-running text-sky-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>18:50 — <a href="https://www.google.com/maps/search/?api=1&query=Dotonbori+Glico+Sign+Osaka" target="_blank" class="text-sky-400 hover:underline font-bold">Dotonbori & Placa do Glico Man (Ebisu Bridge) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> O espetáculo noturno dos canais, neons gigantes e do caranguejo mecânico.
+                  <strong>18:50 — <a href="https://www.google.com/maps/search/?api=1&query=Dotonbori+Glico+Sign+Osaka" target="_blank" class="text-sky-400 hover:underline font-bold">Dotonbori & Placa do Glico Man (Ebisu Bridge) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> O espetáculo noturno dos canais, neons gigantes e do caranguejo mecânico.
                 </div>
               </div>
 
@@ -1966,7 +1971,7 @@
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-chess-rook text-emerald-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>09:00 — <a href="https://www.google.com/maps/search/?api=1&query=Osaka+Castle" target="_blank" class="text-sky-400 hover:underline font-bold">Castelo de Osaka (Osaka-jo) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">PARQUE GRÁTIS</span>:</strong> Muralhas e parque livres (museu interno opcional <span class="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">¥600</span>).
+                  <strong>09:00 — <a href="https://www.google.com/maps/search/?api=1&query=Osaka+Castle" target="_blank" class="text-sky-400 hover:underline font-bold">Castelo de Osaka (Osaka-jo) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">PARQUE GRÁTIS</span>:</strong> Muralhas e parque livres (museu interno opcional <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">¥600</span>).
                 </div>
               </div>
 
@@ -1976,11 +1981,11 @@
                   <strong class="text-[11px] text-red-300 flex items-center gap-1.5">
                     <i class="fa-solid fa-car-side text-red-400"></i> 13:15 às 15:30 — Complexo do Porto de Osaka (Glion & Tempozan)
                   </strong>
-                  <span class="px-1.5 py-0.2 rounded bg-red-500/20 text-red-300 font-mono text-[9px] font-bold">Metrô Chūō (Osakako)</span>
+                  <span class="px-1.5 py-0.5 rounded bg-red-500/20 text-red-300 font-mono text-[9px] font-bold">Metrô Chūō (Osakako)</span>
                 </div>
                 <div class="text-[10px] text-slate-300 leading-relaxed space-y-1.5">
                   <div>
-                    🏎️ <strong><a href="https://www.google.com/maps/search/?api=1&query=GLION+MUSEUM+Osaka" target="_blank" class="text-red-400 font-bold hover:underline">GLION MUSEUM (13:15 – 14:45) ↗</a> <span class="px-1 py-0.2 rounded bg-amber-500/20 text-amber-300 font-mono text-[9px]">¥1.200</span>:</strong> Armazéns de tijolos vermelhos de 1923 com as maiores joias JDM: <strong>Toyota 2000GT</strong>, Skyline GT-R <strong>"Hakosuka"</strong> e <strong>"Kenmeri"</strong>, Mazda Cosmo Sport e Datsun 240Z.
+                    🏎️ <strong><a href="https://www.google.com/maps/search/?api=1&query=GLION+MUSEUM+Osaka" target="_blank" class="text-red-400 font-bold hover:underline">GLION MUSEUM (13:15 – 14:45) ↗</a> <span class="px-1 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono text-[9px]">¥1.200</span>:</strong> Armazéns de tijolos vermelhos de 1923 com as maiores joias JDM: <strong>Toyota 2000GT</strong>, Skyline GT-R <strong>"Hakosuka"</strong> e <strong>"Kenmeri"</strong>, Mazda Cosmo Sport e Datsun 240Z.
                   </div>
                   <div>
                     🎡 <strong><a href="https://www.google.com/maps/search/?api=1&query=Tempozan+Giant+Ferris+Wheel+Osaka" target="_blank" class="text-sky-300 font-bold hover:underline">Orla do Porto & Roda-Gigante Tempozan (14:45 – 15:30) ↗</a>:</strong> A 5 min a pé do museu. Caminhada refrescante pela marina do porto vendo os navios e a gigantesca roda-gigante de 112m de diâmetro (subida opcional ¥800 para vista panorâmica da baía de Osaka).
@@ -1991,14 +1996,14 @@
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-tower-broadcast text-amber-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>15:45 — <a href="https://www.google.com/maps/search/?api=1&query=Shinsekai+Osaka" target="_blank" class="text-sky-400 hover:underline font-bold">Bairro Retrô Shinsekai <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> & <a href="https://www.google.com/maps/search/?api=1&query=Tsutenkaku+Tower+Osaka" target="_blank" class="text-sky-400 hover:underline font-bold">Torre Tsutenkaku <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Ruas nostálgicas dos anos 50 com lanternas e letreiros clássicos.
+                  <strong>15:45 — <a href="https://www.google.com/maps/search/?api=1&query=Shinsekai+Osaka" target="_blank" class="text-sky-400 hover:underline font-bold">Bairro Retrô Shinsekai <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> & <a href="https://www.google.com/maps/search/?api=1&query=Tsutenkaku+Tower+Osaka" target="_blank" class="text-sky-400 hover:underline font-bold">Torre Tsutenkaku <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Ruas nostálgicas dos anos 50 com lanternas e letreiros clássicos.
                 </div>
               </div>
 
               <div class="flex items-start gap-2 p-2 rounded-xl bg-sky-950/30 border border-sky-500/30">
                 <i class="fa-solid fa-building text-sky-400 mt-0.5 shrink-0"></i>
                 <div class="text-[11px] text-sky-200">
-                  <strong>17:15 — <a href="https://www.google.com/maps/search/?api=1&query=Abeno+Harukas+Osaka" target="_blank" class="text-sky-400 hover:underline font-bold">Mirante Abeno Harukas 300 (60F) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">PAGO (~¥2.000 / R$ 74)</span>:</strong> Apenas 12 min a pé de Shinsekai! O prédio mais alto de Osaka (300m) e 2º mais alto do Japão. Elevador espacial que sobe em 45 segundos e observatório 360° com deque ao ar livre no 58F e pôr do sol sobre a baía! *(Volta de metrô direto para o Airbnb em apenas 6 min).*
+                  <strong>17:15 — <a href="https://www.google.com/maps/search/?api=1&query=Abeno+Harukas+Osaka" target="_blank" class="text-sky-400 hover:underline font-bold">Mirante Abeno Harukas 300 (60F) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">PAGO (~¥2.000 / R$ 74)</span>:</strong> Apenas 12 min a pé de Shinsekai! O prédio mais alto de Osaka (300m) e 2º mais alto do Japão. Elevador espacial que sobe em 45 segundos e observatório 360° com deque ao ar livre no 58F e pôr do sol sobre a baía! *(Volta de metrô direto para o Airbnb em apenas 6 min).*
                 </div>
               </div>
 
@@ -2017,7 +2022,7 @@
               <span class="text-amber-300 font-bold font-mono uppercase text-[11px] flex items-center gap-1.5">
                 <i class="fa-solid fa-burger text-amber-400"></i> Almoço Estelar (11:45 às 13:00): Gui's Burger ou Matsuri
               </span>
-              <span class="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-mono text-[9px] font-bold">7º Melhor do Mundo</span>
+              <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono text-[9px] font-bold">7º Melhor do Mundo</span>
             </div>
             
             <div class="space-y-1.5 text-[11px] text-slate-200">
@@ -2078,14 +2083,14 @@
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-train-fast text-emerald-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>09:18 — Shinkansen Nozomi #220 <span class="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">PAGO (SmartEX ¥14.000 / R$ 518)</span>:</strong> Trem-bala de <a href="https://www.google.com/maps/search/?api=1&query=Shin-Osaka+Station" target="_blank" class="text-sky-400 hover:underline font-bold">Shin-Osaka <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> para Tóquio.
+                  <strong>09:18 — Shinkansen Nozomi #220 <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">PAGO (SmartEX ¥14.000 / R$ 518)</span>:</strong> Trem-bala de <a href="https://www.google.com/maps/search/?api=1&query=Shin-Osaka+Station" target="_blank" class="text-sky-400 hover:underline font-bold">Shin-Osaka <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> para Tóquio.
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-house text-sky-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>12:30 — Check-in <a href="https://www.google.com/maps/search/?api=1&query=1-3-18+Misuji+Taito+City+Tokyo" target="_blank" class="text-sky-400 hover:underline font-bold">Airbnb Misuji Kuramae Rooftop <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-sky-500/20 text-sky-300 font-mono text-[10px] font-bold">100% PAGO</span>:</strong> Base em Taito City / Kuramae.
+                  <strong>12:30 — Check-in <a href="https://www.google.com/maps/search/?api=1&query=1-3-18+Misuji+Taito+City+Tokyo" target="_blank" class="text-sky-400 hover:underline font-bold">Airbnb Misuji Kuramae Rooftop <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-mono text-[10px] font-bold">100% PAGO</span>:</strong> Base em Taito City / Kuramae.
                 </div>
               </div>
 
@@ -2147,14 +2152,14 @@
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-church text-emerald-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>09:30 às 12:30 — <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+International+Seventh-day+Adventist+Church" target="_blank" class="text-emerald-400 hover:underline font-bold">Culto Divino na TIC (Shibuya) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Adoração e louvor na igreja adventista.
+                  <strong>09:30 às 12:30 — <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+International+Seventh-day+Adventist+Church" target="_blank" class="text-emerald-400 hover:underline font-bold">Culto Divino na TIC (Shibuya) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Adoração e louvor na igreja adventista.
                 </div>
               </div>
 
               <div class="flex items-start gap-2">
                 <i class="fa-solid fa-peace text-emerald-400 mt-0.5 shrink-0"></i>
                 <div>
-                  <strong>12:30 às 17:00 — Descanso Físico & Espiritual <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Almoço comunitário e comunhão.
+                  <strong>12:30 às 17:00 — Descanso Físico & Espiritual <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">GRATUITO</span>:</strong> Almoço comunitário e comunhão.
                 </div>
               </div>
 
@@ -2172,7 +2177,7 @@
                   <span class="text-[11px] font-bold font-mono text-rose-300 uppercase flex items-center gap-1.5">
                     <i class="fa-solid fa-fire text-rose-400"></i> O Fervo de Sábado em Shibuya (18:15 às 22:30)
                   </span>
-                  <span class="px-1.5 py-0.2 rounded bg-rose-500/20 text-rose-300 text-[9px] font-mono font-bold">Última Noite Completa</span>
+                  <span class="px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-300 text-[9px] font-mono font-bold">Última Noite Completa</span>
                 </div>
 
                 <!-- 1. SHIBUYA CROSSING & MIYASHITA PARK -->
@@ -2335,7 +2340,7 @@
                     <span class="text-sky-300 font-bold font-mono text-[11px] flex items-center gap-1.5">
                       <i class="fa-solid fa-glasses text-sky-400"></i> Opção 1 (Óculos JINS): Asakusa ou Akihabara
                     </span>
-                    <span class="px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-mono text-[9px] font-bold">Pronto em 35 min</span>
+                    <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono text-[9px] font-bold">Pronto em 35 min</span>
                   </div>
                   <p class="text-slate-300 text-[10px] leading-relaxed">
                     Dentro da sua janela de compras matinal (11:00 às 12:30). Faça o pedido na <a href="https://www.google.com/maps/search/?api=1&query=JINS+Asakusa+EKIMISE" target="_blank" class="text-sky-300 hover:underline font-bold">JINS Matsuya Asakusa (EKIMISE 3F) ↗</a> (a 10 min a pé do apê em Kuramae) ou na <a href="https://www.google.com/maps/search/?api=1&query=JINS+Yodobashi+Akiba" target="_blank" class="text-sky-300 hover:underline font-bold">JINS Yodobashi-Akiba (7F) ↗</a>. Enquanto as lentes são montadas, você almoça no Ryogoku Sumo Hall e retira os óculos novinhos prontos bem antes do encerramento das compras às 16:00!
@@ -2350,7 +2355,7 @@
                 <span class="text-emerald-300 font-bold font-mono uppercase text-[11px] flex items-center gap-1.5">
                   <i class="fa-solid fa-house-chimney text-emerald-400"></i> 16:00 às 20:45 — Fim das Compras & Check-in Base Haneda
                 </span>
-                <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[9px] font-bold">16:00 Impreterível</span>
+                <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[9px] font-bold">16:00 Impreterível</span>
               </div>
               <p class="text-slate-300 text-[10px] leading-relaxed">
                 Resgate sua mala no locker e pegue o trem direto até a Estação Tenkubashi. Entre no apê privativo trias527, tome um banho quente demorado, embale todos os presentes com calma, coloque roupa de voo e descanse na cama até as 20:45.
@@ -3745,7 +3750,7 @@
               <tr class="bg-amber-500/10 border-l-4 border-amber-400 hover:bg-amber-500/15 transition-colors">
                 <td class="p-3 font-mono font-bold text-amber-300 flex items-center gap-1.5">
                   <span>DIA 04 • 04/09</span>
-                  <span class="px-1.5 py-0.2 rounded bg-amber-400 text-black text-[9px] font-mono font-black">HOJE</span>
+                  <span class="px-1.5 py-0.5 rounded bg-amber-400 text-black text-[9px] font-mono font-black">HOJE</span>
                 </td>
                 <td class="p-3 font-semibold text-amber-300">Tóquio (teamLab & Shabat)</td>
                 <td class="p-3 font-mono text-amber-200">22°C a 24°C</td>
@@ -4148,7 +4153,7 @@
           <span class="text-xs font-mono text-jp-gold uppercase font-bold flex items-center gap-1.5">
             <i class="fa-solid fa-calculator text-emerald-400"></i> Câmbio Interativo
           </span>
-          <h3 class="text-2xl font-bold text-white mt-1">Calculadora Iene Japonês (JPY) $\longleftrightarrow$ Real (BRL)</h3>
+          <h3 class="text-2xl font-bold text-white mt-1">Calculadora Iene Japonês (JPY) ⇄ Real (BRL)</h3>
           <p class="text-xs text-jp-subtle mt-1 font-mono">Taxa de referência: <strong>R$ 1,00 ≈ 27,00 JPY</strong> (ou ¥ 1.000 ≈ R$ 37,04)</p>
         </div>
 
@@ -4160,7 +4165,7 @@
             </label>
             <div class="relative">
               <span class="absolute left-3.5 top-3.5 text-jp-gold font-mono font-bold text-lg">¥</span>
-              <input type="number" id="input-jpy" value="1000" oninput="convertFromJpy()" class="w-full pl-9 pr-4 py-3 rounded-2xl bg-jp-night border border-jp-cardborder text-white font-mono font-bold text-xl focus:outline-none focus:border-red-500 shadow-inner">
+              <input type="number" inputmode="decimal" id="input-jpy" value="1000" oninput="convertFromJpy()" class="w-full pl-9 pr-4 py-3 rounded-2xl bg-jp-night border border-jp-cardborder text-white font-mono font-bold text-xl focus:outline-none focus:border-jp-gold focus:ring-1 focus:ring-jp-gold shadow-inner">
             </div>
           </div>
 
@@ -4170,7 +4175,7 @@
             </label>
             <div class="relative">
               <span class="absolute left-3.5 top-3.5 text-emerald-400 font-mono font-bold text-lg">R$</span>
-              <input type="number" id="input-brl" value="37.04" oninput="convertFromBrl()" class="w-full pl-12 pr-4 py-3 rounded-2xl bg-jp-night border border-jp-cardborder text-emerald-400 font-mono font-bold text-xl focus:outline-none focus:border-emerald-500 shadow-inner">
+              <input type="number" inputmode="decimal" id="input-brl" value="37.04" oninput="convertFromBrl()" class="w-full pl-12 pr-4 py-3 rounded-2xl bg-jp-night border border-jp-cardborder text-emerald-400 font-mono font-bold text-xl focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 shadow-inner">
             </div>
           </div>
         </div>
@@ -4316,7 +4321,7 @@
 
       setTimeout(() => {
         toast.style.opacity = '0';
-        toast.style.transform = 'translate(-50%, -10px)';
+        toast.style.transform = 'translateY(-10px)';
         toast.style.transition = 'all 0.3s ease';
         setTimeout(() => toast.remove(), 300);
       }, 2500);
@@ -4484,17 +4489,8 @@
 
       const target = document.getElementById(`day-card-${dayNum}`);
       if (target) {
-        // Scroll suave direto para o dia selecionado
-        const offset = 80; // compensar header fixo
-        const bodyRect = document.body.getBoundingClientRect().top;
-        const elementRect = target.getBoundingClientRect().top;
-        const elementPosition = elementRect - bodyRect;
-        const offsetPosition = elementPosition - offset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
+        // Scroll suave direto para o dia selecionado respeitando o scroll-margin-top configurado
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
 
       const btnAll = document.getElementById('btn-show-all');
@@ -4575,7 +4571,10 @@
     const STORAGE_KEY = 'tabi_japan_checklist_state_v1';
 
     function getChecklistState() {
-      const saved = localStorage.getItem(STORAGE_KEY);
+      let saved = null;
+      try {
+        saved = localStorage.getItem(STORAGE_KEY);
+      } catch (e) {}
       if (saved) {
         try {
           return JSON.parse(saved);
@@ -4591,7 +4590,9 @@
     }
 
     function saveChecklistState(state) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (e) {}
       renderChecklist();
     }
 
@@ -4603,7 +4604,9 @@
     }
 
     function resetChecklist() {
-      localStorage.removeItem(STORAGE_KEY);
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+      } catch (e) {}
       renderChecklist();
       showToast('Checklist restaurado para o padrão oficial!', 'info');
     }
@@ -4686,6 +4689,7 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeWaiterModal();
+        if (typeof closeMapsModal === 'function') closeMapsModal();
         toggleDrawer(false);
       }
     });
@@ -4705,7 +4709,13 @@
       } else {
         drawer.classList.remove('drawer-open');
         backdrop.classList.remove('drawer-backdrop-open');
-        document.body.style.overflow = '';
+        const waiterModal = document.getElementById('waiter-modal');
+        const mapsModal = document.getElementById('maps-picker-modal');
+        const isWaiterOpen = waiterModal && waiterModal.style.display !== 'none';
+        const isMapsOpen = mapsModal && mapsModal.style.display !== 'none';
+        if (!isWaiterOpen && !isMapsOpen) {
+          document.body.style.overflow = '';
+        }
       }
     }
 
@@ -4958,7 +4968,7 @@
       const link = e.target.closest('a');
       if (!link) return;
       const href = link.getAttribute('href') || '';
-      if (href.includes('google.com/maps')) {
+      if (href.includes('google.com/maps') || href.includes('maps.app.goo.gl')) {
         e.preventDefault();
         
         const linkText = link.innerText ? link.innerText.trim() : '';
@@ -5000,9 +5010,11 @@
           .catch((err) => console.log('ServiceWorker erro:', err));
       });
 
+      const hadController = !!navigator.serviceWorker.controller;
       let refreshing = false;
       navigator.serviceWorker.addEventListener('controllerchange', () => {
-        if (!refreshing) {
+        // Só recarrega se já havia um controller controlando a página (evita reload espúrio na 1ª visita ao instalar)
+        if (hadController && !refreshing) {
           refreshing = true;
           window.location.reload();
         }
@@ -5146,7 +5158,7 @@
             </div>
             <div>
               <div class="text-xs font-bold text-white flex items-center gap-2">
-                Google Maps <span class="px-1.5 py-0.2 rounded bg-red-500/20 text-red-300 text-[9px] font-mono font-bold">App Oficial</span>
+                Google Maps <span class="px-1.5 py-0.5 rounded bg-red-500/20 text-red-300 text-[9px] font-mono font-bold">App Oficial</span>
               </div>
               <p class="text-[11px] text-slate-400">Abre direto no aplicativo do Google Maps</p>
             </div>
@@ -5162,7 +5174,7 @@
             </div>
             <div>
               <div class="text-xs font-bold text-white flex items-center gap-2">
-                Apple Maps <span class="px-1.5 py-0.2 rounded bg-sky-500/20 text-sky-300 text-[9px] font-mono font-bold">Nativo iOS</span>
+                Apple Maps <span class="px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300 text-[9px] font-mono font-bold">Nativo iOS</span>
               </div>
               <p class="text-[11px] text-slate-400">Abre no app Mapas padrão do iPhone</p>
             </div>
@@ -5257,10 +5269,10 @@
     try { return localStorage.getItem(KEY) === '1'; } catch (e) { return false; }
   }
 
-  function lockSite() {
+  window.lockSite = function() {
     try { localStorage.removeItem(KEY); } catch (e) {}
     location.reload();
-  }
+  };
 
   var gate = document.getElementById('pin-gate');
   if (!gate) return;
