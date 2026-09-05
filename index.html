@@ -266,6 +266,29 @@
     /* Scroll Margin Top para Cards de Dias respeitarem o Header Fixo + Barra Sticky de Dias + Safe Area */
     .day-card {
       scroll-margin-top: calc(8.5rem + env(safe-area-inset-top, 0px));
+      break-inside: avoid !important;
+      page-break-inside: avoid !important;
+      -webkit-column-break-inside: avoid !important;
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Layout Masonry Zero-Gap: Elimina 100% dos espaços vazios entre e abaixo dos cards */
+    #itinerary-grid {
+      display: block !important;
+      column-gap: 1.5rem;
+    }
+    @media (min-width: 640px) {
+      #itinerary-grid {
+        column-count: 2;
+      }
+    }
+    @media (min-width: 1024px) {
+      #itinerary-grid {
+        column-count: 3;
+      }
     }
 
     /* =================================================== */
@@ -300,11 +323,7 @@
       box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
     }
 
-    /* Content Visibility para fluidez a 120Hz */
-    .day-card {
-      content-visibility: auto;
-      contain-intrinsic-size: 0 320px;
-    }
+
 
     /* Foco Acessível de Alto Contraste (WCAG 2.2) */
     button:focus-visible, a:focus-visible, input:focus-visible {
@@ -928,10 +947,10 @@
       </div>
 
                   <!-- ITINERARY 13 DAYS CARDS GRID -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start" id="itinerary-grid">
+      <div class="columns-1 sm:columns-2 lg:columns-3 gap-6" id="itinerary-grid">
         
         <!-- DIA 01 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-1" data-city="toquio1">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-1" data-city="toquio1">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -1010,7 +1029,7 @@
         </div>
 
         <!-- DIA 02 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-2" data-city="toquio1">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-2" data-city="toquio1">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -1078,7 +1097,7 @@
         </div>
 
         <!-- DIA 03 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-3" data-city="toquio1">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-3" data-city="toquio1">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -1185,7 +1204,7 @@
         </div>
 
         <!-- DIA 04 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-4" data-city="toquio1">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-4" data-city="toquio1">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -1277,7 +1296,7 @@
         </div>
 
         <!-- DIA 05 -->
-        <div class="day-card shabat-card rounded-2xl p-5 flex flex-col space-y-4 today-highlight" id="day-card-5" data-city="toquio1">
+        <div class="day-card shabat-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block today-highlight" id="day-card-5" data-city="toquio1">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-emerald-500/30 pb-3">
               <div class="flex items-center gap-2">
@@ -1563,7 +1582,7 @@
         </div>
 
         <!-- DIA 06 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-6" data-city="fuji">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-6" data-city="fuji">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -1672,7 +1691,7 @@
         </div>
 
         <!-- DIA 07 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-7" data-city="quioto">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-7" data-city="quioto">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -1753,7 +1772,7 @@
         </div>
 
         <!-- DIA 08 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-8" data-city="quioto">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-8" data-city="quioto">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -1821,7 +1840,7 @@
         </div>
 
         <!-- DIA 09 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-9" data-city="osaka">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-9" data-city="osaka">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -1941,7 +1960,7 @@
         </div>
 
         <!-- DIA 10 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-10" data-city="osaka">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-10" data-city="osaka">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -2047,7 +2066,7 @@
         </div>
 
         <!-- DIA 11 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-11" data-city="toquio2">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-11" data-city="toquio2">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -2122,7 +2141,7 @@
         </div>
 
         <!-- DIA 12 -->
-        <div class="day-card shabat-card rounded-2xl p-5 flex flex-col space-y-4" id="day-card-12" data-city="toquio2">
+        <div class="day-card shabat-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block" id="day-card-12" data-city="toquio2">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-emerald-500/30 pb-3">
               <div class="flex items-center gap-2">
@@ -2228,7 +2247,7 @@
         </div>
 
         <!-- DIA 13 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-13" data-city="toquio2">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-13" data-city="toquio2">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
