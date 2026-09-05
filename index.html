@@ -1530,7 +1530,10 @@
                   </div>
                 </div>
               </div>
-<!-- LEMBRETE NOTURNO: COMPRA DO TREM NO APP NO AIRBNB -->
+            </div>
+          </div>
+
+          <!-- LEMBRETE NOTURNO: COMPRA DO TREM NO APP NO AIRBNB -->
           <div class="p-3 rounded-xl bg-slate-900/90 border border-sky-500/40 space-y-1.5 mt-2 text-xs">
             <div class="flex items-center justify-between">
               <span class="text-sky-300 font-bold font-mono uppercase text-[11px] flex items-center gap-1.5">
@@ -4475,29 +4478,27 @@
         activePill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
       }
 
-      // Em telas mobile pequenas (< 768px), focar no dia selecionado com fluidez
-      const isMobile = window.innerWidth < 768;
+      // Garantir que todos os 13 dias estejam visíveis (sem esconder os dias seguintes no mobile/app)
       const cards = document.querySelectorAll('.day-card');
+      cards.forEach(card => card.classList.remove('hidden'));
 
-      if (isMobile) {
-        cards.forEach(card => {
-          if (card.id === `day-card-${dayNum}`) {
-            card.classList.remove('hidden');
-            card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          } else {
-            card.classList.add('hidden');
-          }
+      const target = document.getElementById(`day-card-${dayNum}`);
+      if (target) {
+        // Scroll suave direto para o dia selecionado
+        const offset = 80; // compensar header fixo
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = target.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
         });
-        const btnAll = document.getElementById('btn-show-all');
-        if (btnAll) btnAll.textContent = 'Ver Todos (13)';
-      } else {
-        // No desktop, faz scroll suave até o card alvo
-        cards.forEach(card => card.classList.remove('hidden'));
-        const target = document.getElementById(`day-card-${dayNum}`);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
       }
+
+      const btnAll = document.getElementById('btn-show-all');
+      if (btnAll) btnAll.textContent = 'Todos Ativos ✓';
     }
 
     function showAllDays() {
