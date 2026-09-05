@@ -859,12 +859,12 @@
             <span class="text-xs font-bold text-white">Shibuya</span>
           </button>
 
-          <button role="tab" onclick="selectDay(4)" id="pill-day-4" class="day-pill-btn day-pill-active" aria-selected="true">
+          <button role="tab" onclick="selectDay(4)" id="pill-day-4" class="day-pill-btn" aria-selected="false">
             <span class="text-[9px] font-mono font-bold uppercase text-rose-200">Sex 04</span>
             <span class="text-xs font-black text-white">teamLab</span>
           </button>
 
-          <button role="tab" onclick="selectDay(5)" id="pill-day-5" class="day-pill-btn border-emerald-500/40 bg-emerald-950/30" aria-selected="false">
+          <button role="tab" onclick="selectDay(5)" id="pill-day-5" class="day-pill-btn day-pill-active border-emerald-500/40 bg-emerald-950/30" aria-selected="true">
             <span class="text-[9px] font-mono font-bold uppercase text-emerald-400">Sáb 05</span>
             <span class="text-xs font-bold text-white flex items-center gap-0.5"><i class="fa-solid fa-dove text-[8px] text-emerald-400"></i> Shabat</span>
           </button>
@@ -928,10 +928,10 @@
       </div>
 
                   <!-- ITINERARY 13 DAYS CARDS GRID -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="itinerary-grid">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start" id="itinerary-grid">
         
         <!-- DIA 01 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-jp-cardborder" id="day-card-1" data-city="toquio1">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-1" data-city="toquio1">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -1010,7 +1010,7 @@
         </div>
 
         <!-- DIA 02 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-jp-cardborder" id="day-card-2" data-city="toquio1">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-2" data-city="toquio1">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -1078,7 +1078,7 @@
         </div>
 
         <!-- DIA 03 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-jp-cardborder" id="day-card-3" data-city="toquio1">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-3" data-city="toquio1">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -1185,7 +1185,7 @@
         </div>
 
         <!-- DIA 04 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-jp-cardborder" id="day-card-4" data-city="toquio1">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-4" data-city="toquio1">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -1277,7 +1277,7 @@
         </div>
 
         <!-- DIA 05 -->
-        <div class="day-card shabat-card rounded-2xl p-5 flex flex-col justify-between space-y-4 today-highlight" id="day-card-5" data-city="toquio1">
+        <div class="day-card shabat-card rounded-2xl p-5 flex flex-col space-y-4 today-highlight" id="day-card-5" data-city="toquio1">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-emerald-500/30 pb-3">
               <div class="flex items-center gap-2">
@@ -1563,7 +1563,7 @@
         </div>
 
         <!-- DIA 06 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-jp-cardborder" id="day-card-6" data-city="fuji">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-6" data-city="fuji">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -1672,7 +1672,7 @@
         </div>
 
         <!-- DIA 07 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-jp-cardborder" id="day-card-7" data-city="quioto">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-7" data-city="quioto">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -1753,7 +1753,7 @@
         </div>
 
         <!-- DIA 08 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-jp-cardborder" id="day-card-8" data-city="quioto">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-8" data-city="quioto">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -1821,7 +1821,7 @@
         </div>
 
         <!-- DIA 09 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-jp-cardborder" id="day-card-9" data-city="osaka">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-9" data-city="osaka">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -1941,7 +1941,7 @@
         </div>
 
         <!-- DIA 10 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-jp-cardborder" id="day-card-10" data-city="osaka">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-10" data-city="osaka">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -2047,7 +2047,7 @@
         </div>
 
         <!-- DIA 11 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-jp-cardborder" id="day-card-11" data-city="toquio2">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-11" data-city="toquio2">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -2122,7 +2122,7 @@
         </div>
 
         <!-- DIA 12 -->
-        <div class="day-card shabat-card rounded-2xl p-5 flex flex-col justify-between space-y-4" id="day-card-12" data-city="toquio2">
+        <div class="day-card shabat-card rounded-2xl p-5 flex flex-col space-y-4" id="day-card-12" data-city="toquio2">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-emerald-500/30 pb-3">
               <div class="flex items-center gap-2">
@@ -2228,7 +2228,7 @@
         </div>
 
         <!-- DIA 13 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col justify-between space-y-4 border-jp-cardborder" id="day-card-13" data-city="toquio2">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 border-jp-cardborder" id="day-card-13" data-city="toquio2">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -2896,7 +2896,7 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 text-xs">
           <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder">
             <span class="text-jp-subtle block">Anfitrião:</span>
             <span class="font-mono font-bold text-white text-sm">Daigo</span>
@@ -2919,7 +2919,7 @@
             <span class="block font-mono text-[10px] text-slate-400">Wi-Fi: <strong class="text-white">24765702561</strong></span>
             <span class="block font-mono text-[10px] text-slate-400">Senha: <strong class="text-sky-300">21692974</strong></span>
           </div>
-          <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder">
+          <div class="p-3 bg-jp-night rounded-2xl border border-jp-cardborder col-span-2 sm:col-span-1">
             <span class="text-jp-subtle block">Valor Total Pago:</span>
             <span class="font-mono font-bold text-emerald-400 text-sm">R$ 1.261,57</span>
             <span class="text-[10px] text-slate-400 block font-mono">100% Quitado</span>
@@ -4200,27 +4200,27 @@
             <i class="fa-solid fa-tags text-amber-400"></i> Preços Médios Cotidianos no Japão
           </h4>
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-xs font-mono">
-            <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder flex flex-col justify-between">
+            <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder flex flex-col justify-center space-y-1">
               <span class="text-slate-300">Água / Chá 500ml:</span>
               <span class="text-emerald-400 font-bold mt-1">¥130 (R$ 4,80)</span>
             </div>
-            <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder flex flex-col justify-between">
+            <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder flex flex-col justify-center space-y-1">
               <span class="text-slate-300">Onigiri no 7-Eleven:</span>
               <span class="text-emerald-400 font-bold mt-1">¥160 (R$ 5,90)</span>
             </div>
-            <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder flex flex-col justify-between">
+            <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder flex flex-col justify-center space-y-1">
               <span class="text-slate-300">Gyudon Yoshinoya:</span>
               <span class="text-emerald-400 font-bold mt-1">¥550 (R$ 20,30)</span>
             </div>
-            <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder flex flex-col justify-between">
+            <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder flex flex-col justify-center space-y-1">
               <span class="text-slate-300">Lámen Halal Ayam-YA:</span>
               <span class="text-emerald-400 font-bold mt-1">¥1.100 (R$ 40,70)</span>
             </div>
-            <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder flex flex-col justify-between">
+            <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder flex flex-col justify-center space-y-1">
               <span class="text-slate-300">Passagem Metrô 24h:</span>
               <span class="text-emerald-400 font-bold mt-1">¥800 (R$ 29,60)</span>
             </div>
-            <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder flex flex-col justify-between">
+            <div class="p-3 rounded-xl bg-jp-night border border-jp-cardborder flex flex-col justify-center space-y-1">
               <span class="text-slate-300">Trem-Bala Nozomi:</span>
               <span class="text-emerald-400 font-bold mt-1">¥14.170 (R$ 524)</span>
             </div>

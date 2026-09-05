@@ -1,5 +1,5 @@
 // Service Worker for Tabi Japan 2026 PWA
-const CACHE_NAME = 'tabi-japan-v21-cache';
+const CACHE_NAME = 'tabi-japan-v22-cache';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
