@@ -459,9 +459,9 @@
           <span class="text-[10px] font-mono uppercase text-amber-400 font-bold flex items-center gap-1.5">
             <i class="fa-solid fa-location-dot"></i> Hoje no Japão
           </span>
-          <span class="px-2 py-0.5 rounded-full bg-jp-red text-white text-[9px] font-mono font-bold">DIA 05</span>
+          <span id="drawer-today-badge" class="px-2 py-0.5 rounded-full bg-jp-red text-white text-[9px] font-mono font-bold">DIA 06</span>
         </div>
-        <p class="text-xs font-bold text-white">Sábado, 05/09 • Culto TIC, Zojoji & Ginza</p>
+        <p id="drawer-today-text" class="text-xs font-bold text-white">Domingo, 06/09 • Check-out Oshiage, Fuji / Shinkansen ➔ Quioto</p>
         <p class="text-[10px] text-amber-300/90 font-medium">Toque para saltar direto para hoje ➔</p>
       </div>
 
@@ -585,7 +585,7 @@
         <div class="lg:col-span-2 space-y-4">
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-jp-gold/20 via-amber-500/10 to-transparent border border-jp-gold/40 text-jp-gold text-xs font-semibold">
             <i class="fa-solid fa-location-dot text-amber-400"></i>
-            <span>📍 Em Tóquio — <strong>DIA 05 em andamento (05/09, Sábado): Culto TIC + Zojoji + Tokyo Tower + Ginza</strong></span>
+            <span id="hero-today-banner">📍 Em Tóquio ➔ Quioto — <strong>DIA 06 em andamento (06/09, Domingo): Check-out Oshiage, Fuji / Shinkansen ➔ Quioto</strong></span>
           </div>
           
           <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight font-display leading-tight">
@@ -883,12 +883,12 @@
             <span class="text-xs font-black text-white">teamLab</span>
           </button>
 
-          <button role="tab" onclick="selectDay(5)" id="pill-day-5" class="day-pill-btn day-pill-active border-emerald-500/40 bg-emerald-950/30" aria-selected="true">
+          <button role="tab" onclick="selectDay(5)" id="pill-day-5" class="day-pill-btn border-emerald-500/40 bg-emerald-950/30" aria-selected="false">
             <span class="text-[9px] font-mono font-bold uppercase text-emerald-400">Sáb 05</span>
             <span class="text-xs font-bold text-white flex items-center gap-0.5"><i class="fa-solid fa-dove text-[8px] text-emerald-400"></i> Shabat</span>
           </button>
 
-          <button role="tab" onclick="selectDay(6)" id="pill-day-6" class="day-pill-btn border-sky-500/30" aria-selected="false">
+          <button role="tab" onclick="selectDay(6)" id="pill-day-6" class="day-pill-btn day-pill-active border-sky-500/30" aria-selected="true">
             <span class="text-[9px] font-mono font-bold uppercase text-sky-300">Dom 06</span>
             <span class="text-xs font-bold text-white">Fuji 🚅</span>
           </button>
@@ -1296,7 +1296,7 @@
         </div>
 
         <!-- DIA 05 -->
-        <div class="day-card shabat-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block today-highlight" id="day-card-5" data-city="toquio1">
+        <div class="day-card shabat-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block" id="day-card-5" data-city="toquio1">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-emerald-500/30 pb-3">
               <div class="flex items-center gap-2">
@@ -1582,7 +1582,7 @@
         </div>
 
         <!-- DIA 06 -->
-        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-6" data-city="fuji">
+        <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder today-highlight" id="day-card-6" data-city="fuji">
           <div class="space-y-3.5">
             <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
               <div class="flex items-center gap-2">
@@ -4738,6 +4738,84 @@
       }
     }
 
+    // Dicionário Oficial de Metadados dos 13 Dias da Viagem
+    const TRIP_DAYS_METADATA = {
+      1: { num: 1, date: '01/09', weekday: 'Terça', title: 'Chegada em Haneda & Base Oshiage', city: 'Tóquio' },
+      2: { num: 2, date: '02/09', weekday: 'Quarta', title: 'Senso-ji, Shinjuku Gyoen & Tocho 45F', city: 'Tóquio' },
+      3: { num: 3, date: '03/09', weekday: 'Quinta', title: 'Palácio Imperial, Harajuku & Shibuya Sky', city: 'Tóquio' },
+      4: { num: 4, date: '04/09', weekday: 'Sexta', title: 'teamLab Planets, Odaiba & Akihabara', city: 'Tóquio' },
+      5: { num: 5, date: '05/09', weekday: 'Sábado', title: 'Culto TIC, Zojoji, Tokyo Tower & Ginza', city: 'Tóquio' },
+      6: { num: 6, date: '06/09', weekday: 'Domingo', title: 'Check-out Oshiage, Fuji / Shinkansen ➔ Quioto', city: 'Tóquio ➔ Quioto' },
+      7: { num: 7, date: '07/09', weekday: 'Segunda', title: 'Kiyomizu-dera, Ninenzaka & Nishiki Market', city: 'Quioto' },
+      8: { num: 8, date: '08/09', weekday: 'Terça', title: 'Fushimi Inari Torii, Arashiyama & Kinkaku-ji', city: 'Quioto' },
+      9: { num: 9, date: '09/09', weekday: 'Quarta', title: 'Cervos de Nara, Todai-ji & Base Osaka', city: 'Nara ➔ Osaka' },
+      10: { num: 10, date: '10/09', weekday: 'Quinta', title: 'Castelo de Osaka, Dotonbori & Umeda Sky', city: 'Osaka' },
+      11: { num: 11, date: '11/09', weekday: 'Sexta', title: 'Shinsekai, Shinkansen ➔ Tóquio 2 (Kuramae)', city: 'Osaka ➔ Tóquio' },
+      12: { num: 12, date: '12/09', weekday: 'Sábado', title: 'Santo Shabat em Tóquio & Yakiniku Halal', city: 'Tóquio' },
+      13: { num: 13, date: '13/09', weekday: 'Domingo', title: 'Tokyo DisneySea, Base Haneda & Voo Noturno', city: 'Tóquio' }
+    };
+
+    // Calcula de forma precisa e em tempo real o dia atual no fuso horário do Japão (Asia/Tokyo - JST / UTC+9)
+    function getJapanCurrentDay() {
+      try {
+        const jstStr = new Date().toLocaleString("en-US", { timeZone: "Asia/Tokyo" });
+        const jstDate = new Date(jstStr);
+        const month = jstDate.getMonth() + 1; // 9 = Setembro
+        const day = jstDate.getDate();
+
+        if (month === 9) {
+          if (day >= 1 && day <= 13) {
+            return day;
+          }
+          if (day > 13) return 13;
+        }
+      } catch (e) {
+        console.warn('Erro ao obter fuso do Japão:', e);
+      }
+      return 6; // Fallback seguro
+    }
+
+    // Sincroniza dinamicamente a interface com o dia exato no Japão
+    function syncTodayUI() {
+      const currentDay = getJapanCurrentDay();
+      const info = TRIP_DAYS_METADATA[currentDay];
+      if (!info) return;
+
+      const dayPad = currentDay < 10 ? '0' + currentDay : '' + currentDay;
+
+      // 1. Atualizar Drawer
+      const drawerBadge = document.getElementById('drawer-today-badge');
+      const drawerText = document.getElementById('drawer-today-text');
+      if (drawerBadge) drawerBadge.textContent = `DIA ${dayPad}`;
+      if (drawerText) drawerText.textContent = `${info.weekday}, ${info.date} • ${info.title}`;
+
+      // 2. Atualizar Hero Banner
+      const heroBanner = document.getElementById('hero-today-banner');
+      if (heroBanner) {
+        heroBanner.innerHTML = `📍 Em ${info.city} — <strong>DIA ${dayPad} em andamento (${info.date}, ${info.weekday}): ${info.title}</strong>`;
+      }
+
+      // 3. Atualizar destaque do Card
+      document.querySelectorAll('.day-card').forEach(card => card.classList.remove('today-highlight'));
+      const targetCard = document.getElementById(`day-card-${currentDay}`);
+      if (targetCard) targetCard.classList.add('today-highlight');
+
+      // 4. Atualizar pílula ativa do scroller
+      document.querySelectorAll('.day-pill-btn').forEach(btn => {
+        btn.classList.remove('day-pill-active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+      const activePill = document.getElementById(`pill-day-${currentDay}`);
+      if (activePill) {
+        activePill.classList.add('day-pill-active');
+        activePill.setAttribute('aria-selected', 'true');
+        setTimeout(() => {
+          activePill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }, 150);
+      }
+    }
+
+    // Salto Inteligente: Navega direto para o dia correto no Japão sem erros
     function jumpToToday() {
       switchTab('tab-roteiro');
       
@@ -4747,11 +4825,15 @@
         setTimeout(() => bHoje.classList.remove('scale-110'), 300);
       }
       
-      // Hoje no Japão é Dia 05 (Sábado, 05/09): Culto TIC, Zojoji, Tokyo Tower & Ginza
+      const currentDay = getJapanCurrentDay();
+      const info = TRIP_DAYS_METADATA[currentDay];
+      const dayPad = currentDay < 10 ? '0' + currentDay : '' + currentDay;
+
       if (typeof selectDay === 'function') {
-        selectDay(5);
+        selectDay(currentDay);
       }
-      showToast('📍 Exibindo DIA 05 (Hoje no Japão: Culto TIC, Zojoji & Tokyo Tower)', 'info');
+      
+      showToast(`📍 Exibindo DIA ${dayPad} (${info ? info.weekday + ' • ' + info.date : 'Hoje no Japão'})`, 'info');
     }
 
     // ==========================================
@@ -4915,6 +4997,7 @@
       if (remember) {
         try { localStorage.setItem(MAPS_PREF_KEY, choice); } catch(e) {}
         updateMapsDrawerBadge();
+    syncTodayUI();
       }
 
       const query = pendingMapQuery;
