@@ -1673,19 +1673,93 @@
                 </div>
               </div>
 
-              <!-- PASSO 6: EMBARQUE SHINKANSEN TOKYO STATION -->
-              <div class="p-3 rounded-xl bg-emerald-950/30 border border-emerald-500/40 space-y-2">
-                <div class="flex items-center justify-between flex-wrap gap-1">
-                  <strong class="text-xs text-emerald-300 flex items-center gap-1.5">
-                    <i class="fa-solid fa-bolt text-emerald-400"></i> 18:00 — Embarque no Shinkansen Nozomi (Tokyo ➔ Kyoto • 2h15 min)
+              <!-- PASSO 6: COMPRA DE PASSAGEM & EMBARQUE SHINKANSEN NA ESTAÇÃO DE TÓQUIO -->
+              <div class="p-3.5 rounded-2xl bg-emerald-950/40 border-2 border-emerald-500/60 space-y-3 shadow-lg" id="shinkansen-guide-tokyo">
+                <div class="flex items-center justify-between flex-wrap gap-1 border-b border-emerald-500/30 pb-2.5">
+                  <strong class="text-sm text-emerald-300 flex items-center gap-2">
+                    <i class="fa-solid fa-train-subway text-emerald-400 text-base"></i> Estação de Tóquio ➔ Shinkansen Nozomi para Quioto
                   </strong>
-                  <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[9px] font-bold">¥14.170 • 285 km/h</span>
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/30 text-emerald-200 font-mono text-[10px] font-bold border border-emerald-400/40">~2h15 min • ¥14.170</span>
                 </div>
-                <div class="text-[10px] text-slate-300 leading-relaxed space-y-1.5">
-                  <p>• <strong>Ponto Exato de Embarque:</strong> <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Station+Shinkansen+South+Gate" target="_blank" class="text-sky-300 hover:underline font-bold">Tokyo Station • Shinkansen Yaesu South/Central Gate <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> (Plataformas 14 a 19 • Tokaido Shinkansen).</p>
-                  <p>• <strong>Como Passar na Catraca:</strong> Insira os dois cartõezinhos magnéticos juntos na mesma ranhura da catraca (o bilhete de tarifa base e o bilhete expresso) e retire-os na saída da catraca.</p>
-                  <p>• <strong>Mala a Bordo:</strong> Sua mala de mão / média vai no bagageiro superior logo acima da sua poltrona (gratuito e sem necessidade de reserva especial).</p>
-                  <p>• <strong>Marmita de Viagem:</strong> Antes de passar a catraca, passe na <a href="https://www.google.com/maps/search/?api=1&query=Ekibenya+Matsuri+Tokyo+Station" target="_blank" class="text-amber-300 hover:underline font-bold">Ekibenya Matsuri (Piso 1F Corredor Central) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a> e escolha entre 200 tipos de Ekiben artesanais para comer a bordo.</p>
+
+                <!-- 1. LOCALIZAÇÃO EXATA NA TOKYO STATION -->
+                <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-[11px] text-slate-200 space-y-1.5">
+                  <div class="font-bold text-amber-300 flex items-center gap-1.5 text-xs">
+                    <i class="fa-solid fa-location-dot text-rose-400"></i> Onde Ir Dentro da Estação de Tóquio:
+                  </div>
+                  <p>• Siga as placas suspensas com o ícone do <strong>Trem Bala Azul</strong> escrito <strong>"Tokaido-Sanyo Shinkansen" (東海道・山陽新幹線)</strong>.</p>
+                  <p>• As plataformas do Shinkansen para Quioto ficam no <strong>Lado Yaesu (Plataformas 14 a 19)</strong>.</p>
+                  <div class="flex items-center gap-2 flex-wrap pt-1 text-[10px] font-mono">
+                    <a href="https://www.google.com/maps/search/?api=1&query=JR+Ticket+Office+Tokyo+Station+Yaesu+Central" target="_blank" class="px-2 py-1 rounded bg-sky-950 border border-sky-500/50 text-sky-300 hover:underline inline-flex items-center gap-1 font-bold">
+                      📍 Bilheteria JR Yaesu Central ↗
+                    </a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Station+Shinkansen+South+Gate" target="_blank" class="px-2 py-1 rounded bg-sky-950 border border-sky-500/50 text-sky-300 hover:underline inline-flex items-center gap-1 font-bold">
+                      📍 Catraca Shinkansen Yaesu South ↗
+                    </a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Station+Shinkansen+Transfer+Gate" target="_blank" class="px-2 py-1 rounded bg-sky-950 border border-sky-500/50 text-sky-300 hover:underline inline-flex items-center gap-1 font-bold">
+                      📍 Catraca de Transferência JR ↗
+                    </a>
+                  </div>
+                </div>
+
+                <!-- 2. CARD EM JAPONÊS PARA MOSTRAR NO GUICHÊ -->
+                <div class="p-3 rounded-xl bg-amber-950/40 border-2 border-amber-500/60 text-white space-y-2 select-all">
+                  <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono font-bold uppercase text-amber-300 flex items-center gap-1.5">
+                      <i class="fa-solid fa-comment-dots text-amber-400"></i> Opção 1: Mostrar ao Atendente no Guichê (JR Ticket Office)
+                    </span>
+                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-amber-400/20 text-amber-200 font-mono font-bold">Cartão ou Dinheiro</span>
+                  </div>
+                  <div class="bg-black/60 p-3 rounded-lg border border-amber-500/30 text-center space-y-1">
+                    <p class="text-base sm:text-lg font-bold text-amber-200 tracking-wide font-serif">
+                      京都まで、次の「のぞみ」の指定席を大人1枚お願いします。
+                    </p>
+                    <p class="text-[10px] text-slate-300 font-mono italic">
+                      "Kyoto made, tsugi no Nozomi no shiteiseki o otona ichimai onegaishimasu."
+                    </p>
+                    <p class="text-[10px] text-emerald-300 font-semibold">
+                      (1 passagem no próximo trem Nozomi com assento reservado para Quioto, por favor.)
+                    </p>
+                  </div>
+                  <p class="text-[10px] text-slate-300">
+                    💡 O atendente aceita cartão internacional (Wise, Nomad, etc.) ou dinheiro em ienes. Ele emitirá o bilhete no próximo trem vago.
+                  </p>
+                </div>
+
+                <!-- 3. MÁQUINA AUTOMÁTICA (AUTOATENDIMENTO) -->
+                <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-[10px] text-slate-200 space-y-1">
+                  <div class="font-bold text-sky-300 text-[11px] flex items-center gap-1">
+                    <i class="fa-solid fa-desktop"></i> Opção 2: Comprar na Máquina Automática (Shinkansen Ticket Machine):
+                  </div>
+                  <ol class="list-decimal list-inside space-y-0.5 text-slate-300">
+                    <li>Toque em <strong class="text-white">English</strong> (canto superior direito).</li>
+                    <li>Toque em <strong class="text-white">"Shinkansen"</strong> ➔ <strong class="text-white">"For Nagoya, Kyoto, Shin-Osaka"</strong>.</li>
+                    <li>Escolha o destino: <strong class="text-amber-300">Kyoto</strong>.</li>
+                    <li>Escolha: <strong class="text-emerald-300">Reserved Seat</strong> (Ordinary Car).</li>
+                    <li>Escolha o próximo trem <strong class="text-white">Nozomi</strong> (frequência a cada 6-10 min).</li>
+                    <li>Escolha <strong class="text-white">1 Adult</strong> e selecione o assento (janela = letra <em>A</em> ou <em>E</em>).</li>
+                    <li>Insira o cartão internacional ou notas de iene (aprox. ¥14.170).</li>
+                  </ol>
+                </div>
+
+                <!-- 4. CATRACAS & PRÓXIMOS TRENS -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[10px]">
+                  <div class="p-2 rounded-lg bg-slate-900/60 border border-slate-700/60 text-slate-300 space-y-1">
+                    <div class="font-bold text-emerald-300 flex items-center gap-1">
+                      <i class="fa-solid fa-ticket"></i> Como Passar na Catraca:
+                    </div>
+                    <p>• <strong>Se veio de trem/metrô com Suica/iPhone:</strong> Insira o bilhete de papel na fenda <em>E</em> encoste o Suica no leitor da catraca simultaneamente.</p>
+                    <p>• <strong>Se comprou 2 bilhetes de papel:</strong> Insira os dois juntos empilhados na mesma fenda.</p>
+                    <p class="text-amber-300 font-bold">⚠️ RETIRE O BILHETE na saída da catraca! Você precisará dele para sair em Quioto.</p>
+                  </div>
+
+                  <div class="p-2 rounded-lg bg-slate-900/60 border border-slate-700/60 text-slate-300 space-y-1">
+                    <div class="font-bold text-sky-300 flex items-center gap-1">
+                      <i class="fa-solid fa-suitcase-rolling"></i> Mala de Bordo & Jantar:
+                    </div>
+                    <p>• <strong>Mala de Mão:</strong> Vai no bagageiro superior acima da poltrona (gratuito e sem necessidade de reserva especial).</p>
+                    <p>• <strong>Marmita de Viagem:</strong> Compre um <em>Ekiben</em> (marmita tradicional) e bebida nos quiosques da plataforma ou na <a href="https://www.google.com/maps/search/?api=1&query=Ekibenya+Matsuri+Tokyo+Station" target="_blank" class="text-amber-300 hover:underline font-bold">Ekibenya Matsuri ↗</a> antes de subir.</p>
+                  </div>
                 </div>
               </div>
 
