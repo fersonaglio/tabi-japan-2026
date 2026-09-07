@@ -328,9 +328,37 @@
     body.mobile-focus-mode #itinerary-grid {
       columns: 1 !important;
       display: block !important;
-      max-width: 860px;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: 100% !important;
+      width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+    body.mobile-focus-mode #itinerary-grid .day-card.active-focus-day {
+      display: block !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      animation: focusDayFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @media (min-width: 1024px) {
+      body.mobile-focus-mode .day-card.active-focus-day .day-timeline-flow,
+      body.mobile-focus-mode .day-card.active-focus-day .text-xs.text-slate-300.leading-relaxed.space-y-2\.5,
+      body.mobile-focus-mode .day-card.active-focus-day .text-xs.text-slate-300.leading-relaxed.space-y-3 {
+        columns: 2 !important;
+        column-gap: 1.5rem !important;
+        display: block !important;
+      }
+      body.mobile-focus-mode .day-card.active-focus-day .text-xs.text-slate-300.leading-relaxed.space-y-2\.5 > div,
+      body.mobile-focus-mode .day-card.active-focus-day .text-xs.text-slate-300.leading-relaxed.space-y-3 > div,
+      body.mobile-focus-mode .day-card.active-focus-day .day-timeline-flow > div {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+        -webkit-column-break-inside: avoid !important;
+        margin-bottom: 0.75rem !important;
+        display: inline-block !important;
+        width: 100% !important;
+      }
     }
 
     @media (max-width: 767.98px) {
@@ -720,218 +748,8 @@
     </button>
   </nav>
 
-  <!-- ==================== HOME / HERO SECTION MONUMENTAL ==================== -->
-  <section class="hidden md:block hero-glow-monumental py-8 sm:py-12 border-b border-jp-cardborder relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8">
-      
-      <!-- Top Title & Mission -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-        
-        <!-- Left: Hero Text & Flight Countdown -->
-        <div class="lg:col-span-2 space-y-4">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-jp-gold/20 via-amber-500/10 to-transparent border border-jp-gold/40 text-jp-gold text-xs font-semibold">
-            <i class="fa-solid fa-location-dot text-amber-400"></i>
-            <span id="hero-today-banner">📍 Em Tóquio ➔ Quioto — <strong>DIA 06 em andamento (06/09, Domingo): Museu Nacional, The Railway Museum & Shinkansen ➔ Quioto</strong></span>
-          </div>
-          
-          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight font-display leading-tight">
-            Hub Tabi Japan 2026<br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-jp-crimson via-amber-300 to-amber-100">
-              Expedição Fernando Sonaglio
-            </span>
-          </h1>
-          
-          <p class="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed">
-            Painel mestre oficial de navegação e apoio operacional. Roteiro estruturado de <strong>13 dias / 12 noites</strong> (Tóquio, Monte Fuji, Quioto, Nara, Osaka), <strong>dieta 100% adventista</strong>, <strong>cultos de Shabat na Tokyo International SDA Church</strong>, <strong>5 hospedagens Airbnbs reservadas</strong>, trens-bala Shinkansen e <strong>Tokyo DisneySea</strong>.
-          </p>
-        </div>
-
-        <!-- Right: Status Dashboard Card -->
-        <div class="bg-jp-card/95 border border-jp-cardborder rounded-3xl p-6 space-y-3.5 shadow-2xl backdrop-blur-md">
-          <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
-            <div>
-              <span class="text-[10px] font-mono uppercase text-slate-400 font-bold tracking-wider">Status Geral</span>
-              <h2 class="text-sm font-bold text-white flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                Tudo Pronto para o Embarque
-              </h2>
-            </div>
-            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 font-mono font-bold text-xs border border-emerald-500/40">
-              100% Planejado
-            </span>
-          </div>
-          
-          <div class="space-y-2 text-xs">
-            <div class="flex items-center justify-between p-2.5 rounded-xl bg-jp-night border border-jp-cardborder">
-              <div class="flex items-center gap-2.5">
-                <i class="fa-solid fa-plane text-sky-400"></i>
-                <div>
-                  <span class="text-white font-semibold block">Air France Internacional (<span class="font-mono text-sky-400">••••••</span>)</span>
-                  <span class="text-[10px] text-jp-subtle font-mono">GRU ⇄ CDG ⇄ HND</span>
-                </div>
-              </div>
-              <span class="px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 font-bold font-mono text-[10px]">Emitido</span>
-            </div>
-
-            <div class="flex items-center justify-between p-2.5 rounded-xl bg-jp-night border border-jp-cardborder">
-              <div class="flex items-center gap-2.5">
-                <i class="fa-solid fa-plane-departure text-amber-400"></i>
-                <div>
-                  <span class="text-white font-semibold block">GOL Nacional (<span class="font-mono text-amber-400">••••••</span>)</span>
-                  <span class="text-[10px] text-jp-subtle font-mono">Chapecó XAP ⇄ GRU</span>
-                </div>
-              </div>
-              <span class="px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 font-bold font-mono text-[10px]">Emitido</span>
-            </div>
-
-            <div class="flex items-center justify-between p-2.5 rounded-xl bg-emerald-950/20 border border-emerald-500/30">
-              <div class="flex items-center gap-2.5">
-                <i class="fa-solid fa-hotel text-emerald-400"></i>
-                <div>
-                  <span class="text-white font-semibold block">5 Hospedagens Fechadas</span>
-                  <span class="text-[10px] text-emerald-300 font-mono">Tóquio 1 & 2 & Haneda, Quioto e Osaka</span>
-                </div>
-              </div>
-              <span class="px-2 py-0.5 rounded-md bg-emerald-500/30 text-emerald-300 font-bold font-mono text-[10px]">R$ 3.328,90</span>
-            </div>
-
-            <div class="flex items-center justify-between p-2.5 rounded-xl bg-amber-950/20 border border-jp-gold/30">
-              <div class="flex items-center gap-2.5">
-                <i class="fa-solid fa-wallet text-jp-gold"></i>
-                <div>
-                  <span class="text-white font-semibold block">Dinheiro de Bolso (Wise)</span>
-                  <span class="text-[10px] text-amber-200 font-mono">Saldo no app Wise + cartão Suica</span>
-                </div>
-              </div>
-              <span class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-400 font-bold font-mono text-[10px]">R$ —</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- 4 Monumental Pillar Stats Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        
-        <!-- Pillar 1: Voos Confirmados -->
-        <div onclick="switchTab('tab-voos')" class="cursor-pointer bg-jp-card border border-sky-500/30 hover:border-sky-500 p-5 rounded-3xl space-y-2.5 shadow-xl transition-all hover:scale-[1.02] group">
-          <div class="flex items-center justify-between">
-            <span class="w-9 h-9 rounded-2xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-base">
-              <i class="fa-solid fa-plane"></i>
-            </span>
-            <span class="text-[10px] font-mono font-bold text-sky-400 uppercase bg-sky-500/10 px-2.5 py-0.5 rounded-full border border-sky-500/20">
-              100% Emitido
-            </span>
-          </div>
-          <div>
-            <h3 class="text-xs font-mono uppercase text-slate-400 font-bold">Voos Confirmados</h3>
-            <div class="text-xl font-bold text-white font-mono mt-0.5">Air France & GOL</div>
-          </div>
-          <p class="text-[11px] text-slate-300 leading-relaxed">
-            Localizadores <span class="text-sky-300 font-mono font-bold">••••••</span> (Internacional) e <span class="text-amber-300 font-mono font-bold">••••••</span> (Nacional). Viajando leve: 1 Mochila pessoal + 1 Mala de bordo de mão.
-          </p>
-          <span class="text-[10px] font-mono text-sky-400 group-hover:underline flex items-center gap-1 font-bold pt-1">
-            Ver detalhes dos voos <i class="fa-solid fa-arrow-right text-[9px]"></i>
-          </span>
-        </div>
-
-        <!-- Pillar 2: 5 Hospedagens 100% Pagas -->
-        <div onclick="switchTab('tab-hospedagem')" class="cursor-pointer bg-jp-card border border-emerald-500/30 hover:border-emerald-500 p-5 rounded-3xl space-y-2.5 shadow-xl transition-all hover:scale-[1.02] group">
-          <div class="flex items-center justify-between">
-            <span class="w-9 h-9 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-base">
-              <i class="fa-solid fa-hotel"></i>
-            </span>
-            <span class="text-[10px] font-mono font-bold text-emerald-400 uppercase bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
-              5/5 Confirmadas
-            </span>
-          </div>
-          <div>
-            <h3 class="text-xs font-mono uppercase text-slate-400 font-bold">5 Hospedagens Pagas</h3>
-            <div class="text-xl font-bold text-emerald-400 font-mono mt-0.5">R$ 3.328,90</div>
-          </div>
-          <p class="text-[11px] text-slate-300 leading-relaxed">
-            Ciel Hills (Tóquio), Faminess (Quioto), CHUANHouse (Osaka), Misuji Kuramae (Tóquio) e trias527 (Haneda Base).
-          </p>
-          <span class="text-[10px] font-mono text-emerald-400 group-hover:underline flex items-center gap-1 font-bold pt-1">
-            Ver senhas e anfitriões <i class="fa-solid fa-arrow-right text-[9px]"></i>
-          </span>
-        </div>
-
-        <!-- Pillar 3: Dieta Adventista & Shabat -->
-        <div onclick="switchTab('tab-alimentacao')" class="cursor-pointer bg-jp-card border border-amber-500/30 hover:border-amber-500 p-5 rounded-3xl space-y-2.5 shadow-xl transition-all hover:scale-[1.02] group">
-          <div class="flex items-center justify-between">
-            <span class="w-9 h-9 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-base">
-              <i class="fa-solid fa-church"></i>
-            </span>
-            <span class="text-[10px] font-mono font-bold text-amber-400 uppercase bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/20">
-              Adventista
-            </span>
-          </div>
-          <div>
-            <h3 class="text-xs font-mono uppercase text-slate-400 font-bold">Shabat & Alimentação</h3>
-            <div class="text-xl font-bold text-amber-400 font-mono mt-0.5">TIC Jingumae</div>
-          </div>
-          <p class="text-[11px] text-slate-300 leading-relaxed">
-            Zero porco, zero álcool, restaurantes Halal/Wagyu seguros e culto aos sábados em Shibuya.
-          </p>
-          <span class="text-[10px] font-mono text-amber-400 group-hover:underline flex items-center gap-1 font-bold pt-1">
-            Ver cartão de garçom <i class="fa-solid fa-arrow-right text-[9px]"></i>
-          </span>
-        </div>
-
-        <!-- Pillar 4: Dinheiro no Destino (Wise) -->
-        <div onclick="switchTab('tab-orcamento')" class="cursor-pointer bg-jp-card border border-purple-500/30 hover:border-purple-500 p-5 rounded-3xl space-y-2.5 shadow-xl transition-all hover:scale-[1.02] group">
-          <div class="flex items-center justify-between">
-            <span class="w-9 h-9 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-base">
-              <i class="fa-solid fa-wallet"></i>
-            </span>
-            <span class="text-[10px] font-mono font-bold text-purple-400 uppercase bg-purple-500/10 px-2.5 py-0.5 rounded-full border border-purple-500/20">
-              ¥ —
-            </span>
-          </div>
-          <div>
-            <h3 class="text-xs font-mono uppercase text-slate-400 font-bold">Custo Vivo no Japão</h3>
-            <div class="text-xl font-bold text-purple-400 font-mono mt-0.5">R$ —</div>
-          </div>
-          <p class="text-[11px] text-slate-300 leading-relaxed">
-            Refeições diárias, 2x Shinkansen Nozomi, metrôs, ingressos e compras de lembranças.
-          </p>
-          <span class="text-[10px] font-mono text-purple-400 group-hover:underline flex items-center gap-1 font-bold pt-1">
-            Ver tabela por cidades <i class="fa-solid fa-arrow-right text-[9px]"></i>
-          </span>
-        </div>
-
-      </div>
-
-      <!-- Quick Action Buttons Bar -->
-      <div class="flex items-center justify-between flex-wrap gap-2.5 p-3 rounded-2xl bg-jp-night/80 border border-jp-cardborder">
-        <span class="text-xs font-mono uppercase text-jp-gold font-bold px-2 flex items-center gap-1.5">
-          <i class="fa-solid fa-bolt text-amber-400"></i> Atalhos Rápidos:
-        </span>
-        <div class="flex items-center gap-2 flex-wrap">
-          <button onclick="switchTab('tab-roteiro')" class="px-3.5 py-1.5 rounded-xl bg-jp-card hover:bg-slate-800 text-slate-200 border border-jp-cardborder text-xs font-semibold transition-all flex items-center gap-1.5">
-            <i class="fa-solid fa-calendar-days text-red-400"></i> Roteiro 13 Dias
-          </button>
-          <button onclick="switchTab('tab-alimentacao')" class="px-3.5 py-1.5 rounded-xl bg-jp-card hover:bg-slate-800 text-slate-200 border border-jp-cardborder text-xs font-semibold transition-all flex items-center gap-1.5">
-            <i class="fa-solid fa-utensils text-amber-400"></i> Cartão de Garçom
-          </button>
-          <button onclick="switchTab('tab-conversor')" class="px-3.5 py-1.5 rounded-xl bg-jp-card hover:bg-slate-800 text-slate-200 border border-jp-cardborder text-xs font-semibold transition-all flex items-center gap-1.5">
-            <i class="fa-solid fa-calculator text-emerald-400"></i> Conversor JPY/BRL
-          </button>
-          <button onclick="switchTab('tab-checklist')" class="px-3.5 py-1.5 rounded-xl bg-jp-card hover:bg-slate-800 text-slate-200 border border-jp-cardborder text-xs font-semibold transition-all flex items-center gap-1.5">
-            <i class="fa-solid fa-list-check text-purple-400"></i> Checklist Interativo
-          </button>
-          <button onclick="switchTab('tab-emergencia')" class="px-3.5 py-1.5 rounded-xl bg-rose-950/40 hover:bg-rose-900/60 text-rose-300 border border-rose-500/40 text-xs font-semibold transition-all flex items-center gap-1.5">
-            <i class="fa-solid fa-phone-volume text-rose-400"></i> SOS & Emergência
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
   <!-- NAVIGATION TABS (10 TELAS/ABAS COMPLETAS - DESKTOP ONLY) -->
-  <nav class="hidden md:block sticky top-16 z-40 bg-jp-night/95 backdrop-blur-md border-b border-jp-cardborder py-2.5 shadow-md">
+  <nav class="hidden md:block sticky top-14 sm:top-16 z-40 bg-jp-night/95 backdrop-blur-md border-b border-jp-cardborder py-1.5 shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1 tab-scroll-container" role="tablist" aria-label="Abas de Navegação do Roteiro" id="tab-buttons">
         
@@ -990,7 +808,7 @@
   </nav>
 
   <!-- MAIN CONTAINER -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 mt-2">
+  <main class="max-w-[1600px] w-full mx-auto px-3 sm:px-6 lg:px-8 pt-16 md:pt-4">
 
     <!-- ==================== TAB 1: ROTEIRO DIA A DIA ==================== -->
     <div id="tab-roteiro" class="tab-content space-y-5">
@@ -1076,74 +894,53 @@
         </div>
       </div>
 
-      <!-- Filter Toolbar (Desktop / Tablet) -->
-      <div class="hidden sm:flex items-center justify-between flex-wrap gap-3 p-4 bg-jp-card/90 border border-jp-cardborder rounded-2xl shadow-md">
-        <div class="flex items-center gap-2 flex-wrap">
-          <span class="text-xs font-mono uppercase text-jp-gold font-bold mr-1 flex items-center gap-1">
-            <i class="fa-solid fa-filter"></i> Filtrar Região:
-          </span>
-          <button onclick="filterDays('all')" class="city-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-jp-red text-white transition-all shadow-md">Todos (13 Dias)</button>
-          <button onclick="filterDays('toquio1')" class="city-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-jp-night text-jp-subtle hover:text-white border border-jp-cardborder transition-all">Tóquio 1 (5n)</button>
-          <button onclick="filterDays('fuji')" class="city-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-jp-night text-jp-subtle hover:text-white border border-jp-cardborder transition-all">Monte Fuji (1d)</button>
-          <button onclick="filterDays('quioto')" class="city-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-jp-night text-jp-subtle hover:text-white border border-jp-cardborder transition-all">Quioto & Nara (3n)</button>
-          <button onclick="filterDays('osaka')" class="city-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-jp-night text-jp-subtle hover:text-white border border-jp-cardborder transition-all">Osaka (2n)</button>
-          <button onclick="filterDays('toquio2')" class="city-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-jp-night text-jp-subtle hover:text-white border border-jp-cardborder transition-all">Tóquio 2 (2n)</button>
-        </div>
-        <span class="text-xs text-jp-subtle font-mono">12 Noites no Japão • 01/09 a 14/09</span>
-      </div>
-
-                  <!-- ITINERARY 13 DAYS CARDS GRID -->
-            <!-- INFORMAÇÕES PRÁTICAS: MODO 100% CASHLESS ATIVADO -->
-      <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-emerald-950/70 via-slate-900/90 to-sky-950/70 border-2 border-emerald-500/60 shadow-2xl space-y-3 mb-6">
-        <div class="flex items-center justify-between flex-wrap gap-2 border-b border-emerald-500/30 pb-2.5">
-          <div class="flex items-center gap-2.5">
-            <span class="w-8 h-8 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-sm">
+      <!-- ITINERARY 13 DAYS CARDS GRID -->
+            <!-- INFORMAÇÕES PRÁTICAS: GUIA 100% CASHLESS (EXPANSÍVEL) -->
+      <details class="group rounded-xl bg-slate-900/90 border border-emerald-500/40 text-xs shadow-md mb-3 transition-all">
+        <summary class="cursor-pointer list-none flex items-center justify-between px-3.5 py-2 text-emerald-300 font-mono text-xs font-bold select-none hover:bg-emerald-950/40 rounded-xl transition-all">
+          <div class="flex items-center gap-2">
+            <span class="w-5 h-5 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-[10px]">
               <i class="fa-solid fa-shield-halved"></i>
             </span>
-            <div>
-              <h3 class="text-sm sm:text-base font-bold text-white flex items-center gap-2">
-                Modo 100% Cashless Ativado <span class="px-2 py-0.5 rounded-full bg-emerald-500 text-black text-[10px] font-mono font-black uppercase tracking-wide">Zero Moedas</span>
-              </h3>
-              <p class="text-[11px] text-emerald-200/90 font-medium">Roteiro dos Dias 07 a 13 100% no cartão e Suica: sem dependência de notas ou moedas</p>
+            <span>💳 Modo 100% Cashless Ativado (Suica no iPhone • Apple Pay • Cartão Wise)</span>
+            <span class="hidden sm:inline-block px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[9px] uppercase font-mono">Zero Moedas</span>
+          </div>
+          <span class="text-[10px] text-emerald-400 font-mono flex items-center gap-1 group-open:rotate-180 transition-transform">
+            <i class="fa-solid fa-chevron-down"></i>
+          </span>
+        </summary>
+        <div class="p-3 sm:p-4 border-t border-emerald-500/20 bg-slate-950/50 space-y-3">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-slate-300">
+            <div class="p-2.5 rounded-xl bg-slate-950/60 border border-emerald-500/20 space-y-1">
+              <strong class="text-emerald-300 font-mono text-[11px] flex items-center gap-1.5">
+                <i class="fa-solid fa-mobile-screen-button text-emerald-400"></i> 1. Suica no iPhone (Moeda Viva)
+              </strong>
+              <p class="text-[10.5px] leading-relaxed text-slate-300">
+                Recarregue em segundos no Apple Wallet com Apple Pay (Wise/Inter). Paga <strong>100% dos trens, metrôs, ônibus de Quioto (#206 e #205), lockers digitais touch das estações, máquinas de bebidas e lojas de conveniência</strong> (7-Eleven, Lawson, FamilyMart).
+              </p>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-950/60 border border-emerald-500/20 space-y-1">
+              <strong class="text-sky-300 font-mono text-[11px] flex items-center gap-1.5">
+                <i class="fa-solid fa-credit-card text-sky-400"></i> 2. Apple Pay & Cartão Wise
+              </strong>
+              <p class="text-[10.5px] leading-relaxed text-slate-300">
+                Aceito em <strong>100% dos grandes restaurantes</strong> (Wagyu Halal, Gui's Burger, Kura Sushi, Yakiniku Panga), lojas de departamento, farmácias, Don Quijote, Uniqlo e nos incríveis <strong>subsolos gastronômicos (Depachika da Daimaru e Takashimaya)</strong>.
+              </p>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-950/60 border border-emerald-500/20 space-y-1">
+              <strong class="text-amber-300 font-mono text-[11px] flex items-center gap-1.5">
+                <i class="fa-solid fa-torii-gate text-amber-400"></i> 3. Atrações Gratuitas ou no Cartão
+              </strong>
+              <p class="text-[10.5px] leading-relaxed text-slate-300">
+                As visitas principais não dependem de moedas: <strong>Kiyomizu-dera (portões e mirantes livres), Fushimi Inari, Arashiyama e cervos de Nara são 100% GRATUITOS</strong>, e para o Kinkaku-ji há a alternativa do <strong>Palácio Imperial de Quioto (grátis)</strong>!
+              </p>
             </div>
           </div>
-          <span class="px-2.5 py-1 rounded-lg bg-emerald-950 border border-emerald-500/30 text-emerald-300 font-mono text-[11px] font-bold">
-            Apple Pay • Suica no iPhone • Cartão Wise
-          </span>
         </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-slate-300">
-          <div class="p-2.5 rounded-xl bg-slate-950/60 border border-emerald-500/20 space-y-1">
-            <strong class="text-emerald-300 font-mono text-[11px] flex items-center gap-1.5">
-              <i class="fa-solid fa-mobile-screen-button text-emerald-400"></i> 1. Suica no iPhone (Moeda Viva)
-            </strong>
-            <p class="text-[10.5px] leading-relaxed text-slate-300">
-              Recarregue em segundos no Apple Wallet com Apple Pay (Wise/Inter). Paga <strong>100% dos trens, metrôs, ônibus de Quioto (#206 e #205), lockers digitais touch das estações, máquinas de bebidas e lojas de conveniência</strong> (7-Eleven, Lawson, FamilyMart).
-            </p>
-          </div>
-
-          <div class="p-2.5 rounded-xl bg-slate-950/60 border border-emerald-500/20 space-y-1">
-            <strong class="text-sky-300 font-mono text-[11px] flex items-center gap-1.5">
-              <i class="fa-solid fa-credit-card text-sky-400"></i> 2. Apple Pay & Cartão Wise
-            </strong>
-            <p class="text-[10.5px] leading-relaxed text-slate-300">
-              Aceito em <strong>100% dos grandes restaurantes</strong> (Wagyu Halal, Gui's Burger, Kura Sushi, Yakiniku Panga), lojas de departamento, farmácias, Don Quijote, Uniqlo e nos incríveis <strong>subsolos gastronômicos (Depachika da Daimaru e Takashimaya)</strong>.
-            </p>
-          </div>
-
-          <div class="p-2.5 rounded-xl bg-slate-950/60 border border-emerald-500/20 space-y-1">
-            <strong class="text-amber-300 font-mono text-[11px] flex items-center gap-1.5">
-              <i class="fa-solid fa-torii-gate text-amber-400"></i> 3. Atrações Gratuitas ou no Cartão
-            </strong>
-            <p class="text-[10.5px] leading-relaxed text-slate-300">
-              As visitas principais não dependem de moedas: <strong>Kiyomizu-dera (portões e mirantes livres), Fushimi Inari, Arashiyama e cervos de Nara são 100% GRATUITOS</strong>, e para o Kinkaku-ji há a alternativa do <strong>Palácio Imperial de Quioto (grátis)</strong>!
-            </p>
-          </div>
-        </div>
-      </div>
+      </details>
 
       <!-- BARRA DE NAVEGAÇÃO DE DIA NO DESKTOP (MODO FOCO) -->
-      <div id="desktop-focus-bar" class="hidden items-center justify-between p-3 rounded-2xl bg-slate-900/90 border border-slate-700/80 shadow-lg text-xs mb-5 max-w-[860px] mx-auto transition-all">
+      <div id="desktop-focus-bar" class="hidden items-center justify-between py-2 px-3 sm:px-4 rounded-xl bg-slate-900/95 border border-slate-700/80 shadow-lg text-xs mb-3 w-full transition-all">
         <button type="button" onclick="navigateDay(-1)" id="desktop-btn-prev" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-mono font-bold flex items-center gap-1.5 transition-all disabled:opacity-30 disabled:cursor-not-allowed">
           <i class="fa-solid fa-chevron-left text-rose-400"></i> Dia Anterior
         </button>
@@ -2055,6 +1852,9 @@
               <span class="text-[9.5px] font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-500/30 px-2 py-0.5 rounded-md font-semibold whitespace-nowrap self-start sm:self-auto">Quarto liberado ✓</span>
             </div>
 
+            <!-- ATIVIDADES DO DIA 7 (DISTRIBUIÇÃO EM 2 COLUNAS NO DESKTOP) -->
+            <div class="day-timeline-flow space-y-2.5">
+
             <!-- PAINEL COMPLETO DA MANHÃ REALIZADA (COM LINKS PRECISOS NO GOOGLE MAPS PARA NAVEGAR OU RETORNAR) -->
             <div class="p-3.5 rounded-xl bg-emerald-950/40 border-2 border-emerald-500/50 space-y-2.5 text-xs shadow-md">
               <div class="flex items-center justify-between flex-wrap gap-1 border-b border-emerald-500/30 pb-2">
@@ -2195,6 +1995,7 @@
               <p class="text-slate-300 text-[10px] leading-relaxed">
                 Óculos de grau na JINS e tênis de caminhada na ABC-MART já foram adquiridos com sucesso no Dia 06. O seu tempo em Quioto está 100% protegido para contemplação cultural, história e gastronomia!
               </p>
+            </div>
             </div>
           </div>
         </div>
@@ -2805,6 +2606,9 @@
               </div>
             </div>
 
+            <!-- ATIVIDADES DO DIA 13 (DISTRIBUIÇÃO EM 2 COLUNAS NO DESKTOP) -->
+            <div class="day-timeline-flow space-y-2.5">
+
             <!-- BLOCO ESPECIAL: A JANELA DE COMPRAS DAS 10H ÀS 16H -->
             <div class="p-3.5 rounded-2xl bg-slate-900/90 border-2 border-amber-500/60 space-y-3 mt-1 shadow-lg">
               <div class="flex items-center justify-between flex-wrap gap-2 border-b border-amber-500/30 pb-2">
@@ -2895,6 +2699,7 @@
                   <strong>00:05 (14/09) — Decolagem:</strong> Voo noturno tranquilo de volta ao Brasil com escala em Paris CDG. Pouso em SP às 17:20! ✈️🇧🇷
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>
