@@ -211,6 +211,20 @@
       overflow-y: hidden;
     }
 
+    @media (min-width: 768px) {
+      .day-scroller-sticky {
+        position: static !important;
+        background: transparent !important;
+        border-bottom: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 0.25rem !important;
+        padding-bottom: 0.5rem !important;
+      }
+    }
+
     .day-snap-track {
       display: flex;
       gap: 0.5rem;
@@ -749,7 +763,7 @@
   </nav>
 
   <!-- NAVIGATION TABS (10 TELAS/ABAS COMPLETAS - DESKTOP ONLY) -->
-  <nav class="hidden md:block sticky top-14 sm:top-16 z-40 bg-jp-night/95 backdrop-blur-md border-b border-jp-cardborder py-1.5 shadow-md">
+  <nav class="hidden md:block fixed top-14 sm:top-16 left-0 right-0 z-40 bg-slate-950/95 backdrop-blur-md border-b border-slate-800/80 py-2 shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1 tab-scroll-container" role="tablist" aria-label="Abas de Navegação do Roteiro" id="tab-buttons">
         
@@ -808,7 +822,7 @@
   </nav>
 
   <!-- MAIN CONTAINER -->
-  <main class="max-w-[1600px] w-full mx-auto px-3 sm:px-6 lg:px-8 pt-16 md:pt-4">
+  <main class="max-w-[1600px] w-full mx-auto px-3 sm:px-6 lg:px-8 pt-16 md:pt-[7.5rem]">
 
     <!-- ==================== TAB 1: ROTEIRO DIA A DIA ==================== -->
     <div id="tab-roteiro" class="tab-content space-y-5">
@@ -4759,7 +4773,11 @@
       if (activeBtn) {
         activeBtn.classList.add('tab-active');
         activeBtn.classList.remove('text-jp-subtle', 'border-transparent');
-        activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        const container = activeBtn.parentElement;
+        if (container) {
+          const btnOffset = activeBtn.offsetLeft - (container.clientWidth / 2) + (activeBtn.clientWidth / 2);
+          container.scrollTo({ left: Math.max(0, btnOffset), behavior: 'smooth' });
+        }
       }
 
       // Sync Bottom Nav Bar active state
@@ -4848,7 +4866,11 @@
       if (activePill) {
         activePill.classList.add('day-pill-active');
         activePill.setAttribute('aria-selected', 'true');
-        activePill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        const track = activePill.parentElement;
+        if (track) {
+          const pillOffset = activePill.offsetLeft - (track.clientWidth / 2) + (activePill.clientWidth / 2);
+          track.scrollTo({ left: Math.max(0, pillOffset), behavior: 'smooth' });
+        }
       }
 
       // 3. Atualiza controles do Bottom Thumb Dock (Mobile)
@@ -4897,17 +4919,21 @@
         else deskToday.classList.add('hidden');
       }
 
-      // 5. Persistência de Estado e URL Hash
+      // 5. Persistência de Estado (e URL Hash somente em mobile)
       try {
         localStorage.setItem('tabi_active_day', String(dayNum));
       } catch(e) {}
 
-      if (window.history && window.history.replaceState) {
+      if (window.history && window.history.replaceState && window.innerWidth < 768) {
         window.history.replaceState(null, '', `#day-card-${dayNum}`);
+      } else if (window.innerWidth >= 768 && window.location.hash.startsWith('#day-card-')) {
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState(null, '', window.location.pathname + window.location.search);
+        }
       }
 
-      // 6. Scroll suave para o topo do dia selecionado
-      if (shouldScrollTop && activeCard) {
+      // 6. Scroll suave para o topo do dia selecionado (somente mobile para não descolar tabs no desktop)
+      if (shouldScrollTop && activeCard && window.innerWidth < 768) {
         requestAnimationFrame(() => {
           activeCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
@@ -5387,7 +5413,11 @@
         activePill.classList.add('day-pill-active');
         activePill.setAttribute('aria-selected', 'true');
         setTimeout(() => {
-          activePill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          const track = activePill.parentElement;
+          if (track) {
+            const pillOffset = activePill.offsetLeft - (track.clientWidth / 2) + (activePill.clientWidth / 2);
+            track.scrollTo({ left: Math.max(0, pillOffset), behavior: 'smooth' });
+          }
         }, 150);
       }
     }
