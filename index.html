@@ -286,6 +286,7 @@
       word-wrap: break-word;
       word-break: normal;
       min-width: 0;
+      overflow-x: clip;
     }
     .day-card * {
       min-width: 0;
@@ -294,11 +295,18 @@
       word-break: break-all;
       overflow-wrap: anywhere;
     }
-    /* Apenas badges individuais do cabeçalho mantêm palavras unidas */
+    /* Todos os containers com borda e flex dentro dos cards quebram linhas suavemente */
+    .day-card .border-b.flex,
+    .day-card [class*="border-b"][class*="flex"] {
+      flex-wrap: wrap !important;
+      gap: 0.375rem;
+    }
+    /* Apenas badges individuais mantêm palavras unidas */
     .day-card .border-b span.rounded,
     .day-card .border-b span.rounded-md,
     .day-card .border-b span.rounded-full {
       white-space: nowrap;
+      flex-shrink: 0;
     }
 
     @media (max-width: 767.98px) {
@@ -1555,11 +1563,11 @@
 
               <!-- SEÇÃO ESPECIAL: O CIRCUITO DO FERVO DE SÁBADO & JDM CULTURE -->
               <div class="p-3.5 rounded-2xl bg-gradient-to-br from-rose-950/40 via-purple-950/30 to-slate-900/80 border-2 border-rose-500/40 space-y-3 mt-1 shadow-lg">
-                <div class="flex items-center justify-between border-b border-rose-500/30 pb-2">
-                  <span class="text-xs font-mono font-bold text-rose-300 uppercase flex items-center gap-1.5">
+                <div class="flex items-center justify-between flex-wrap gap-2 border-b border-rose-500/30 pb-2">
+                  <span class="text-xs font-mono font-bold text-rose-300 uppercase flex items-center gap-1.5 flex-wrap">
                     <i class="fa-solid fa-fire text-rose-400"></i> O Circuito de Sábado: Fé, Supercarros & JDM (17:45 às 22:50)
                   </span>
-                  <span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 text-[9px] font-mono font-bold">Ginza & Akihabara</span>
+                  <span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 text-[9px] font-mono font-bold shrink-0">Ginza & Akihabara</span>
                 </div>
 
                 <!-- PARADA 1: LIVRARIA CRISTÃ HISTÓRICA KYOBUNKWAN -->
@@ -1721,11 +1729,11 @@
 
           <!-- LEMBRETE NOTURNO: COMPRA DO TREM NO APP NO AIRBNB -->
           <div class="p-3 rounded-xl bg-slate-900/90 border border-sky-500/40 space-y-1.5 mt-2 text-xs">
-            <div class="flex items-center justify-between">
-              <span class="text-sky-300 font-bold font-mono uppercase text-[11px] flex items-center gap-1.5">
+            <div class="flex items-center justify-between flex-wrap gap-1.5">
+              <span class="text-sky-300 font-bold font-mono uppercase text-[11px] flex items-center gap-1.5 flex-wrap">
                 <i class="fa-solid fa-mobile-screen-button text-sky-400"></i> Noite no Airbnb (~23:00): Comprar Trem Fuji no App
               </span>
-              <span class="px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-mono text-[9px] font-bold">Via Celular</span>
+              <span class="px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-mono text-[9px] font-bold shrink-0">Via Celular</span>
             </div>
             <p class="text-slate-300 text-[10px] leading-relaxed">
               Ao retornar ao Airbnb, relaxe e compre pelo app/site da JR com Wi-Fi o trem direto <strong>Fuji Excursion</strong> para domingo:
@@ -2754,11 +2762,11 @@
 
             <!-- BLOCO ESPECIAL: A JANELA DE COMPRAS DAS 10H ÀS 16H -->
             <div class="p-3.5 rounded-2xl bg-slate-900/90 border-2 border-amber-500/60 space-y-3 mt-1 shadow-lg">
-              <div class="flex items-center justify-between border-b border-amber-500/30 pb-2">
-                <span class="text-xs font-mono font-bold text-amber-300 uppercase flex items-center gap-1.5">
+              <div class="flex items-center justify-between flex-wrap gap-2 border-b border-amber-500/30 pb-2">
+                <span class="text-xs font-mono font-bold text-amber-300 uppercase flex items-center gap-1.5 flex-wrap">
                   <i class="fa-solid fa-bag-shopping text-amber-400"></i> Circuito de Compras 100% Cashless (10:00 às 16:00)
                 </span>
-                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[9px] font-mono font-bold">Apple Pay • Suica • Cartão</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[9px] font-mono font-bold shrink-0">Apple Pay • Suica • Cartão</span>
               </div>
 
               <!-- 1. KAPPABASHI -->
@@ -2816,11 +2824,11 @@
 
             <!-- FIM DA JANELA DE COMPRAS & ENTRADA NA BASE HANEDA -->
             <div class="p-3 rounded-xl bg-emerald-950/30 border border-emerald-500/40 space-y-1.5 text-xs">
-              <div class="flex items-center justify-between">
-                <span class="text-emerald-300 font-bold font-mono uppercase text-[11px] flex items-center gap-1.5">
+              <div class="flex items-center justify-between flex-wrap gap-1.5">
+                <span class="text-emerald-300 font-bold font-mono uppercase text-[11px] flex items-center gap-1.5 flex-wrap">
                   <i class="fa-solid fa-house-chimney text-emerald-400"></i> 16:00 às 20:45 — Fim das Compras & Check-in Base Haneda
                 </span>
-                <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[9px] font-bold">16:00 Impreterível</span>
+                <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[9px] font-bold shrink-0">16:00 Impreterível</span>
               </div>
               <p class="text-slate-300 text-[10px] leading-relaxed">
                 Resgate sua mala no locker no Suica e pegue o trem direto até a Estação Tenkubashi. Entre no apê privativo trias527, tome um banho demorado, organize todos os presentes com calma, vista a roupa de voo e descanse na cama até as 20:45.
