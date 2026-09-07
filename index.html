@@ -309,32 +309,57 @@
       flex-shrink: 0;
     }
 
+    /* ========================================================================== */
+    /* MODO FOCO INTELIGENTE (1 DIA POR VEZ - MOBILE E DESKTOP) */
+    /* ========================================================================== */
+    /* No Modo Foco: esconde todos os cards exceto o card do dia ativo em qualquer tela */
+    body.mobile-focus-mode #itinerary-grid .day-card:not(.active-focus-day) {
+      display: none !important;
+    }
+    body.mobile-focus-mode #itinerary-grid .day-card.active-focus-day {
+      display: block !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: auto;
+      margin-right: auto;
+      animation: focusDayFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    /* No Modo Foco: layout centralizado, focado e espaçoso para desktop e mobile */
+    body.mobile-focus-mode #itinerary-grid {
+      columns: 1 !important;
+      display: block !important;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     @media (max-width: 767.98px) {
-      /* No Modo Foco: esconde todos os cards exceto o card do dia ativo */
-      body.mobile-focus-mode #itinerary-grid .day-card:not(.active-focus-day) {
-        display: none !important;
-      }
-      body.mobile-focus-mode #itinerary-grid .day-card.active-focus-day {
-        display: block !important;
-        width: 100% !important;
-        animation: focusDayFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-      }
       /* Espaço de respiro inferior generoso para que nenhum texto fique coberto pelo Dock Flutuante */
       body.mobile-focus-mode #itinerary-grid,
       #itinerary-grid {
         padding-bottom: calc(10.5rem + env(safe-area-inset-bottom, 0px)) !important;
       }
+      #desktop-focus-bar {
+        display: none !important;
+      }
     }
 
-    /* Desktop e Tablets (>= 768px): Preserva 100% o Masonry de 3 Colunas intacto */
+    /* Desktop e Tablets (>= 768px) */
     @media (min-width: 768px) {
-      body.mobile-focus-mode .day-card,
-      .day-card {
+      /* Quando o usuário clica em 'Ver Todos (13)', exibe o Masonry de 3 Colunas */
+      body:not(.mobile-focus-mode) .day-card {
         display: inline-block !important;
         break-inside: avoid !important;
         -webkit-column-break-inside: avoid !important;
       }
       #mobile-thumb-dock {
+        display: none !important;
+      }
+      /* Exibe a barra de navegação superior do desktop apenas quando o Modo Foco estiver ativo */
+      body.mobile-focus-mode #desktop-focus-bar {
+        display: flex !important;
+      }
+      body:not(.mobile-focus-mode) #desktop-focus-bar {
         display: none !important;
       }
     }
@@ -1115,6 +1140,26 @@
             </p>
           </div>
         </div>
+      </div>
+
+      <!-- BARRA DE NAVEGAÇÃO DE DIA NO DESKTOP (MODO FOCO) -->
+      <div id="desktop-focus-bar" class="hidden items-center justify-between p-3 rounded-2xl bg-slate-900/90 border border-slate-700/80 shadow-lg text-xs mb-5 max-w-[860px] mx-auto transition-all">
+        <button type="button" onclick="navigateDay(-1)" id="desktop-btn-prev" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-mono font-bold flex items-center gap-1.5 transition-all disabled:opacity-30 disabled:cursor-not-allowed">
+          <i class="fa-solid fa-chevron-left text-rose-400"></i> Dia Anterior
+        </button>
+
+        <div class="flex items-center gap-2 font-mono">
+          <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-bold text-xs" id="desktop-focus-badge">DIA 07</span>
+          <span class="text-xs font-bold text-slate-200" id="desktop-focus-date">Segunda • 07/09</span>
+          <span class="text-[11px] text-slate-400">•</span>
+          <span class="text-xs font-bold text-jp-gold" id="desktop-focus-city">Quioto</span>
+          <span class="hidden text-[9px] font-bold font-mono px-1.5 py-0.5 rounded bg-amber-400 text-black ml-1" id="desktop-today-badge">HOJE</span>
+          <span class="text-[10px] text-slate-400 hidden lg:inline ml-2">(Setas ← → do teclado)</span>
+        </div>
+
+        <button type="button" onclick="navigateDay(1)" id="desktop-btn-next" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-mono font-bold flex items-center gap-1.5 transition-all disabled:opacity-30 disabled:cursor-not-allowed">
+          Próximo Dia <i class="fa-solid fa-chevron-right text-rose-400"></i>
+        </button>
       </div>
 
       <div class="columns-1 sm:columns-2 lg:columns-3 gap-6" id="itinerary-grid">
@@ -4940,18 +4985,32 @@
         event.target.classList.add('bg-jp-red', 'text-white', 'shadow-md');
       }
 
-      const cards = document.querySelectorAll('.day-card');
-      cards.forEach(card => {
-        if (city === 'all' || card.getAttribute('data-city') === city) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      });
+      const cityFirstDay = {
+        'all': (typeof currentMobileFocusDay !== 'undefined' ? currentMobileFocusDay : 7),
+        'toquio1': 1,
+        'fuji': 3,
+        'quioto': 7,
+        'osaka': 9,
+        'toquio2': 11
+      };
+
+      if (document.body.classList.contains('mobile-focus-mode')) {
+        const targetDay = cityFirstDay[city] || 7;
+        setMobileFocusDay(targetDay, true);
+      } else {
+        const cards = document.querySelectorAll('.day-card');
+        cards.forEach(card => {
+          if (city === 'all' || card.getAttribute('data-city') === city) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      }
     }
 
     // ==========================================================================
-    // MOBILE SINGLE-DAY FOCUS MODE STATE & NAVIGATION (iPhone 17 Pro / Mobile)
+    // SINGLE-DAY FOCUS MODE STATE & NAVIGATION (Mobile & Desktop)
     // ==========================================================================
     let currentMobileFocusDay = 7; // Estado do dia ativo (1..13)
 
@@ -4987,7 +5046,7 @@
         activePill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
       }
 
-      // 3. Atualiza controles do Bottom Thumb Dock
+      // 3. Atualiza controles do Bottom Thumb Dock (Mobile)
       const btnPrev = document.getElementById('thumb-btn-prev');
       const btnNext = document.getElementById('thumb-btn-next');
       if (btnPrev) btnPrev.disabled = (dayNum <= 1);
@@ -5014,7 +5073,26 @@
         }
       }
 
-      // 4. Persistência de Estado e URL Hash
+      // 4. Atualiza controles da Barra de Navegação do Desktop
+      const deskBtnPrev = document.getElementById('desktop-btn-prev');
+      const deskBtnNext = document.getElementById('desktop-btn-next');
+      if (deskBtnPrev) deskBtnPrev.disabled = (dayNum <= 1);
+      if (deskBtnNext) deskBtnNext.disabled = (dayNum >= 13);
+
+      const deskBadge = document.getElementById('desktop-focus-badge');
+      const deskDate = document.getElementById('desktop-focus-date');
+      const deskCity = document.getElementById('desktop-focus-city');
+      const deskToday = document.getElementById('desktop-today-badge');
+
+      if (deskBadge) deskBadge.textContent = `DIA ${dayPad}`;
+      if (deskDate) deskDate.textContent = `${meta.weekday || ''} • ${meta.date || ''}`;
+      if (deskCity) deskCity.textContent = meta.city || 'Japão';
+      if (deskToday) {
+        if (dayNum === realToday) deskToday.classList.remove('hidden');
+        else deskToday.classList.add('hidden');
+      }
+
+      // 5. Persistência de Estado e URL Hash
       try {
         localStorage.setItem('tabi_active_day', String(dayNum));
       } catch(e) {}
@@ -5023,7 +5101,7 @@
         window.history.replaceState(null, '', `#day-card-${dayNum}`);
       }
 
-      // 5. Scroll suave para o topo do dia selecionado
+      // 6. Scroll suave para o topo do dia selecionado
       if (shouldScrollTop && activeCard) {
         requestAnimationFrame(() => {
           activeCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -5042,7 +5120,7 @@
     }
 
     /**
-     * Alterna entre "1 Dia (Foco)" e "13 Dias (Todos)" no Mobile
+     * Alterna entre "1 Dia (Foco)" e "13 Dias (Todos)" em Qualquer Tela
      */
     function toggleMobileMode() {
       if (navigator.vibrate) {
@@ -5108,27 +5186,24 @@
         btnCityAll.classList.add('bg-jp-red', 'text-white', 'shadow-md');
       }
 
-      const isMobile = window.innerWidth < 768;
-      if (isMobile) {
-        // No mobile, define o dia de foco
-        setMobileFocusDay(dayNum, true);
-      } else {
-        // No desktop, atualiza pílula e rola suavemente para o card
-        document.querySelectorAll('.day-pill-btn').forEach(btn => {
-          btn.classList.remove('day-pill-active');
-          btn.setAttribute('aria-selected', 'false');
-        });
-        const activePill = document.getElementById(`pill-day-${dayNum}`);
-        if (activePill) {
-          activePill.classList.add('day-pill-active');
-          activePill.setAttribute('aria-selected', 'true');
-          activePill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      // Ao clicar em uma pílula de dia no topo, foca exatamente no dia selecionado
+      if (!document.body.classList.contains('mobile-focus-mode')) {
+        document.body.classList.add('mobile-focus-mode');
+        try { localStorage.setItem('tabi_focus_mode', 'true'); } catch(e) {}
+        const btnAll = document.getElementById('btn-show-all');
+        if (btnAll) btnAll.textContent = 'Ver Todos (13)';
+        const modeBtn = document.getElementById('thumb-btn-mode');
+        const modeLabel = document.getElementById('thumb-mode-label');
+        const modeIcon = document.getElementById('thumb-mode-icon');
+        if (modeBtn) {
+          modeBtn.className = 'min-w-[44px] min-h-[44px] px-2 flex flex-col items-center justify-center rounded-xl font-mono text-[10px] font-bold bg-jp-red text-white shadow-sm active:scale-95 transition-all border border-red-500/40';
+          modeBtn.setAttribute('aria-pressed', 'true');
         }
-        const target = document.getElementById(`day-card-${dayNum}`);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        if (modeLabel) modeLabel.textContent = '1 Dia';
+        if (modeIcon) modeIcon.className = 'fa-solid fa-bullseye text-[10px]';
       }
+
+      setMobileFocusDay(dayNum, true);
     }
 
     function showAllDays() {
@@ -5136,61 +5211,66 @@
     }
 
     /**
-     * Inicializa o Modo Foco Inteligente no Mobile
+     * Inicializa o Modo Foco Inteligente (Mobile e Desktop)
      */
     function initMobileFocusMode() {
-      const isMobile = window.innerWidth < 768;
+      let savedMode = null;
+      try { savedMode = localStorage.getItem('tabi_focus_mode'); } catch(e) {}
+      const shouldEnableFocus = (savedMode !== 'false'); // Padrão: TRUE (1 Dia de cada vez)
 
-      if (isMobile) {
-        let savedMode = null;
-        try { savedMode = localStorage.getItem('tabi_focus_mode'); } catch(e) {}
-        const shouldEnableFocus = (savedMode !== 'false');
+      const btnAll = document.getElementById('btn-show-all');
+      const modeBtn = document.getElementById('thumb-btn-mode');
+      const modeLabel = document.getElementById('thumb-mode-label');
+      const modeIcon = document.getElementById('thumb-mode-icon');
 
-        if (shouldEnableFocus) {
-          document.body.classList.add('mobile-focus-mode');
-        } else {
-          document.body.classList.remove('mobile-focus-mode');
-          const modeBtn = document.getElementById('thumb-btn-mode');
-          const modeLabel = document.getElementById('thumb-mode-label');
-          const modeIcon = document.getElementById('thumb-mode-icon');
-          if (modeBtn) {
-            modeBtn.className = 'min-w-[44px] min-h-[44px] px-2 flex flex-col items-center justify-center rounded-xl font-mono text-[10px] font-bold bg-slate-800 text-slate-300 shadow-sm active:scale-95 transition-all border border-slate-700';
-            modeBtn.setAttribute('aria-pressed', 'false');
-          }
-          if (modeLabel) modeLabel.textContent = '13 Dias';
-          if (modeIcon) modeIcon.className = 'fa-solid fa-layer-group text-[10px] text-amber-300';
+      if (shouldEnableFocus) {
+        document.body.classList.add('mobile-focus-mode');
+        if (btnAll) btnAll.textContent = 'Ver Todos (13)';
+        if (modeBtn) {
+          modeBtn.className = 'min-w-[44px] min-h-[44px] px-2 flex flex-col items-center justify-center rounded-xl font-mono text-[10px] font-bold bg-jp-red text-white shadow-sm active:scale-95 transition-all border border-red-500/40';
+          modeBtn.setAttribute('aria-pressed', 'true');
         }
-
-        // Recupera dia salvo ou hash ou dia real no Japão (Dia 07)
-        let initialDay = null;
-        try {
-          const stored = localStorage.getItem('tabi_active_day');
-          if (stored) initialDay = parseInt(stored, 10);
-        } catch(e) {}
-
-        if (!initialDay && window.location.hash.startsWith('#day-card-')) {
-          initialDay = parseInt(window.location.hash.replace('#day-card-', ''), 10);
-        }
-
-        if (!initialDay || initialDay < 1 || initialDay > 13) {
-          initialDay = (typeof getJapanCurrentDay === 'function') ? getJapanCurrentDay() : 7;
-        }
-
-        setMobileFocusDay(initialDay, false);
+        if (modeLabel) modeLabel.textContent = '1 Dia';
+        if (modeIcon) modeIcon.className = 'fa-solid fa-bullseye text-[10px]';
       } else {
         document.body.classList.remove('mobile-focus-mode');
+        if (btnAll) btnAll.textContent = 'Modo 1 Dia';
+        if (modeBtn) {
+          modeBtn.className = 'min-w-[44px] min-h-[44px] px-2 flex flex-col items-center justify-center rounded-xl font-mono text-[10px] font-bold bg-slate-800 text-slate-300 shadow-sm active:scale-95 transition-all border border-slate-700';
+          modeBtn.setAttribute('aria-pressed', 'false');
+        }
+        if (modeLabel) modeLabel.textContent = '13 Dias';
+        if (modeIcon) modeIcon.className = 'fa-solid fa-layer-group text-[10px] text-amber-300';
       }
+
+      // Recupera dia salvo ou hash ou dia real no Japão (Dia 07)
+      let initialDay = null;
+      try {
+        const stored = localStorage.getItem('tabi_active_day');
+        if (stored) initialDay = parseInt(stored, 10);
+      } catch(e) {}
+
+      if (!initialDay && window.location.hash.startsWith('#day-card-')) {
+        initialDay = parseInt(window.location.hash.replace('#day-card-', ''), 10);
+      }
+
+      if (!initialDay || initialDay < 1 || initialDay > 13) {
+        initialDay = (typeof getJapanCurrentDay === 'function') ? getJapanCurrentDay() : 7;
+      }
+
+      setMobileFocusDay(initialDay, false);
     }
 
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 768) {
-        document.body.classList.remove('mobile-focus-mode');
-      } else {
-        let savedMode = null;
-        try { savedMode = localStorage.getItem('tabi_focus_mode'); } catch(e) {}
-        if (savedMode !== 'false') {
-          document.body.classList.add('mobile-focus-mode');
-        }
+    // Navegação prática por teclado no desktop (Setas Esquerda / Direita)
+    document.addEventListener('keydown', (e) => {
+      if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) return;
+      const waiterModal = document.getElementById('waiter-modal');
+      if (waiterModal && waiterModal.style.display !== 'none') return;
+
+      if (e.key === 'ArrowLeft') {
+        navigateDay(-1);
+      } else if (e.key === 'ArrowRight') {
+        navigateDay(1);
       }
     });
 
