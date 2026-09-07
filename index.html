@@ -198,12 +198,10 @@
     /* =================================================== */
     .day-scroller-sticky {
       position: sticky;
-      top: calc(3.75rem + env(safe-area-inset-top));
-      z-index: 35;
-      background: rgba(8, 12, 20, 0.94);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      top: calc(3.5rem + env(safe-area-inset-top, 0px));
+      z-index: 45;
+      background: #080C14;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       margin-left: -1rem;
       margin-right: -1rem;
       padding: 0.5rem 1rem;
@@ -280,6 +278,16 @@
     /* ========================================================================== */
     /* MOBILE SINGLE-DAY FOCUS MODE & THUMB DOCK (iPhone 17 Pro / Mobile < 768px) */
     /* ========================================================================== */
+    /* Garante que badges de dia, status e cidade nunca quebrem palavras internamente */
+    .day-card .border-b span.rounded,
+    .day-card .border-b span.rounded-md,
+    .day-card .border-b span.rounded-full,
+    .day-card .badge,
+    .day-card .font-mono.text-xs,
+    .day-card .font-mono.text-\[10px\] {
+      white-space: nowrap;
+    }
+
     @media (max-width: 767.98px) {
       /* No Modo Foco: esconde todos os cards exceto o card do dia ativo */
       body.mobile-focus-mode #itinerary-grid .day-card:not(.active-focus-day) {
@@ -290,10 +298,10 @@
         width: 100% !important;
         animation: focusDayFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
       }
-      /* Espaço de respiro inferior para o Dock Flutuante de Polegar + Barra de Navegação */
+      /* Espaço de respiro inferior generoso para que nenhum texto fique coberto pelo Dock Flutuante */
       body.mobile-focus-mode #itinerary-grid,
       #itinerary-grid {
-        padding-bottom: calc(9rem + env(safe-area-inset-bottom, 0px)) !important;
+        padding-bottom: calc(10.5rem + env(safe-area-inset-bottom, 0px)) !important;
       }
     }
 
@@ -597,7 +605,7 @@
   </aside>
 
   <!-- ==================== MOBILE FOCUS THUMB DOCK (iPhone 17 Pro / Mobile) ==================== -->
-  <aside id="mobile-thumb-dock" class="fixed bottom-[calc(3.85rem+env(safe-area-inset-bottom,0px))] left-2.5 right-2.5 z-40 md:hidden transition-all duration-300 pointer-events-none" aria-label="Controle de Navegação dos Dias">
+  <aside id="mobile-thumb-dock" class="fixed bottom-[calc(5rem+env(safe-area-inset-bottom,0px))] left-2.5 right-2.5 z-40 md:hidden transition-all duration-300 pointer-events-none" aria-label="Controle de Navegação dos Dias">
     <div class="pointer-events-auto max-w-md mx-auto">
       <div class="rounded-2xl p-1.5 flex items-center justify-between gap-1.5 bg-slate-950/92 backdrop-blur-2xl border border-slate-700/80 shadow-2xl">
         <!-- BOTAO DIA ANTERIOR (Apple HIG 44px min) -->
@@ -1954,31 +1962,31 @@
                 <!-- DIA 07 -->
         <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder today-highlight" id="day-card-7" data-city="quioto">
           <div class="space-y-3.5">
-            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
-              <div class="flex items-center gap-2">
-                <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs shadow-md animate-pulse">HOJE • DIA 07</span>
-                <span class="text-xs font-bold text-amber-300">Segunda • 07/09</span>
+            <div class="flex items-center justify-between flex-wrap gap-2 border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs shadow-md animate-pulse whitespace-nowrap">HOJE • DIA 07</span>
+                <span class="text-xs font-bold text-amber-300 whitespace-nowrap">Segunda • 07/09</span>
               </div>
-              <div class="flex items-center gap-1.5">
-                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold text-[10px] font-mono flex items-center gap-1"><i class="fa-solid fa-credit-card"></i> 100% CASHLESS</span>
-                <span class="px-2 py-0.5 rounded bg-red-500/10 text-red-400 font-bold text-[10px] font-mono uppercase">Quioto Oriental</span>
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold text-[10px] font-mono flex items-center gap-1 whitespace-nowrap"><i class="fa-solid fa-credit-card"></i> 100% CASHLESS</span>
+                <span class="px-2 py-0.5 rounded bg-red-500/10 text-red-400 font-bold text-[10px] font-mono uppercase whitespace-nowrap">Quioto Oriental</span>
               </div>
             </div>
 
-            <h4 class="font-bold text-base text-white flex items-center gap-2">
+            <h4 class="font-bold text-base text-white flex items-center gap-2 leading-snug">
               Kiyomizu-dera, Sannenzaka, Gion, Tarde no Apê & Banquete Noturno (Daimaru / Pontocho)
             </h4>
 
             <!-- STATUS DA HOSPEDAGEM COM LINK DIRETO GOOGLE MAPS -->
-            <div class="p-2 rounded-xl bg-slate-900/60 border border-slate-700/60 flex items-center justify-between gap-2">
-              <div class="flex items-center gap-2">
-                <i class="fa-solid fa-bed text-sky-400 shrink-0 text-xs"></i>
-                <div class="text-[11px] text-slate-300">
-                  <span class="font-bold text-sky-300 text-[9px] px-1.5 py-0.5 rounded bg-sky-950 border border-sky-500/30 mr-1">🛏️ HOSPEDADO</span>
+            <div class="p-2.5 rounded-xl bg-slate-900/60 border border-slate-700/60 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+              <div class="flex items-start sm:items-center gap-2">
+                <i class="fa-solid fa-bed text-sky-400 shrink-0 text-xs mt-0.5 sm:mt-0"></i>
+                <div class="text-[11px] text-slate-300 leading-tight">
+                  <span class="font-bold text-sky-300 text-[9px] px-1.5 py-0.5 rounded bg-sky-950 border border-sky-500/30 mr-1 whitespace-nowrap">🛏️ HOSPEDADO</span>
                   <strong><a href="https://maps.app.goo.gl/ZBUZTGMBwtC9vULa6" target="_blank" class="text-sky-300 hover:underline font-bold">Faminess Kyoto Ap 503 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a></strong> (Noite 2 de 3 • A 250m da Saída Hachijo)
                 </div>
               </div>
-              <span class="text-[10px] font-mono text-emerald-400 shrink-0 font-semibold">Quarto liberado</span>
+              <span class="text-[9.5px] font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-500/30 px-2 py-0.5 rounded-md font-semibold whitespace-nowrap self-start sm:self-auto">Quarto liberado ✓</span>
             </div>
 
             <!-- PAINEL COMPLETO DA MANHÃ REALIZADA (COM LINKS PRECISOS NO GOOGLE MAPS PARA NAVEGAR OU RETORNAR) -->
