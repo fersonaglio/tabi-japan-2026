@@ -279,12 +279,25 @@
     /* MOBILE SINGLE-DAY FOCUS MODE & THUMB DOCK (iPhone 17 Pro / Mobile < 768px) */
     /* ========================================================================== */
     /* Garante que badges de dia, status e cidade nunca quebrem palavras internamente */
+    /* Garante que nenhum card ou texto escape lateralmente no desktop e mobile */
+    .day-card,
+    .glass-card {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: normal;
+      min-width: 0;
+    }
+    .day-card * {
+      min-width: 0;
+    }
+    .day-card code {
+      word-break: break-all;
+      overflow-wrap: anywhere;
+    }
+    /* Apenas badges individuais do cabeçalho mantêm palavras unidas */
     .day-card .border-b span.rounded,
     .day-card .border-b span.rounded-md,
-    .day-card .border-b span.rounded-full,
-    .day-card .badge,
-    .day-card .font-mono.text-xs,
-    .day-card .font-mono.text-\[10px\] {
+    .day-card .border-b span.rounded-full {
       white-space: nowrap;
     }
 
@@ -1101,15 +1114,15 @@
         <!-- DIA 01 -->
         <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-1" data-city="toquio1">
           <div class="space-y-3.5">
-            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
-              <div class="flex items-center gap-2">
+            <div class="flex items-center justify-between flex-wrap gap-2 border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2 flex-wrap">
                 <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs">DIA 01</span>
                 <span class="text-xs font-bold text-slate-200">Terça • 01/09</span>
               </div>
               <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-bold text-[10px] font-mono uppercase">Chegada & Asakusa</span>
             </div>
 
-            <h4 class="font-bold text-base text-white flex items-center gap-2">
+            <h4 class="font-bold text-base text-white flex flex-wrap items-center gap-2 leading-snug">
               Chegada em Haneda e Base Oshiage <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-mono uppercase ml-1">✔ Concluído</span>
             </h4>
 
@@ -1180,15 +1193,15 @@
         <!-- DIA 02 -->
         <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-2" data-city="toquio1">
           <div class="space-y-3.5">
-            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
-              <div class="flex items-center gap-2">
+            <div class="flex items-center justify-between flex-wrap gap-2 border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2 flex-wrap">
                 <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs">DIA 02</span>
                 <span class="text-xs font-bold text-slate-200">Quarta • 02/09</span>
               </div>
               <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-bold text-[10px] font-mono uppercase">✔ Concluído</span>
             </div>
 
-            <h4 class="font-bold text-base text-white flex items-center gap-2">
+            <h4 class="font-bold text-base text-white flex flex-wrap items-center gap-2 leading-snug">
               Senso-ji, Shinjuku Gyoen & Mirante Tocho 45F <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-mono uppercase ml-1">✔ Feito</span>
             </h4>
 
@@ -1248,15 +1261,15 @@
         <!-- DIA 03 -->
         <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-3" data-city="toquio1">
           <div class="space-y-3.5">
-            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
-              <div class="flex items-center gap-2">
+            <div class="flex items-center justify-between flex-wrap gap-2 border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2 flex-wrap">
                 <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs">DIA 03</span>
                 <span class="text-xs font-bold text-slate-200">Quinta • 03/09</span>
               </div>
               <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-bold text-[10px] font-mono uppercase">✔ Concluído</span>
             </div>
 
-            <h4 class="font-bold text-base text-white flex items-center gap-2">
+            <h4 class="font-bold text-base text-white flex flex-wrap items-center gap-2 leading-snug">
               Palácio Imperial, Shibuya, Shinjuku & MEGA Donki <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-mono uppercase ml-1">✔ 100% Feito</span>
             </h4>
 
@@ -1355,15 +1368,15 @@
         <!-- DIA 04 -->
         <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-4" data-city="toquio1">
           <div class="space-y-3.5">
-            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
-              <div class="flex items-center gap-2">
+            <div class="flex items-center justify-between flex-wrap gap-2 border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2 flex-wrap">
                 <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs">DIA 04</span>
                 <span class="text-xs font-bold text-slate-200">Sexta • 04/09</span>
               </div>
               <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-bold text-[10px] font-mono uppercase">✔ 100% Concluído</span>
             </div>
 
-            <h4 class="font-bold text-base text-white flex items-center gap-2">
+            <h4 class="font-bold text-base text-white flex flex-wrap items-center gap-2 leading-snug">
               teamLab Planets, Odaiba, Tsukiji, Akihabara & Kanda <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-mono uppercase ml-1">✔ Concluído</span>
             </h4>
 
@@ -1447,15 +1460,15 @@
         <!-- DIA 05 -->
         <div class="day-card shabat-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block" id="day-card-5" data-city="toquio1">
           <div class="space-y-3.5">
-            <div class="flex items-center justify-between border-b border-emerald-500/30 pb-3">
-              <div class="flex items-center gap-2">
+            <div class="flex items-center justify-between flex-wrap gap-2 border-b border-emerald-500/30 pb-3">
+              <div class="flex items-center gap-2 flex-wrap">
                 <span class="px-2.5 py-1 rounded-md bg-emerald-900/60 text-emerald-300 font-mono font-bold text-xs">DIA 05</span>
                 <span class="text-xs font-bold text-emerald-300">Sábado • 05/09</span>
               </div>
               <span class="px-2 py-0.5 rounded badge-shabat font-bold text-[10px] font-mono uppercase">🌿 Santo Shabat</span>
             </div>
 
-            <h4 class="font-bold text-base text-white flex items-center gap-2">
+            <h4 class="font-bold text-base text-white flex flex-wrap items-center gap-2 leading-snug">
               Culto TIC, Tokyo Tower, Kyobunkwan Cristã, Nissan Crossing & JDM Akihabara
             </h4>
 
@@ -1733,8 +1746,8 @@
         <!-- DIA 06 -->
         <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-6" data-city="fuji">
           <div class="space-y-3.5">
-            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
-              <div class="flex items-center gap-2">
+            <div class="flex items-center justify-between flex-wrap gap-2 border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2 flex-wrap">
                 <span class="px-2.5 py-1 rounded-md bg-slate-700 text-white font-mono font-bold text-xs">DIA 06</span>
                 <span class="text-xs font-bold text-slate-300">Domingo • 06/09</span>
                 <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[9px] font-bold">CONCLUÍDO ✓</span>
@@ -1742,7 +1755,7 @@
               <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 font-bold text-[10px] font-mono uppercase">Samurais, Trens & Shinkansen</span>
             </div>
 
-            <h4 class="font-bold text-base text-white flex items-center gap-2">
+            <h4 class="font-bold text-base text-white flex flex-wrap items-center gap-2 leading-snug">
               Tênis & Óculos JINS, Museu Nacional (Samurais), The Railway Museum & Shinkansen ➔ Quioto
             </h4>
 
@@ -1864,7 +1877,7 @@
                     <p class="text-base sm:text-lg font-bold text-amber-200 tracking-wide font-serif">
                       京都まで、次の「のぞみ」の指定席を大人1枚お願いします。
                     </p>
-                    <p class="text-[10px] text-slate-300 font-mono italic">
+                    <p class="text-[10px] text-slate-300 font-mono italic break-words">
                       "Kyoto made, tsugi no Nozomi no shiteiseki o otona ichimai onegaishimasu."
                     </p>
                     <p class="text-[10px] text-emerald-300 font-semibold">
@@ -1992,7 +2005,7 @@
             <!-- PAINEL COMPLETO DA MANHÃ REALIZADA (COM LINKS PRECISOS NO GOOGLE MAPS PARA NAVEGAR OU RETORNAR) -->
             <div class="p-3.5 rounded-xl bg-emerald-950/40 border-2 border-emerald-500/50 space-y-2.5 text-xs shadow-md">
               <div class="flex items-center justify-between flex-wrap gap-1 border-b border-emerald-500/30 pb-2">
-                <span class="text-emerald-300 font-bold font-mono text-[11px] flex items-center gap-1.5">
+                <span class="text-emerald-300 font-bold font-mono text-[11px] flex flex-wrap items-center gap-1.5">
                   <i class="fa-solid fa-circle-check text-emerald-400"></i> Manhã Realizada com Sucesso (Links Precisos no Google Maps)
                 </span>
                 <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[9px] font-bold">CLIQUE P/ ABRIR O MAPA</span>
@@ -2037,7 +2050,7 @@
             <!-- AGORA: PAUSA DA TARDE NO APÊ COM LINK DO APÊ E ESTAÇÃO -->
             <div class="p-3 rounded-xl bg-gradient-to-r from-sky-950/50 via-slate-900/90 to-emerald-950/40 border-2 border-sky-400/60 shadow-lg space-y-1.5 text-xs">
               <div class="flex items-center justify-between flex-wrap gap-1">
-                <span class="text-sky-300 font-bold font-mono text-[11px] flex items-center gap-1.5">
+                <span class="text-sky-300 font-bold font-mono text-[11px] flex flex-wrap items-center gap-1.5">
                   <i class="fa-solid fa-couch text-sky-400"></i> ⚡ AGORA (13:30 às 16:30) — Pausa da Tarde no <a href="https://maps.app.goo.gl/ZBUZTGMBwtC9vULa6" target="_blank" class="text-sky-300 hover:underline font-bold">Apê Faminess #503 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
                 </span>
                 <span class="px-2 py-0.5 rounded-full bg-sky-500/20 text-sky-300 font-mono text-[9px] font-bold border border-sky-400/30">DESCANSO NO APÊ</span>
@@ -2067,7 +2080,7 @@
               <!-- 18:00: DAIMARU DEPACHIKA BANQUETE -->
               <div class="p-3 rounded-xl bg-gradient-to-r from-emerald-950/60 via-slate-900/90 to-amber-950/40 border-2 border-emerald-500/50 space-y-1.5">
                 <div class="flex items-center justify-between flex-wrap gap-1">
-                  <strong class="text-emerald-300 text-[11px] flex items-center gap-1.5">
+                  <strong class="text-emerald-300 text-[11px] flex flex-wrap items-center gap-1.5">
                     <i class="fa-solid fa-utensils text-emerald-400"></i> 18:00 às 19:30 — Jantar no Subsolo Gourmet: <a href="https://www.google.com/maps/search/?api=1&query=Daimaru+Kyoto" target="_blank" class="text-emerald-300 font-bold hover:underline">Daimaru Kyoto Depachika (B1F) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i></a>
                   </strong>
                   <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[9px] font-bold">100% Cashless • Waribiki 🏷️</span>
@@ -2152,18 +2165,18 @@
         <!-- DIA 08 -->
         <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-8" data-city="quioto">
           <div class="space-y-3.5">
-            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
-              <div class="flex items-center gap-2">
+            <div class="flex items-center justify-between flex-wrap gap-2 border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2 flex-wrap">
                 <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs">DIA 08</span>
                 <span class="text-xs font-bold text-slate-200">Terça • 08/09</span>
               </div>
-              <div class="flex items-center gap-1.5">
+              <div class="flex items-center gap-1.5 flex-wrap">
                 <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold text-[10px] font-mono flex items-center gap-1"><i class="fa-solid fa-credit-card"></i> 100% CASHLESS</span>
                 <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-bold text-[10px] font-mono uppercase">Sul, Oeste & Norte</span>
               </div>
             </div>
 
-            <h4 class="font-bold text-base text-white flex items-center gap-2">
+            <h4 class="font-bold text-base text-white flex flex-wrap items-center gap-2 leading-snug">
               Fushimi Inari (10.000 Torii), Bambus de Arashiyama & Rota Imperial Cashless
             </h4>
 
@@ -2252,18 +2265,18 @@
         <!-- DIA 09 -->
         <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-9" data-city="osaka">
           <div class="space-y-3.5">
-            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
-              <div class="flex items-center gap-2">
+            <div class="flex items-center justify-between flex-wrap gap-2 border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2 flex-wrap">
                 <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs">DIA 09</span>
                 <span class="text-xs font-bold text-slate-200">Quarta • 09/09</span>
               </div>
-              <div class="flex items-center gap-1.5">
+              <div class="flex items-center gap-1.5 flex-wrap">
                 <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold text-[10px] font-mono flex items-center gap-1"><i class="fa-solid fa-credit-card"></i> 100% CASHLESS</span>
                 <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 font-bold text-[10px] font-mono uppercase">Nara & Osaka</span>
               </div>
             </div>
 
-            <h4 class="font-bold text-base text-white flex items-center gap-2">
+            <h4 class="font-bold text-base text-white flex flex-wrap items-center gap-2 leading-snug">
               Cervos de Nara, Todai-ji, Segredos de Dotonbori & Chegada em Osaka
             </h4>
 
@@ -2394,18 +2407,18 @@
         <!-- DIA 10 -->
         <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-10" data-city="osaka">
           <div class="space-y-3.5">
-            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
-              <div class="flex items-center gap-2">
+            <div class="flex items-center justify-between flex-wrap gap-2 border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2 flex-wrap">
                 <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs">DIA 10</span>
                 <span class="text-xs font-bold text-slate-200">Quinta • 10/09</span>
               </div>
-              <div class="flex items-center gap-1.5">
+              <div class="flex items-center gap-1.5 flex-wrap">
                 <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold text-[10px] font-mono flex items-center gap-1"><i class="fa-solid fa-credit-card"></i> 100% CASHLESS</span>
                 <span class="px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 font-bold text-[10px] font-mono uppercase">História & Mirante</span>
               </div>
             </div>
 
-            <h4 class="font-bold text-base text-white flex items-center gap-2">
+            <h4 class="font-bold text-base text-white flex flex-wrap items-center gap-2 leading-snug">
               Castelo de Osaka, Gui's Wagyu Burger (7º do Mundo), GLION Museum & Harukas 300
             </h4>
 
@@ -2507,18 +2520,18 @@
         <!-- DIA 11 -->
         <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-11" data-city="toquio2">
           <div class="space-y-3.5">
-            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
-              <div class="flex items-center gap-2">
+            <div class="flex items-center justify-between flex-wrap gap-2 border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2 flex-wrap">
                 <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs">DIA 11</span>
                 <span class="text-xs font-bold text-slate-200">Sexta • 11/09</span>
               </div>
-              <div class="flex items-center gap-1.5">
+              <div class="flex items-center gap-1.5 flex-wrap">
                 <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold text-[10px] font-mono flex items-center gap-1"><i class="fa-solid fa-credit-card"></i> 100% CASHLESS</span>
                 <span class="px-2 py-0.5 rounded bg-red-500/10 text-red-400 font-bold text-[10px] font-mono uppercase">Retorno a Tóquio</span>
               </div>
             </div>
 
-            <h4 class="font-bold text-base text-white flex items-center gap-2">
+            <h4 class="font-bold text-base text-white flex flex-wrap items-center gap-2 leading-snug">
               Shinkansen Nozomi, Ueno Park & Jantar Wagyu Panga
             </h4>
 
@@ -2585,18 +2598,18 @@
         <!-- DIA 12 -->
         <div class="day-card shabat-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block" id="day-card-12" data-city="toquio2">
           <div class="space-y-3.5">
-            <div class="flex items-center justify-between border-b border-emerald-500/30 pb-3">
-              <div class="flex items-center gap-2">
+            <div class="flex items-center justify-between flex-wrap gap-2 border-b border-emerald-500/30 pb-3">
+              <div class="flex items-center gap-2 flex-wrap">
                 <span class="px-2.5 py-1 rounded-md bg-emerald-600 text-white font-mono font-bold text-xs">DIA 12</span>
                 <span class="text-xs font-bold text-emerald-300">Sábado • 12/09</span>
               </div>
-              <div class="flex items-center gap-1.5">
+              <div class="flex items-center gap-1.5 flex-wrap">
                 <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold text-[10px] font-mono flex items-center gap-1"><i class="fa-solid fa-credit-card"></i> 100% CASHLESS</span>
                 <span class="px-2 py-0.5 rounded badge-shabat font-bold text-[10px] font-mono uppercase">🌿 Santo Shabat</span>
               </div>
             </div>
 
-            <h4 class="font-bold text-base text-white flex items-center gap-2">
+            <h4 class="font-bold text-base text-white flex flex-wrap items-center gap-2 leading-snug">
               Culto TIC, Descanso de Shabat & Noite de Sábado em Shibuya
             </h4>
 
@@ -2694,18 +2707,18 @@
         <!-- DIA 13 -->
         <div class="day-card glass-card rounded-2xl p-5 flex flex-col space-y-4 break-inside-avoid w-full inline-block border-jp-cardborder" id="day-card-13" data-city="toquio2">
           <div class="space-y-3.5">
-            <div class="flex items-center justify-between border-b border-jp-cardborder pb-3">
-              <div class="flex items-center gap-2">
+            <div class="flex items-center justify-between flex-wrap gap-2 border-b border-jp-cardborder pb-3">
+              <div class="flex items-center gap-2 flex-wrap">
                 <span class="px-2.5 py-1 rounded-md bg-jp-red text-white font-mono font-bold text-xs">DIA 13</span>
                 <span class="text-xs font-bold text-slate-200">Domingo • 13/09</span>
               </div>
-              <div class="flex items-center gap-1.5">
+              <div class="flex items-center gap-1.5 flex-wrap">
                 <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold text-[10px] font-mono flex items-center gap-1"><i class="fa-solid fa-credit-card"></i> 100% CASHLESS</span>
                 <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold text-[10px] font-mono uppercase">🛍️ Compras (Até 16h) & Voo</span>
               </div>
             </div>
 
-            <h4 class="font-bold text-base text-white flex items-center gap-2">
+            <h4 class="font-bold text-base text-white flex flex-wrap items-center gap-2 leading-snug">
               Kappabashi, Ryogoku Sumo Hall, Compras até 16h & Embarque Haneda T3
             </h4>
 
